@@ -1,0 +1,557 @@
+
+    <!doctype html><html lang="en"><head><meta charset="utf-8"><title>Cellular Automaton Based Urban Growth</title></head>
+    <body>
+    <link rel="stylesheet" href="/style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="//connect.facebook.net/en_US/all.js"></script>
+<script src="/linkify.min.js"></script>
+<script src="/linkify-jquery.min.js"></script>
+<script>
+  $(document).ready(function(){
+	  		$.getJSON('https://graph.facebook.com/238065426321929/feed?access_token=229040647557399|MQKFlFYX7YW25XGj4GUYZ7B1lcY', function(data) {
+		var ahtml="";
+		for(var i = 0; i < 5; i++) {
+			ahtml=ahtml+"<li>"+data["data"][i]["message"]+"</li>";
+		}
+		ahtml=ahtml+"";
+		$("#fbquotes").html(ahtml);
+		$("#fbquotes").linkify();
+	});
+	 
+		$.getJSON('https://api.github.com/repos/gama-platform/gama/commits', function(data) {
+			var ahtml="";
+			for(var i = 0; i < 5; i++) {
+				ahtml=ahtml+"<li>"+data[i]["commit"]["message"]+" by "+data[i]["commit"]["author"]["name"]+" <a href='"+data[i]["commit"]["html_url"]+"'> See more</a></li>";
+			}
+			ahtml=ahtml+"";
+			$("#commitquotes").html(ahtml);
+			$("#commitquotes").linkify();
+		});
+				
+				
+		$.getJSON('https://api.github.com/repos/gama-platform/gama/issues', function(data) {
+			var ahtml="";
+			for(var i = 0; i < 5; i++) {
+				ahtml=ahtml+"<li>"+data[i]["title"]+" by "+data[i]["user"]["login"]+" <a href='"+data[i]["html_url"]+"'> See more</a></li>";
+			}
+			ahtml=ahtml+"";
+			$("#issuequotes").html(ahtml);
+			$("#issuequotes").linkify();
+		});
+		
+		$.getJSON('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fgroups.google.com%2Fforum%2Ffeed%2Fgama-platform%2Ftopics%2Frss.xml%3Fnum%3D15', function(data) {
+			var ahtml="";
+			for(var i = 0; i < 5; i++) {
+				ahtml=ahtml+"<li>"+data["items"][i]["title"]+" by "+data["items"][i]["author"]+" <a href='"+data["items"][i]["link"]+"'> See more</a></li>";
+			}
+			ahtml=ahtml+"";
+			$("#googleusersquotes").html(ahtml);
+			$("#googleusersquotes").linkify();
+			
+		});
+ });
+  
+</script>
+
+      <div id="left">
+
+		<ul class="mcd-menu"><li><a href="/">Home</a></li><li><a href="/">Discussions</a></li>
+<li><a href='/wiki/Tutorials'>Tutorials
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/LearnGAMLStepByStep'>Learn GAML Step by Step
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/Introduction'>Introduction
+</a></li>
+<li><a href='/wiki/StartWithGAML'>Start with GAML
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/ModelOrganization'>Organization of a model
+</a></li>
+<li><a href='/wiki/BasicProgrammingConceptsInGAML'>Basic programming concepts in GAML
+</a></li>
+</ul>
+<li><a href='/wiki/ManipulateBasicSpecies'>Manipulate basic species
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/GlobalSpecies'>The global species
+</a></li>
+<li><a href='/wiki/RegularSpecies'>Regular species
+</a></li>
+<li><a href='/wiki/DefiningActionsAndBehaviors'>Defining actions and behaviors
+</a></li>
+<li><a href='/wiki/InteractionBetweenAgents'>Interaction between agents
+</a></li>
+<li><a href='/wiki/AttachingSkills'>Attaching Skills
+</a></li>
+<li><a href='/wiki/Inheritance'>Inheritance
+</a></li>
+</ul>
+<li><a href='/wiki/DefiningAdvancedSpecies'>Defining advanced species
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/GridSpecies'>Grid Species
+</a></li>
+<li><a href='/wiki/GraphSpecies'>Graph Species
+</a></li>
+<li><a href='/wiki/MirrorSpecies'>Mirror species
+</a></li>
+<li><a href='/wiki/MultiLevelArchitecture'>Multi-level architecture
+</a></li>
+</ul>
+<li><a href='/wiki/DefiningGUIExperiment'>Defining GUI Experiment
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/DefiningParameters'>Defining Parameters
+</a></li>
+<li><a href='/wiki/DefiningDisplaysGeneralities'>Defining displays (Generalities)
+</a></li>
+<li><a href='/wiki/DefiningCharts'>Defining Charts
+</a></li>
+<li><a href='/wiki/Defining3DDisplays'>Defining 3D Displays
+</a></li>
+<li><a href='/wiki/DefiningMonitorsAndInspectors'>Defining monitors and inspectors
+</a></li>
+<li><a href='/wiki/DefiningExportFiles'>Defining export files
+</a></li>
+<li><a href='/wiki/DefiningUserInteraction'>Defining user interaction
+</a></li>
+</ul>
+<li><a href='/wiki/ExploringModels'>Exploring Models
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/RunSeveralSimulations'>Run Several Simulations
+</a></li>
+<li><a href='/wiki/BatchExperiments'>Defining Batch Experiments
+</a></li>
+<li><a href='/wiki/ExplorationMethods'>Exploration Methods
+</a></li>
+</ul>
+<li><a href='/wiki/OptimizingModels'>Optimizing Models
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/RuntimeConcepts'>Runtime Concepts
+</a></li>
+<li><a href='/wiki/OptimizingModels'>Optimizing Models
+</a></li>
+</ul>
+<li><a href='/wiki/MultiParadigmModeling'>Multi-Paradigm Modeling
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/ControlArchitecture'>Control Architectures
+</a></li>
+<li><a href='/wiki/Equations'>Using Equations
+</a></li>
+</ul>
+</ul>
+<li><a href='/wiki/Recipes'>Recipes
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/ManipulateOSMDatas'>Manipulate OSM Datas
+</a></li>
+<li><a href='/wiki/Diffusion'>Implementing diffusion
+</a></li>
+<li><a href='/wiki/UsingDatabase'>Using Database Access
+</a></li>
+<li><a href='/wiki/CallingR'>Calling R
+</a></li>
+<li><a href='/wiki/UsingFIPAACL'>Using FIPA ACL
+</a></li>
+<li><a href='/wiki/GamAnalyzer'>Using GAMAnalyzer
+</a></li>
+<li><a href='/wiki/UsingBDI'>Using BDI
+</a></li>
+<li><a href='/wiki/UsingDrivingSkill'>Advanced Driving Skill
+</a></li>
+<li><a href='/wiki/ManipulateDates'>Manipulate Dates
+</a></li>
+<li><a href='/wiki/ManipulateLight'>Implementing light
+</a></li>
+<li><a href='/wiki/Comodel'>Using Comodel
+</a></li>
+</ul>
+<li><a href='/wiki/Tutorials'>Tutorials
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/LuneraysFlu'>Luneray's flu
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/LuneraysFlu_step1'>1. Creation of a first basic disease spreading model
+</a></li>
+<li><a href='/wiki/LuneraysFlu_step2'>2. Definition of monitors and chart outputs
+</a></li>
+<li><a href='/wiki/LuneraysFlu_step3'>3. Importation of GIS data
+</a></li>
+<li><a href='/wiki/LuneraysFlu_step4'>4. Use of a graph to constraint the movements of people]
+</a></li>
+<li><a href='/wiki/LuneraysFlu_step5'>5. Definition of 3D displays
+</a></li>
+</ul>
+<li><a href='/wiki/IncrementalModel'>Incremental Model
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/IncrementalModel_step1'>1. Simple SI Model
+</a></li>
+<li><a href='/wiki/IncrementalModel_step2'>2. Charts
+</a></li>
+<li><a href='/wiki/IncrementalModel_step3'>3. Integration of GIS Data
+</a></li>
+<li><a href='/wiki/IncrementalModel_step4'>4. Movement on Graph
+</a></li>
+<li><a href='/wiki/IncrementalModel_step5'>5. Visualizing in 3D
+</a></li>
+<li><a href='/wiki/IncrementalModel_step6'>6. Multi-Level
+</a></li>
+<li><a href='/wiki/IncrementalModel_step7'>7. Differential Equations
+</a></li>
+</ul>
+<li><a href='/wiki/PredatorPrey'>Predator Prey
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/PredatorPrey_step1'>1. Basic Model
+</a></li>
+<li><a href='/wiki/PredatorPrey_step2'>2. Vegetation Dynamic
+</a></li>
+<li><a href='/wiki/PredatorPrey_step3'>3. Prey Agent Behavior
+</a></li>
+<li><a href='/wiki/PredatorPrey_step4'>4. Inspectors and Monitors
+</a></li>
+<li><a href='/wiki/PredatorPrey_step5'>5. Predator Agent
+</a></li>
+<li><a href='/wiki/PredatorPrey_step6'>6. Breeding
+</a></li>
+<li><a href='/wiki/PredatorPrey_step7'>7. Agent Aspect
+</a></li>
+<li><a href='/wiki/PredatorPrey_step8'>8. Complex Behavior
+</a></li>
+<li><a href='/wiki/PredatorPrey_step9'>9. Stopping condition
+</a></li>
+<li><a href='/wiki/PredatorPrey_step10'>10. Charts
+</a></li>
+<li><a href='/wiki/PredatorPrey_step11'>11. Writing Files
+</a></li>
+<li><a href='/wiki/PredatorPrey_step12'>12. Image loading
+</a></li>
+</ul>
+<li><a href='/wiki/RoadTrafficModel'>Road Traffic
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/RoadTrafficModel_step1'>1. Loading of GIS Data
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step2'>2. People Agents
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step3'>3. Movement of People
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step4'>4. Weight for Road Network
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step5'>5. Dynamic weights
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step6'>6. Charts
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step7'>7. Automatic Road Repair
+</a></li>
+</ul>
+<li><a href='/wiki/ThreeD'>3D Tutorial
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/ThreeD_step1'>1. Basic Model
+</a></li>
+<li><a href='/wiki/ThreeD_step2'>2. Moving Cells
+</a></li>
+<li><a href='/wiki/ThreeD_step3'>3. Connections
+</a></li>
+</ul>
+</ul>
+</ul>
+<li><a href='/wiki/References'>References
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/PlatformDocumentation'>Platform
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/InstallationAndLaunching'>Installation and Launching
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/Installation'>Installation
+</a></li>
+<li><a href='/wiki/Launching'>Launching GAMA
+</a></li>
+<li><a href='/wiki/Headless'>Headless Mode
+</a></li>
+<li><a href='/wiki/Updating'>Updating GAMA
+</a></li>
+<li><a href='/wiki/InstallingPlugins'>Installing Plugins
+</a></li>
+<li><a href='/wiki/Troubleshooting'>Troubleshooting
+</a></li>
+</ul>
+<li><a href='/wiki/WorkspaceProjectsAndModels'>Workspace, Projects and Models
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/NavigatingWorkspace'>Navigating in the Workspace
+</a></li>
+<li><a href='/wiki/ChangingWorkspace'>Changing Workspace
+</a></li>
+<li><a href='/wiki/ImportingModels'>Importing Models
+</a></li>
+</ul>
+<li><a href='/wiki/EditingModels'>Editing models
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/GamlEditorGeneralities'>The GAML Editor - Generalities
+</a></li>
+<li><a href='/wiki/GamlEditorToolbar'>The GAML Editor Toolbar
+</a></li>
+<li><a href='/wiki/ValidationOfModels'>Validation of Models
+</a></li>
+</ul>
+<li><a href='/wiki/RunningExperiments'>Running Experiments
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/LaunchingExperiments'>Launching Experiments from the User Interface
+</a></li>
+<li><a href='/wiki/ExperimentsUserInterface'>Experiments User Interface
+</a></li>
+<li><a href='/wiki/MenusAndCommands'>Menus and Commands
+</a></li>
+<li><a href='/wiki/ParametersView'>Parameters View
+</a></li>
+<li><a href='/wiki/InspectorsAndMonitors'>Inspectors and monitors
+</a></li>
+<li><a href='/wiki/Displays'>Displays
+</a></li>
+<li><a href='/wiki/BatchSpecific'>Batch Specific UI
+</a></li>
+<li><a href='/wiki/ErrorsView'>Errors View
+</a></li>
+</ul>
+<li><a href='/wiki/Preferences'>Preferences
+</a></li>
+</ul>
+<li><a href='/wiki/GamlReferences'>Gaml Reference
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/BuiltInSpecies'>Built-in Species
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/AgentBuiltIn'>The 'agent' built-in species (Under Construction)
+</a></li>
+<li><a href='/wiki/ModelBuiltIn'>The 'model' built-in species (Under Construction)
+</a></li>
+<li><a href='/wiki/ExperimentBuiltIn'>The 'experiment' built-in species (Under Construction)
+</a></li>
+</ul>
+<li><a href='/wiki/BuiltInSkills'>Built-in Skills
+</a></li>
+<li><a href='/wiki/BuiltInArchitectures'>Built-in Architectures
+</a></li>
+<li><a href='/wiki/Statements'>Statements
+</a></li>
+<li><a href='/wiki/DataTypes'>Types
+</a></li>
+<li><a href='/wiki/FileTypes'>File Types
+</a></li>
+<li><a href='/wiki/Expressions'>Expressions
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/Literals'>Literals
+</a></li>
+<li><a href='/wiki/UnitsAndConstants'>Units and constants
+</a></li>
+<li><a href='/wiki/PseudoVariables'>Pseudo-variables
+</a></li>
+<li><a href='/wiki/VariablesAndAttributes'>Variables and Attributes
+</a></li>
+<li><a href='/wiki/Operators'>Operators 
+</a></li>
+</ul>
+</ul>
+</ul>
+<li>Community
+</li>
+<ul class='sub'>
+<li><a href='/wiki/Contribute'>Contribute
+</a></li>
+<li><a href='/wiki/Projects'>Projects
+</a></li>
+<li><a href='/wiki/TrainingSession'>Training Session
+</a></li>
+</ul></ul></div><div id="right">
+<h3>Facebook Activities</h3>
+<ul id="fbquotes">
+</ul>
+<h3>Commit Activities</h3>
+<ul id="commitquotes">
+</ul>
+<h3>Issue Activities</h3>
+<ul id="issuequotes">
+</ul>
+<h3>Gama Platform Users Activities</h3>
+<ul id="googleusersquotes">
+</ul>
+</div><div id="content"><h1 id="cellular-automaton-based-urban-growth">Cellular Automaton Based Urban Growth</h1>
+
+<p><em>Author : Truong Chi Quang, Patrick Taillandier, Benoit Gaudou &amp; Alexis Drogoul</em></p>
+
+<p>model based on the one proposed by (Raimbault et al., 2014): At each simulation step the nb_plots_to_build empty plots with the highest constructability are built The constructability is computed from 3 criteria: the density of construction in the neighborhood, the distance to a road, the distance to the city center (using the road network).</p>
+
+<p>Code of the model :</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>
+model raster3
+
+
+global
+{ 
+	//File for the ascii grid
+	file asc_grid &lt;- grid_file("../includes/cantho_1999_v6.asc");
+	//Shapefile for the road
+	file road_shapefile &lt;- shape_file("../includes/roads15_3.shp");
+	//Shapefile for the city
+	file city_center_shapefile &lt;- shape_file("../includes/city center.shp");
+	//Shape of the environment
+	geometry shape &lt;- envelope(asc_grid);
+	//Graph of the roads
+	graph roads_network;
+	
+	// Dynamic list of the cells to consider at each cycle
+	list&lt;plot&gt; empty_plots &lt;- plot where (each.grid_value = 0.0) update: shuffle(plot where (each.grid_value = 0.0));
+	
+	list&lt;rgb&gt; plot_colors &lt;- [ 
+		#lightgray, //empty
+		#orange, // 1 built
+		#blue // 2 River-lake
+	];
+	//Radius of density
+	int density_radius &lt;- 4;
+	//Weight of density
+	float weight_density &lt;- 0.05;
+	//Weight of the road distance
+	float weight_road_dist &lt;- 0.5;
+	//Weight of the city center distance
+	float weight_cc_dist &lt;- 0.3;
+	//Number of plot allowing to build a building
+	int nb_plots_to_build &lt;- 195;
+
+	init
+	{
+		//Creation of the roads using the shapefile of the road
+		create roads from: road_shapefile;
+		//Creation of the city center using the city center shapefile
+		create city_center from: city_center_shapefile;
+		//Creation of the graph of the road network
+		roads_network &lt;- as_edge_graph(roads);
+		
+		//Each road has to compute its distance from the city center
+		ask roads {
+			do compute_cc_dist;
+		}
+		//Compute the city distance for each plot
+		ask empty_plots {
+			do compute_distances;
+		}
+		//Normalization of the distance
+		do normalize_distances;
+	}
+	//Action to normalize the distance
+	action normalize_distances {
+		//Maximum distance from the road of all the plots
+		float max_road_dist &lt;- empty_plots max_of each.dist_route;
+		//Maximum distance from the city center for all the plots
+		float max_cc_dist &lt;- empty_plots max_of each.dist_cv;
+		//Normalization of  each empty plot according to the maximal value of each attribute
+		ask empty_plots {
+			dist_cv &lt;- 1 - dist_cv / max_cc_dist;
+			dist_route &lt;- 1 - dist_route / max_road_dist;
+		}
+	}
+	
+	
+	//Reflex representing the global dynamic of the model
+	reflex dynamique_globale when: weight_density != 0 or weight_road_dist != 0 or weight_cc_dist != 0 {
+		//Ask to each empty plot to compute its constructability
+		ask empty_plots {
+			constructability &lt;- compute_constructability();
+		}
+		list&lt;plot&gt; ordered_plots &lt;- empty_plots sort_by (each.constructability);
+		ordered_plots &lt;- nb_plots_to_build last ordered_plots;
+		//Build on each empty plot having the highest constructability
+		ask ordered_plots
+		{
+			do build;
+		}
+	}	
+}
+//Species representing the city center
+species city_center {
+	aspect default {
+		draw circle(300) color: #cyan;
+	}	
+}
+//Species representing the roads
+species roads
+{
+	float dist_cv;
+	//Action to compute the city center distance for the road
+	action compute_cc_dist {
+		using topology(roads_network)
+		{
+			dist_cv &lt;- self distance_to first(city_center);
+		}
+	}
+	aspect default {
+		draw shape color: #black;	
+	}
+}
+//Grid species to represent the different building plots
+grid plot file: asc_grid use_individual_shapes: false use_regular_agents: false neighbors: 4
+{
+	rgb color &lt;- grid_value = -1 ? #white : plot_colors[int(grid_value)];
+	//Distance from the road
+	float dist_route &lt;- 0.0;
+	//Distance from the city center
+	float dist_cv &lt;- 0.0;
+	//Constructability of the plot
+	float constructability;
+	
+	//Action to compute all the distances for the cell
+	action compute_distances
+	{
+		roads route_pp &lt;- roads closest_to self;
+		dist_route &lt;- (self distance_to route_pp) using topology(world);
+		dist_cv &lt;- dist_route + route_pp.dist_cv;
+	}
+	//Action to build on the cell
+	action build
+	{
+		grid_value &lt;- 1.0;
+		color &lt;- plot_colors[1];
+	}
+	//Action to compute the constructability of the plot cell
+	float compute_constructability
+	{
+		//Get all the neighbours plots
+		list&lt;plot&gt; voisins &lt;- (self neighbors_at density_radius);
+		//Compute the density of all the neighbours plots
+		float densite &lt;- (voisins count (each.grid_value = 1.0)) / length(voisins);
+		return (densite * weight_density + dist_route * weight_road_dist + dist_cv * weight_cc_dist) / (weight_density + weight_road_dist + weight_cc_dist);
+	}			
+}
+
+experiment raster type: gui {
+ 	parameter "Weight of the density criteria" var: weight_density;
+ 	parameter "Weight of the distance to roads criteria" var: weight_road_dist;
+ 	parameter "Weight of the distance to city center criteria" var: weight_cc_dist;
+ 	output {
+ 		display map type: opengl {
+			grid plot;
+			species roads;
+			species city_center;
+		}
+	}
+}
+
+</code></pre>
+</div>
+</div></body></html>

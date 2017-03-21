@@ -1,0 +1,979 @@
+
+    <!doctype html><html lang="en"><head><meta charset="utf-8"><title>Comodel of Flood and Evacuation model</title></head>
+    <body>
+    <link rel="stylesheet" href="/style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="//connect.facebook.net/en_US/all.js"></script>
+<script src="/linkify.min.js"></script>
+<script src="/linkify-jquery.min.js"></script>
+<script>
+  $(document).ready(function(){
+	  		$.getJSON('https://graph.facebook.com/238065426321929/feed?access_token=229040647557399|MQKFlFYX7YW25XGj4GUYZ7B1lcY', function(data) {
+		var ahtml="";
+		for(var i = 0; i < 5; i++) {
+			ahtml=ahtml+"<li>"+data["data"][i]["message"]+"</li>";
+		}
+		ahtml=ahtml+"";
+		$("#fbquotes").html(ahtml);
+		$("#fbquotes").linkify();
+	});
+	 
+		$.getJSON('https://api.github.com/repos/gama-platform/gama/commits', function(data) {
+			var ahtml="";
+			for(var i = 0; i < 5; i++) {
+				ahtml=ahtml+"<li>"+data[i]["commit"]["message"]+" by "+data[i]["commit"]["author"]["name"]+" <a href='"+data[i]["commit"]["html_url"]+"'> See more</a></li>";
+			}
+			ahtml=ahtml+"";
+			$("#commitquotes").html(ahtml);
+			$("#commitquotes").linkify();
+		});
+				
+				
+		$.getJSON('https://api.github.com/repos/gama-platform/gama/issues', function(data) {
+			var ahtml="";
+			for(var i = 0; i < 5; i++) {
+				ahtml=ahtml+"<li>"+data[i]["title"]+" by "+data[i]["user"]["login"]+" <a href='"+data[i]["html_url"]+"'> See more</a></li>";
+			}
+			ahtml=ahtml+"";
+			$("#issuequotes").html(ahtml);
+			$("#issuequotes").linkify();
+		});
+		
+		$.getJSON('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fgroups.google.com%2Fforum%2Ffeed%2Fgama-platform%2Ftopics%2Frss.xml%3Fnum%3D15', function(data) {
+			var ahtml="";
+			for(var i = 0; i < 5; i++) {
+				ahtml=ahtml+"<li>"+data["items"][i]["title"]+" by "+data["items"][i]["author"]+" <a href='"+data["items"][i]["link"]+"'> See more</a></li>";
+			}
+			ahtml=ahtml+"";
+			$("#googleusersquotes").html(ahtml);
+			$("#googleusersquotes").linkify();
+			
+		});
+ });
+  
+</script>
+
+      <div id="left">
+
+		<ul class="mcd-menu"><li><a href="/">Home</a></li><li><a href="/">Discussions</a></li>
+<li><a href='/wiki/Tutorials'>Tutorials
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/LearnGAMLStepByStep'>Learn GAML Step by Step
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/Introduction'>Introduction
+</a></li>
+<li><a href='/wiki/StartWithGAML'>Start with GAML
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/ModelOrganization'>Organization of a model
+</a></li>
+<li><a href='/wiki/BasicProgrammingConceptsInGAML'>Basic programming concepts in GAML
+</a></li>
+</ul>
+<li><a href='/wiki/ManipulateBasicSpecies'>Manipulate basic species
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/GlobalSpecies'>The global species
+</a></li>
+<li><a href='/wiki/RegularSpecies'>Regular species
+</a></li>
+<li><a href='/wiki/DefiningActionsAndBehaviors'>Defining actions and behaviors
+</a></li>
+<li><a href='/wiki/InteractionBetweenAgents'>Interaction between agents
+</a></li>
+<li><a href='/wiki/AttachingSkills'>Attaching Skills
+</a></li>
+<li><a href='/wiki/Inheritance'>Inheritance
+</a></li>
+</ul>
+<li><a href='/wiki/DefiningAdvancedSpecies'>Defining advanced species
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/GridSpecies'>Grid Species
+</a></li>
+<li><a href='/wiki/GraphSpecies'>Graph Species
+</a></li>
+<li><a href='/wiki/MirrorSpecies'>Mirror species
+</a></li>
+<li><a href='/wiki/MultiLevelArchitecture'>Multi-level architecture
+</a></li>
+</ul>
+<li><a href='/wiki/DefiningGUIExperiment'>Defining GUI Experiment
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/DefiningParameters'>Defining Parameters
+</a></li>
+<li><a href='/wiki/DefiningDisplaysGeneralities'>Defining displays (Generalities)
+</a></li>
+<li><a href='/wiki/DefiningCharts'>Defining Charts
+</a></li>
+<li><a href='/wiki/Defining3DDisplays'>Defining 3D Displays
+</a></li>
+<li><a href='/wiki/DefiningMonitorsAndInspectors'>Defining monitors and inspectors
+</a></li>
+<li><a href='/wiki/DefiningExportFiles'>Defining export files
+</a></li>
+<li><a href='/wiki/DefiningUserInteraction'>Defining user interaction
+</a></li>
+</ul>
+<li><a href='/wiki/ExploringModels'>Exploring Models
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/RunSeveralSimulations'>Run Several Simulations
+</a></li>
+<li><a href='/wiki/BatchExperiments'>Defining Batch Experiments
+</a></li>
+<li><a href='/wiki/ExplorationMethods'>Exploration Methods
+</a></li>
+</ul>
+<li><a href='/wiki/OptimizingModels'>Optimizing Models
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/RuntimeConcepts'>Runtime Concepts
+</a></li>
+<li><a href='/wiki/OptimizingModels'>Optimizing Models
+</a></li>
+</ul>
+<li><a href='/wiki/MultiParadigmModeling'>Multi-Paradigm Modeling
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/ControlArchitecture'>Control Architectures
+</a></li>
+<li><a href='/wiki/Equations'>Using Equations
+</a></li>
+</ul>
+</ul>
+<li><a href='/wiki/Recipes'>Recipes
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/ManipulateOSMDatas'>Manipulate OSM Datas
+</a></li>
+<li><a href='/wiki/Diffusion'>Implementing diffusion
+</a></li>
+<li><a href='/wiki/UsingDatabase'>Using Database Access
+</a></li>
+<li><a href='/wiki/CallingR'>Calling R
+</a></li>
+<li><a href='/wiki/UsingFIPAACL'>Using FIPA ACL
+</a></li>
+<li><a href='/wiki/GamAnalyzer'>Using GAMAnalyzer
+</a></li>
+<li><a href='/wiki/UsingBDI'>Using BDI
+</a></li>
+<li><a href='/wiki/UsingDrivingSkill'>Advanced Driving Skill
+</a></li>
+<li><a href='/wiki/ManipulateDates'>Manipulate Dates
+</a></li>
+<li><a href='/wiki/ManipulateLight'>Implementing light
+</a></li>
+<li><a href='/wiki/Comodel'>Using Comodel
+</a></li>
+</ul>
+<li><a href='/wiki/Tutorials'>Tutorials
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/LuneraysFlu'>Luneray's flu
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/LuneraysFlu_step1'>1. Creation of a first basic disease spreading model
+</a></li>
+<li><a href='/wiki/LuneraysFlu_step2'>2. Definition of monitors and chart outputs
+</a></li>
+<li><a href='/wiki/LuneraysFlu_step3'>3. Importation of GIS data
+</a></li>
+<li><a href='/wiki/LuneraysFlu_step4'>4. Use of a graph to constraint the movements of people]
+</a></li>
+<li><a href='/wiki/LuneraysFlu_step5'>5. Definition of 3D displays
+</a></li>
+</ul>
+<li><a href='/wiki/IncrementalModel'>Incremental Model
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/IncrementalModel_step1'>1. Simple SI Model
+</a></li>
+<li><a href='/wiki/IncrementalModel_step2'>2. Charts
+</a></li>
+<li><a href='/wiki/IncrementalModel_step3'>3. Integration of GIS Data
+</a></li>
+<li><a href='/wiki/IncrementalModel_step4'>4. Movement on Graph
+</a></li>
+<li><a href='/wiki/IncrementalModel_step5'>5. Visualizing in 3D
+</a></li>
+<li><a href='/wiki/IncrementalModel_step6'>6. Multi-Level
+</a></li>
+<li><a href='/wiki/IncrementalModel_step7'>7. Differential Equations
+</a></li>
+</ul>
+<li><a href='/wiki/PredatorPrey'>Predator Prey
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/PredatorPrey_step1'>1. Basic Model
+</a></li>
+<li><a href='/wiki/PredatorPrey_step2'>2. Vegetation Dynamic
+</a></li>
+<li><a href='/wiki/PredatorPrey_step3'>3. Prey Agent Behavior
+</a></li>
+<li><a href='/wiki/PredatorPrey_step4'>4. Inspectors and Monitors
+</a></li>
+<li><a href='/wiki/PredatorPrey_step5'>5. Predator Agent
+</a></li>
+<li><a href='/wiki/PredatorPrey_step6'>6. Breeding
+</a></li>
+<li><a href='/wiki/PredatorPrey_step7'>7. Agent Aspect
+</a></li>
+<li><a href='/wiki/PredatorPrey_step8'>8. Complex Behavior
+</a></li>
+<li><a href='/wiki/PredatorPrey_step9'>9. Stopping condition
+</a></li>
+<li><a href='/wiki/PredatorPrey_step10'>10. Charts
+</a></li>
+<li><a href='/wiki/PredatorPrey_step11'>11. Writing Files
+</a></li>
+<li><a href='/wiki/PredatorPrey_step12'>12. Image loading
+</a></li>
+</ul>
+<li><a href='/wiki/RoadTrafficModel'>Road Traffic
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/RoadTrafficModel_step1'>1. Loading of GIS Data
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step2'>2. People Agents
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step3'>3. Movement of People
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step4'>4. Weight for Road Network
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step5'>5. Dynamic weights
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step6'>6. Charts
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step7'>7. Automatic Road Repair
+</a></li>
+</ul>
+<li><a href='/wiki/ThreeD'>3D Tutorial
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/ThreeD_step1'>1. Basic Model
+</a></li>
+<li><a href='/wiki/ThreeD_step2'>2. Moving Cells
+</a></li>
+<li><a href='/wiki/ThreeD_step3'>3. Connections
+</a></li>
+</ul>
+</ul>
+</ul>
+<li><a href='/wiki/References'>References
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/PlatformDocumentation'>Platform
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/InstallationAndLaunching'>Installation and Launching
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/Installation'>Installation
+</a></li>
+<li><a href='/wiki/Launching'>Launching GAMA
+</a></li>
+<li><a href='/wiki/Headless'>Headless Mode
+</a></li>
+<li><a href='/wiki/Updating'>Updating GAMA
+</a></li>
+<li><a href='/wiki/InstallingPlugins'>Installing Plugins
+</a></li>
+<li><a href='/wiki/Troubleshooting'>Troubleshooting
+</a></li>
+</ul>
+<li><a href='/wiki/WorkspaceProjectsAndModels'>Workspace, Projects and Models
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/NavigatingWorkspace'>Navigating in the Workspace
+</a></li>
+<li><a href='/wiki/ChangingWorkspace'>Changing Workspace
+</a></li>
+<li><a href='/wiki/ImportingModels'>Importing Models
+</a></li>
+</ul>
+<li><a href='/wiki/EditingModels'>Editing models
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/GamlEditorGeneralities'>The GAML Editor - Generalities
+</a></li>
+<li><a href='/wiki/GamlEditorToolbar'>The GAML Editor Toolbar
+</a></li>
+<li><a href='/wiki/ValidationOfModels'>Validation of Models
+</a></li>
+</ul>
+<li><a href='/wiki/RunningExperiments'>Running Experiments
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/LaunchingExperiments'>Launching Experiments from the User Interface
+</a></li>
+<li><a href='/wiki/ExperimentsUserInterface'>Experiments User Interface
+</a></li>
+<li><a href='/wiki/MenusAndCommands'>Menus and Commands
+</a></li>
+<li><a href='/wiki/ParametersView'>Parameters View
+</a></li>
+<li><a href='/wiki/InspectorsAndMonitors'>Inspectors and monitors
+</a></li>
+<li><a href='/wiki/Displays'>Displays
+</a></li>
+<li><a href='/wiki/BatchSpecific'>Batch Specific UI
+</a></li>
+<li><a href='/wiki/ErrorsView'>Errors View
+</a></li>
+</ul>
+<li><a href='/wiki/Preferences'>Preferences
+</a></li>
+</ul>
+<li><a href='/wiki/GamlReferences'>Gaml Reference
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/BuiltInSpecies'>Built-in Species
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/AgentBuiltIn'>The 'agent' built-in species (Under Construction)
+</a></li>
+<li><a href='/wiki/ModelBuiltIn'>The 'model' built-in species (Under Construction)
+</a></li>
+<li><a href='/wiki/ExperimentBuiltIn'>The 'experiment' built-in species (Under Construction)
+</a></li>
+</ul>
+<li><a href='/wiki/BuiltInSkills'>Built-in Skills
+</a></li>
+<li><a href='/wiki/BuiltInArchitectures'>Built-in Architectures
+</a></li>
+<li><a href='/wiki/Statements'>Statements
+</a></li>
+<li><a href='/wiki/DataTypes'>Types
+</a></li>
+<li><a href='/wiki/FileTypes'>File Types
+</a></li>
+<li><a href='/wiki/Expressions'>Expressions
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/Literals'>Literals
+</a></li>
+<li><a href='/wiki/UnitsAndConstants'>Units and constants
+</a></li>
+<li><a href='/wiki/PseudoVariables'>Pseudo-variables
+</a></li>
+<li><a href='/wiki/VariablesAndAttributes'>Variables and Attributes
+</a></li>
+<li><a href='/wiki/Operators'>Operators 
+</a></li>
+</ul>
+</ul>
+</ul>
+<li>Community
+</li>
+<ul class='sub'>
+<li><a href='/wiki/Contribute'>Contribute
+</a></li>
+<li><a href='/wiki/Projects'>Projects
+</a></li>
+<li><a href='/wiki/TrainingSession'>Training Session
+</a></li>
+</ul></ul></div><div id="right">
+<h3>Facebook Activities</h3>
+<ul id="fbquotes">
+</ul>
+<h3>Commit Activities</h3>
+<ul id="commitquotes">
+</ul>
+<h3>Issue Activities</h3>
+<ul id="issuequotes">
+</ul>
+<h3>Gama Platform Users Activities</h3>
+<ul id="googleusersquotes">
+</ul>
+</div><div id="content"><h1 id="comodel-of-flood-and-evacuation-model">Comodel of Flood and Evacuation model</h1>
+
+<p><em>Author : HUYNH Quang Nghi</em></p>
+
+<p>Co-model example : couple the evacuation model with the flood model. Water win or human win?</p>
+
+<p>Imported models :</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>model continuous_move 
+global { 
+	//Shapefile of the buildings
+	file building_shapefile &lt;- file("../includes/building.shp");
+	//Shape of the environment
+	geometry shape &lt;- envelope(building_shapefile);
+	int maximal_turn &lt;- 90; //in degree
+	int cohesion_factor &lt;- 10;
+	//Size of the people
+	float people_size &lt;- 2.0;
+	//Space without buildings
+	geometry free_space;
+	//Number of people agent
+	int nb_people &lt;- 500;
+	//Point to evacuate
+	point target_point &lt;- {world.location.x, 0};
+	init { 
+		
+		free_space &lt;- copy(shape);
+		//Creation of the buildinds
+		create building from: building_shapefile {
+			//Creation of the free space by removing the shape of the different buildings existing
+			free_space &lt;- free_space - (shape + people_size);
+		}
+		//Simplification of the free_space to remove sharp edges
+		free_space &lt;- free_space simplification(1.0);
+		//Creation of the people agents
+		create people number: nb_people {
+			//People agents are placed randomly among the free space
+			location &lt;- any_location_in(free_space);
+			target_loc &lt;-  target_point;
+		} 		 	
+	}	
+}
+//Species which represent the building 
+species building {
+	//Height of the buildings
+	float height &lt;- 3.0 + rnd(5);
+	aspect default {
+		draw shape color: #gray depth: height;
+	}
+}
+//Species people which move to the evacuation point using the skill moving
+species people skills:[moving]{
+	//Target point to evacuate
+	point target_loc;
+	//Speed of the agent
+	float speed &lt;- 0.5 + rnd(1000) / 1000;
+	//Velocity of the agent
+	point velocity &lt;- {0,0};
+	//Direction of the agent taking in consideration the maximal turn an agent is able to make
+	int heading max: heading + maximal_turn min: heading - maximal_turn;
+	
+	//Size of the agent
+	float size &lt;- people_size;
+	rgb color &lt;- rgb(rnd(255),rnd(255),rnd(255));
+		
+	//Reflex to kill the agent when it has evacuated the area
+	reflex end when: location distance_to target_loc &lt;= 2 * people_size{
+		write name + " is arrived";
+		do die;
+	}
+	//Reflex to compute the velocity of the agent considering the cohesion factor
+	reflex follow_goal  {
+		velocity &lt;- velocity + ((target_loc - location) / cohesion_factor);
+	}
+	//Reflex to apply separation when people are too close from each other
+	reflex separation {
+		point acc &lt;- {0,0};
+		ask (people at_distance size)  {
+			acc &lt;- acc - (location - myself.location);
+		}  
+		velocity &lt;- velocity + acc;
+	}
+	//Reflex to avoid the different obstacles
+	reflex avoid { 
+		point acc &lt;- {0,0};
+		list&lt;building&gt; nearby_obstacles &lt;- (building at_distance people_size);
+		loop obs over: nearby_obstacles {
+			acc &lt;- acc - (obs.location - location);
+		}
+		velocity &lt;- velocity + acc; 
+	}
+	//Reflex to move the agent considering its location, target and velocity
+	reflex move {
+		point old_location &lt;- copy(location);
+		do goto target: location + velocity ;
+		if (not empty(building overlapping self )) {
+			location &lt;- point((location closest_points_with free_space)[1]);
+		}
+		velocity &lt;- location - old_location;
+	}	
+	aspect default {
+		draw pyramid(size) color: color;
+		draw sphere(size/3) at: {location.x,location.y,size} color: color;
+	}
+}
+
+experiment main type: gui {
+	parameter "nb people" var: nb_people min: 1 max: 1000;
+	output {
+		display map type: opengl {
+			species building refresh: false;
+			species people;
+			graphics "exit" refresh: false {
+				draw sphere(2 * people_size) at: target_point color: #green;	
+			}
+		}
+	}
+}
+
+</code></pre>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>model Evacuation_coupling
+
+import "../../../Toy Models/Evacuation/models/Continuous Move.gaml"
+experiment Evacuation_coupling_exp type: gui parent: main
+{
+	point centroid &lt;- { 0, 180 };
+	list&lt;building&gt; getBuilding
+	{
+		return list(building);
+	}
+
+	action transform_environement
+	{
+		loop t over: list(building)
+		{
+			t.shape &lt;- t.shape translated_by centroid;
+			t.shape &lt;- t.shape * 10;
+			t.location &lt;- t.location * 8;
+		}
+
+		loop t over: list(people)
+		{
+			t.speed &lt;- 10.0;
+			t.size &lt;- 20.0;
+			t.shape &lt;- t.shape translated_by centroid;
+			t.location &lt;- t.location * 8;
+		}
+
+		target_point &lt;- point(target_point translated_by centroid);
+	}
+
+	list&lt;people&gt; getPeople
+	{
+		return list(people);
+	}
+
+	output
+	{
+	}
+
+}
+</code></pre>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>
+model hydro
+
+global {
+   //Shapefile for the river
+   file river_shapefile &lt;- file("../includes/RedRiver.shp");
+   //Shapefile for the dykes
+   file dykes_shapefile &lt;- file("../includes/Dykes.shp");
+   //Shapefile for the buildings
+   file buildings_shapefile &lt;- file("../includes/Building.shp");
+   
+   //Data elevation file
+   file dem_file &lt;- file("../includes/mnt50.asc");  
+   //Diffusion rate
+   float diffusion_rate &lt;- 0.6;
+   //Height of the dykes
+   float dyke_height &lt;- 15.0;
+   //Width of the dyke
+   float dyke_width &lt;- 15.0;
+    
+   //Shape of the environment using the dem file
+   geometry shape &lt;- envelope(dem_file);
+   
+   //List of the drain and river cells
+   list&lt;cell&gt; drain_cells;
+   list&lt;cell&gt; river_cells;
+   
+   
+  
+   float step &lt;- 1°h;
+   
+   init {
+   	 //Initialization of the cells
+      do init_cells;
+     //Initialization of the water cells
+      do init_water;
+     //Initialization of the river cells
+     river_cells &lt;- cell where (each.is_river);
+     //Initialization of the drain cells
+      drain_cells &lt;- cell where (each.is_drain);
+     //Initialization of the obstacles (buildings and dykes)
+      do init_obstacles;
+      //Set the height of each cell
+      ask cell {
+         obstacle_height &lt;- compute_highest_obstacle();
+         do update_color;
+      }
+   }
+   //Action to initialize the altitude value of the cell according to the dem file
+   action init_cells {
+      ask cell {
+         altitude &lt;- grid_value;
+         neighbour_cells &lt;- (self neighbors_at 1) ;
+      }
+   }
+   //action to initialize the water cells according to the river shape file and the drain
+   action init_water {
+      geometry river &lt;- geometry(river_shapefile);
+      ask cell overlapping river {
+         water_height &lt;- 10.0;
+         is_river &lt;- true;
+         is_drain &lt;- grid_y = matrix(cell).rows - 1;
+      }
+   }
+   //initialization of the obstacles (the buildings and the dykes)
+   action init_obstacles{
+      create buildings from: buildings_shapefile  {
+         do update_cells;
+      }
+      create dyke from: dykes_shapefile;
+      ask dyke {
+          shape &lt;-  shape + dyke_width;
+            do update_cells;
+      }
+   }
+   //Reflex to add water among the water cells
+   reflex adding_input_water {
+   	  float water_input &lt;- rnd(100)/100;
+      ask river_cells {
+         water_height &lt;- water_height + water_input;
+      }
+   }
+   //Reflex to flow the water according to the altitute and the obstacle
+   reflex flowing {
+      ask cell {already &lt;- false;}
+      ask (cell sort_by ((each.altitude + each.water_height + each.obstacle_height))) {
+         do flow;
+      }
+   }
+   //Reflex to update the color of the cell
+   reflex update_cell_color {
+      ask cell {
+         do update_color;
+      }
+   }
+   //Reflex for the drain cells to drain water
+   reflex draining {
+      ask drain_cells {
+         water_height &lt;- 0.0;
+      }
+   }
+   
+}
+//Species which represent the obstacle
+   species obstacle {
+   	  //height of the obstacle
+      float height min: 0.0;
+      //Color of the obstacle
+      rgb color;
+      //Pressure of the water
+      float water_pressure update: compute_water_pressure();
+      
+      //List of cells concerned
+      list&lt;cell&gt; cells_concerned ;
+      //List of cells in the neighbourhood 
+      list&lt;cell&gt; cells_neighbours;
+      
+      //Action to compute the water pressure
+      float compute_water_pressure {
+      	//If the obstacle doesn't have height, then there will be no pressure
+         if (height = 0.0) {
+            return 0.0;
+         } else {
+         	//The leve of the water is equals to the maximul level of water in the neighbours cells
+            float water_level &lt;- cells_neighbours max_of (each.water_height);
+            //Return the water pressure as the minimal value between 1 and the water level divided by the height
+            return min([1.0,water_level / height]);
+         } 
+      }
+      
+      //Action to update the cells
+      action update_cells {
+      	//All the cells concerned by the obstacle are the ones overlapping the obstacle
+         cells_concerned &lt;- (cell overlapping self);
+        	ask cells_concerned {
+        	//Add the obstacles to the obstacles of the cell
+            add myself to: obstacles;
+            water_height &lt;- 0.0;
+         }
+         //Cells neighbours are all the neighbours cells of the cells concerned
+         cells_neighbours &lt;- cells_concerned + cells_concerned accumulate (each.neighbour_cells);
+         //The height is now computed
+      	 do compute_height();
+         if (height &gt; 0.0) {   
+         	//We compute the water pressure again
+            water_pressure &lt;- compute_water_pressure();
+         } else {water_pressure &lt;- 0.0;}
+      }
+      action compute_height;
+      aspect geometry {
+         int val &lt;- int( 255 * water_pressure);
+         color &lt;- rgb(val,255-val,0);
+         draw shape color: color depth: height*5 border: color;
+      }
+   }
+   //Species buildings which is derivated from obstacle
+   species buildings parent: obstacle {
+   	 //The building has a height randomly chosed between 2 and 10
+      float height &lt;- 2.0 + rnd(8);
+   }
+   //Species dyke which is derivated from obstacle
+   species dyke parent: obstacle{
+   	
+       int counter_wp &lt;- 0;
+       int breaking_threshold &lt;- 24;
+      
+      //Action to represent the break of the dyke
+       action break{
+         ask cells_concerned {
+            do update_after_destruction(myself);
+         }
+         do die;
+      }
+      //Action to compute the height of the dyke as the dyke_height without the mean height of the cells it overlaps
+      action compute_height
+       {
+      	   height &lt;- dyke_height - mean(cells_concerned collect (each.altitude));
+      
+      }
+      
+      //Reflex to break the dynamic of the water
+      reflex breaking_dynamic {
+      	if (water_pressure = 1.0) {
+      		counter_wp &lt;- counter_wp + 1;
+      		if (counter_wp &gt; breaking_threshold) {
+      			do break;
+      		}
+      	} else {
+      		counter_wp &lt;- 0;
+      	}
+      }
+      //user command which allows the possibility to destroy the dyke for the user
+      user_command "Destroy dyke" action: break; 
+   }
+   //Grid cell to discretize space, initialized using the dem file
+   grid cell file: dem_file neighbors: 8 frequency: 0  use_regular_agents: false use_individual_shapes: false use_neighbors_cache: false {
+      //Altitude of the cell
+      float altitude;
+      //Height of the water in the cell
+      float water_height &lt;- 0.0 min: 0.0;
+      //Height of the cell
+      float height;
+      //List of the neighbour cells
+      list&lt;cell&gt; neighbour_cells ;
+      //Boolean to know if it is a drain cell
+      bool is_drain &lt;- false;
+      //Boolean to know if it is a river cell
+      bool is_river &lt;- false;
+      //List of all the obstacles overlapping the cell
+      list&lt;obstacle&gt; obstacles;
+      //Height of the obstacles
+      float obstacle_height &lt;- 0.0;
+      bool already &lt;- false;
+      
+      //Action to compute the highest obstacle among the obstacles
+      float compute_highest_obstacle {
+         if (empty(obstacles))
+         {
+            return 0.0; 
+         } else {
+            return obstacles max_of(each.height);
+         }
+      }
+      //Action to flow the water 
+      action flow {
+      	//if the height of the water is higher than 0 then, it can flow among the neighbour cells
+         if (water_height &gt; 0) {
+         	//We get all the cells already done
+            list&lt;cell&gt; neighbour_cells_al &lt;- neighbour_cells where (each.already);
+            //If there are cells already done then we continue
+            if (!empty(neighbour_cells_al)) {
+               //We compute the height of the neighbours cells according to their altitude, water_height and obstacle_height
+               ask neighbour_cells_al {height &lt;- altitude + water_height + obstacle_height;}
+               //The height of the cell is equals to its altitude and water height
+               height &lt;-  altitude +  water_height;
+               //The water of the cells will flow to the neighbour cells which have a height less than the height of the actual cell
+               list&lt;cell&gt; flow_cells &lt;- (neighbour_cells_al where (height &gt; each.height)) ;
+               //If there are cells, we compute the water flowing
+               if (!empty(flow_cells)) {
+                  loop flow_cell over: shuffle(flow_cells) sort_by (each.height){
+                     float water_flowing &lt;- max([0.0, min([(height - flow_cell.height), water_height * diffusion_rate])]); 
+                     water_height &lt;- water_height - water_flowing;
+                     flow_cell.water_height &lt;-flow_cell.water_height +  water_flowing;
+                     height &lt;- altitude + water_height;
+                  }   
+               }
+            }
+         }
+         already &lt;- true;
+      }  
+      //Update the color of the cell
+      action update_color { 
+         int val_water &lt;- 0;
+         val_water &lt;- max([0, min([255, int(255 * (1 - (water_height / 12.0)))])]) ;  
+         color &lt;- rgb([val_water, val_water, 255]);
+         grid_value &lt;- water_height + altitude;
+      }
+      //action to compute the destruction of the obstacle
+      action update_after_destruction(obstacle the_obstacle){
+         remove the_obstacle from: obstacles;
+         obstacle_height &lt;- compute_highest_obstacle();
+      }
+       
+   }
+
+
+experiment main_gui type: gui {
+   parameter "Shapefile for the river" var:river_shapefile category:"Water data";
+   parameter "Shapefile for the dykes" var:dykes_shapefile category:"Obstacles";
+   parameter "Shapefile for the buildings" var:buildings_shapefile category:"Obstacles";
+   parameter "Height of the dykes" var:dyke_height category:"Obstacles";
+   parameter "Diffusion rate" var:diffusion_rate category:"Water dynamic";
+   output { 
+      display map type: opengl {
+         grid cell triangulation: true;
+         species buildings aspect: geometry;
+         species dyke aspect: geometry ;
+      }
+      display chart_display refresh: every(24) { 
+         chart "Pressure on Dykes" type: series {
+            data "Mean pressure on dykes " value: mean(dyke collect (each.water_pressure)) style: line color: #magenta ;
+            data "Rate of dykes with max pressure" value: (dyke count (each.water_pressure = 1.0))/ length(dyke) style: line color: #red ;
+            data "Rate of dykes with high pressure" value: (dyke count (each.water_pressure &gt; 0.5))/ length(dyke) style: line color: #orange ;
+            data "Rate of dykes with low pressure" value: (dyke count (each.water_pressure &lt; 0.25))/ length(dyke) style: line color: #green ;
+         }
+      }
+   }
+}
+</code></pre>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>model Flood_coupling
+
+import "../../../Toy Models/Flood Simulation/models/Hydrological Model.gaml"
+experiment Flood_coupling_exp type: gui parent: main_gui
+{
+	point newSize &lt;- { 0.07, 0.07 };
+	cell getCellAt (geometry p)
+	{
+		ask simulation
+		{
+			return cell closest_to p;
+		}
+
+	}
+
+	list&lt;cell&gt; getCell
+	{
+		return list(cell) where (each.grid_value &gt; 8.0);
+	}
+
+	list&lt;buildings&gt; getBuildings
+	{
+		return list(buildings);
+	}
+
+	list&lt;dyke&gt; getDyke
+	{
+		return list(dyke);
+	}
+
+	output
+	{
+	}
+
+}
+</code></pre>
+</div>
+
+<p>Code of the model :</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>model comodel_Flood_Evacuation
+
+import "Flood_coupling.gaml" as myFlood
+import "Evacuation_coupling.gaml" as myEvacuation
+
+
+global
+{
+	//set the bound of environment
+	geometry shape &lt;- envelope(file("../../../Toy Models/Flood Simulation/includes/mnt50.asc"));
+	//counting variable of casualty
+	int casualty &lt;- 0;
+	init
+	{
+		//create experiment from micro-model myFlood with corresponding parameters
+		create myFlood.Flood_coupling_exp with:
+		[buildings_shapefile::file("../../../Toy Models/Flood Simulation/includes/Building.shp"), river_shapefile::file("../../../Toy Models/Flood Simulation/includes/RedRiver.shp"), dykes_shapefile::file("../../../Toy Models/Flood Simulation/includes/Dykes.shp"), dem_file::file("../../../Toy Models/Flood Simulation/includes/mnt50.asc")];
+		//create the Evacuation micro-model's experiment
+		create myEvacuation.Evacuation_coupling_exp with: [nb_people::200, target_point::{ 0, 1580 }, building_shapefile::file("../../../Toy Models/Evacuation/includes/building.shp")]
+		{
+			//transform the environment and the agents to new location (near the river)
+			do transform_environement;
+		}
+
+	}
+
+	reflex doing_cosimulation
+	{
+		//do a step of Flooding
+		ask myFlood.Flood_coupling_exp collect each.simulation
+		{
+			do _step_;
+		}
+
+		//people evacate 
+		ask myEvacuation.Evacuation_coupling_exp collect each.simulation
+		{
+			//depending on the real plan of evacuation, we can test the speed of the evacuation with the speed of flooding by doing more or less simulation step  
+			if (cycle mod 2 = 0)
+			{
+				do _step_;
+			}
+
+		}
+
+		//loop over the population
+		loop thePeople over: first(myEvacuation.Evacuation_coupling_exp).getPeople()
+		{
+			//get the cell at people's location
+			cell theWater &lt;- cell(first(myFlood.Flood_coupling_exp).getCellAt(thePeople));
+			//if the water levele is high than 8 meters and people is overlapped, tell him that he must dead
+			if (theWater.grid_value &gt; 8.0 and theWater overlaps thePeople)
+			{
+				ask thePeople
+				{
+					do die;
+				}
+				//increase the counting variable
+				casualty &lt;- casualty + 1;
+			}
+
+		}
+
+	}
+
+}
+
+experiment comodel_Flood_Evacuation_exp type: gui
+{
+	output
+	{
+		display "comodel_disp"
+		{
+			agents "building" value: first(myEvacuation.Evacuation_coupling_exp).getBuilding();
+			agents "people" value: first(myEvacuation.Evacuation_coupling_exp).getPeople();
+			agents "cell" value: first(myFlood.Flood_coupling_exp).getCell();
+			agents "dyke" value: first(myFlood.Flood_coupling_exp).getDyke();
+			graphics 'CasualtyView'
+			{
+				draw ('Casualty: ' + casualty) at: { 0, 4000 } font: font("Arial", 18, # bold) color: # red;
+			}
+
+		}
+
+	}
+
+}
+</code></pre>
+</div>
+</div></body></html>

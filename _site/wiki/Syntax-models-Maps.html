@@ -1,0 +1,685 @@
+
+    <!doctype html><html lang="en"><head><meta charset="utf-8"><title>Maps</title></head>
+    <body>
+    <link rel="stylesheet" href="/style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="//connect.facebook.net/en_US/all.js"></script>
+<script src="/linkify.min.js"></script>
+<script src="/linkify-jquery.min.js"></script>
+<script>
+  $(document).ready(function(){
+	  		$.getJSON('https://graph.facebook.com/238065426321929/feed?access_token=229040647557399|MQKFlFYX7YW25XGj4GUYZ7B1lcY', function(data) {
+		var ahtml="";
+		for(var i = 0; i < 5; i++) {
+			ahtml=ahtml+"<li>"+data["data"][i]["message"]+"</li>";
+		}
+		ahtml=ahtml+"";
+		$("#fbquotes").html(ahtml);
+		$("#fbquotes").linkify();
+	});
+	 
+		$.getJSON('https://api.github.com/repos/gama-platform/gama/commits', function(data) {
+			var ahtml="";
+			for(var i = 0; i < 5; i++) {
+				ahtml=ahtml+"<li>"+data[i]["commit"]["message"]+" by "+data[i]["commit"]["author"]["name"]+" <a href='"+data[i]["commit"]["html_url"]+"'> See more</a></li>";
+			}
+			ahtml=ahtml+"";
+			$("#commitquotes").html(ahtml);
+			$("#commitquotes").linkify();
+		});
+				
+				
+		$.getJSON('https://api.github.com/repos/gama-platform/gama/issues', function(data) {
+			var ahtml="";
+			for(var i = 0; i < 5; i++) {
+				ahtml=ahtml+"<li>"+data[i]["title"]+" by "+data[i]["user"]["login"]+" <a href='"+data[i]["html_url"]+"'> See more</a></li>";
+			}
+			ahtml=ahtml+"";
+			$("#issuequotes").html(ahtml);
+			$("#issuequotes").linkify();
+		});
+		
+		$.getJSON('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fgroups.google.com%2Fforum%2Ffeed%2Fgama-platform%2Ftopics%2Frss.xml%3Fnum%3D15', function(data) {
+			var ahtml="";
+			for(var i = 0; i < 5; i++) {
+				ahtml=ahtml+"<li>"+data["items"][i]["title"]+" by "+data["items"][i]["author"]+" <a href='"+data["items"][i]["link"]+"'> See more</a></li>";
+			}
+			ahtml=ahtml+"";
+			$("#googleusersquotes").html(ahtml);
+			$("#googleusersquotes").linkify();
+			
+		});
+ });
+  
+</script>
+
+      <div id="left">
+
+		<ul class="mcd-menu"><li><a href="/">Home</a></li><li><a href="/">Discussions</a></li>
+<li><a href='/wiki/Tutorials'>Tutorials
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/LearnGAMLStepByStep'>Learn GAML Step by Step
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/Introduction'>Introduction
+</a></li>
+<li><a href='/wiki/StartWithGAML'>Start with GAML
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/ModelOrganization'>Organization of a model
+</a></li>
+<li><a href='/wiki/BasicProgrammingConceptsInGAML'>Basic programming concepts in GAML
+</a></li>
+</ul>
+<li><a href='/wiki/ManipulateBasicSpecies'>Manipulate basic species
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/GlobalSpecies'>The global species
+</a></li>
+<li><a href='/wiki/RegularSpecies'>Regular species
+</a></li>
+<li><a href='/wiki/DefiningActionsAndBehaviors'>Defining actions and behaviors
+</a></li>
+<li><a href='/wiki/InteractionBetweenAgents'>Interaction between agents
+</a></li>
+<li><a href='/wiki/AttachingSkills'>Attaching Skills
+</a></li>
+<li><a href='/wiki/Inheritance'>Inheritance
+</a></li>
+</ul>
+<li><a href='/wiki/DefiningAdvancedSpecies'>Defining advanced species
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/GridSpecies'>Grid Species
+</a></li>
+<li><a href='/wiki/GraphSpecies'>Graph Species
+</a></li>
+<li><a href='/wiki/MirrorSpecies'>Mirror species
+</a></li>
+<li><a href='/wiki/MultiLevelArchitecture'>Multi-level architecture
+</a></li>
+</ul>
+<li><a href='/wiki/DefiningGUIExperiment'>Defining GUI Experiment
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/DefiningParameters'>Defining Parameters
+</a></li>
+<li><a href='/wiki/DefiningDisplaysGeneralities'>Defining displays (Generalities)
+</a></li>
+<li><a href='/wiki/DefiningCharts'>Defining Charts
+</a></li>
+<li><a href='/wiki/Defining3DDisplays'>Defining 3D Displays
+</a></li>
+<li><a href='/wiki/DefiningMonitorsAndInspectors'>Defining monitors and inspectors
+</a></li>
+<li><a href='/wiki/DefiningExportFiles'>Defining export files
+</a></li>
+<li><a href='/wiki/DefiningUserInteraction'>Defining user interaction
+</a></li>
+</ul>
+<li><a href='/wiki/ExploringModels'>Exploring Models
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/RunSeveralSimulations'>Run Several Simulations
+</a></li>
+<li><a href='/wiki/BatchExperiments'>Defining Batch Experiments
+</a></li>
+<li><a href='/wiki/ExplorationMethods'>Exploration Methods
+</a></li>
+</ul>
+<li><a href='/wiki/OptimizingModels'>Optimizing Models
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/RuntimeConcepts'>Runtime Concepts
+</a></li>
+<li><a href='/wiki/OptimizingModels'>Optimizing Models
+</a></li>
+</ul>
+<li><a href='/wiki/MultiParadigmModeling'>Multi-Paradigm Modeling
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/ControlArchitecture'>Control Architectures
+</a></li>
+<li><a href='/wiki/Equations'>Using Equations
+</a></li>
+</ul>
+</ul>
+<li><a href='/wiki/Recipes'>Recipes
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/ManipulateOSMDatas'>Manipulate OSM Datas
+</a></li>
+<li><a href='/wiki/Diffusion'>Implementing diffusion
+</a></li>
+<li><a href='/wiki/UsingDatabase'>Using Database Access
+</a></li>
+<li><a href='/wiki/CallingR'>Calling R
+</a></li>
+<li><a href='/wiki/UsingFIPAACL'>Using FIPA ACL
+</a></li>
+<li><a href='/wiki/GamAnalyzer'>Using GAMAnalyzer
+</a></li>
+<li><a href='/wiki/UsingBDI'>Using BDI
+</a></li>
+<li><a href='/wiki/UsingDrivingSkill'>Advanced Driving Skill
+</a></li>
+<li><a href='/wiki/ManipulateDates'>Manipulate Dates
+</a></li>
+<li><a href='/wiki/ManipulateLight'>Implementing light
+</a></li>
+<li><a href='/wiki/Comodel'>Using Comodel
+</a></li>
+</ul>
+<li><a href='/wiki/Tutorials'>Tutorials
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/LuneraysFlu'>Luneray's flu
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/LuneraysFlu_step1'>1. Creation of a first basic disease spreading model
+</a></li>
+<li><a href='/wiki/LuneraysFlu_step2'>2. Definition of monitors and chart outputs
+</a></li>
+<li><a href='/wiki/LuneraysFlu_step3'>3. Importation of GIS data
+</a></li>
+<li><a href='/wiki/LuneraysFlu_step4'>4. Use of a graph to constraint the movements of people]
+</a></li>
+<li><a href='/wiki/LuneraysFlu_step5'>5. Definition of 3D displays
+</a></li>
+</ul>
+<li><a href='/wiki/IncrementalModel'>Incremental Model
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/IncrementalModel_step1'>1. Simple SI Model
+</a></li>
+<li><a href='/wiki/IncrementalModel_step2'>2. Charts
+</a></li>
+<li><a href='/wiki/IncrementalModel_step3'>3. Integration of GIS Data
+</a></li>
+<li><a href='/wiki/IncrementalModel_step4'>4. Movement on Graph
+</a></li>
+<li><a href='/wiki/IncrementalModel_step5'>5. Visualizing in 3D
+</a></li>
+<li><a href='/wiki/IncrementalModel_step6'>6. Multi-Level
+</a></li>
+<li><a href='/wiki/IncrementalModel_step7'>7. Differential Equations
+</a></li>
+</ul>
+<li><a href='/wiki/PredatorPrey'>Predator Prey
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/PredatorPrey_step1'>1. Basic Model
+</a></li>
+<li><a href='/wiki/PredatorPrey_step2'>2. Vegetation Dynamic
+</a></li>
+<li><a href='/wiki/PredatorPrey_step3'>3. Prey Agent Behavior
+</a></li>
+<li><a href='/wiki/PredatorPrey_step4'>4. Inspectors and Monitors
+</a></li>
+<li><a href='/wiki/PredatorPrey_step5'>5. Predator Agent
+</a></li>
+<li><a href='/wiki/PredatorPrey_step6'>6. Breeding
+</a></li>
+<li><a href='/wiki/PredatorPrey_step7'>7. Agent Aspect
+</a></li>
+<li><a href='/wiki/PredatorPrey_step8'>8. Complex Behavior
+</a></li>
+<li><a href='/wiki/PredatorPrey_step9'>9. Stopping condition
+</a></li>
+<li><a href='/wiki/PredatorPrey_step10'>10. Charts
+</a></li>
+<li><a href='/wiki/PredatorPrey_step11'>11. Writing Files
+</a></li>
+<li><a href='/wiki/PredatorPrey_step12'>12. Image loading
+</a></li>
+</ul>
+<li><a href='/wiki/RoadTrafficModel'>Road Traffic
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/RoadTrafficModel_step1'>1. Loading of GIS Data
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step2'>2. People Agents
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step3'>3. Movement of People
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step4'>4. Weight for Road Network
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step5'>5. Dynamic weights
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step6'>6. Charts
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step7'>7. Automatic Road Repair
+</a></li>
+</ul>
+<li><a href='/wiki/ThreeD'>3D Tutorial
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/ThreeD_step1'>1. Basic Model
+</a></li>
+<li><a href='/wiki/ThreeD_step2'>2. Moving Cells
+</a></li>
+<li><a href='/wiki/ThreeD_step3'>3. Connections
+</a></li>
+</ul>
+</ul>
+</ul>
+<li><a href='/wiki/References'>References
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/PlatformDocumentation'>Platform
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/InstallationAndLaunching'>Installation and Launching
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/Installation'>Installation
+</a></li>
+<li><a href='/wiki/Launching'>Launching GAMA
+</a></li>
+<li><a href='/wiki/Headless'>Headless Mode
+</a></li>
+<li><a href='/wiki/Updating'>Updating GAMA
+</a></li>
+<li><a href='/wiki/InstallingPlugins'>Installing Plugins
+</a></li>
+<li><a href='/wiki/Troubleshooting'>Troubleshooting
+</a></li>
+</ul>
+<li><a href='/wiki/WorkspaceProjectsAndModels'>Workspace, Projects and Models
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/NavigatingWorkspace'>Navigating in the Workspace
+</a></li>
+<li><a href='/wiki/ChangingWorkspace'>Changing Workspace
+</a></li>
+<li><a href='/wiki/ImportingModels'>Importing Models
+</a></li>
+</ul>
+<li><a href='/wiki/EditingModels'>Editing models
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/GamlEditorGeneralities'>The GAML Editor - Generalities
+</a></li>
+<li><a href='/wiki/GamlEditorToolbar'>The GAML Editor Toolbar
+</a></li>
+<li><a href='/wiki/ValidationOfModels'>Validation of Models
+</a></li>
+</ul>
+<li><a href='/wiki/RunningExperiments'>Running Experiments
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/LaunchingExperiments'>Launching Experiments from the User Interface
+</a></li>
+<li><a href='/wiki/ExperimentsUserInterface'>Experiments User Interface
+</a></li>
+<li><a href='/wiki/MenusAndCommands'>Menus and Commands
+</a></li>
+<li><a href='/wiki/ParametersView'>Parameters View
+</a></li>
+<li><a href='/wiki/InspectorsAndMonitors'>Inspectors and monitors
+</a></li>
+<li><a href='/wiki/Displays'>Displays
+</a></li>
+<li><a href='/wiki/BatchSpecific'>Batch Specific UI
+</a></li>
+<li><a href='/wiki/ErrorsView'>Errors View
+</a></li>
+</ul>
+<li><a href='/wiki/Preferences'>Preferences
+</a></li>
+</ul>
+<li><a href='/wiki/GamlReferences'>Gaml Reference
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/BuiltInSpecies'>Built-in Species
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/AgentBuiltIn'>The 'agent' built-in species (Under Construction)
+</a></li>
+<li><a href='/wiki/ModelBuiltIn'>The 'model' built-in species (Under Construction)
+</a></li>
+<li><a href='/wiki/ExperimentBuiltIn'>The 'experiment' built-in species (Under Construction)
+</a></li>
+</ul>
+<li><a href='/wiki/BuiltInSkills'>Built-in Skills
+</a></li>
+<li><a href='/wiki/BuiltInArchitectures'>Built-in Architectures
+</a></li>
+<li><a href='/wiki/Statements'>Statements
+</a></li>
+<li><a href='/wiki/DataTypes'>Types
+</a></li>
+<li><a href='/wiki/FileTypes'>File Types
+</a></li>
+<li><a href='/wiki/Expressions'>Expressions
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/Literals'>Literals
+</a></li>
+<li><a href='/wiki/UnitsAndConstants'>Units and constants
+</a></li>
+<li><a href='/wiki/PseudoVariables'>Pseudo-variables
+</a></li>
+<li><a href='/wiki/VariablesAndAttributes'>Variables and Attributes
+</a></li>
+<li><a href='/wiki/Operators'>Operators 
+</a></li>
+</ul>
+</ul>
+</ul>
+<li>Community
+</li>
+<ul class='sub'>
+<li><a href='/wiki/Contribute'>Contribute
+</a></li>
+<li><a href='/wiki/Projects'>Projects
+</a></li>
+<li><a href='/wiki/TrainingSession'>Training Session
+</a></li>
+</ul></ul></div><div id="right">
+<h3>Facebook Activities</h3>
+<ul id="fbquotes">
+</ul>
+<h3>Commit Activities</h3>
+<ul id="commitquotes">
+</ul>
+<h3>Issue Activities</h3>
+<ul id="issuequotes">
+</ul>
+<h3>Gama Platform Users Activities</h3>
+<ul id="googleusersquotes">
+</ul>
+</div><div id="content"><h1 id="maps">Maps</h1>
+
+<p><em>Author : Alexis Drogoul</em></p>
+
+<p>Examples of the syntax and various operators used to manipulate the ‘map’ data type. Read the comments and run the model to get a better idea on how to use maps in GAML.</p>
+
+<p>Code of the model :</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>
+model Maps
+
+/* Maps is a data structure consisting of a list of pair&lt;key, value&gt; where each key is unique */
+
+species declaring_map_attributes {
+	
+	/**
+	 * Declarations of map attributes
+	 */
+	 // The simplest declaration identifies empty_map as a map that can contain any type of objects. 
+	 // Its default value will be [] (the empty list/map) if it is not initialized.
+	map empty_map;
+	// To provide it with a literal initial value, use the '&lt;-' (or 'init:') facet and pass a map
+	map explicit_empty_map &lt;- [];
+	// Or, more explicitely
+	map explicit_empty_map2 &lt;- map([]);
+	// Values can be declared litterally in this map, which is nothing more than a list of pair objects
+	map explicit_filled_map &lt;- ["First"::1, "Second"::2];
+	// If a map is initialized with a list that contains non-pair objects, the pairs element::element are added to the map
+	map map_initialized_with_list &lt;- map&lt;int, int&gt;([1,2,3,4]);
+	// maps can be declared so that they only accept a given type of keys and values
+	// For instance, empty_map_of_int will accept string keys and integer values
+	map&lt;string, int&gt; empty_map_of_int;
+	// The appropriate casting is realized if the map is initialized with a list of values
+	map&lt;string, int&gt; map_of_int_with_init_of_string &lt;- map&lt;string, int&gt;(['10', '20']); // =&gt; ['10'::10,'20'::20]
+	// or with another map
+	map&lt;int, float&gt; map_of_float_with_init_of_map &lt;- map&lt;int, float&gt;(map_initialized_with_list); 
+	// When the casting is not obvious, the default values are used
+	// Here, the list is first casted to return pairs, and they are casted to pair&lt;string, float&gt;
+	map&lt;string, float&gt; map_of_float_with_impossible_casting &lt;- map&lt;string, float&gt;(['A','B']); 
+	// maps can of course contain maps
+	map&lt;string, map&gt; map_of_maps &lt;- map&lt;string, map&gt;(['A'::[], 'B'::[]]);
+	// untyped maps can contain heterogeneous objects
+	map untyped_map &lt;- [10::'5','11'::5,[12]::[5]];
+	// the casting applies to all elements when a key and contents type is defined
+	map&lt;int, string&gt; recasted_map_with_int_and_string &lt;- map&lt;int, string&gt;(untyped_map); //=&gt; [5,5,0]
+
+	
+	init {
+		write "";
+		write "== DECLARING MAPS ==";
+		write "";
+		write sample(empty_map);
+		write sample(explicit_empty_map);
+		write sample(empty_map_of_int);
+		write sample(explicit_filled_map);
+		write sample(map_initialized_with_list);
+		write sample(map_of_int_with_init_of_string);
+		write sample(map_of_float_with_init_of_map);
+		write sample(map_of_float_with_impossible_casting);
+		write sample(map_of_maps);
+		write sample(untyped_map);
+		write sample(recasted_map_with_int_and_string);
+		write "";
+		// Declaring temporary variables of type map follows the same pattern
+		map&lt;int,string&gt; map_of_string &lt;- [1::'A',2::'B',3::'C'];
+		// maps are not always declared litterally and can be obtained from various elements
+		// by using the casting 'map()' operator
+		// for instance, map(species_name) will return a list of all the agents of species_name
+		// using pairs of agent::agent. If the key is explicit, it is used in the casting:
+		create test_species number:4;
+		map&lt;string, test_species&gt; my_agents &lt;- map&lt;string, test_species&gt;(test_species);
+		write sample(my_agents);
+		// Some special casting operations are applied to specific types, like agents (returns a copy of their attributes)
+		write sample(map(any(my_agents)));
+		// The 'as_map(pair)' iterator operator also provides a way to build more complex maps
+		write sample(list("This is a string") as_map (length(each)::each));
+		// As well as "group_by" or "index_by"
+		write sample(my_agents index_by (each distance_to {0,0}));
+		write sample([1,2,3,4,5,6,7] group_by ((each mod 3) = 0));
+ 	}
+}
+
+species test_species{}
+
+species accessing_map_elements {
+	map&lt;int, int&gt; l1 &lt;- map&lt;int, int&gt;([1,2,3,4,5,6,7,8,9,10]);
+	map&lt;int, string&gt; l2 &lt;- [1::'this',2::'is',3::'a',4::'list', 5::'of',6::'strings'];
+	init {
+		write "";
+		write "== ACCESSING MAPS ELEMENTS ==";
+		write "";
+		write sample(l1);
+		write sample(l2);
+		write sample(first(l1));
+		write sample(last(l1));
+		write sample(l1 at 1);
+		write sample(l1[1]);
+		write sample(length(l1));
+		write sample(mean(l1));
+		write sample(max(l1));
+		write sample(min(l1));
+		write sample(any(l1));
+		write sample(3 among l1);
+		write sample(l1 contains 1);
+		write sample(l1 contains_all [1,4,6, 14]);
+		write sample(l1 contains_any [1,23]);
+		write sample(reverse(l2));
+		write sample(l1 collect (each + 1));
+		write sample(l1 collect (norm({each, each, each})));
+		write sample(l1 where (each &gt; 5));
+		write sample(l1 count (each &gt; 5));
+		write sample(l1 group_by (even(each)));
+		write sample(l2 index_by (each + "_index"));
+		write sample(l1 index_of 100);
+		write sample(l2 last_index_of 'is');
+		write sample(l2 sort_by each);
+		write sample(l2 sort_by length(each));
+		write sample(l2 first_with (first(each)  = 'o'));
+		write sample(l2 where (length(each) = 2) );
+		write sample(l2 with_min_of (length(each)));
+		write sample(l2 with_max_of (length(each)));
+		write sample(l2 min_of (length(each)));
+		write sample(l2 max_of (length(each)));
+	}
+}
+
+species combining_maps {
+	map&lt;int, int&gt; l1 &lt;- map&lt;int, int&gt;([1,2,3,4,5,6,7,8,9,10]);
+	map&lt;int, int&gt; l2 &lt;- map&lt;int, int&gt;([1,3,5,7,9]);
+	init {
+
+		write "";
+		write "== COMBINING MAPS ==";
+		write "";
+		write sample(l1);
+		write sample(l2);
+		write sample(l1 + l2);
+		write sample(l1 - l2);
+		write sample(l1 inter l2);
+		write sample(l1 union l2);
+		map&lt;string&gt; l3 &lt;- map&lt;int, string&gt;(l1 + l2);
+		write "map&lt;string&gt; l3 &lt;- l1 + l2; " + sample(l3);
+	}
+}
+
+species modifying_maps {
+	init {
+		write "";
+		write "== MODIFYING MAPS ==";
+		write "";
+		// Besides assigning a new value to a map, maps can be manipulated using
+		// the "add", "remove" and "put" statements. 
+		// Let's define an empty list supposed to contain integer keys and values
+		trace { map&lt;int, int&gt; m1 &lt;- [0::0]; 
+		// and add some stuff to it using "add"
+		add 1::1 to: m1;
+		add 2::2 to: m1;
+		add 3::3 to: m1;
+		write sample(m1);
+		// the same can be done with the compact syntax introduced in GAMA 1.6.1 for "add"
+		m1 &lt;+ 4::4;
+		m1 &lt;+ 5::5;
+		write sample(m1);
+		// tired of writing lines of add ? The "all:" facet is here to serve:
+		add [6, 7, 8, 9] to: m1 all: true;
+		// or, in a more compact way:
+		m1 &lt;&lt;+ [10,11,12,13];
+		write sample(m1);
+		// automatic casting applies to any element added to the map
+		m1 &lt;+ int("14");
+		// as well as any container of elements
+		m1 &lt;&lt;+ map&lt;int, int&gt;([15::"15", 16::16.0]);
+		write sample(m1);
+		// elements are by default added to the map while their keys are unique
+		// So, what about replacing some elements once they have been added ?
+		// "put" can be used for that purpose
+		put -2 at: 0 in: m1;
+		// or, more simply:
+		m1[0] &lt;- -3;
+		// Trying to put an element outside the "bounds" of the map will of course not yield an error
+		 m1[20] &lt;- 10; 
+		write sample(m1);
+		// And what about replacing all the values with a new one ?
+		m1[] &lt;- 0;
+		write("m1[] &lt;- 0;");
+		write sample(m1);
+		// Well, m1 is a bit boring now, isnt't it ?
+		// Let's fill it again with fresh values
+		loop i over: m1.keys {
+			m1[i] &lt;- rnd(3);
+		}
+		write(sample(m1));
+		// To remove values from it, the "remove" statement (and its compact "&gt;-" form) can be used
+		// WARNING: this form operation on the *values* of the map (i.e. it will remove the first pair
+		// whose value = 0
+		remove 0 from: m1;
+		// it can also be written
+		m1 &gt;- 0;
+		write(sample(m1));
+		// To remove all occurrences of pairs with a specific value, "all:" (or "&gt;&gt;-") can be used
+		// For instance:
+		m1 &gt;&gt;- 2;
+		// or, written using the long syntactic form
+		remove 1 from: m1 all: true;
+		write sample(m1);
+		// To remove keys instead, the same syntax can be used, but on the keys of the map (i.e. map[])
+		m1[] &gt;- 1; // This will remove the (unique) pair whose key = 1
+		// The equivalent long syntax is
+		remove key: 1 from: m1;
+		// To remove a set of keys, the following syntax can be used
+		m1[] &gt;&gt;- [2,3,4];
+ 		// And to remove all the keys present in a given map (using the 'keys' attribute)
+		m1[] &gt;&gt;- m1.keys;
+		write sample(m1);
+		// By all means, m1 should now be empty! Let's fill it again
+		int i &lt;- 0;
+		loop times: 20 {
+			i &lt;- i + 1;
+			m1 &lt;+ i::rnd(3);
+		}
+		// Random things to try out
+		// Using the 'pairs' attribute: all number now vary from 1000 to 1003
+		m1 &lt;- m1.pairs as_map (each.key::((each.value) + 1000));
+		write sample(m1);
+		// Removing values based on a criteria
+		m1 &gt;&gt;- m1 select (each &gt; 1001);
+		write(sample(m1));
+	}
+
+	}
+	
+}
+
+species looping_on_maps {
+	init {
+		write "";
+		write "== LOOPING ON MAPS ==";
+		write "";
+		// Besides iterator operators (like "collect", "where", etc.), which provide 
+		// functional iterations (i.e. filters), one can loop over maps using the imperative
+		// statement 'loop'
+		list&lt;string&gt; strings &lt;- list("This a list of string");
+		write sample(strings);
+		map&lt;string, string&gt; l1 &lt;- strings as_map (first(each)::each);
+		write sample(l1);
+		int i &lt;- 0;
+		list l2 &lt;- [];
+		// Here, the value of 's' will be that of each value of each pairs of the list
+		loop s over: l1 { // equivalent to 'loop s over: l1.values'
+			i &lt;- i + 1;
+			l2 &lt;&lt; "Word #" + i + ": " + s;
+		}
+		write sample(l2);
+		// To loop on the keys of l1, simply use its 'keys' attribute
+		l2 &lt;- [];
+		 i &lt;- 0;
+		loop s over: l1.keys{
+			i &lt;- i + 1;
+			l2 &lt;&lt; "Key #" + i + ": " + s;
+		}
+		write(sample(l2));
+		// Looping on indexes allows to gain access to each element in turn
+		l2 &lt;- [];
+		loop i over: l1.keys {
+			l2 &lt;+ l1[i];
+		}
+		write sample(l2);
+		// Finally, maps containing agents can be the support of implicit loops in the 'ask' statement
+		create test_species number: 5 returns: my_agents;
+		map&lt;int, test_species&gt; map_of_agents &lt;- map&lt;int, test_species&gt;(my_agents);
+		write(sample(map_of_agents));
+		l2 &lt;- [];
+		ask map_of_agents{
+			// attributes of each agent can be directly accessed
+			l2 &lt;&lt; name;
+		}
+		write sample(l2);
+		// Of course, this can be done more simply like this
+		l2 &lt;- map_of_agents collect each.name;
+		}
+	}
+
+
+experiment Maps type: gui {
+	user_command "Declaring maps" {create declaring_map_attributes;}
+	user_command "Accessing maps" {create accessing_map_elements;}
+	user_command "Combining maps" {create combining_maps;}
+	user_command "Modifying maps" {create modifying_maps;}
+	user_command "Looping on maps" {create looping_on_maps;}	
+}
+</code></pre>
+</div>
+</div></body></html>

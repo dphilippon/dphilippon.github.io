@@ -1,0 +1,663 @@
+
+    <!doctype html><html lang="en"><head><meta charset="utf-8"><title>comodel_with_the_coupling</title></head>
+    <body>
+    <link rel="stylesheet" href="/style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="//connect.facebook.net/en_US/all.js"></script>
+<script src="/linkify.min.js"></script>
+<script src="/linkify-jquery.min.js"></script>
+<script>
+  $(document).ready(function(){
+	  		$.getJSON('https://graph.facebook.com/238065426321929/feed?access_token=229040647557399|MQKFlFYX7YW25XGj4GUYZ7B1lcY', function(data) {
+		var ahtml="";
+		for(var i = 0; i < 5; i++) {
+			ahtml=ahtml+"<li>"+data["data"][i]["message"]+"</li>";
+		}
+		ahtml=ahtml+"";
+		$("#fbquotes").html(ahtml);
+		$("#fbquotes").linkify();
+	});
+	 
+		$.getJSON('https://api.github.com/repos/gama-platform/gama/commits', function(data) {
+			var ahtml="";
+			for(var i = 0; i < 5; i++) {
+				ahtml=ahtml+"<li>"+data[i]["commit"]["message"]+" by "+data[i]["commit"]["author"]["name"]+" <a href='"+data[i]["commit"]["html_url"]+"'> See more</a></li>";
+			}
+			ahtml=ahtml+"";
+			$("#commitquotes").html(ahtml);
+			$("#commitquotes").linkify();
+		});
+				
+				
+		$.getJSON('https://api.github.com/repos/gama-platform/gama/issues', function(data) {
+			var ahtml="";
+			for(var i = 0; i < 5; i++) {
+				ahtml=ahtml+"<li>"+data[i]["title"]+" by "+data[i]["user"]["login"]+" <a href='"+data[i]["html_url"]+"'> See more</a></li>";
+			}
+			ahtml=ahtml+"";
+			$("#issuequotes").html(ahtml);
+			$("#issuequotes").linkify();
+		});
+		
+		$.getJSON('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fgroups.google.com%2Fforum%2Ffeed%2Fgama-platform%2Ftopics%2Frss.xml%3Fnum%3D15', function(data) {
+			var ahtml="";
+			for(var i = 0; i < 5; i++) {
+				ahtml=ahtml+"<li>"+data["items"][i]["title"]+" by "+data["items"][i]["author"]+" <a href='"+data["items"][i]["link"]+"'> See more</a></li>";
+			}
+			ahtml=ahtml+"";
+			$("#googleusersquotes").html(ahtml);
+			$("#googleusersquotes").linkify();
+			
+		});
+ });
+  
+</script>
+
+      <div id="left">
+
+		<ul class="mcd-menu"><li><a href="/">Home</a></li><li><a href="/">Discussions</a></li>
+<li><a href='/wiki/Tutorials'>Tutorials
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/LearnGAMLStepByStep'>Learn GAML Step by Step
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/Introduction'>Introduction
+</a></li>
+<li><a href='/wiki/StartWithGAML'>Start with GAML
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/ModelOrganization'>Organization of a model
+</a></li>
+<li><a href='/wiki/BasicProgrammingConceptsInGAML'>Basic programming concepts in GAML
+</a></li>
+</ul>
+<li><a href='/wiki/ManipulateBasicSpecies'>Manipulate basic species
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/GlobalSpecies'>The global species
+</a></li>
+<li><a href='/wiki/RegularSpecies'>Regular species
+</a></li>
+<li><a href='/wiki/DefiningActionsAndBehaviors'>Defining actions and behaviors
+</a></li>
+<li><a href='/wiki/InteractionBetweenAgents'>Interaction between agents
+</a></li>
+<li><a href='/wiki/AttachingSkills'>Attaching Skills
+</a></li>
+<li><a href='/wiki/Inheritance'>Inheritance
+</a></li>
+</ul>
+<li><a href='/wiki/DefiningAdvancedSpecies'>Defining advanced species
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/GridSpecies'>Grid Species
+</a></li>
+<li><a href='/wiki/GraphSpecies'>Graph Species
+</a></li>
+<li><a href='/wiki/MirrorSpecies'>Mirror species
+</a></li>
+<li><a href='/wiki/MultiLevelArchitecture'>Multi-level architecture
+</a></li>
+</ul>
+<li><a href='/wiki/DefiningGUIExperiment'>Defining GUI Experiment
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/DefiningParameters'>Defining Parameters
+</a></li>
+<li><a href='/wiki/DefiningDisplaysGeneralities'>Defining displays (Generalities)
+</a></li>
+<li><a href='/wiki/DefiningCharts'>Defining Charts
+</a></li>
+<li><a href='/wiki/Defining3DDisplays'>Defining 3D Displays
+</a></li>
+<li><a href='/wiki/DefiningMonitorsAndInspectors'>Defining monitors and inspectors
+</a></li>
+<li><a href='/wiki/DefiningExportFiles'>Defining export files
+</a></li>
+<li><a href='/wiki/DefiningUserInteraction'>Defining user interaction
+</a></li>
+</ul>
+<li><a href='/wiki/ExploringModels'>Exploring Models
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/RunSeveralSimulations'>Run Several Simulations
+</a></li>
+<li><a href='/wiki/BatchExperiments'>Defining Batch Experiments
+</a></li>
+<li><a href='/wiki/ExplorationMethods'>Exploration Methods
+</a></li>
+</ul>
+<li><a href='/wiki/OptimizingModels'>Optimizing Models
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/RuntimeConcepts'>Runtime Concepts
+</a></li>
+<li><a href='/wiki/OptimizingModels'>Optimizing Models
+</a></li>
+</ul>
+<li><a href='/wiki/MultiParadigmModeling'>Multi-Paradigm Modeling
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/ControlArchitecture'>Control Architectures
+</a></li>
+<li><a href='/wiki/Equations'>Using Equations
+</a></li>
+</ul>
+</ul>
+<li><a href='/wiki/Recipes'>Recipes
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/ManipulateOSMDatas'>Manipulate OSM Datas
+</a></li>
+<li><a href='/wiki/Diffusion'>Implementing diffusion
+</a></li>
+<li><a href='/wiki/UsingDatabase'>Using Database Access
+</a></li>
+<li><a href='/wiki/CallingR'>Calling R
+</a></li>
+<li><a href='/wiki/UsingFIPAACL'>Using FIPA ACL
+</a></li>
+<li><a href='/wiki/GamAnalyzer'>Using GAMAnalyzer
+</a></li>
+<li><a href='/wiki/UsingBDI'>Using BDI
+</a></li>
+<li><a href='/wiki/UsingDrivingSkill'>Advanced Driving Skill
+</a></li>
+<li><a href='/wiki/ManipulateDates'>Manipulate Dates
+</a></li>
+<li><a href='/wiki/ManipulateLight'>Implementing light
+</a></li>
+<li><a href='/wiki/Comodel'>Using Comodel
+</a></li>
+</ul>
+<li><a href='/wiki/Tutorials'>Tutorials
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/LuneraysFlu'>Luneray's flu
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/LuneraysFlu_step1'>1. Creation of a first basic disease spreading model
+</a></li>
+<li><a href='/wiki/LuneraysFlu_step2'>2. Definition of monitors and chart outputs
+</a></li>
+<li><a href='/wiki/LuneraysFlu_step3'>3. Importation of GIS data
+</a></li>
+<li><a href='/wiki/LuneraysFlu_step4'>4. Use of a graph to constraint the movements of people]
+</a></li>
+<li><a href='/wiki/LuneraysFlu_step5'>5. Definition of 3D displays
+</a></li>
+</ul>
+<li><a href='/wiki/IncrementalModel'>Incremental Model
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/IncrementalModel_step1'>1. Simple SI Model
+</a></li>
+<li><a href='/wiki/IncrementalModel_step2'>2. Charts
+</a></li>
+<li><a href='/wiki/IncrementalModel_step3'>3. Integration of GIS Data
+</a></li>
+<li><a href='/wiki/IncrementalModel_step4'>4. Movement on Graph
+</a></li>
+<li><a href='/wiki/IncrementalModel_step5'>5. Visualizing in 3D
+</a></li>
+<li><a href='/wiki/IncrementalModel_step6'>6. Multi-Level
+</a></li>
+<li><a href='/wiki/IncrementalModel_step7'>7. Differential Equations
+</a></li>
+</ul>
+<li><a href='/wiki/PredatorPrey'>Predator Prey
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/PredatorPrey_step1'>1. Basic Model
+</a></li>
+<li><a href='/wiki/PredatorPrey_step2'>2. Vegetation Dynamic
+</a></li>
+<li><a href='/wiki/PredatorPrey_step3'>3. Prey Agent Behavior
+</a></li>
+<li><a href='/wiki/PredatorPrey_step4'>4. Inspectors and Monitors
+</a></li>
+<li><a href='/wiki/PredatorPrey_step5'>5. Predator Agent
+</a></li>
+<li><a href='/wiki/PredatorPrey_step6'>6. Breeding
+</a></li>
+<li><a href='/wiki/PredatorPrey_step7'>7. Agent Aspect
+</a></li>
+<li><a href='/wiki/PredatorPrey_step8'>8. Complex Behavior
+</a></li>
+<li><a href='/wiki/PredatorPrey_step9'>9. Stopping condition
+</a></li>
+<li><a href='/wiki/PredatorPrey_step10'>10. Charts
+</a></li>
+<li><a href='/wiki/PredatorPrey_step11'>11. Writing Files
+</a></li>
+<li><a href='/wiki/PredatorPrey_step12'>12. Image loading
+</a></li>
+</ul>
+<li><a href='/wiki/RoadTrafficModel'>Road Traffic
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/RoadTrafficModel_step1'>1. Loading of GIS Data
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step2'>2. People Agents
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step3'>3. Movement of People
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step4'>4. Weight for Road Network
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step5'>5. Dynamic weights
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step6'>6. Charts
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step7'>7. Automatic Road Repair
+</a></li>
+</ul>
+<li><a href='/wiki/ThreeD'>3D Tutorial
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/ThreeD_step1'>1. Basic Model
+</a></li>
+<li><a href='/wiki/ThreeD_step2'>2. Moving Cells
+</a></li>
+<li><a href='/wiki/ThreeD_step3'>3. Connections
+</a></li>
+</ul>
+</ul>
+</ul>
+<li><a href='/wiki/References'>References
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/PlatformDocumentation'>Platform
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/InstallationAndLaunching'>Installation and Launching
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/Installation'>Installation
+</a></li>
+<li><a href='/wiki/Launching'>Launching GAMA
+</a></li>
+<li><a href='/wiki/Headless'>Headless Mode
+</a></li>
+<li><a href='/wiki/Updating'>Updating GAMA
+</a></li>
+<li><a href='/wiki/InstallingPlugins'>Installing Plugins
+</a></li>
+<li><a href='/wiki/Troubleshooting'>Troubleshooting
+</a></li>
+</ul>
+<li><a href='/wiki/WorkspaceProjectsAndModels'>Workspace, Projects and Models
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/NavigatingWorkspace'>Navigating in the Workspace
+</a></li>
+<li><a href='/wiki/ChangingWorkspace'>Changing Workspace
+</a></li>
+<li><a href='/wiki/ImportingModels'>Importing Models
+</a></li>
+</ul>
+<li><a href='/wiki/EditingModels'>Editing models
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/GamlEditorGeneralities'>The GAML Editor - Generalities
+</a></li>
+<li><a href='/wiki/GamlEditorToolbar'>The GAML Editor Toolbar
+</a></li>
+<li><a href='/wiki/ValidationOfModels'>Validation of Models
+</a></li>
+</ul>
+<li><a href='/wiki/RunningExperiments'>Running Experiments
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/LaunchingExperiments'>Launching Experiments from the User Interface
+</a></li>
+<li><a href='/wiki/ExperimentsUserInterface'>Experiments User Interface
+</a></li>
+<li><a href='/wiki/MenusAndCommands'>Menus and Commands
+</a></li>
+<li><a href='/wiki/ParametersView'>Parameters View
+</a></li>
+<li><a href='/wiki/InspectorsAndMonitors'>Inspectors and monitors
+</a></li>
+<li><a href='/wiki/Displays'>Displays
+</a></li>
+<li><a href='/wiki/BatchSpecific'>Batch Specific UI
+</a></li>
+<li><a href='/wiki/ErrorsView'>Errors View
+</a></li>
+</ul>
+<li><a href='/wiki/Preferences'>Preferences
+</a></li>
+</ul>
+<li><a href='/wiki/GamlReferences'>Gaml Reference
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/BuiltInSpecies'>Built-in Species
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/AgentBuiltIn'>The 'agent' built-in species (Under Construction)
+</a></li>
+<li><a href='/wiki/ModelBuiltIn'>The 'model' built-in species (Under Construction)
+</a></li>
+<li><a href='/wiki/ExperimentBuiltIn'>The 'experiment' built-in species (Under Construction)
+</a></li>
+</ul>
+<li><a href='/wiki/BuiltInSkills'>Built-in Skills
+</a></li>
+<li><a href='/wiki/BuiltInArchitectures'>Built-in Architectures
+</a></li>
+<li><a href='/wiki/Statements'>Statements
+</a></li>
+<li><a href='/wiki/DataTypes'>Types
+</a></li>
+<li><a href='/wiki/FileTypes'>File Types
+</a></li>
+<li><a href='/wiki/Expressions'>Expressions
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/Literals'>Literals
+</a></li>
+<li><a href='/wiki/UnitsAndConstants'>Units and constants
+</a></li>
+<li><a href='/wiki/PseudoVariables'>Pseudo-variables
+</a></li>
+<li><a href='/wiki/VariablesAndAttributes'>Variables and Attributes
+</a></li>
+<li><a href='/wiki/Operators'>Operators 
+</a></li>
+</ul>
+</ul>
+</ul>
+<li>Community
+</li>
+<ul class='sub'>
+<li><a href='/wiki/Contribute'>Contribute
+</a></li>
+<li><a href='/wiki/Projects'>Projects
+</a></li>
+<li><a href='/wiki/TrainingSession'>Training Session
+</a></li>
+</ul></ul></div><div id="right">
+<h3>Facebook Activities</h3>
+<ul id="fbquotes">
+</ul>
+<h3>Commit Activities</h3>
+<ul id="commitquotes">
+</ul>
+<h3>Issue Activities</h3>
+<ul id="issuequotes">
+</ul>
+<h3>Gama Platform Users Activities</h3>
+<ul id="googleusersquotes">
+</ul>
+</div><div id="content"><h1 id="comodel_with_the_coupling">comodel_with_the_coupling</h1>
+
+<p><em>Author : HUYNH Quang Nghi</em></p>
+
+<p>This is a simple comodel serve to demonstrate the importation and instatiation of micro-model  using the couplings  with the mutation the population of micro-model. A population can be a collection from itself and from other mircro-model</p>
+
+<p>Imported models :</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>model PreyPredator
+ global
+{
+	geometry shape &lt;- square(100);
+	float perceipt_radius &lt;- 20.0;
+	int preyinit &lt;- 500;
+	int predatorinit &lt;- 3;
+	list&lt;agent&gt; lstPredator &lt;- list&lt;agent&gt;(predator);
+	list&lt;agent&gt; lstPrey &lt;- list&lt;agent&gt;(prey);
+	init
+	{
+		create prey number: preyinit;
+		create predator number: predatorinit;
+		lstPredator &lt;- list&lt;agent&gt;(predator);
+		lstPrey &lt;- list&lt;agent&gt;(prey);
+	}
+
+}
+
+species generic_species skills: [moving]
+{
+	float speed &lt;- 1.0;
+	point goal &lt;- nil;
+	bool is_chased &lt;- false;
+	reflex live_with_my_goal
+	{
+		if (goal != nil)
+		{
+			do wander speed: speed;
+			do goto target: goal speed: speed;
+		} else
+		{
+			do wander speed: speed;
+		}
+
+	}
+
+}
+
+species prey parent: generic_species
+{
+	geometry shape &lt;- circle(0.5);
+	float speed &lt;- 0.2;
+	rgb color &lt;- # green;
+	reflex fleeing
+	{
+		if (length((lstPredator where (each != nil and !dead(each) and each distance_to self &lt; perceipt_radius))) &gt; 0)
+		{
+			speed &lt;- 1.0;
+			is_chased &lt;- true;
+			color &lt;- # lime;
+			if (goal = nil)
+			{
+				agent a &lt;- any(((lstPrey where (each != nil and !dead(each) and !generic_species(each).is_chased))));
+				if (a != nil and !dead(a))
+				{
+					if (flip(0.5))
+					{
+						goal &lt;- a.location;
+					} else
+					{
+						goal &lt;- any_location_in(world.shape);
+					}
+
+				} else
+				{
+					goal &lt;- any_location_in(world.shape);
+				}
+
+			}
+
+		}
+
+		if (goal != nil and self.location distance_to goal &lt; 0.5)
+		{
+			goal &lt;- nil;
+		}
+
+		if (length((lstPredator where (each != nil and !dead(each))) where (each distance_to self &lt;= perceipt_radius)) = 0)
+		{
+			is_chased &lt;- false;
+			color &lt;- # green;
+			speed &lt;- 0.2;
+		}
+
+	}
+
+	aspect default
+	{
+		draw shape color: color;
+	}
+
+}
+
+species predator parent: generic_species
+{
+	geometry shape &lt;- triangle(2);
+	rgb color &lt;- # red;
+	reflex hunting
+	{
+		if (goal = nil)
+		{
+			list tmp &lt;- (lstPrey where (!dead(each) and each.shape distance_to self.shape &lt; perceipt_radius));
+			if (length(tmp) &gt; 0)
+			{
+				agent a &lt;- first(tmp sort (each.shape distance_to self.shape));
+				if (a = nil)
+				{
+					a &lt;- any((lstPrey where (!dead(each))));
+				}
+
+				if (a != nil)
+				{
+					speed &lt;- 2.0;
+					goal &lt;- a.location;
+				}
+
+			}
+
+		} else if ((self.location distance_to goal &lt; 0.5))
+		{
+			ask lstPrey where (!dead(each) and each.location distance_to goal &lt; 0.5)
+			{
+				do die;
+			}
+
+			goal &lt;- nil;
+			speed &lt;- 1.0;
+		}
+
+	}
+
+	aspect default
+	{
+		draw circle(perceipt_radius) color: # pink empty: true;
+		draw shape color: color rotate: 90 + my heading;
+	}
+
+}
+
+experiment prey_predator_exp type: gui
+{
+	output
+	{
+		display main_display
+
+		{
+			species prey;
+			species predator;
+		}
+
+	}
+
+}
+</code></pre>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>model PreyPredator_coupling
+import "PreyPredator.gaml"
+
+global
+{	
+}
+
+experiment PreyPredator_coupling_exp parent:prey_predator_exp type: gui
+{
+geometry shape&lt;- square(100);
+	list&lt;prey&gt; getPrey{
+		return list(prey);
+	}
+		list&lt;predator&gt; getPredator{
+		return list(predator);
+	}
+	
+	//if we redefine the output, i.e, a blank output, the displays in parent experiement dont show.
+	output
+	{
+	}
+
+}
+
+
+</code></pre>
+</div>
+
+<p>Code of the model :</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>model comodel_with_the_coupling
+
+import "PreyPredator_coupling.gaml" as myP
+
+
+global
+{
+	// set the shape of world as a rectangle 200 x 100
+	geometry shape &lt;- rectangle(200, 100);
+	init
+	{
+		//instantiate three instant of micro-model PreyPredator
+		create myP.PreyPredator_coupling_exp with: [shape::square(100), preyinit::rnd(20), predatorinit::1] number: 3;
+		
+		//explicitly save the orginal population of predator and original population of prey of each micro-model
+		list&lt;agent&gt; lstpredator0 &lt;- myP.PreyPredator_coupling_exp[0].getPredator();
+		list&lt;agent&gt; lstprey0 &lt;- myP.PreyPredator_coupling_exp[0].getPrey();
+		
+		list&lt;agent&gt; lstpredator1 &lt;- myP.PreyPredator_coupling_exp[1].getPredator();
+		list&lt;agent&gt; lstprey1 &lt;- myP.PreyPredator_coupling_exp[1].getPrey();
+		
+		list&lt;agent&gt; lstpredator2 &lt;- myP.PreyPredator_coupling_exp[2].getPredator();
+		list&lt;agent&gt; lstprey2 &lt;- myP.PreyPredator_coupling_exp[2].getPrey();
+		
+		//mutate the popuplation of micro-model by assigning the list above to  the population of micro-models
+		(myP.PreyPredator_coupling_exp[0].simulation).lstPredator &lt;- lstpredator2;
+		(myP.PreyPredator_coupling_exp[1].simulation).lstPredator &lt;- lstprey2;
+		(myP.PreyPredator_coupling_exp[2].simulation).lstPredator &lt;- lstprey1;
+		
+		
+		(myP.PreyPredator_coupling_exp[0].simulation).lstPrey &lt;- lstprey0 + lstprey1;
+		(myP.PreyPredator_coupling_exp[1].simulation).lstPrey &lt;- lstpredator1;
+		(myP.PreyPredator_coupling_exp[2].simulation).lstPrey &lt;- lstpredator0 + lstprey2;
+		
+		//change the shape correspond with the new role of agent in the new populations
+		ask (myP.PreyPredator_coupling_exp accumulate each.simulation.lstPredator)
+		{
+			shape &lt;- triangle(2);
+		}
+
+		ask (myP.PreyPredator_coupling_exp accumulate each.simulation.lstPrey)
+		{
+			shape &lt;- circle(0.5);
+		}
+
+	}
+
+	reflex simulate_micro_models
+	{
+		// ask all simulation do their job
+		ask (myP.PreyPredator_coupling_exp collect each.simulation)
+		{
+			do _step_;
+		}
+
+	}
+
+}
+
+experiment comodel_with_the_coupling_exp type: gui
+{
+	output
+	{
+		//a mixing display of all agents from all populations
+		display "comodel"
+		{
+			agents "agentprey" value: (myP.PreyPredator_coupling_exp accumulate each.getPrey());
+			agents "agentpredator" value: (myP.PreyPredator_coupling_exp accumulate each.getPredator());
+		}
+
+	}
+
+}
+</code></pre>
+</div>
+</div></body></html>

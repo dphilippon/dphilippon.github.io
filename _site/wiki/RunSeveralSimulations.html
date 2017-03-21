@@ -1,0 +1,858 @@
+
+    <!doctype html><html lang="en"><head><meta charset="utf-8"><title>Run Several Simulations</title></head>
+    <body>
+    <link rel="stylesheet" href="/style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="//connect.facebook.net/en_US/all.js"></script>
+<script src="/linkify.min.js"></script>
+<script src="/linkify-jquery.min.js"></script>
+<script>
+  $(document).ready(function(){
+	  		$.getJSON('https://graph.facebook.com/238065426321929/feed?access_token=229040647557399|MQKFlFYX7YW25XGj4GUYZ7B1lcY', function(data) {
+		var ahtml="";
+		for(var i = 0; i < 5; i++) {
+			ahtml=ahtml+"<li>"+data["data"][i]["message"]+"</li>";
+		}
+		ahtml=ahtml+"";
+		$("#fbquotes").html(ahtml);
+		$("#fbquotes").linkify();
+	});
+	 
+		$.getJSON('https://api.github.com/repos/gama-platform/gama/commits', function(data) {
+			var ahtml="";
+			for(var i = 0; i < 5; i++) {
+				ahtml=ahtml+"<li>"+data[i]["commit"]["message"]+" by "+data[i]["commit"]["author"]["name"]+" <a href='"+data[i]["commit"]["html_url"]+"'> See more</a></li>";
+			}
+			ahtml=ahtml+"";
+			$("#commitquotes").html(ahtml);
+			$("#commitquotes").linkify();
+		});
+				
+				
+		$.getJSON('https://api.github.com/repos/gama-platform/gama/issues', function(data) {
+			var ahtml="";
+			for(var i = 0; i < 5; i++) {
+				ahtml=ahtml+"<li>"+data[i]["title"]+" by "+data[i]["user"]["login"]+" <a href='"+data[i]["html_url"]+"'> See more</a></li>";
+			}
+			ahtml=ahtml+"";
+			$("#issuequotes").html(ahtml);
+			$("#issuequotes").linkify();
+		});
+		
+		$.getJSON('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fgroups.google.com%2Fforum%2Ffeed%2Fgama-platform%2Ftopics%2Frss.xml%3Fnum%3D15', function(data) {
+			var ahtml="";
+			for(var i = 0; i < 5; i++) {
+				ahtml=ahtml+"<li>"+data["items"][i]["title"]+" by "+data["items"][i]["author"]+" <a href='"+data["items"][i]["link"]+"'> See more</a></li>";
+			}
+			ahtml=ahtml+"";
+			$("#googleusersquotes").html(ahtml);
+			$("#googleusersquotes").linkify();
+			
+		});
+ });
+  
+</script>
+
+      <div id="left">
+
+		<ul class="mcd-menu"><li><a href="/">Home</a></li><li><a href="/">Discussions</a></li>
+<li><a href='/wiki/Tutorials'>Tutorials
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/LearnGAMLStepByStep'>Learn GAML Step by Step
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/Introduction'>Introduction
+</a></li>
+<li><a href='/wiki/StartWithGAML'>Start with GAML
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/ModelOrganization'>Organization of a model
+</a></li>
+<li><a href='/wiki/BasicProgrammingConceptsInGAML'>Basic programming concepts in GAML
+</a></li>
+</ul>
+<li><a href='/wiki/ManipulateBasicSpecies'>Manipulate basic species
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/GlobalSpecies'>The global species
+</a></li>
+<li><a href='/wiki/RegularSpecies'>Regular species
+</a></li>
+<li><a href='/wiki/DefiningActionsAndBehaviors'>Defining actions and behaviors
+</a></li>
+<li><a href='/wiki/InteractionBetweenAgents'>Interaction between agents
+</a></li>
+<li><a href='/wiki/AttachingSkills'>Attaching Skills
+</a></li>
+<li><a href='/wiki/Inheritance'>Inheritance
+</a></li>
+</ul>
+<li><a href='/wiki/DefiningAdvancedSpecies'>Defining advanced species
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/GridSpecies'>Grid Species
+</a></li>
+<li><a href='/wiki/GraphSpecies'>Graph Species
+</a></li>
+<li><a href='/wiki/MirrorSpecies'>Mirror species
+</a></li>
+<li><a href='/wiki/MultiLevelArchitecture'>Multi-level architecture
+</a></li>
+</ul>
+<li><a href='/wiki/DefiningGUIExperiment'>Defining GUI Experiment
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/DefiningParameters'>Defining Parameters
+</a></li>
+<li><a href='/wiki/DefiningDisplaysGeneralities'>Defining displays (Generalities)
+</a></li>
+<li><a href='/wiki/DefiningCharts'>Defining Charts
+</a></li>
+<li><a href='/wiki/Defining3DDisplays'>Defining 3D Displays
+</a></li>
+<li><a href='/wiki/DefiningMonitorsAndInspectors'>Defining monitors and inspectors
+</a></li>
+<li><a href='/wiki/DefiningExportFiles'>Defining export files
+</a></li>
+<li><a href='/wiki/DefiningUserInteraction'>Defining user interaction
+</a></li>
+</ul>
+<li><a href='/wiki/ExploringModels'>Exploring Models
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/RunSeveralSimulations'>Run Several Simulations
+</a></li>
+<li><a href='/wiki/BatchExperiments'>Defining Batch Experiments
+</a></li>
+<li><a href='/wiki/ExplorationMethods'>Exploration Methods
+</a></li>
+</ul>
+<li><a href='/wiki/OptimizingModels'>Optimizing Models
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/RuntimeConcepts'>Runtime Concepts
+</a></li>
+<li><a href='/wiki/OptimizingModels'>Optimizing Models
+</a></li>
+</ul>
+<li><a href='/wiki/MultiParadigmModeling'>Multi-Paradigm Modeling
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/ControlArchitecture'>Control Architectures
+</a></li>
+<li><a href='/wiki/Equations'>Using Equations
+</a></li>
+</ul>
+</ul>
+<li><a href='/wiki/Recipes'>Recipes
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/ManipulateOSMDatas'>Manipulate OSM Datas
+</a></li>
+<li><a href='/wiki/Diffusion'>Implementing diffusion
+</a></li>
+<li><a href='/wiki/UsingDatabase'>Using Database Access
+</a></li>
+<li><a href='/wiki/CallingR'>Calling R
+</a></li>
+<li><a href='/wiki/UsingFIPAACL'>Using FIPA ACL
+</a></li>
+<li><a href='/wiki/GamAnalyzer'>Using GAMAnalyzer
+</a></li>
+<li><a href='/wiki/UsingBDI'>Using BDI
+</a></li>
+<li><a href='/wiki/UsingDrivingSkill'>Advanced Driving Skill
+</a></li>
+<li><a href='/wiki/ManipulateDates'>Manipulate Dates
+</a></li>
+<li><a href='/wiki/ManipulateLight'>Implementing light
+</a></li>
+<li><a href='/wiki/Comodel'>Using Comodel
+</a></li>
+</ul>
+<li><a href='/wiki/Tutorials'>Tutorials
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/LuneraysFlu'>Luneray's flu
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/LuneraysFlu_step1'>1. Creation of a first basic disease spreading model
+</a></li>
+<li><a href='/wiki/LuneraysFlu_step2'>2. Definition of monitors and chart outputs
+</a></li>
+<li><a href='/wiki/LuneraysFlu_step3'>3. Importation of GIS data
+</a></li>
+<li><a href='/wiki/LuneraysFlu_step4'>4. Use of a graph to constraint the movements of people]
+</a></li>
+<li><a href='/wiki/LuneraysFlu_step5'>5. Definition of 3D displays
+</a></li>
+</ul>
+<li><a href='/wiki/IncrementalModel'>Incremental Model
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/IncrementalModel_step1'>1. Simple SI Model
+</a></li>
+<li><a href='/wiki/IncrementalModel_step2'>2. Charts
+</a></li>
+<li><a href='/wiki/IncrementalModel_step3'>3. Integration of GIS Data
+</a></li>
+<li><a href='/wiki/IncrementalModel_step4'>4. Movement on Graph
+</a></li>
+<li><a href='/wiki/IncrementalModel_step5'>5. Visualizing in 3D
+</a></li>
+<li><a href='/wiki/IncrementalModel_step6'>6. Multi-Level
+</a></li>
+<li><a href='/wiki/IncrementalModel_step7'>7. Differential Equations
+</a></li>
+</ul>
+<li><a href='/wiki/PredatorPrey'>Predator Prey
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/PredatorPrey_step1'>1. Basic Model
+</a></li>
+<li><a href='/wiki/PredatorPrey_step2'>2. Vegetation Dynamic
+</a></li>
+<li><a href='/wiki/PredatorPrey_step3'>3. Prey Agent Behavior
+</a></li>
+<li><a href='/wiki/PredatorPrey_step4'>4. Inspectors and Monitors
+</a></li>
+<li><a href='/wiki/PredatorPrey_step5'>5. Predator Agent
+</a></li>
+<li><a href='/wiki/PredatorPrey_step6'>6. Breeding
+</a></li>
+<li><a href='/wiki/PredatorPrey_step7'>7. Agent Aspect
+</a></li>
+<li><a href='/wiki/PredatorPrey_step8'>8. Complex Behavior
+</a></li>
+<li><a href='/wiki/PredatorPrey_step9'>9. Stopping condition
+</a></li>
+<li><a href='/wiki/PredatorPrey_step10'>10. Charts
+</a></li>
+<li><a href='/wiki/PredatorPrey_step11'>11. Writing Files
+</a></li>
+<li><a href='/wiki/PredatorPrey_step12'>12. Image loading
+</a></li>
+</ul>
+<li><a href='/wiki/RoadTrafficModel'>Road Traffic
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/RoadTrafficModel_step1'>1. Loading of GIS Data
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step2'>2. People Agents
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step3'>3. Movement of People
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step4'>4. Weight for Road Network
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step5'>5. Dynamic weights
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step6'>6. Charts
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step7'>7. Automatic Road Repair
+</a></li>
+</ul>
+<li><a href='/wiki/ThreeD'>3D Tutorial
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/ThreeD_step1'>1. Basic Model
+</a></li>
+<li><a href='/wiki/ThreeD_step2'>2. Moving Cells
+</a></li>
+<li><a href='/wiki/ThreeD_step3'>3. Connections
+</a></li>
+</ul>
+</ul>
+</ul>
+<li><a href='/wiki/References'>References
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/PlatformDocumentation'>Platform
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/InstallationAndLaunching'>Installation and Launching
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/Installation'>Installation
+</a></li>
+<li><a href='/wiki/Launching'>Launching GAMA
+</a></li>
+<li><a href='/wiki/Headless'>Headless Mode
+</a></li>
+<li><a href='/wiki/Updating'>Updating GAMA
+</a></li>
+<li><a href='/wiki/InstallingPlugins'>Installing Plugins
+</a></li>
+<li><a href='/wiki/Troubleshooting'>Troubleshooting
+</a></li>
+</ul>
+<li><a href='/wiki/WorkspaceProjectsAndModels'>Workspace, Projects and Models
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/NavigatingWorkspace'>Navigating in the Workspace
+</a></li>
+<li><a href='/wiki/ChangingWorkspace'>Changing Workspace
+</a></li>
+<li><a href='/wiki/ImportingModels'>Importing Models
+</a></li>
+</ul>
+<li><a href='/wiki/EditingModels'>Editing models
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/GamlEditorGeneralities'>The GAML Editor - Generalities
+</a></li>
+<li><a href='/wiki/GamlEditorToolbar'>The GAML Editor Toolbar
+</a></li>
+<li><a href='/wiki/ValidationOfModels'>Validation of Models
+</a></li>
+</ul>
+<li><a href='/wiki/RunningExperiments'>Running Experiments
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/LaunchingExperiments'>Launching Experiments from the User Interface
+</a></li>
+<li><a href='/wiki/ExperimentsUserInterface'>Experiments User Interface
+</a></li>
+<li><a href='/wiki/MenusAndCommands'>Menus and Commands
+</a></li>
+<li><a href='/wiki/ParametersView'>Parameters View
+</a></li>
+<li><a href='/wiki/InspectorsAndMonitors'>Inspectors and monitors
+</a></li>
+<li><a href='/wiki/Displays'>Displays
+</a></li>
+<li><a href='/wiki/BatchSpecific'>Batch Specific UI
+</a></li>
+<li><a href='/wiki/ErrorsView'>Errors View
+</a></li>
+</ul>
+<li><a href='/wiki/Preferences'>Preferences
+</a></li>
+</ul>
+<li><a href='/wiki/GamlReferences'>Gaml Reference
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/BuiltInSpecies'>Built-in Species
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/AgentBuiltIn'>The 'agent' built-in species (Under Construction)
+</a></li>
+<li><a href='/wiki/ModelBuiltIn'>The 'model' built-in species (Under Construction)
+</a></li>
+<li><a href='/wiki/ExperimentBuiltIn'>The 'experiment' built-in species (Under Construction)
+</a></li>
+</ul>
+<li><a href='/wiki/BuiltInSkills'>Built-in Skills
+</a></li>
+<li><a href='/wiki/BuiltInArchitectures'>Built-in Architectures
+</a></li>
+<li><a href='/wiki/Statements'>Statements
+</a></li>
+<li><a href='/wiki/DataTypes'>Types
+</a></li>
+<li><a href='/wiki/FileTypes'>File Types
+</a></li>
+<li><a href='/wiki/Expressions'>Expressions
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/Literals'>Literals
+</a></li>
+<li><a href='/wiki/UnitsAndConstants'>Units and constants
+</a></li>
+<li><a href='/wiki/PseudoVariables'>Pseudo-variables
+</a></li>
+<li><a href='/wiki/VariablesAndAttributes'>Variables and Attributes
+</a></li>
+<li><a href='/wiki/Operators'>Operators 
+</a></li>
+</ul>
+</ul>
+</ul>
+<li>Community
+</li>
+<ul class='sub'>
+<li><a href='/wiki/Contribute'>Contribute
+</a></li>
+<li><a href='/wiki/Projects'>Projects
+</a></li>
+<li><a href='/wiki/TrainingSession'>Training Session
+</a></li>
+</ul></ul></div><div id="right">
+<h3>Facebook Activities</h3>
+<ul id="fbquotes">
+</ul>
+<h3>Commit Activities</h3>
+<ul id="commitquotes">
+</ul>
+<h3>Issue Activities</h3>
+<ul id="issuequotes">
+</ul>
+<h3>Gama Platform Users Activities</h3>
+<ul id="googleusersquotes">
+</ul>
+</div><div id="content"><h1 id="run-several-simulations">Run Several Simulations</h1>
+
+<p>To explore a model, the easiest and the most intuitive way to proceed is running several simulations with several parameter value, and see the differences from the output. GAMA provides you the possibility to launch several simulations from the GUI.</p>
+
+<h2 id="index">Index</h2>
+
+<ul>
+  <li><a href="#create-a-simulation">Create a simulation</a></li>
+  <li><a href="#manipulate-simulations">Manipulate simulations</a></li>
+  <li><a href="#random-seed">Random seed</a>
+    <ul>
+      <li><a href="#defining-the-seed-from-the-model">Defining the seed from the model</a></li>
+      <li><a href="#defining-the-seed-from-the-experiment">Defining the seed from the experiment</a></li>
+      <li><a href="#run-several-simulations-with-the-same-random-numbers">Run several simulations with the same random numbers</a></li>
+      <li><a href="#change-the-rng">Change the RNG</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="create-a-simulation">Create a simulation</h2>
+
+<p>Let’s remind you that in GAMA, everything is an <strong>agent</strong>. We already saw that the <strong>“world” agent</strong> is the <strong>agent of the model</strong>. The model is thus a <strong>species</strong>, called modelName_model :</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>model toto // &lt;- the name of the species is "toto_model"
+</code></pre>
+</div>
+
+<p>New highlight of the day : an <strong>Experiment</strong> is also an agent ! It’s a special agent which will instantiate automatically an agent from the model species. You can then perfectly create agents (<em>model</em> agents) from your experiment, using the statement <code class="highlighter-rouge">create</code> :</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>model multi_simulations // the "world" is an instance of the "multi_simulations_model"
+
+global {
+}
+
+experiment my_experiment type:gui  {
+	init {
+		create multi_simulations_model;
+	}
+}
+</code></pre>
+</div>
+
+<p>This sort model will instantiate 2 simulations (two instance of the model) : one is created automatically by the experiment, and the second one is explicitly created through the statement <code class="highlighter-rouge">create</code>.</p>
+
+<p>To simplify the syntax, you can use the built-in attribute <code class="highlighter-rouge">simulation</code> of your <strong>experiment</strong>. When you have a model called “multi_simulations”, the two following lines are strictly equal :</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>create multi_simulations_model;
+create simulation;
+</code></pre>
+</div>
+
+<p>As it was the case for creating regular species, you can specify the parameters of your agent during the creation through the facet <code class="highlighter-rouge">with:</code> :</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>model multi_simulations
+
+global {
+	rgb bgd_color;
+}
+
+experiment my_experiment type:gui  {
+	parameter name:"background color:" var:bgd_color init:#blue;
+	init {
+		create simulation with:[bgd_color::#red];
+	}
+	output {
+		display "my_display" background:bgd_color{}
+	}
+}
+</code></pre>
+</div>
+
+<h2 id="manipulate-simulations">Manipulate simulations</h2>
+
+<p>When you think the simulations as agents, it gives you a lot of new possibilities. You can for example create a reflex from your experiment, asking to create simulations <strong>during the experiment execution</strong> !</p>
+
+<p>The following short model for example will create a new simulation at each 10 cycles :</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>model multi_simulations
+
+global {
+	init {
+		write "new simulation created ! Its name is "+name;
+	}
+}
+
+experiment my_experiment type:gui  {
+	init {
+	}
+	reflex when:(mod(cycle,10)=0 and cycle!=0) {
+		create simulation;
+	}
+	output {
+	}
+}
+</code></pre>
+</div>
+
+<p>You may ask, what is the purpose of such a thing ? Well, with such a short model, it is not very interesting, for sure. But you can imagine running a simulation, and if the simulation reaches a certain state, it can be closed, and another simulation can be run instead with different parameters (a simulation can be closed by doing a “do die” on itself). You can also imagine to run two simulations, and to communicate from one to an other through the experiment, as it is shown in this easy model, where agents can move from one simulation to another :</p>
+
+<p><img src="resources/images/exploringModel/change_world.png" alt="resources/images/exploringModel/change_world.png" /></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>model smallWorld
+
+global {
+	int grid_size &lt;- 10;
+	bool modelleft &lt;- true;
+	int id&lt;- 0;
+	int nb_agents &lt;- 50;
+	
+	init {
+		create people number: nb_agents {
+			my_cell &lt;- one_of(cell);
+			location &lt;- my_cell.location;
+		}
+		if (modelleft) {
+			ask cell where (each.grid_x = (grid_size - 1))  {
+				color &lt;- #red;	
+			}
+		} else {
+			ask cell where (each.grid_x = 0)  {
+				color &lt;- #red;	
+			}
+		}
+	}
+	
+	action changeWorld(rgb color, point loc) {
+		create people with:[color::color, location::loc] {
+			my_cell &lt;- cell(location);
+		}
+	}
+}
+
+species people {
+	rgb color &lt;- rnd_color(255);
+	cell my_cell;
+
+	reflex move {
+		if (modelleft and my_cell.color = #red) {
+			ask smallWorld_model[1] {
+				do changeWorld(myself.color, {100 - myself.location.x,myself.location.y});
+		 	}
+		 	do die;
+		} else {
+			list&lt;cell&gt; free_cells &lt;- list&lt;cell&gt; (my_cell.neighbors) where empty(people inside each);
+			if not empty(free_cells) {
+				my_cell &lt;- one_of(free_cells);
+				location &lt;- my_cell.location;
+			}
+		}
+		
+	} 
+	aspect default {
+		draw circle(50/grid_size) color: color;
+	}	
+}
+
+grid cell width: grid_size height: grid_size;
+
+experiment fromWorldToWorld type: gui {
+	init {
+		 create simulation with:[grid_size::20, modelleft::false, id::1, nb_agents::0];
+	}
+	
+	output {
+		display map {
+			grid cell lines: #black;
+			species people;
+		}
+	}
+}
+</code></pre>
+</div>
+
+<p>Here is an other example of application of application, available in the model library. Here we run 4 times the Ant Foraging model, with different parameters.</p>
+
+<p><img src="resources/images/exploringModel/multi_foraging.jpg" alt="resources/images/exploringModel/multi_foraging.jpg" /></p>
+
+<table>
+  <tbody>
+    <tr>
+      <td><a href="# (endConcept|control_randomness)">//</a>: # (endConcept</td>
+      <td>run_simulations_as_agents)</td>
+    </tr>
+    <tr>
+      <td><a href="# (endConcept|control_randomness)">//</a>: # (startConcept</td>
+      <td>control_randomness)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="random-seed">Random seed</h2>
+
+<h3 id="defining-the-seed-from-the-model">Defining the seed from the model</h3>
+
+<p>If you run several simulations, you may want to use the same seed for each one of those simulations (to compare the influence of a certain parameter, in exactly the same conditions).</p>
+
+<p>Let’s remind you that <code class="highlighter-rouge">seed</code> is a built-in attribute of the model. You than just need to specify the value of your seed during the creation of the simulation if you want to fix the seed :</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>create simulation with:[seed::10.0];
+</code></pre>
+</div>
+
+<p>You can also specify the seed if you are inside the <code class="highlighter-rouge">init</code> scope of your <code class="highlighter-rouge">global</code> agent.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>global {
+	init {
+		seed&lt;-10.0;
+	}
+}
+</code></pre>
+</div>
+
+<p>Notice that if you affect the value of your seed built-in directly in the global scope, the affectation of the parameters (for instance specified with the facet <code class="highlighter-rouge">with</code> of the statement <code class="highlighter-rouge">create</code>), and the “init” will be done after  will be done at the end.</p>
+
+<h3 id="defining-the-seed-from-the-experiment">Defining the seed from the experiment</h3>
+
+<p>The experiment agent also have a built-in attribute <code class="highlighter-rouge">seed</code>. The value of this seed is defined in your <a href="Preferences#simulation">simulation preferences</a>. The first simulation created is created <strong>with the seed value of the experiment</strong>.</p>
+
+<p>The following sequence diagram can explain you better how the affectation of the seed attribute works :</p>
+
+<p><img src="resources/images/exploringModel/sequence_diagram_seed_affectation.png" alt="resources/images/exploringModel/sequence_diagram_seed_affectation.png" /></p>
+
+<p>The affectation of an attribute is always done in this order :
+(1) the attribute is affected with a specific value in the species scope. If no attribute value is specified, the value is a default value.
+(2) if a value is specified for this attribute in the <code class="highlighter-rouge">create</code> statement, then the attribute value is affected again.
+(3) the attribute value can be changed again in the <code class="highlighter-rouge">init</code> scope.</p>
+
+<h3 id="run-several-simulations-with-the-same-random-numbers">Run several simulations with the same random numbers</h3>
+
+<p>The following code shows how to run several simulations with a specific seed, determined from the experiment agent :</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>model multi_simulations
+
+global {
+	init {
+		create my_species;
+	}
+}
+
+species my_species skills:[moving] {
+	reflex update {
+		do wander;
+	}
+	aspect base {
+		draw circle(2) color:#green;
+	}
+}
+
+experiment my_experiment type:gui  {
+	float seedValue &lt;- 10.0;
+	float seed &lt;- seedValue; // force the value of the seed.
+	init {
+		// create a second simulation with the same seed as the main simulation
+		create simulation with:[seed::seedValue];
+	}
+	output {
+		display my_display {
+			species my_species aspect:base;
+		}
+	}
+}
+</code></pre>
+</div>
+
+<p>When you run this simulation, their execution is exactly similar.</p>
+
+<p><img src="resources/images/exploringModel/same_simulation_one_agent.png" alt="resources/images/exploringModel/same_simulation_one_agent.png" /></p>
+
+<p>Let’s try now to add a new species in this model, and to add a parameter to the simulation for the number of agents created for this species.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>model multi_simulations
+
+global {
+	int number_of_speciesB &lt;- 1;
+	init {
+		create my_speciesA;
+		create my_speciesB number:number_of_speciesB;
+	}
+}
+
+species my_speciesA skills:[moving] {
+	reflex update {
+		do wander;
+	}
+	aspect base {
+		draw circle(2) color:#green;
+	}
+}
+
+species my_speciesB skills:[moving] {
+	reflex update {
+		do wander;
+	}
+	aspect base {
+		draw circle(2) color:#red;
+	}
+}
+
+experiment my_experiment type:gui  {
+	float seedValue &lt;- 10.0;
+	float seed &lt;- seedValue; // force the value of the seed.
+	init {
+		create simulation with:[seed::seedValue,number_of_speciesB::2];
+	}
+	output {
+		display my_display {
+			species my_speciesA aspect:base;
+			species my_speciesB aspect:base;
+		}
+	}
+}
+</code></pre>
+</div>
+
+<p>Then you run the experiment, you may find something strange…</p>
+
+<p><img src="resources/images/exploringModel/same_simulation_2_species.png" alt="resources/images/exploringModel/same_simulation_2_species.png" /></p>
+
+<p>Even if the first step seems ok (the greed agent and one of the two red agent is initialized with the same location), the simulation differs completly. You should have expected to have the same behavior for the greed agent in both of the simulation, but it is not the case. The explaination of this behavior is that a random number generator has generated more random numbers in the second simulation than in the first one.</p>
+
+<p>If you don’t understand, here is a short example that may help you to understand better :</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>model multi_simulations
+
+global {
+	int iteration_number &lt;- 1;
+	reflex update {
+		float value;
+		loop times:iteration_number {
+			value&lt;-rnd(10.0);
+			write value;
+		}
+		write "cycle "+cycle+" in experiment "+name+" : "+value;
+	}
+}
+
+experiment my_experiment type:gui  {
+	float seedValue &lt;- 10.0;
+	float seed &lt;- seedValue; // force the value of the seed.
+	init {
+		create simulation with:[seed::seedValue,iteration_number::2];
+	}
+	output {
+	}
+}
+</code></pre>
+</div>
+
+<p>The output will be something like that :</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>7.67003069780383
+cycle 0 in experiment multi_simulations_model0 : 7.67003069780383
+7.67003069780383
+0.22889843360303863
+cycle 0 in experiment multi_simulations_model1 : 0.22889843360303863
+0.22889843360303863
+cycle 1 in experiment multi_simulations_model0 : 0.22889843360303863
+4.5220913306263855
+0.8363180333035425
+cycle 1 in experiment multi_simulations_model1 : 0.8363180333035425
+4.5220913306263855
+cycle 2 in experiment multi_simulations_model0 : 4.5220913306263855
+5.460148568140819
+4.158355846617511
+cycle 2 in experiment multi_simulations_model1 : 4.158355846617511
+0.8363180333035425
+cycle 3 in experiment multi_simulations_model0 : 0.8363180333035425
+1.886091659169562
+4.371253083874633
+cycle 3 in experiment multi_simulations_model1 : 4.371253083874633
+</code></pre>
+</div>
+
+<p>Which means :</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left"><strong>Cycle</strong></th>
+      <th style="text-align: left"><strong>Value generated in simulation 0</strong></th>
+      <th style="text-align: left"><strong>Value generated in simulation 1</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><strong>1</strong></td>
+      <td style="text-align: left">7.67003069780383</td>
+      <td style="text-align: left">7.67003069780383</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">0.22889843360303863</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>2</strong></td>
+      <td style="text-align: left">0.22889843360303863</td>
+      <td style="text-align: left">4.5220913306263855</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">0.8363180333035425</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>3</strong></td>
+      <td style="text-align: left">4.5220913306263855</td>
+      <td style="text-align: left">5.460148568140819</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">4.158355846617511</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>When writing your models, you have to be aware of this behavior. Remember that each simulation has it’s own random number generator.</p>
+
+<h3 id="change-the-rng">Change the RNG</h3>
+
+<p>The RNG (random number generator) can also be changed : <code class="highlighter-rouge">rng</code> is a string built-in attribute of the experiment (and also of the model). You can choose among the following rng :</p>
+<ul>
+  <li>mersenne (by default)</li>
+  <li>cellular</li>
+  <li>java</li>
+</ul>
+
+<p>The following model shows how to run 4 simulations with the same seed but with some different RNG :</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>model multi_simulations
+
+global {
+	init {
+		create my_species number:50;
+	}
+}
+
+species my_species skills:[moving] {
+	reflex update {
+		do wander;
+	}
+	aspect base {
+		draw square(2) color:#blue;
+	}
+}
+
+experiment my_experiment type:gui  {
+	float seed &lt;- 10.0;
+	init {
+		create simulation with:[rng::"cellular",seed::10.0];
+		create simulation with:[rng::"java",seed::10.0];
+	}
+	output {
+		display my_display {
+			species my_species aspect:base;
+			graphics "my_graphic" {
+				draw rectangle(35,10) at:{0,0} color:#lightgrey;
+				draw rng at:{3,3} font:font("Helvetica", 20 , #plain) color:#black;
+			}
+		}
+	}
+}
+</code></pre>
+</div>
+</div></body></html>

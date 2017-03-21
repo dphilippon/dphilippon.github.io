@@ -1,0 +1,612 @@
+
+    <!doctype html><html lang="en"><head><meta charset="utf-8"><title>segregationGIS</title></head>
+    <body>
+    <link rel="stylesheet" href="/style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="//connect.facebook.net/en_US/all.js"></script>
+<script src="/linkify.min.js"></script>
+<script src="/linkify-jquery.min.js"></script>
+<script>
+  $(document).ready(function(){
+	  		$.getJSON('https://graph.facebook.com/238065426321929/feed?access_token=229040647557399|MQKFlFYX7YW25XGj4GUYZ7B1lcY', function(data) {
+		var ahtml="";
+		for(var i = 0; i < 5; i++) {
+			ahtml=ahtml+"<li>"+data["data"][i]["message"]+"</li>";
+		}
+		ahtml=ahtml+"";
+		$("#fbquotes").html(ahtml);
+		$("#fbquotes").linkify();
+	});
+	 
+		$.getJSON('https://api.github.com/repos/gama-platform/gama/commits', function(data) {
+			var ahtml="";
+			for(var i = 0; i < 5; i++) {
+				ahtml=ahtml+"<li>"+data[i]["commit"]["message"]+" by "+data[i]["commit"]["author"]["name"]+" <a href='"+data[i]["commit"]["html_url"]+"'> See more</a></li>";
+			}
+			ahtml=ahtml+"";
+			$("#commitquotes").html(ahtml);
+			$("#commitquotes").linkify();
+		});
+				
+				
+		$.getJSON('https://api.github.com/repos/gama-platform/gama/issues', function(data) {
+			var ahtml="";
+			for(var i = 0; i < 5; i++) {
+				ahtml=ahtml+"<li>"+data[i]["title"]+" by "+data[i]["user"]["login"]+" <a href='"+data[i]["html_url"]+"'> See more</a></li>";
+			}
+			ahtml=ahtml+"";
+			$("#issuequotes").html(ahtml);
+			$("#issuequotes").linkify();
+		});
+		
+		$.getJSON('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fgroups.google.com%2Fforum%2Ffeed%2Fgama-platform%2Ftopics%2Frss.xml%3Fnum%3D15', function(data) {
+			var ahtml="";
+			for(var i = 0; i < 5; i++) {
+				ahtml=ahtml+"<li>"+data["items"][i]["title"]+" by "+data["items"][i]["author"]+" <a href='"+data["items"][i]["link"]+"'> See more</a></li>";
+			}
+			ahtml=ahtml+"";
+			$("#googleusersquotes").html(ahtml);
+			$("#googleusersquotes").linkify();
+			
+		});
+ });
+  
+</script>
+
+      <div id="left">
+
+		<ul class="mcd-menu"><li><a href="/">Home</a></li><li><a href="/">Discussions</a></li>
+<li><a href='/wiki/Tutorials'>Tutorials
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/LearnGAMLStepByStep'>Learn GAML Step by Step
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/Introduction'>Introduction
+</a></li>
+<li><a href='/wiki/StartWithGAML'>Start with GAML
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/ModelOrganization'>Organization of a model
+</a></li>
+<li><a href='/wiki/BasicProgrammingConceptsInGAML'>Basic programming concepts in GAML
+</a></li>
+</ul>
+<li><a href='/wiki/ManipulateBasicSpecies'>Manipulate basic species
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/GlobalSpecies'>The global species
+</a></li>
+<li><a href='/wiki/RegularSpecies'>Regular species
+</a></li>
+<li><a href='/wiki/DefiningActionsAndBehaviors'>Defining actions and behaviors
+</a></li>
+<li><a href='/wiki/InteractionBetweenAgents'>Interaction between agents
+</a></li>
+<li><a href='/wiki/AttachingSkills'>Attaching Skills
+</a></li>
+<li><a href='/wiki/Inheritance'>Inheritance
+</a></li>
+</ul>
+<li><a href='/wiki/DefiningAdvancedSpecies'>Defining advanced species
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/GridSpecies'>Grid Species
+</a></li>
+<li><a href='/wiki/GraphSpecies'>Graph Species
+</a></li>
+<li><a href='/wiki/MirrorSpecies'>Mirror species
+</a></li>
+<li><a href='/wiki/MultiLevelArchitecture'>Multi-level architecture
+</a></li>
+</ul>
+<li><a href='/wiki/DefiningGUIExperiment'>Defining GUI Experiment
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/DefiningParameters'>Defining Parameters
+</a></li>
+<li><a href='/wiki/DefiningDisplaysGeneralities'>Defining displays (Generalities)
+</a></li>
+<li><a href='/wiki/DefiningCharts'>Defining Charts
+</a></li>
+<li><a href='/wiki/Defining3DDisplays'>Defining 3D Displays
+</a></li>
+<li><a href='/wiki/DefiningMonitorsAndInspectors'>Defining monitors and inspectors
+</a></li>
+<li><a href='/wiki/DefiningExportFiles'>Defining export files
+</a></li>
+<li><a href='/wiki/DefiningUserInteraction'>Defining user interaction
+</a></li>
+</ul>
+<li><a href='/wiki/ExploringModels'>Exploring Models
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/RunSeveralSimulations'>Run Several Simulations
+</a></li>
+<li><a href='/wiki/BatchExperiments'>Defining Batch Experiments
+</a></li>
+<li><a href='/wiki/ExplorationMethods'>Exploration Methods
+</a></li>
+</ul>
+<li><a href='/wiki/OptimizingModels'>Optimizing Models
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/RuntimeConcepts'>Runtime Concepts
+</a></li>
+<li><a href='/wiki/OptimizingModels'>Optimizing Models
+</a></li>
+</ul>
+<li><a href='/wiki/MultiParadigmModeling'>Multi-Paradigm Modeling
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/ControlArchitecture'>Control Architectures
+</a></li>
+<li><a href='/wiki/Equations'>Using Equations
+</a></li>
+</ul>
+</ul>
+<li><a href='/wiki/Recipes'>Recipes
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/ManipulateOSMDatas'>Manipulate OSM Datas
+</a></li>
+<li><a href='/wiki/Diffusion'>Implementing diffusion
+</a></li>
+<li><a href='/wiki/UsingDatabase'>Using Database Access
+</a></li>
+<li><a href='/wiki/CallingR'>Calling R
+</a></li>
+<li><a href='/wiki/UsingFIPAACL'>Using FIPA ACL
+</a></li>
+<li><a href='/wiki/GamAnalyzer'>Using GAMAnalyzer
+</a></li>
+<li><a href='/wiki/UsingBDI'>Using BDI
+</a></li>
+<li><a href='/wiki/UsingDrivingSkill'>Advanced Driving Skill
+</a></li>
+<li><a href='/wiki/ManipulateDates'>Manipulate Dates
+</a></li>
+<li><a href='/wiki/ManipulateLight'>Implementing light
+</a></li>
+<li><a href='/wiki/Comodel'>Using Comodel
+</a></li>
+</ul>
+<li><a href='/wiki/Tutorials'>Tutorials
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/LuneraysFlu'>Luneray's flu
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/LuneraysFlu_step1'>1. Creation of a first basic disease spreading model
+</a></li>
+<li><a href='/wiki/LuneraysFlu_step2'>2. Definition of monitors and chart outputs
+</a></li>
+<li><a href='/wiki/LuneraysFlu_step3'>3. Importation of GIS data
+</a></li>
+<li><a href='/wiki/LuneraysFlu_step4'>4. Use of a graph to constraint the movements of people]
+</a></li>
+<li><a href='/wiki/LuneraysFlu_step5'>5. Definition of 3D displays
+</a></li>
+</ul>
+<li><a href='/wiki/IncrementalModel'>Incremental Model
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/IncrementalModel_step1'>1. Simple SI Model
+</a></li>
+<li><a href='/wiki/IncrementalModel_step2'>2. Charts
+</a></li>
+<li><a href='/wiki/IncrementalModel_step3'>3. Integration of GIS Data
+</a></li>
+<li><a href='/wiki/IncrementalModel_step4'>4. Movement on Graph
+</a></li>
+<li><a href='/wiki/IncrementalModel_step5'>5. Visualizing in 3D
+</a></li>
+<li><a href='/wiki/IncrementalModel_step6'>6. Multi-Level
+</a></li>
+<li><a href='/wiki/IncrementalModel_step7'>7. Differential Equations
+</a></li>
+</ul>
+<li><a href='/wiki/PredatorPrey'>Predator Prey
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/PredatorPrey_step1'>1. Basic Model
+</a></li>
+<li><a href='/wiki/PredatorPrey_step2'>2. Vegetation Dynamic
+</a></li>
+<li><a href='/wiki/PredatorPrey_step3'>3. Prey Agent Behavior
+</a></li>
+<li><a href='/wiki/PredatorPrey_step4'>4. Inspectors and Monitors
+</a></li>
+<li><a href='/wiki/PredatorPrey_step5'>5. Predator Agent
+</a></li>
+<li><a href='/wiki/PredatorPrey_step6'>6. Breeding
+</a></li>
+<li><a href='/wiki/PredatorPrey_step7'>7. Agent Aspect
+</a></li>
+<li><a href='/wiki/PredatorPrey_step8'>8. Complex Behavior
+</a></li>
+<li><a href='/wiki/PredatorPrey_step9'>9. Stopping condition
+</a></li>
+<li><a href='/wiki/PredatorPrey_step10'>10. Charts
+</a></li>
+<li><a href='/wiki/PredatorPrey_step11'>11. Writing Files
+</a></li>
+<li><a href='/wiki/PredatorPrey_step12'>12. Image loading
+</a></li>
+</ul>
+<li><a href='/wiki/RoadTrafficModel'>Road Traffic
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/RoadTrafficModel_step1'>1. Loading of GIS Data
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step2'>2. People Agents
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step3'>3. Movement of People
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step4'>4. Weight for Road Network
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step5'>5. Dynamic weights
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step6'>6. Charts
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step7'>7. Automatic Road Repair
+</a></li>
+</ul>
+<li><a href='/wiki/ThreeD'>3D Tutorial
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/ThreeD_step1'>1. Basic Model
+</a></li>
+<li><a href='/wiki/ThreeD_step2'>2. Moving Cells
+</a></li>
+<li><a href='/wiki/ThreeD_step3'>3. Connections
+</a></li>
+</ul>
+</ul>
+</ul>
+<li><a href='/wiki/References'>References
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/PlatformDocumentation'>Platform
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/InstallationAndLaunching'>Installation and Launching
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/Installation'>Installation
+</a></li>
+<li><a href='/wiki/Launching'>Launching GAMA
+</a></li>
+<li><a href='/wiki/Headless'>Headless Mode
+</a></li>
+<li><a href='/wiki/Updating'>Updating GAMA
+</a></li>
+<li><a href='/wiki/InstallingPlugins'>Installing Plugins
+</a></li>
+<li><a href='/wiki/Troubleshooting'>Troubleshooting
+</a></li>
+</ul>
+<li><a href='/wiki/WorkspaceProjectsAndModels'>Workspace, Projects and Models
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/NavigatingWorkspace'>Navigating in the Workspace
+</a></li>
+<li><a href='/wiki/ChangingWorkspace'>Changing Workspace
+</a></li>
+<li><a href='/wiki/ImportingModels'>Importing Models
+</a></li>
+</ul>
+<li><a href='/wiki/EditingModels'>Editing models
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/GamlEditorGeneralities'>The GAML Editor - Generalities
+</a></li>
+<li><a href='/wiki/GamlEditorToolbar'>The GAML Editor Toolbar
+</a></li>
+<li><a href='/wiki/ValidationOfModels'>Validation of Models
+</a></li>
+</ul>
+<li><a href='/wiki/RunningExperiments'>Running Experiments
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/LaunchingExperiments'>Launching Experiments from the User Interface
+</a></li>
+<li><a href='/wiki/ExperimentsUserInterface'>Experiments User Interface
+</a></li>
+<li><a href='/wiki/MenusAndCommands'>Menus and Commands
+</a></li>
+<li><a href='/wiki/ParametersView'>Parameters View
+</a></li>
+<li><a href='/wiki/InspectorsAndMonitors'>Inspectors and monitors
+</a></li>
+<li><a href='/wiki/Displays'>Displays
+</a></li>
+<li><a href='/wiki/BatchSpecific'>Batch Specific UI
+</a></li>
+<li><a href='/wiki/ErrorsView'>Errors View
+</a></li>
+</ul>
+<li><a href='/wiki/Preferences'>Preferences
+</a></li>
+</ul>
+<li><a href='/wiki/GamlReferences'>Gaml Reference
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/BuiltInSpecies'>Built-in Species
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/AgentBuiltIn'>The 'agent' built-in species (Under Construction)
+</a></li>
+<li><a href='/wiki/ModelBuiltIn'>The 'model' built-in species (Under Construction)
+</a></li>
+<li><a href='/wiki/ExperimentBuiltIn'>The 'experiment' built-in species (Under Construction)
+</a></li>
+</ul>
+<li><a href='/wiki/BuiltInSkills'>Built-in Skills
+</a></li>
+<li><a href='/wiki/BuiltInArchitectures'>Built-in Architectures
+</a></li>
+<li><a href='/wiki/Statements'>Statements
+</a></li>
+<li><a href='/wiki/DataTypes'>Types
+</a></li>
+<li><a href='/wiki/FileTypes'>File Types
+</a></li>
+<li><a href='/wiki/Expressions'>Expressions
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/Literals'>Literals
+</a></li>
+<li><a href='/wiki/UnitsAndConstants'>Units and constants
+</a></li>
+<li><a href='/wiki/PseudoVariables'>Pseudo-variables
+</a></li>
+<li><a href='/wiki/VariablesAndAttributes'>Variables and Attributes
+</a></li>
+<li><a href='/wiki/Operators'>Operators 
+</a></li>
+</ul>
+</ul>
+</ul>
+<li>Community
+</li>
+<ul class='sub'>
+<li><a href='/wiki/Contribute'>Contribute
+</a></li>
+<li><a href='/wiki/Projects'>Projects
+</a></li>
+<li><a href='/wiki/TrainingSession'>Training Session
+</a></li>
+</ul></ul></div><div id="right">
+<h3>Facebook Activities</h3>
+<ul id="fbquotes">
+</ul>
+<h3>Commit Activities</h3>
+<ul id="commitquotes">
+</ul>
+<h3>Issue Activities</h3>
+<ul id="issuequotes">
+</ul>
+<h3>Gama Platform Users Activities</h3>
+<ul id="googleusersquotes">
+</ul>
+</div><div id="content"><h1 id="segregationgis">segregationGIS</h1>
+
+<p>_Author : _</p>
+
+<p>A model showing the segregation of the people just by putting a similarity wanted parameter using agents to represent the individuals and GIS file for the places</p>
+
+<p>Imported model :</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>model segregation_base
+
+global {
+	//Different colors for the group
+	rgb color_1 &lt;- rgb ("yellow") parameter: "Color of group 1:" category: "User interface";
+	rgb color_2 &lt;- rgb ("red") parameter: "Color of group 2:" category: "User interface";
+	rgb color_3 &lt;- rgb ("blue") parameter: "Color of group 3:" category: "User interface";
+	rgb color_4 &lt;- rgb ("orange") parameter: "Color of group 4:" category: "User interface";
+	rgb color_5 &lt;- rgb ("green") parameter: "Color of group 5:" category: "User interface";
+	rgb color_6 &lt;- rgb ("pink") parameter: "Color of group 6:" category: "User interface";   
+	rgb color_7 &lt;- rgb ("magenta") parameter: "Color of group 7:" category: "User interface";
+	rgb color_8 &lt;- rgb ("cyan") parameter: "Color of group 8:" category: "User interface";
+    list colors &lt;- [color_1, color_2, color_3, color_4, color_5, color_6, color_7, color_8] of: rgb;
+
+	
+	//Number of groups
+	int number_of_groups &lt;- 2 max: 8 parameter: "Number of groups:" category: "Population";
+	//Density of the people
+	float density_of_people &lt;- 0.7 parameter: "Density of people:" category: "Population" min: 0.01 max: 0.99;
+	//Percentage of similar wanted for segregation
+	float percent_similar_wanted &lt;- 0.5 min: float (0) max: float (1) parameter: "Desired percentage of similarity:" category: "Population";
+	//Dimension of the grid
+	int dimensions &lt;- 40 max: 400 min: 10 parameter: "Width and height of the environment:" category: "Environment";
+	//Neighbours distance for the perception of the agents
+	int neighbours_distance &lt;- 2 max: 10 min: 1 parameter: "Distance of perception:" category: "Population";
+	//Number of people agents
+	int number_of_people &lt;- 0;
+	//Number of happy people
+	int sum_happy_people &lt;- 0 update: all_people count (each.is_happy);
+	//Number of similar neighbours
+	int sum_similar_neighbours &lt;- 0 update: sum (all_people collect each.similar_nearby);
+	//Number of neighbours
+	int sum_total_neighbours &lt;- 1 update: sum (all_people collect each.total_nearby) min: 1;
+	//List of all the places
+	list&lt;agent&gt; all_places;
+	//List of all the people
+	list&lt;base&gt; all_people;  
+	
+	//Action to write the description of the model in the console
+	action description {
+		write
+		"\\n\\u25B6 Description. \\n\\u25B6 Thomas Schelling model of residential segregation is a classic study of the effects of local decisions on global dynamics. Agents with mild preferences for same-type neighbors, but without preferences for segregated neighborhoods, can wind up producing complete segregation.\\n\\u25B6 In this model, agents populate a grid with a given *density*. They are in two different states : happy when the percentage of same-color neighbours is above their *desired percentage of similarity*; unhappy otherwise. In the latter case, they change their location randomly until they find a neighbourhood that fits their desire. \\n\\u25B6 In addition to the previous parameter, one can adjust the *distance of perception* (i.e.  the distance at which they consider other agents as neighbours) of the agents to see how it affects the global process. ";
+	}
+	//Initialization of the model
+	init {
+		//Write the description of the model 
+		do description;
+		//Initialization of the places
+		do initialize_places;
+		//Computation of the number of people according to the density of people
+		number_of_people &lt;- int( length (all_places) * density_of_people);
+		//Initialization of the people
+		do initialize_people;
+	}
+	//Action to initialize places defined in the subclasses
+	action initialize_places virtual: true;
+	//Action to initialize people in the subclasses
+	action initialize_people virtual: true;
+}
+
+//Species base representing the people agents
+species base {
+	rgb color;
+	//List of all the neighbours agents
+	list&lt;base&gt; my_neighbours;
+	//computation of the similar neighbours
+	int similar_nearby -&gt; {
+		(my_neighbours count (each.color = color))
+	};
+	//Computation of the total neighbours nearby
+	int total_nearby -&gt; {
+		length (my_neighbours)
+	};
+	//Boolean to know if the agent is happy or not
+	bool is_happy -&gt; {similar_nearby &gt;= (percent_similar_wanted * total_nearby )} ;
+}
+
+</code></pre>
+</div>
+
+<p>Code of the model :</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>model segregation
+
+//Import the model Common Schelling Segregation
+import "../include/Common Schelling Segregation.gaml" 
+global {
+	//List of all the free places
+	list&lt;space&gt; free_places  ;  
+	//List of all the places
+	list&lt;space&gt; all_places ;
+	//Neighbours distance for the perception of an agent
+	int neighbours_distance &lt;- 50 min: 1 parameter: "Distance of perception:" category: "Population" max: 1000;
+	//Shapefile to load
+	file shape_file_name &lt;- file("../gis/nha2.shp") parameter: "Shapefile to load:" category: "GIS specific";
+	//Shape of the environment
+	geometry shape &lt;- envelope(shape_file_name);
+	//Square meters per people in m2
+	int square_meters_per_people &lt;- 200 parameter: "Occupancy of people (in m2):" category: "GIS specific";
+	
+	//Action to initialize people agents
+	action initialize_people { 
+		//Create all the places with a surface given within the shapefile
+		create space from: shape_file_name with: [surface :: float(read("AREA"))];
+		all_places  &lt;- shuffle(space);
+		//Compute the number of people to create considering the density of people
+		number_of_people &lt;- int( density_of_people * sum (all_places collect (each.capacity))); 
+		create people number: number_of_people;  
+	    all_people &lt;- people as list ; 
+	    //Move all the people to a new place
+		ask people  {  
+			do move_to_new_place;       
+		}   
+	}      
+	//Action to initialize the places
+	action initialize_places {}   
+	
+} 
+
+//Species people representing the people
+species people parent: base { 
+	//Size of the people agent
+	float size const: true &lt;- 2.0;
+	//Color of the people agent  
+	rgb color const: true &lt;- colors at (rnd (number_of_groups - 1)); 
+	int red const: true &lt;- (color as list) at 0; 
+	int green const: true &lt;- (color as list) at 1;  
+	int blue const: true &lt;- (color as list) at 2;  
+	//Building in which the agent lives
+	space current_building &lt;- nil;
+	//List of all the neighbour people agents
+	list&lt;people&gt; my_neighbours -&gt; {people at_distance neighbours_distance}; 
+	
+	//Action to move to a new place
+	action move_to_new_place {  
+		current_building &lt;- (shuffle(all_places) first_with (((each).capacity) &gt; 0));
+		ask current_building {
+			do accept one_people: myself;   
+		}
+	}
+	//Reflex to migrate to another place if the agent isn't happy
+	reflex migrate when: !is_happy {
+		if current_building != nil {
+			ask current_building { 
+				do remove_one one_people: myself;
+			}
+		} 
+		do move_to_new_place;
+	}
+
+	aspect simple {
+		draw circle(5) color: color;
+	}
+}
+
+//Species space representing a space for a people agent to live in
+species space {	
+	//List of all the people agents living within
+	list&lt;people&gt; insiders;
+	rgb color &lt;- rgb(255, 255, 255); 
+	//Surface of the place
+	float surface;
+	//Capacity of the place
+	int capacity  &lt;- 1 + int(surface / square_meters_per_people);
+	
+	//Action to accept a people agent  
+	action accept (people one_people) {
+		add one_people to: insiders;
+		location of one_people &lt;- any_location_in(shape);
+		capacity &lt;- capacity - 1;
+	}
+	//Action to remove a people agent
+	action remove_one (people one_people){
+		remove one_people from: insiders;
+		capacity &lt;- capacity + 1;
+	}
+	aspect simple {
+		color &lt;- empty(insiders) ? #white : rgb ([mean (insiders collect each.red), mean (insiders collect each.green), mean (insiders collect each.blue)]);
+		draw  square(40) color: color;
+	}
+	aspect gis {
+		color &lt;- empty(insiders) ? #white : rgb( [mean (insiders collect each.red), mean (insiders collect each.green), mean (insiders collect each.blue)]);
+		draw shape color: color border: #black;
+	} 
+	aspect highlighted {
+		color &lt;- #blue;
+		draw shape+10 color: color;
+	}
+}
+
+
+experiment schelling type: gui {	
+	output {
+		display Town_display  {
+			species space aspect: gis;
+			species people  aspect: simple;
+		}
+		display Charts {
+			chart "Proportion of happiness" type: histogram background: #lightgray gap:0.05 position: {0,0} size: {1.0,0.5}{
+				data "Unhappy" value: number_of_people - sum_happy_people color: #green;
+				data "Happy" value: sum_happy_people color: #yellow ;
+			}
+			chart "Global happiness and similarity" type: series background: #lightgray axes: #white position: {0,0.5} size: {1.0,0.5} {
+				data "happy" color: #blue value:  ((sum_happy_people * 100) / number_of_people)  style: spline ;
+				data "similarity" color: #red value:  (sum_similar_neighbours / sum_total_neighbours) * 100 style: step ;
+			}
+		}
+	}
+}
+</code></pre>
+</div>
+</div></body></html>

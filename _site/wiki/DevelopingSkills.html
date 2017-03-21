@@ -1,0 +1,557 @@
+
+    <!doctype html><html lang="en"><head><meta charset="utf-8"><title>Developing a New Skill</title></head>
+    <body>
+    <link rel="stylesheet" href="/style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="//connect.facebook.net/en_US/all.js"></script>
+<script src="/linkify.min.js"></script>
+<script src="/linkify-jquery.min.js"></script>
+<script>
+  $(document).ready(function(){
+	  		$.getJSON('https://graph.facebook.com/238065426321929/feed?access_token=229040647557399|MQKFlFYX7YW25XGj4GUYZ7B1lcY', function(data) {
+		var ahtml="";
+		for(var i = 0; i < 5; i++) {
+			ahtml=ahtml+"<li>"+data["data"][i]["message"]+"</li>";
+		}
+		ahtml=ahtml+"";
+		$("#fbquotes").html(ahtml);
+		$("#fbquotes").linkify();
+	});
+	 
+		$.getJSON('https://api.github.com/repos/gama-platform/gama/commits', function(data) {
+			var ahtml="";
+			for(var i = 0; i < 5; i++) {
+				ahtml=ahtml+"<li>"+data[i]["commit"]["message"]+" by "+data[i]["commit"]["author"]["name"]+" <a href='"+data[i]["commit"]["html_url"]+"'> See more</a></li>";
+			}
+			ahtml=ahtml+"";
+			$("#commitquotes").html(ahtml);
+			$("#commitquotes").linkify();
+		});
+				
+				
+		$.getJSON('https://api.github.com/repos/gama-platform/gama/issues', function(data) {
+			var ahtml="";
+			for(var i = 0; i < 5; i++) {
+				ahtml=ahtml+"<li>"+data[i]["title"]+" by "+data[i]["user"]["login"]+" <a href='"+data[i]["html_url"]+"'> See more</a></li>";
+			}
+			ahtml=ahtml+"";
+			$("#issuequotes").html(ahtml);
+			$("#issuequotes").linkify();
+		});
+		
+		$.getJSON('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fgroups.google.com%2Fforum%2Ffeed%2Fgama-platform%2Ftopics%2Frss.xml%3Fnum%3D15', function(data) {
+			var ahtml="";
+			for(var i = 0; i < 5; i++) {
+				ahtml=ahtml+"<li>"+data["items"][i]["title"]+" by "+data["items"][i]["author"]+" <a href='"+data["items"][i]["link"]+"'> See more</a></li>";
+			}
+			ahtml=ahtml+"";
+			$("#googleusersquotes").html(ahtml);
+			$("#googleusersquotes").linkify();
+			
+		});
+ });
+  
+</script>
+
+      <div id="left">
+
+		<ul class="mcd-menu"><li><a href="/">Home</a></li><li><a href="/">Discussions</a></li>
+<li><a href='/wiki/Tutorials'>Tutorials
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/LearnGAMLStepByStep'>Learn GAML Step by Step
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/Introduction'>Introduction
+</a></li>
+<li><a href='/wiki/StartWithGAML'>Start with GAML
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/ModelOrganization'>Organization of a model
+</a></li>
+<li><a href='/wiki/BasicProgrammingConceptsInGAML'>Basic programming concepts in GAML
+</a></li>
+</ul>
+<li><a href='/wiki/ManipulateBasicSpecies'>Manipulate basic species
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/GlobalSpecies'>The global species
+</a></li>
+<li><a href='/wiki/RegularSpecies'>Regular species
+</a></li>
+<li><a href='/wiki/DefiningActionsAndBehaviors'>Defining actions and behaviors
+</a></li>
+<li><a href='/wiki/InteractionBetweenAgents'>Interaction between agents
+</a></li>
+<li><a href='/wiki/AttachingSkills'>Attaching Skills
+</a></li>
+<li><a href='/wiki/Inheritance'>Inheritance
+</a></li>
+</ul>
+<li><a href='/wiki/DefiningAdvancedSpecies'>Defining advanced species
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/GridSpecies'>Grid Species
+</a></li>
+<li><a href='/wiki/GraphSpecies'>Graph Species
+</a></li>
+<li><a href='/wiki/MirrorSpecies'>Mirror species
+</a></li>
+<li><a href='/wiki/MultiLevelArchitecture'>Multi-level architecture
+</a></li>
+</ul>
+<li><a href='/wiki/DefiningGUIExperiment'>Defining GUI Experiment
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/DefiningParameters'>Defining Parameters
+</a></li>
+<li><a href='/wiki/DefiningDisplaysGeneralities'>Defining displays (Generalities)
+</a></li>
+<li><a href='/wiki/DefiningCharts'>Defining Charts
+</a></li>
+<li><a href='/wiki/Defining3DDisplays'>Defining 3D Displays
+</a></li>
+<li><a href='/wiki/DefiningMonitorsAndInspectors'>Defining monitors and inspectors
+</a></li>
+<li><a href='/wiki/DefiningExportFiles'>Defining export files
+</a></li>
+<li><a href='/wiki/DefiningUserInteraction'>Defining user interaction
+</a></li>
+</ul>
+<li><a href='/wiki/ExploringModels'>Exploring Models
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/RunSeveralSimulations'>Run Several Simulations
+</a></li>
+<li><a href='/wiki/BatchExperiments'>Defining Batch Experiments
+</a></li>
+<li><a href='/wiki/ExplorationMethods'>Exploration Methods
+</a></li>
+</ul>
+<li><a href='/wiki/OptimizingModels'>Optimizing Models
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/RuntimeConcepts'>Runtime Concepts
+</a></li>
+<li><a href='/wiki/OptimizingModels'>Optimizing Models
+</a></li>
+</ul>
+<li><a href='/wiki/MultiParadigmModeling'>Multi-Paradigm Modeling
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/ControlArchitecture'>Control Architectures
+</a></li>
+<li><a href='/wiki/Equations'>Using Equations
+</a></li>
+</ul>
+</ul>
+<li><a href='/wiki/Recipes'>Recipes
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/ManipulateOSMDatas'>Manipulate OSM Datas
+</a></li>
+<li><a href='/wiki/Diffusion'>Implementing diffusion
+</a></li>
+<li><a href='/wiki/UsingDatabase'>Using Database Access
+</a></li>
+<li><a href='/wiki/CallingR'>Calling R
+</a></li>
+<li><a href='/wiki/UsingFIPAACL'>Using FIPA ACL
+</a></li>
+<li><a href='/wiki/GamAnalyzer'>Using GAMAnalyzer
+</a></li>
+<li><a href='/wiki/UsingBDI'>Using BDI
+</a></li>
+<li><a href='/wiki/UsingDrivingSkill'>Advanced Driving Skill
+</a></li>
+<li><a href='/wiki/ManipulateDates'>Manipulate Dates
+</a></li>
+<li><a href='/wiki/ManipulateLight'>Implementing light
+</a></li>
+<li><a href='/wiki/Comodel'>Using Comodel
+</a></li>
+</ul>
+<li><a href='/wiki/Tutorials'>Tutorials
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/LuneraysFlu'>Luneray's flu
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/LuneraysFlu_step1'>1. Creation of a first basic disease spreading model
+</a></li>
+<li><a href='/wiki/LuneraysFlu_step2'>2. Definition of monitors and chart outputs
+</a></li>
+<li><a href='/wiki/LuneraysFlu_step3'>3. Importation of GIS data
+</a></li>
+<li><a href='/wiki/LuneraysFlu_step4'>4. Use of a graph to constraint the movements of people]
+</a></li>
+<li><a href='/wiki/LuneraysFlu_step5'>5. Definition of 3D displays
+</a></li>
+</ul>
+<li><a href='/wiki/IncrementalModel'>Incremental Model
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/IncrementalModel_step1'>1. Simple SI Model
+</a></li>
+<li><a href='/wiki/IncrementalModel_step2'>2. Charts
+</a></li>
+<li><a href='/wiki/IncrementalModel_step3'>3. Integration of GIS Data
+</a></li>
+<li><a href='/wiki/IncrementalModel_step4'>4. Movement on Graph
+</a></li>
+<li><a href='/wiki/IncrementalModel_step5'>5. Visualizing in 3D
+</a></li>
+<li><a href='/wiki/IncrementalModel_step6'>6. Multi-Level
+</a></li>
+<li><a href='/wiki/IncrementalModel_step7'>7. Differential Equations
+</a></li>
+</ul>
+<li><a href='/wiki/PredatorPrey'>Predator Prey
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/PredatorPrey_step1'>1. Basic Model
+</a></li>
+<li><a href='/wiki/PredatorPrey_step2'>2. Vegetation Dynamic
+</a></li>
+<li><a href='/wiki/PredatorPrey_step3'>3. Prey Agent Behavior
+</a></li>
+<li><a href='/wiki/PredatorPrey_step4'>4. Inspectors and Monitors
+</a></li>
+<li><a href='/wiki/PredatorPrey_step5'>5. Predator Agent
+</a></li>
+<li><a href='/wiki/PredatorPrey_step6'>6. Breeding
+</a></li>
+<li><a href='/wiki/PredatorPrey_step7'>7. Agent Aspect
+</a></li>
+<li><a href='/wiki/PredatorPrey_step8'>8. Complex Behavior
+</a></li>
+<li><a href='/wiki/PredatorPrey_step9'>9. Stopping condition
+</a></li>
+<li><a href='/wiki/PredatorPrey_step10'>10. Charts
+</a></li>
+<li><a href='/wiki/PredatorPrey_step11'>11. Writing Files
+</a></li>
+<li><a href='/wiki/PredatorPrey_step12'>12. Image loading
+</a></li>
+</ul>
+<li><a href='/wiki/RoadTrafficModel'>Road Traffic
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/RoadTrafficModel_step1'>1. Loading of GIS Data
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step2'>2. People Agents
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step3'>3. Movement of People
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step4'>4. Weight for Road Network
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step5'>5. Dynamic weights
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step6'>6. Charts
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step7'>7. Automatic Road Repair
+</a></li>
+</ul>
+<li><a href='/wiki/ThreeD'>3D Tutorial
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/ThreeD_step1'>1. Basic Model
+</a></li>
+<li><a href='/wiki/ThreeD_step2'>2. Moving Cells
+</a></li>
+<li><a href='/wiki/ThreeD_step3'>3. Connections
+</a></li>
+</ul>
+</ul>
+</ul>
+<li><a href='/wiki/References'>References
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/PlatformDocumentation'>Platform
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/InstallationAndLaunching'>Installation and Launching
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/Installation'>Installation
+</a></li>
+<li><a href='/wiki/Launching'>Launching GAMA
+</a></li>
+<li><a href='/wiki/Headless'>Headless Mode
+</a></li>
+<li><a href='/wiki/Updating'>Updating GAMA
+</a></li>
+<li><a href='/wiki/InstallingPlugins'>Installing Plugins
+</a></li>
+<li><a href='/wiki/Troubleshooting'>Troubleshooting
+</a></li>
+</ul>
+<li><a href='/wiki/WorkspaceProjectsAndModels'>Workspace, Projects and Models
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/NavigatingWorkspace'>Navigating in the Workspace
+</a></li>
+<li><a href='/wiki/ChangingWorkspace'>Changing Workspace
+</a></li>
+<li><a href='/wiki/ImportingModels'>Importing Models
+</a></li>
+</ul>
+<li><a href='/wiki/EditingModels'>Editing models
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/GamlEditorGeneralities'>The GAML Editor - Generalities
+</a></li>
+<li><a href='/wiki/GamlEditorToolbar'>The GAML Editor Toolbar
+</a></li>
+<li><a href='/wiki/ValidationOfModels'>Validation of Models
+</a></li>
+</ul>
+<li><a href='/wiki/RunningExperiments'>Running Experiments
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/LaunchingExperiments'>Launching Experiments from the User Interface
+</a></li>
+<li><a href='/wiki/ExperimentsUserInterface'>Experiments User Interface
+</a></li>
+<li><a href='/wiki/MenusAndCommands'>Menus and Commands
+</a></li>
+<li><a href='/wiki/ParametersView'>Parameters View
+</a></li>
+<li><a href='/wiki/InspectorsAndMonitors'>Inspectors and monitors
+</a></li>
+<li><a href='/wiki/Displays'>Displays
+</a></li>
+<li><a href='/wiki/BatchSpecific'>Batch Specific UI
+</a></li>
+<li><a href='/wiki/ErrorsView'>Errors View
+</a></li>
+</ul>
+<li><a href='/wiki/Preferences'>Preferences
+</a></li>
+</ul>
+<li><a href='/wiki/GamlReferences'>Gaml Reference
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/BuiltInSpecies'>Built-in Species
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/AgentBuiltIn'>The 'agent' built-in species (Under Construction)
+</a></li>
+<li><a href='/wiki/ModelBuiltIn'>The 'model' built-in species (Under Construction)
+</a></li>
+<li><a href='/wiki/ExperimentBuiltIn'>The 'experiment' built-in species (Under Construction)
+</a></li>
+</ul>
+<li><a href='/wiki/BuiltInSkills'>Built-in Skills
+</a></li>
+<li><a href='/wiki/BuiltInArchitectures'>Built-in Architectures
+</a></li>
+<li><a href='/wiki/Statements'>Statements
+</a></li>
+<li><a href='/wiki/DataTypes'>Types
+</a></li>
+<li><a href='/wiki/FileTypes'>File Types
+</a></li>
+<li><a href='/wiki/Expressions'>Expressions
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/Literals'>Literals
+</a></li>
+<li><a href='/wiki/UnitsAndConstants'>Units and constants
+</a></li>
+<li><a href='/wiki/PseudoVariables'>Pseudo-variables
+</a></li>
+<li><a href='/wiki/VariablesAndAttributes'>Variables and Attributes
+</a></li>
+<li><a href='/wiki/Operators'>Operators 
+</a></li>
+</ul>
+</ul>
+</ul>
+<li>Community
+</li>
+<ul class='sub'>
+<li><a href='/wiki/Contribute'>Contribute
+</a></li>
+<li><a href='/wiki/Projects'>Projects
+</a></li>
+<li><a href='/wiki/TrainingSession'>Training Session
+</a></li>
+</ul></ul></div><div id="right">
+<h3>Facebook Activities</h3>
+<ul id="fbquotes">
+</ul>
+<h3>Commit Activities</h3>
+<ul id="commitquotes">
+</ul>
+<h3>Issue Activities</h3>
+<ul id="issuequotes">
+</ul>
+<h3>Gama Platform Users Activities</h3>
+<ul id="googleusersquotes">
+</ul>
+</div><div id="content"><h1 id="developing-a-new-skill">Developing a New Skill</h1>
+
+<p>A skill adds new features (attributes) and new capabilities (actions) to the instances of the species that use it.</p>
+
+<h2 id="defining-the-class">Defining the class</h2>
+
+<p>A Skill is basically a <strong>singleton</strong> and <strong>stateless</strong> Java class that:</p>
+<ul>
+  <li>extends the abstract class <code class="highlighter-rouge">Skill</code>,</li>
+  <li>begins by the annotation <a href="DevelopingIndexAnnotations#@skill">@skill</a>: <code class="highlighter-rouge">@skill(name = "name_of_the_skill_in_gaml")</code>.</li>
+</ul>
+
+<p>Note: GAMA annotations are classes defined into the <code class="highlighter-rouge">msi.gama.precompiler.GamlAnnotations</code> class.</p>
+
+<h2 id="defining-new-attributes">Defining new attributes</h2>
+
+<p>To add new attributes to the species that declares this skill, developers have to define them before the class using the <a href="DevelopingIndexAnnotations#@vars">@vars</a> and <code class="highlighter-rouge">@var</code> annotations.
+The <code class="highlighter-rouge">@vars</code> annotation contains a set of <code class="highlighter-rouge">@var</code> elements.</p>
+
+<p>In a <a href="DevelopingIndexAnnotations#@var">@var</a> element, one has to define the name, the type and the default value of the attribute. For example in MovingSkill:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>@vars({
+  @var(name = IKeyword.SPEED, type = IType.FLOAT, init = "1.0"),
+  @var(name = IKeyword.HEADING, type = IType.INT, init = "rnd(359)")
+})
+</code></pre>
+</div>
+
+<p>In order to detail how to access these new attributes (if needed), developers have to define a getter (using <code class="highlighter-rouge">@getter</code>) and a setter (using <code class="highlighter-rouge">@setter</code>) methods.
+If no getter (and setter) is defined, the attribute can nevertheless be set and get, using implicit by default getter and setter. But as soon as a getter and/or a setter is defined, they replace the implicit default ones.
+For example:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>@getter(var = IKeyword.SPEED)
+public double getSpeed(final IAgent agent) {
+    return (Double) agent.getAttribute(IKeyword.SPEED);
+}
+
+@setter(IKeyword.SPEED)
+public void setSpeed(final IAgent agent, final double s) {
+    agent.setAttribute(IKeyword.SPEED, s);
+}
+</code></pre>
+</div>
+
+<h2 id="defining-new-actions">Defining new actions</h2>
+<p>An action (also called <code class="highlighter-rouge">primitive</code>) is basically a Java method that can be called from the GAML language using the same syntax as the one used for calling actions defined in a model. The method should be annotated with <code class="highlighter-rouge">@action</code>, supplying the name of the action as it will be available in GAML.</p>
+
+<p>The developer can also define parameters for this action using the annotation <code class="highlighter-rouge">@arg</code> will a set of parameters names. For example, the action <code class="highlighter-rouge">goto</code> of the MovingSkill is defined as follows:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>@action(name="goto", args={ 
+    @arg(name = "target", type = { IType.AGENT, IType.POINT,IType.GEOMETRY }, optional = false),
+    @arg(name = IKeyword.SPEED, type = IType.FLOAT, optional = true),
+    @arg(name = "on", type = { IType.GRAPH }, optional = true)
+    }
+)
+
+public IPath primGoto(final IScope scope) throws GamaRuntimeException {
+...
+}
+</code></pre>
+</div>
+<p>It is called in GAMA models with:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>do goto (target: the_target, on: the_graph);
+</code></pre>
+</div>
+<p>or</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>path path_followed &lt;- self goto (target: the_target, on: the_graph, return_path: true);
+</code></pre>
+</div>
+
+<h3 id="access-to-parameters-in-actions">Access to parameters in actions</h3>
+<p>To get the value of the arguments passed in GAML to the Java code, two methods can be useful:</p>
+<ul>
+  <li><code class="highlighter-rouge">scope.hasArg("name_of_argument")</code> returns a boolean value testing whether the argument “name_of_argument” has been defined by the modeler, since all the arguments to actions should be considered as optional.</li>
+  <li><code class="highlighter-rouge">getArg(name_arg,IType)</code>, <code class="highlighter-rouge">getFloatArg(name_param_of_float)</code>, <code class="highlighter-rouge">getIntArg(name_param_of_int)</code> and their variants return the value of the given parameter using a given (or predefined) type to cast it.</li>
+</ul>
+
+<h3 id="warnings">Warnings</h3>
+<p>Developers should notice that:</p>
+<ul>
+  <li>the method associated with an action has to return a non-void object.</li>
+  <li>the method should have only one parameter: the scope (type IScope).</li>
+  <li>the method can only throw <code class="highlighter-rouge">GamaRuntimeException</code>s. Other exceptions should be caught in the method and wrapped in a <code class="highlighter-rouge">GamaRuntimeException</code> before being thrown.</li>
+</ul>
+
+<h2 id="annotations">Annotations</h2>
+<h3 id="skill">@skill</h3>
+<p>This annotations Allows to define a new skill (class grouping variables and actions that can be used by agents).</p>
+
+<p>This annotation contains:</p>
+<ul>
+  <li><strong>name</strong> (String): <em>a String representing the skill name in GAML (must be unique throughout GAML)</em>.</li>
+  <li><strong>attach_to</strong> (set of strings): <em>an array of species names to which the skill will be automatically added (complements the “skills” parameter of species)</em>.</li>
+  <li><strong>internal</strong> (boolean, false by default): <em>return whether this skill is for internal use only</em>.</li>
+  <li><strong>doc</strong> (set of @doc, empty by default): <em>the documentation associated to the skill</em>.</li>
+</ul>
+
+<h3 id="var">@var</h3>
+<p>This annotations is used to describe a single variable or field.</p>
+
+<p>This annotation contains:</p>
+<ul>
+  <li><strong>name</strong> (String): <em>the name of the variable as it can be used in GAML</em>.</li>
+  <li><strong>type</strong> (int): <em>The textual representation of the type of the variable (see IType)</em>.</li>
+  <li><strong>of</strong> (int, 0 by default): <em>The textual representation of the content type of the variable (see IType#defaultContentType())</em>.</li>
+  <li><strong>index</strong> (int, 0 by default): <em>The textual representation of the index type of the variable (see IType#defaultKeyType())</em>.</li>
+  <li><strong>constant</strong> (int, false by default): <em>returns whether or not this variable should be considered as non modifiable</em>.</li>
+  <li><strong>init</strong> (String, “” by default): <em>the initial value of this variable as a String that will be interpreted by GAML</em>.</li>
+  <li><strong>depend_on</strong> (set of Strings, empty by default): <em>an array of String representing the names of the variables on which this variable depends (so that they are computed before)</em>.</li>
+  <li><strong>internal</strong> (boolean, false by default): <em>return whether this var is for internal use only</em>.</li>
+  <li><strong>doc</strong> (set of @doc, empty by default): <em>the documentation associated to the variable</em>.</li>
+</ul>
+
+<h3 id="doc">@doc</h3>
+<p>It provides a unified way of attaching documentation to the various GAML elements tagged by the other annotations. The documentation is automatically assembled at compile time and also used at runtime in GAML editors.</p>
+<ul>
+  <li><strong>value</strong> (String, “” by default): <em>a String representing the documentation of a GAML element</em>.</li>
+  <li><strong>deprecated</strong> (String, “” by default): <em>a String indicating (if it is not empty) that the element is deprecated and defining, if possible, what to use instead</em>.</li>
+  <li><strong>returns</strong> (String, “” by default): <em>the documentation concerning the value(s) returned by this element (if any).</em>.</li>
+  <li><strong>comment</strong> (String, “” by default): <em>an optional comment that will appear differently from the documentation itself</em>.</li>
+  <li><strong>special_cases</strong> (set of Strings, empty by default): <em>an array of String representing the documentation of the “special cases” in which the documented element takes part</em>.</li>
+  <li><strong>examples</strong> (set of Strings, empty by default): <em>an array of String representing some examples or use-cases about how to use this element</em>.</li>
+  <li><strong>see</strong> (set of Strings, empty by default): <em>an array of String representing cross-references to other elements in GAML</em>.</li>
+</ul>
+
+<h3 id="getter">@getter</h3>
+<p>This annotations is used to indicate that a method is to be used as a getter for a variable defined in the class. The variable must be defined on its own (in vars).</p>
+
+<p>This annotation contains:</p>
+<ul>
+  <li><strong>value</strong> (String): the name of the variable for which the annotated method is to be considered as a getter.</li>
+  <li><strong>initializer</strong> (boolean, false by default): returns whether or not this getter should also be used as an initializer</li>
+</ul>
+
+<h3 id="setter">@setter</h3>
+<p>This annotations is used to indicate that a method is to be used as a setter for a variable defined in the class. The variable must be defined on its own (in vars).</p>
+
+<p>This annotation contains:</p>
+<ul>
+  <li><strong>value</strong> (String): the name of the variable for which the annotated method is to be considered as a setter.</li>
+</ul>
+
+<h3 id="action">@action</h3>
+<p>This annotations is used to tag a method that will be considered as an action (or primitive) in GAML.
+The method must have the following signature: <code class="highlighter-rouge">
+Object methodName(IScope) throws GamaRuntimeException</code> and be contained in a class annotated with @species or @skill (or a related class, like a subclass or an interface).</p>
+
+<p>This annotation contains:</p>
+<ul>
+  <li><strong>name</strong> (String): <em>the name of the variable as it can be used in GAML</em>.</li>
+  <li><strong>virtual</strong> (boolean, false by default): <em>if true the action is virtual, i.e. equivalent to abstract method in java</em>.</li>
+  <li><strong>args</strong> (set of arg, empty by default): <em>the list of arguments passed to this action. Each argument is an instance of arg</em>.</li>
+  <li><strong>doc</strong> (set of @doc, empty by default): <em>the documentation associated to the action</em>.</li>
+</ul>
+
+<h3 id="arg">@arg</h3>
+<p>This annotations describes an argument passed to an action.</p>
+
+<p>This annotation contains:</p>
+<ul>
+  <li><strong>name</strong> (String, “” by default): <em>the name of the argument as it can be used in GAML</em>.</li>
+  <li><strong>type</strong> (set of ints, empty by default): <em>An array containing the textual representation of the types that can be taken by the argument (see IType)</em>.</li>
+  <li><strong>optional</strong> (boolean, true by default): <em>whether this argument is optional or not</em>.</li>
+  <li><strong>doc</strong> (set of @doc, empty by default): <em>the documentation associated to the argument.</em></li>
+</ul>
+
+<p>All these annotations are defined in the <code class="highlighter-rouge">GamlAnnotations.java</code> file of the <code class="highlighter-rouge">msi.gama.processor</code> plug-in.</p>
+</div></body></html>

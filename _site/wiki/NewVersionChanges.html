@@ -1,0 +1,518 @@
+
+    <!doctype html><html lang="en"><head><meta charset="utf-8"><title>Java version</title></head>
+    <body>
+    <link rel="stylesheet" href="/style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="//connect.facebook.net/en_US/all.js"></script>
+<script src="/linkify.min.js"></script>
+<script src="/linkify-jquery.min.js"></script>
+<script>
+  $(document).ready(function(){
+	  		$.getJSON('https://graph.facebook.com/238065426321929/feed?access_token=229040647557399|MQKFlFYX7YW25XGj4GUYZ7B1lcY', function(data) {
+		var ahtml="";
+		for(var i = 0; i < 5; i++) {
+			ahtml=ahtml+"<li>"+data["data"][i]["message"]+"</li>";
+		}
+		ahtml=ahtml+"";
+		$("#fbquotes").html(ahtml);
+		$("#fbquotes").linkify();
+	});
+	 
+		$.getJSON('https://api.github.com/repos/gama-platform/gama/commits', function(data) {
+			var ahtml="";
+			for(var i = 0; i < 5; i++) {
+				ahtml=ahtml+"<li>"+data[i]["commit"]["message"]+" by "+data[i]["commit"]["author"]["name"]+" <a href='"+data[i]["commit"]["html_url"]+"'> See more</a></li>";
+			}
+			ahtml=ahtml+"";
+			$("#commitquotes").html(ahtml);
+			$("#commitquotes").linkify();
+		});
+				
+				
+		$.getJSON('https://api.github.com/repos/gama-platform/gama/issues', function(data) {
+			var ahtml="";
+			for(var i = 0; i < 5; i++) {
+				ahtml=ahtml+"<li>"+data[i]["title"]+" by "+data[i]["user"]["login"]+" <a href='"+data[i]["html_url"]+"'> See more</a></li>";
+			}
+			ahtml=ahtml+"";
+			$("#issuequotes").html(ahtml);
+			$("#issuequotes").linkify();
+		});
+		
+		$.getJSON('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fgroups.google.com%2Fforum%2Ffeed%2Fgama-platform%2Ftopics%2Frss.xml%3Fnum%3D15', function(data) {
+			var ahtml="";
+			for(var i = 0; i < 5; i++) {
+				ahtml=ahtml+"<li>"+data["items"][i]["title"]+" by "+data["items"][i]["author"]+" <a href='"+data["items"][i]["link"]+"'> See more</a></li>";
+			}
+			ahtml=ahtml+"";
+			$("#googleusersquotes").html(ahtml);
+			$("#googleusersquotes").linkify();
+			
+		});
+ });
+  
+</script>
+
+      <div id="left">
+
+		<ul class="mcd-menu"><li><a href="/">Home</a></li><li><a href="/">Discussions</a></li>
+<li><a href='/wiki/Tutorials'>Tutorials
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/LearnGAMLStepByStep'>Learn GAML Step by Step
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/Introduction'>Introduction
+</a></li>
+<li><a href='/wiki/StartWithGAML'>Start with GAML
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/ModelOrganization'>Organization of a model
+</a></li>
+<li><a href='/wiki/BasicProgrammingConceptsInGAML'>Basic programming concepts in GAML
+</a></li>
+</ul>
+<li><a href='/wiki/ManipulateBasicSpecies'>Manipulate basic species
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/GlobalSpecies'>The global species
+</a></li>
+<li><a href='/wiki/RegularSpecies'>Regular species
+</a></li>
+<li><a href='/wiki/DefiningActionsAndBehaviors'>Defining actions and behaviors
+</a></li>
+<li><a href='/wiki/InteractionBetweenAgents'>Interaction between agents
+</a></li>
+<li><a href='/wiki/AttachingSkills'>Attaching Skills
+</a></li>
+<li><a href='/wiki/Inheritance'>Inheritance
+</a></li>
+</ul>
+<li><a href='/wiki/DefiningAdvancedSpecies'>Defining advanced species
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/GridSpecies'>Grid Species
+</a></li>
+<li><a href='/wiki/GraphSpecies'>Graph Species
+</a></li>
+<li><a href='/wiki/MirrorSpecies'>Mirror species
+</a></li>
+<li><a href='/wiki/MultiLevelArchitecture'>Multi-level architecture
+</a></li>
+</ul>
+<li><a href='/wiki/DefiningGUIExperiment'>Defining GUI Experiment
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/DefiningParameters'>Defining Parameters
+</a></li>
+<li><a href='/wiki/DefiningDisplaysGeneralities'>Defining displays (Generalities)
+</a></li>
+<li><a href='/wiki/DefiningCharts'>Defining Charts
+</a></li>
+<li><a href='/wiki/Defining3DDisplays'>Defining 3D Displays
+</a></li>
+<li><a href='/wiki/DefiningMonitorsAndInspectors'>Defining monitors and inspectors
+</a></li>
+<li><a href='/wiki/DefiningExportFiles'>Defining export files
+</a></li>
+<li><a href='/wiki/DefiningUserInteraction'>Defining user interaction
+</a></li>
+</ul>
+<li><a href='/wiki/ExploringModels'>Exploring Models
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/RunSeveralSimulations'>Run Several Simulations
+</a></li>
+<li><a href='/wiki/BatchExperiments'>Defining Batch Experiments
+</a></li>
+<li><a href='/wiki/ExplorationMethods'>Exploration Methods
+</a></li>
+</ul>
+<li><a href='/wiki/OptimizingModels'>Optimizing Models
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/RuntimeConcepts'>Runtime Concepts
+</a></li>
+<li><a href='/wiki/OptimizingModels'>Optimizing Models
+</a></li>
+</ul>
+<li><a href='/wiki/MultiParadigmModeling'>Multi-Paradigm Modeling
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/ControlArchitecture'>Control Architectures
+</a></li>
+<li><a href='/wiki/Equations'>Using Equations
+</a></li>
+</ul>
+</ul>
+<li><a href='/wiki/Recipes'>Recipes
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/ManipulateOSMDatas'>Manipulate OSM Datas
+</a></li>
+<li><a href='/wiki/Diffusion'>Implementing diffusion
+</a></li>
+<li><a href='/wiki/UsingDatabase'>Using Database Access
+</a></li>
+<li><a href='/wiki/CallingR'>Calling R
+</a></li>
+<li><a href='/wiki/UsingFIPAACL'>Using FIPA ACL
+</a></li>
+<li><a href='/wiki/GamAnalyzer'>Using GAMAnalyzer
+</a></li>
+<li><a href='/wiki/UsingBDI'>Using BDI
+</a></li>
+<li><a href='/wiki/UsingDrivingSkill'>Advanced Driving Skill
+</a></li>
+<li><a href='/wiki/ManipulateDates'>Manipulate Dates
+</a></li>
+<li><a href='/wiki/ManipulateLight'>Implementing light
+</a></li>
+<li><a href='/wiki/Comodel'>Using Comodel
+</a></li>
+</ul>
+<li><a href='/wiki/Tutorials'>Tutorials
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/LuneraysFlu'>Luneray's flu
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/LuneraysFlu_step1'>1. Creation of a first basic disease spreading model
+</a></li>
+<li><a href='/wiki/LuneraysFlu_step2'>2. Definition of monitors and chart outputs
+</a></li>
+<li><a href='/wiki/LuneraysFlu_step3'>3. Importation of GIS data
+</a></li>
+<li><a href='/wiki/LuneraysFlu_step4'>4. Use of a graph to constraint the movements of people]
+</a></li>
+<li><a href='/wiki/LuneraysFlu_step5'>5. Definition of 3D displays
+</a></li>
+</ul>
+<li><a href='/wiki/IncrementalModel'>Incremental Model
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/IncrementalModel_step1'>1. Simple SI Model
+</a></li>
+<li><a href='/wiki/IncrementalModel_step2'>2. Charts
+</a></li>
+<li><a href='/wiki/IncrementalModel_step3'>3. Integration of GIS Data
+</a></li>
+<li><a href='/wiki/IncrementalModel_step4'>4. Movement on Graph
+</a></li>
+<li><a href='/wiki/IncrementalModel_step5'>5. Visualizing in 3D
+</a></li>
+<li><a href='/wiki/IncrementalModel_step6'>6. Multi-Level
+</a></li>
+<li><a href='/wiki/IncrementalModel_step7'>7. Differential Equations
+</a></li>
+</ul>
+<li><a href='/wiki/PredatorPrey'>Predator Prey
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/PredatorPrey_step1'>1. Basic Model
+</a></li>
+<li><a href='/wiki/PredatorPrey_step2'>2. Vegetation Dynamic
+</a></li>
+<li><a href='/wiki/PredatorPrey_step3'>3. Prey Agent Behavior
+</a></li>
+<li><a href='/wiki/PredatorPrey_step4'>4. Inspectors and Monitors
+</a></li>
+<li><a href='/wiki/PredatorPrey_step5'>5. Predator Agent
+</a></li>
+<li><a href='/wiki/PredatorPrey_step6'>6. Breeding
+</a></li>
+<li><a href='/wiki/PredatorPrey_step7'>7. Agent Aspect
+</a></li>
+<li><a href='/wiki/PredatorPrey_step8'>8. Complex Behavior
+</a></li>
+<li><a href='/wiki/PredatorPrey_step9'>9. Stopping condition
+</a></li>
+<li><a href='/wiki/PredatorPrey_step10'>10. Charts
+</a></li>
+<li><a href='/wiki/PredatorPrey_step11'>11. Writing Files
+</a></li>
+<li><a href='/wiki/PredatorPrey_step12'>12. Image loading
+</a></li>
+</ul>
+<li><a href='/wiki/RoadTrafficModel'>Road Traffic
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/RoadTrafficModel_step1'>1. Loading of GIS Data
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step2'>2. People Agents
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step3'>3. Movement of People
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step4'>4. Weight for Road Network
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step5'>5. Dynamic weights
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step6'>6. Charts
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step7'>7. Automatic Road Repair
+</a></li>
+</ul>
+<li><a href='/wiki/ThreeD'>3D Tutorial
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/ThreeD_step1'>1. Basic Model
+</a></li>
+<li><a href='/wiki/ThreeD_step2'>2. Moving Cells
+</a></li>
+<li><a href='/wiki/ThreeD_step3'>3. Connections
+</a></li>
+</ul>
+</ul>
+</ul>
+<li><a href='/wiki/References'>References
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/PlatformDocumentation'>Platform
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/InstallationAndLaunching'>Installation and Launching
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/Installation'>Installation
+</a></li>
+<li><a href='/wiki/Launching'>Launching GAMA
+</a></li>
+<li><a href='/wiki/Headless'>Headless Mode
+</a></li>
+<li><a href='/wiki/Updating'>Updating GAMA
+</a></li>
+<li><a href='/wiki/InstallingPlugins'>Installing Plugins
+</a></li>
+<li><a href='/wiki/Troubleshooting'>Troubleshooting
+</a></li>
+</ul>
+<li><a href='/wiki/WorkspaceProjectsAndModels'>Workspace, Projects and Models
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/NavigatingWorkspace'>Navigating in the Workspace
+</a></li>
+<li><a href='/wiki/ChangingWorkspace'>Changing Workspace
+</a></li>
+<li><a href='/wiki/ImportingModels'>Importing Models
+</a></li>
+</ul>
+<li><a href='/wiki/EditingModels'>Editing models
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/GamlEditorGeneralities'>The GAML Editor - Generalities
+</a></li>
+<li><a href='/wiki/GamlEditorToolbar'>The GAML Editor Toolbar
+</a></li>
+<li><a href='/wiki/ValidationOfModels'>Validation of Models
+</a></li>
+</ul>
+<li><a href='/wiki/RunningExperiments'>Running Experiments
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/LaunchingExperiments'>Launching Experiments from the User Interface
+</a></li>
+<li><a href='/wiki/ExperimentsUserInterface'>Experiments User Interface
+</a></li>
+<li><a href='/wiki/MenusAndCommands'>Menus and Commands
+</a></li>
+<li><a href='/wiki/ParametersView'>Parameters View
+</a></li>
+<li><a href='/wiki/InspectorsAndMonitors'>Inspectors and monitors
+</a></li>
+<li><a href='/wiki/Displays'>Displays
+</a></li>
+<li><a href='/wiki/BatchSpecific'>Batch Specific UI
+</a></li>
+<li><a href='/wiki/ErrorsView'>Errors View
+</a></li>
+</ul>
+<li><a href='/wiki/Preferences'>Preferences
+</a></li>
+</ul>
+<li><a href='/wiki/GamlReferences'>Gaml Reference
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/BuiltInSpecies'>Built-in Species
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/AgentBuiltIn'>The 'agent' built-in species (Under Construction)
+</a></li>
+<li><a href='/wiki/ModelBuiltIn'>The 'model' built-in species (Under Construction)
+</a></li>
+<li><a href='/wiki/ExperimentBuiltIn'>The 'experiment' built-in species (Under Construction)
+</a></li>
+</ul>
+<li><a href='/wiki/BuiltInSkills'>Built-in Skills
+</a></li>
+<li><a href='/wiki/BuiltInArchitectures'>Built-in Architectures
+</a></li>
+<li><a href='/wiki/Statements'>Statements
+</a></li>
+<li><a href='/wiki/DataTypes'>Types
+</a></li>
+<li><a href='/wiki/FileTypes'>File Types
+</a></li>
+<li><a href='/wiki/Expressions'>Expressions
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/Literals'>Literals
+</a></li>
+<li><a href='/wiki/UnitsAndConstants'>Units and constants
+</a></li>
+<li><a href='/wiki/PseudoVariables'>Pseudo-variables
+</a></li>
+<li><a href='/wiki/VariablesAndAttributes'>Variables and Attributes
+</a></li>
+<li><a href='/wiki/Operators'>Operators 
+</a></li>
+</ul>
+</ul>
+</ul>
+<li>Community
+</li>
+<ul class='sub'>
+<li><a href='/wiki/Contribute'>Contribute
+</a></li>
+<li><a href='/wiki/Projects'>Projects
+</a></li>
+<li><a href='/wiki/TrainingSession'>Training Session
+</a></li>
+</ul></ul></div><div id="right">
+<h3>Facebook Activities</h3>
+<ul id="fbquotes">
+</ul>
+<h3>Commit Activities</h3>
+<ul id="commitquotes">
+</ul>
+<h3>Issue Activities</h3>
+<ul id="issuequotes">
+</ul>
+<h3>Gama Platform Users Activities</h3>
+<ul id="googleusersquotes">
+</ul>
+</div><div id="content"><h1 id="java-version">Java version</h1>
+
+<p>Due to changes in the libraries used by GAMA 1.7, this version now <strong>requires JDK/JVM 1.8</strong> to run.</p>
+
+<h1 id="changes-between-161-and-17-that-can-influence-the-dynamics-of-models">Changes between 1.6.1 and 1.7 that can influence the dynamics of models</h1>
+
+<ul>
+  <li>Initialization order between the initialization of variables and the execution of the <code class="highlighter-rouge">init</code> block in grids
+init -&gt; vars in 1.6.1 / vars -&gt; init in 1.7</li>
+  <li>Initialization order of agents -&gt; now, the init block of the agents are not executed at the end of the global init, but during it.
+put a sample model to explain the order of creation and its differences</li>
+  <li>Initialization of vars to their default value
+map ? list ?</li>
+  <li>Systematic casting and verification of types
+give examples</li>
+  <li>header of CSV files: be careful, in GAMA 1.7, if the first line is detected as a header, it is not read when the file is casted as a matrix (so the first row of the matrix is not the header, but the first line of data)
+gives examples</li>
+  <li>the step of batch experiments is now executed after all repetitions of simulations are done (not after each one). They can however be still accessed using the attributes <code class="highlighter-rouge">simulations</code> (see Batch.gaml in Models Library)</li>
+  <li>signal and diffuse have been merged into a single statement</li>
+  <li>facets do not accept a space between their identifier and the <code class="highlighter-rouge">:</code> anymore.</li>
+  <li>simplification of equation/solve statements and deprecation of old facets</li>
+  <li>in FIPA skill, <code class="highlighter-rouge">content</code>is replaced everywhere with <code class="highlighter-rouge">contents</code></li>
+  <li>in FIPA skill, <code class="highlighter-rouge">receivers</code> is replaced everywhere with <code class="highlighter-rouge">to</code></li>
+  <li>in FIPA skill, <code class="highlighter-rouge">messages</code> is replaced by <code class="highlighter-rouge">mailbox</code></li>
+  <li>The pseudo-attribute <code class="highlighter-rouge">user_location</code> has been removed (not deprecated, unfortunately) and replaced by the “unit” <code class="highlighter-rouge">#user_location</code>.</li>
+  <li>The actions called by an <code class="highlighter-rouge">event</code> layer do not need anymore to define <code class="highlighter-rouge">point</code> and <code class="highlighter-rouge">list&lt;agent&gt;</code> arguments to receive the mouse location and the list of agents selected. Instead, they can now use <code class="highlighter-rouge">#user_location</code> and they have to compute the selected agents by themselves (using an arbitrary function).</li>
+  <li>The random number generators now better handle seeding (larger range), but it can change the series of values previously obtained from a given seed in 1.6.1</li>
+  <li>all models now have a starting_date and a current_date. They then dont begin at an hypothetical “zero” date, but at the epoch date defined by ISO 8601 (1970/1/1). It should not change models that dont rely on dates, except that:</li>
+  <li>#year (and its nicknames #y, #years) and #month (and its nickname #month) do not longer have a default value (of resp. 30 days and 360 days). Instead, they are always evaluated against the current_date of the model. If no starting_date is defined, the values of #month and #year will then depend on the sequence of months and year since epoch day.</li>
+  <li><code class="highlighter-rouge">as_time</code>, <code class="highlighter-rouge">as_system_time</code>, <code class="highlighter-rouge">as_date</code> and <code class="highlighter-rouge">as_system_date</code> have been removed</li>
+</ul>
+
+<h1 id="enhancements-in-17">Enhancements in 1.7</h1>
+
+<ul>
+  <li>Simulations</li>
+  <li>simulations can now be run in parallel withing an experiment (with their outputs, displays, etc.)</li>
+  <li>batch experiments inherit from this possibility and can now run their repetitions in parallel too.</li>
+  <li>
+    <p>concurrency between agents is now possible and can be controlled on a species/grid/ask basis (from multi-threaded concurrency to complete parallelism within a species/grid or between the targets of an <code class="highlighter-rouge">ask</code> statement)</p>
+  </li>
+  <li>Language</li>
+  <li><code class="highlighter-rouge">gama</code> : a new immutable agent that can be invoked to change preferences or access to platform-only properties (like <code class="highlighter-rouge">machine-time</code>)</li>
+  <li><code class="highlighter-rouge">date</code> : new data type that offers the possibility to use a real calendar, to define a <code class="highlighter-rouge">starting_date</code> and to query a <code class="highlighter-rouge">current_date</code> from a simulation, to parse dates from date files or to output them in custom formats. Dates can be added, subtracted, compared. Various new operators (<code class="highlighter-rouge">minus_months</code>, etc.) allow for a fine manipulation of their data. Time units (<code class="highlighter-rouge">#sec</code>, <code class="highlighter-rouge">#s</code>, <code class="highlighter-rouge">#mn</code>, <code class="highlighter-rouge">#minute</code>, <code class="highlighter-rouge">#h</code>, <code class="highlighter-rouge">#hour</code>, <code class="highlighter-rouge">#day</code>, etc.) can be used in conjunction with them. Interval of dates (date1 to date2) can be created and used as a basis for loops, etc. Various simple operators allow for defining conditions based on the current_date (after(date1), before(date2), since(date1), etc.).</li>
+  <li>font in draw</li>
+  <li>BDI control architecture for agents</li>
+  <li>file management, new operators, new statements, new skills(?), new built-in variables, files can now download their contents from the web by using standard http: https: addresses instead of file paths.</li>
+  <li>The <code class="highlighter-rouge">save</code> can now directly manipulate files and … save them. So something like <code class="highlighter-rouge">save shape_file("bb.shp", my_agents collect each.shape);</code> is possible.</li>
+  <li><code class="highlighter-rouge">status</code> statement (to manipulate the status line from GAML)</li>
+  <li>new operators (<code class="highlighter-rouge">sum_of</code>, <code class="highlighter-rouge">product_of</code>, etc.)</li>
+  <li>casting of files works</li>
+  <li>co-modeling (importation of micro-models that can be managed within a macro-model)</li>
+  <li>populations of agents can now be easily exported to CSV files using the <code class="highlighter-rouge">save</code> statement</li>
+  <li>Simple <code class="highlighter-rouge">messaging</code> skill between agents</li>
+  <li>Terminal commands can now be issued from within GAMA using the <code class="highlighter-rouge">console</code> operator</li>
+  <li>New <code class="highlighter-rouge">status</code> statement allows to change the text of the status.</li>
+  <li>light statement in 3D display provides the possibility to custom your lights (point lights, direction lights, spot lights)</li>
+  <li>
+    <p><code class="highlighter-rouge">on_change:</code> facet for attributes/parameters allows to define a sequence of statements to run whenever the value changes.</p>
+  </li>
+  <li>Data importation</li>
+  <li>draw of complex shapes through obj file</li>
+  <li>new types fo files are taken into account: geotiff and dxf</li>
+  <li>viewers for common files</li>
+  <li>
+    <p>navigator: better overview of model files and their support files, addition of plugin models</p>
+  </li>
+  <li>Editor</li>
+  <li>doc on built-in elements, templates, shortcuts to common tasks, hyperlinks to files used</li>
+  <li>improvement in time, gathering of infos/todos</li>
+  <li>
+    <p>warnings can be removed from model files</p>
+  </li>
+  <li>Models library:</li>
+  <li>
+    <p>New models (make a list)</p>
+  </li>
+  <li>Preferences</li>
+  <li>
+    <p>For performances and bug fixes in displays</p>
+  </li>
+  <li>Simulation displays</li>
+  <li>fullscreen mode for displays (ESC key)</li>
+  <li>CTRL+O for overlay and CTRL+L for layers side controls</li>
+  <li>cleaner OpenGL displays (less garbage, better drawing of lines, rotation helper, sticky ROI, etc.)</li>
+  <li>possibility to use a new OpenGl pipeline and to define keystoning parameters (for projections)</li>
+  <li>faster java2D displays (esp. on zoom)</li>
+  <li>better user interaction (mouse move, hover, key listener)</li>
+  <li>a whole new set of charts</li>
+  <li>getting values when moving the mouse on charts</li>
+  <li>possibility to declare <code class="highlighter-rouge">permanent layout: </code> + <code class="highlighter-rouge">#splitted</code>, <code class="highlighter-rouge">#horizontal</code>, <code class="highlighter-rouge">#vertical</code>, <code class="highlighter-rouge">#stacked</code> in the <code class="highlighter-rouge">output</code> section to automatically layout the display view.</li>
+  <li>
+    <p>Changing simulation names is reflected in their display titles (and it can be dynamic)</p>
+  </li>
+  <li>Error view</li>
+  <li>Much faster (up to 100x !) display of errors</li>
+  <li>
+    <p>Contextual menu to copy the text of errors to clipboard or open the editor on it</p>
+  </li>
+  <li>Validation</li>
+  <li>Faster validation of multi-file models (x2 approx.)</li>
+  <li>Much less memory used compared to 1.6.1 (/10 approx.)</li>
+  <li>
+    <p>No more “false positive” errors</p>
+  </li>
+  <li>Console</li>
+  <li>Interactive console allows to directly interact with agents (experiments, simulations and any agent) and get a direct feedback on the impact of code execution using a new interpreter integrated with the console. Available in the modeling perspective (to interact with the new <code class="highlighter-rouge">gama</code> agent) as well as the simulation perspective (to interact with the current <code class="highlighter-rouge">experiment</code> agent).</li>
+  <li>
+    <p>Console now accepts colored text output</p>
+  </li>
+  <li>Monitor view</li>
+  <li>
+    <p>monitors can have colors</p>
+  </li>
+  <li>GAMA-wide online help on the language</li>
+  <li>
+    <p>A global search engine is now available in the top-right corner of the GAMA window to look for GAML idioms</p>
+  </li>
+  <li>Serialization</li>
+  <li>Serialize simulations and replay them (to come)</li>
+  <li>
+    <p>Serialization and deserialization of agents between simulations (to come)</p>
+  </li>
+  <li>Allow TCP, UDP and MQQT communications between agents in different simulations (to come)</li>
+</ul>
+</div></body></html>

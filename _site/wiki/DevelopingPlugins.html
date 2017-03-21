@@ -1,0 +1,592 @@
+
+    <!doctype html><html lang="en"><head><meta charset="utf-8"><title>Developing Plugins</title></head>
+    <body>
+    <link rel="stylesheet" href="/style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="//connect.facebook.net/en_US/all.js"></script>
+<script src="/linkify.min.js"></script>
+<script src="/linkify-jquery.min.js"></script>
+<script>
+  $(document).ready(function(){
+	  		$.getJSON('https://graph.facebook.com/238065426321929/feed?access_token=229040647557399|MQKFlFYX7YW25XGj4GUYZ7B1lcY', function(data) {
+		var ahtml="";
+		for(var i = 0; i < 5; i++) {
+			ahtml=ahtml+"<li>"+data["data"][i]["message"]+"</li>";
+		}
+		ahtml=ahtml+"";
+		$("#fbquotes").html(ahtml);
+		$("#fbquotes").linkify();
+	});
+	 
+		$.getJSON('https://api.github.com/repos/gama-platform/gama/commits', function(data) {
+			var ahtml="";
+			for(var i = 0; i < 5; i++) {
+				ahtml=ahtml+"<li>"+data[i]["commit"]["message"]+" by "+data[i]["commit"]["author"]["name"]+" <a href='"+data[i]["commit"]["html_url"]+"'> See more</a></li>";
+			}
+			ahtml=ahtml+"";
+			$("#commitquotes").html(ahtml);
+			$("#commitquotes").linkify();
+		});
+				
+				
+		$.getJSON('https://api.github.com/repos/gama-platform/gama/issues', function(data) {
+			var ahtml="";
+			for(var i = 0; i < 5; i++) {
+				ahtml=ahtml+"<li>"+data[i]["title"]+" by "+data[i]["user"]["login"]+" <a href='"+data[i]["html_url"]+"'> See more</a></li>";
+			}
+			ahtml=ahtml+"";
+			$("#issuequotes").html(ahtml);
+			$("#issuequotes").linkify();
+		});
+		
+		$.getJSON('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fgroups.google.com%2Fforum%2Ffeed%2Fgama-platform%2Ftopics%2Frss.xml%3Fnum%3D15', function(data) {
+			var ahtml="";
+			for(var i = 0; i < 5; i++) {
+				ahtml=ahtml+"<li>"+data["items"][i]["title"]+" by "+data["items"][i]["author"]+" <a href='"+data["items"][i]["link"]+"'> See more</a></li>";
+			}
+			ahtml=ahtml+"";
+			$("#googleusersquotes").html(ahtml);
+			$("#googleusersquotes").linkify();
+			
+		});
+ });
+  
+</script>
+
+      <div id="left">
+
+		<ul class="mcd-menu"><li><a href="/">Home</a></li><li><a href="/">Discussions</a></li>
+<li><a href='/wiki/Tutorials'>Tutorials
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/LearnGAMLStepByStep'>Learn GAML Step by Step
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/Introduction'>Introduction
+</a></li>
+<li><a href='/wiki/StartWithGAML'>Start with GAML
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/ModelOrganization'>Organization of a model
+</a></li>
+<li><a href='/wiki/BasicProgrammingConceptsInGAML'>Basic programming concepts in GAML
+</a></li>
+</ul>
+<li><a href='/wiki/ManipulateBasicSpecies'>Manipulate basic species
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/GlobalSpecies'>The global species
+</a></li>
+<li><a href='/wiki/RegularSpecies'>Regular species
+</a></li>
+<li><a href='/wiki/DefiningActionsAndBehaviors'>Defining actions and behaviors
+</a></li>
+<li><a href='/wiki/InteractionBetweenAgents'>Interaction between agents
+</a></li>
+<li><a href='/wiki/AttachingSkills'>Attaching Skills
+</a></li>
+<li><a href='/wiki/Inheritance'>Inheritance
+</a></li>
+</ul>
+<li><a href='/wiki/DefiningAdvancedSpecies'>Defining advanced species
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/GridSpecies'>Grid Species
+</a></li>
+<li><a href='/wiki/GraphSpecies'>Graph Species
+</a></li>
+<li><a href='/wiki/MirrorSpecies'>Mirror species
+</a></li>
+<li><a href='/wiki/MultiLevelArchitecture'>Multi-level architecture
+</a></li>
+</ul>
+<li><a href='/wiki/DefiningGUIExperiment'>Defining GUI Experiment
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/DefiningParameters'>Defining Parameters
+</a></li>
+<li><a href='/wiki/DefiningDisplaysGeneralities'>Defining displays (Generalities)
+</a></li>
+<li><a href='/wiki/DefiningCharts'>Defining Charts
+</a></li>
+<li><a href='/wiki/Defining3DDisplays'>Defining 3D Displays
+</a></li>
+<li><a href='/wiki/DefiningMonitorsAndInspectors'>Defining monitors and inspectors
+</a></li>
+<li><a href='/wiki/DefiningExportFiles'>Defining export files
+</a></li>
+<li><a href='/wiki/DefiningUserInteraction'>Defining user interaction
+</a></li>
+</ul>
+<li><a href='/wiki/ExploringModels'>Exploring Models
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/RunSeveralSimulations'>Run Several Simulations
+</a></li>
+<li><a href='/wiki/BatchExperiments'>Defining Batch Experiments
+</a></li>
+<li><a href='/wiki/ExplorationMethods'>Exploration Methods
+</a></li>
+</ul>
+<li><a href='/wiki/OptimizingModels'>Optimizing Models
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/RuntimeConcepts'>Runtime Concepts
+</a></li>
+<li><a href='/wiki/OptimizingModels'>Optimizing Models
+</a></li>
+</ul>
+<li><a href='/wiki/MultiParadigmModeling'>Multi-Paradigm Modeling
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/ControlArchitecture'>Control Architectures
+</a></li>
+<li><a href='/wiki/Equations'>Using Equations
+</a></li>
+</ul>
+</ul>
+<li><a href='/wiki/Recipes'>Recipes
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/ManipulateOSMDatas'>Manipulate OSM Datas
+</a></li>
+<li><a href='/wiki/Diffusion'>Implementing diffusion
+</a></li>
+<li><a href='/wiki/UsingDatabase'>Using Database Access
+</a></li>
+<li><a href='/wiki/CallingR'>Calling R
+</a></li>
+<li><a href='/wiki/UsingFIPAACL'>Using FIPA ACL
+</a></li>
+<li><a href='/wiki/GamAnalyzer'>Using GAMAnalyzer
+</a></li>
+<li><a href='/wiki/UsingBDI'>Using BDI
+</a></li>
+<li><a href='/wiki/UsingDrivingSkill'>Advanced Driving Skill
+</a></li>
+<li><a href='/wiki/ManipulateDates'>Manipulate Dates
+</a></li>
+<li><a href='/wiki/ManipulateLight'>Implementing light
+</a></li>
+<li><a href='/wiki/Comodel'>Using Comodel
+</a></li>
+</ul>
+<li><a href='/wiki/Tutorials'>Tutorials
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/LuneraysFlu'>Luneray's flu
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/LuneraysFlu_step1'>1. Creation of a first basic disease spreading model
+</a></li>
+<li><a href='/wiki/LuneraysFlu_step2'>2. Definition of monitors and chart outputs
+</a></li>
+<li><a href='/wiki/LuneraysFlu_step3'>3. Importation of GIS data
+</a></li>
+<li><a href='/wiki/LuneraysFlu_step4'>4. Use of a graph to constraint the movements of people]
+</a></li>
+<li><a href='/wiki/LuneraysFlu_step5'>5. Definition of 3D displays
+</a></li>
+</ul>
+<li><a href='/wiki/IncrementalModel'>Incremental Model
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/IncrementalModel_step1'>1. Simple SI Model
+</a></li>
+<li><a href='/wiki/IncrementalModel_step2'>2. Charts
+</a></li>
+<li><a href='/wiki/IncrementalModel_step3'>3. Integration of GIS Data
+</a></li>
+<li><a href='/wiki/IncrementalModel_step4'>4. Movement on Graph
+</a></li>
+<li><a href='/wiki/IncrementalModel_step5'>5. Visualizing in 3D
+</a></li>
+<li><a href='/wiki/IncrementalModel_step6'>6. Multi-Level
+</a></li>
+<li><a href='/wiki/IncrementalModel_step7'>7. Differential Equations
+</a></li>
+</ul>
+<li><a href='/wiki/PredatorPrey'>Predator Prey
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/PredatorPrey_step1'>1. Basic Model
+</a></li>
+<li><a href='/wiki/PredatorPrey_step2'>2. Vegetation Dynamic
+</a></li>
+<li><a href='/wiki/PredatorPrey_step3'>3. Prey Agent Behavior
+</a></li>
+<li><a href='/wiki/PredatorPrey_step4'>4. Inspectors and Monitors
+</a></li>
+<li><a href='/wiki/PredatorPrey_step5'>5. Predator Agent
+</a></li>
+<li><a href='/wiki/PredatorPrey_step6'>6. Breeding
+</a></li>
+<li><a href='/wiki/PredatorPrey_step7'>7. Agent Aspect
+</a></li>
+<li><a href='/wiki/PredatorPrey_step8'>8. Complex Behavior
+</a></li>
+<li><a href='/wiki/PredatorPrey_step9'>9. Stopping condition
+</a></li>
+<li><a href='/wiki/PredatorPrey_step10'>10. Charts
+</a></li>
+<li><a href='/wiki/PredatorPrey_step11'>11. Writing Files
+</a></li>
+<li><a href='/wiki/PredatorPrey_step12'>12. Image loading
+</a></li>
+</ul>
+<li><a href='/wiki/RoadTrafficModel'>Road Traffic
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/RoadTrafficModel_step1'>1. Loading of GIS Data
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step2'>2. People Agents
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step3'>3. Movement of People
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step4'>4. Weight for Road Network
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step5'>5. Dynamic weights
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step6'>6. Charts
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step7'>7. Automatic Road Repair
+</a></li>
+</ul>
+<li><a href='/wiki/ThreeD'>3D Tutorial
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/ThreeD_step1'>1. Basic Model
+</a></li>
+<li><a href='/wiki/ThreeD_step2'>2. Moving Cells
+</a></li>
+<li><a href='/wiki/ThreeD_step3'>3. Connections
+</a></li>
+</ul>
+</ul>
+</ul>
+<li><a href='/wiki/References'>References
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/PlatformDocumentation'>Platform
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/InstallationAndLaunching'>Installation and Launching
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/Installation'>Installation
+</a></li>
+<li><a href='/wiki/Launching'>Launching GAMA
+</a></li>
+<li><a href='/wiki/Headless'>Headless Mode
+</a></li>
+<li><a href='/wiki/Updating'>Updating GAMA
+</a></li>
+<li><a href='/wiki/InstallingPlugins'>Installing Plugins
+</a></li>
+<li><a href='/wiki/Troubleshooting'>Troubleshooting
+</a></li>
+</ul>
+<li><a href='/wiki/WorkspaceProjectsAndModels'>Workspace, Projects and Models
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/NavigatingWorkspace'>Navigating in the Workspace
+</a></li>
+<li><a href='/wiki/ChangingWorkspace'>Changing Workspace
+</a></li>
+<li><a href='/wiki/ImportingModels'>Importing Models
+</a></li>
+</ul>
+<li><a href='/wiki/EditingModels'>Editing models
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/GamlEditorGeneralities'>The GAML Editor - Generalities
+</a></li>
+<li><a href='/wiki/GamlEditorToolbar'>The GAML Editor Toolbar
+</a></li>
+<li><a href='/wiki/ValidationOfModels'>Validation of Models
+</a></li>
+</ul>
+<li><a href='/wiki/RunningExperiments'>Running Experiments
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/LaunchingExperiments'>Launching Experiments from the User Interface
+</a></li>
+<li><a href='/wiki/ExperimentsUserInterface'>Experiments User Interface
+</a></li>
+<li><a href='/wiki/MenusAndCommands'>Menus and Commands
+</a></li>
+<li><a href='/wiki/ParametersView'>Parameters View
+</a></li>
+<li><a href='/wiki/InspectorsAndMonitors'>Inspectors and monitors
+</a></li>
+<li><a href='/wiki/Displays'>Displays
+</a></li>
+<li><a href='/wiki/BatchSpecific'>Batch Specific UI
+</a></li>
+<li><a href='/wiki/ErrorsView'>Errors View
+</a></li>
+</ul>
+<li><a href='/wiki/Preferences'>Preferences
+</a></li>
+</ul>
+<li><a href='/wiki/GamlReferences'>Gaml Reference
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/BuiltInSpecies'>Built-in Species
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/AgentBuiltIn'>The 'agent' built-in species (Under Construction)
+</a></li>
+<li><a href='/wiki/ModelBuiltIn'>The 'model' built-in species (Under Construction)
+</a></li>
+<li><a href='/wiki/ExperimentBuiltIn'>The 'experiment' built-in species (Under Construction)
+</a></li>
+</ul>
+<li><a href='/wiki/BuiltInSkills'>Built-in Skills
+</a></li>
+<li><a href='/wiki/BuiltInArchitectures'>Built-in Architectures
+</a></li>
+<li><a href='/wiki/Statements'>Statements
+</a></li>
+<li><a href='/wiki/DataTypes'>Types
+</a></li>
+<li><a href='/wiki/FileTypes'>File Types
+</a></li>
+<li><a href='/wiki/Expressions'>Expressions
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/Literals'>Literals
+</a></li>
+<li><a href='/wiki/UnitsAndConstants'>Units and constants
+</a></li>
+<li><a href='/wiki/PseudoVariables'>Pseudo-variables
+</a></li>
+<li><a href='/wiki/VariablesAndAttributes'>Variables and Attributes
+</a></li>
+<li><a href='/wiki/Operators'>Operators 
+</a></li>
+</ul>
+</ul>
+</ul>
+<li>Community
+</li>
+<ul class='sub'>
+<li><a href='/wiki/Contribute'>Contribute
+</a></li>
+<li><a href='/wiki/Projects'>Projects
+</a></li>
+<li><a href='/wiki/TrainingSession'>Training Session
+</a></li>
+</ul></ul></div><div id="right">
+<h3>Facebook Activities</h3>
+<ul id="fbquotes">
+</ul>
+<h3>Commit Activities</h3>
+<ul id="commitquotes">
+</ul>
+<h3>Issue Activities</h3>
+<ul id="issuequotes">
+</ul>
+<h3>Gama Platform Users Activities</h3>
+<ul id="googleusersquotes">
+</ul>
+</div><div id="content"><h1 id="developing-plugins">Developing Plugins</h1>
+
+<p>This page details how to create a new plug-in in order to extend the GAML language with new skills, species, displays or operators.
+It also details how to create a plug-in that can be  uploaded on an update site and can be installed into the GAMA release.
+We consider here that the developer version of GAMA has been installed (as detailled in <a href="InstallingGitVersion">this page</a>).</p>
+
+<h2 id="creation-of-a-plug-in">Creation of a plug-in</h2>
+
+<p>Here are detailled steps to create and configure a new GAMA plug-in.</p>
+
+<ul>
+  <li>File &gt; New &gt; Project &gt; plug-in project</li>
+  <li>In the “New plug-in Project” / “Plug-in project” window:
+    <ul>
+      <li>Choose as <strong>name</strong> « name_of_the_plugin » (or anything else)</li>
+      <li>Check “Use défaut location”</li>
+      <li>Check “Create a Java Project”</li>
+      <li>The project should be targeted to run with Eclipse</li>
+      <li>working set is unchecked</li>
+      <li>Click on “Next”</li>
+    </ul>
+  </li>
+  <li>In the “New plug-in Project” / “Content” window:
+    <ul>
+      <li>Id : could contain the name of your institution and/or your project, e.g. « irit.maelia.gaml.additions »</li>
+      <li>version 1.0.0.qualifier (this latter mention is important if you plan on distributing the plugin on GAMA update site)</li>
+      <li>Name « Additions to GAML from Maelia project »</li>
+      <li>Uncheck “Generate an activator, a Java class that controls the plug-in’s life cycle” ,</li>
+      <li>Uncheck “This plug-in will make contributions to the UI”</li>
+      <li>Check “No” when its asks “Would you like to create a rich client application ?”</li>
+      <li>Click on “Next”</li>
+    </ul>
+  </li>
+  <li>In the “New plug-in Project” / “Templates” window:
+    <ul>
+      <li>Uncheck “Create a plug-in using one of the templates”</li>
+      <li>Click on “Finish”</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Your plug-in has been created.</p>
+
+<ul>
+  <li>Edit the file “Manifest.MF”:
+    <ul>
+      <li>Overview pane:
+        <ul>
+          <li>check « This plug-in is a singleton »</li>
+        </ul>
+      </li>
+      <li>Dependencies pane:
+        <ul>
+          <li>add (at least minimum) the three plug-ins “msi.gama.core”, “msi.gama.ext” and “msi.gama.processor” in the “Required Plug-ins”. When you click on “Add”, a new window will appear without any plug-in. Just write the beginning of the plug-in name in the text field under “Select a plug-in”.</li>
+        </ul>
+      </li>
+      <li>Runtime pane:
+        <ul>
+          <li>In exported Packages: nothing (but when you will have implemented new packages in the plug-in you should add them there)</li>
+          <li>Add in the classpath all the additional libraries (.jar files) used in the project.</li>
+        </ul>
+      </li>
+      <li>Extensions pane:
+        <ul>
+          <li>“Add” “gaml.extension”</li>
+        </ul>
+      </li>
+      <li>Save the file. This should create a “plugin.xml” file.</li>
+    </ul>
+  </li>
+  <li>Select the project and in menu Project &gt; Properties:
+    <ul>
+      <li>Java Compiler  &gt; Annotation Processing: check “Enable project specific settings”, then in “Generated Source Directory”, change “.apt_generated” in “gaml”,</li>
+      <li>Java Compiler  &gt; Annotation Processing &gt; Factory path: check “Enable project specific settings”, then “Add Jars” and choose “msi.gama.processor/processor/plugins/msi.gama.processor.1.4.0.jar”</li>
+      <li>Close the menu. It should compile the project and create the <code class="highlighter-rouge">gaml</code> directory.</li>
+      <li>Return in the Project &gt; Properties Menu.</li>
+      <li>In Java Buildpath  &gt; Source, check that the gaml directory has been added. Otherwise click on Add Folder and select the gaml directory</li>
+    </ul>
+  </li>
+</ul>
+
+<p>The plug-in is ready to accept any addition to the GAML language, e.g. skills, actions, operators.</p>
+
+<p>Do not forget to export the created packages that could be used by “clients”, especially the packages containing the code of the additions (in the plugin.xml of the new project, tab “Runtime”).</p>
+
+<p>To test the plug-in and use it into GAMA, developers have to define a new feature project containing your plugin and its dependencies, and adds this feature to the existing product (or a new .product file of your own).
+The use of feature is also mandatory to define a plug-in that can be uploaded on the update site and can be installed in the release of GAMA.</p>
+
+<h2 id="creation-of-a-feature">Creation of a feature</h2>
+
+<p>A feature is an Eclipse project dedicated to gather one or several plug-ins to integrate them into a product or to deploy them on the update site and install them from the GAMA release (a feature is mandatory in this case).</p>
+
+<p>Here are detailled steps to create and configure a new feature.</p>
+
+<ul>
+  <li>File &gt; New &gt; Feature project (or File &gt; New &gt; Project… then  Plug-in Development &gt; Feature Project)</li>
+  <li>In Feature properties
+    <ul>
+      <li>Choose a project name (e.g. “institution.gama.feature.pluginsName”)</li>
+      <li>Click on “Next”</li>
+    </ul>
+  </li>
+  <li>In Referenced Plug-ins and fragments
+    <ul>
+      <li>Check “Initialize from the plug-ins list:”</li>
+      <li>Choose the plug-ins that have to be gathered in the feature</li>
+      <li>Click on “Finish”</li>
+    </ul>
+  </li>
+  <li>A new project has been created. The “feature.xml” file will configure the feature.
+    <ul>
+      <li>In “Information pane”:
+        <ul>
+          <li>You can add description of the various plug-ins of the feature, define the copyright notice and the licence.</li>
+        </ul>
+      </li>
+      <li>In “Plug-ins and Fragments”
+        <ul>
+          <li>In the Plug-ins and Fragments, additional plug-ins can be added.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="addition-of-a-feature-to-the-product">Addition of a feature to the product</h2>
+
+<p>In the product, e.g. <code class="highlighter-rouge">gama.product</code> in the <code class="highlighter-rouge">ummisco.gama.product</code> project:</p>
+<ul>
+  <li>Contents pane
+    <ul>
+      <li>Click on Add button</li>
+      <li>In the window select the feature</li>
+      <li>Click on OK.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Remark:</strong> To check whether the new plug-in has been taken into account by GAMA, after GAMA launch, it should appear in the Eclipse console in a line beginning by “» GAMA bundle loaded in “.</p>
+
+<h2 id="how-to-make-a-plug-in-available-as-an-extension-for-the-gama-release">How to make a plug-in available as an extension for the GAMA release</h2>
+
+<p>Once the plug-in has been tested in the GAMA SVN version, it can be made available for GAMA release users.</p>
+
+<p>First, the <code class="highlighter-rouge">update_site</code> should be checked out from the SVN repository:</p>
+<ul>
+  <li>File &gt; New &gt; Other… &gt; SVN &gt; Project from SVN</li>
+  <li>In Checkout Project from SVN repository
+    <ul>
+      <li>Use existing repository location (it is the same location as for the GAMA code)</li>
+      <li>Next</li>
+    </ul>
+  </li>
+  <li>In Select resource:
+    <ul>
+      <li>Browse
+        <ul>
+          <li>choose svn &gt; update_site</li>
+        </ul>
+      </li>
+      <li>Finish</li>
+    </ul>
+  </li>
+  <li>Finish</li>
+</ul>
+
+<p>Now the update_site project is available in the project list (in Package Explorer).
+The sequel describes how to add a new feature to the update site.</p>
+<ul>
+  <li>Open the <code class="highlighter-rouge">site.xml</code> file</li>
+  <li>In update site Map:
+    <ul>
+      <li>Click on Extensions</li>
+      <li>click on the Add Feature… button
+        <ul>
+          <li>Choose the feature to be added</li>
+          <li>It should appear in Extensions</li>
+        </ul>
+      </li>
+      <li>Select the added feature and click on the Synchronize… button
+        <ul>
+          <li>Check Synchronize selected features only</li>
+          <li>Finish</li>
+        </ul>
+      </li>
+      <li>Select the added feature and click on the Build button</li>
+    </ul>
+  </li>
+  <li>All the files and folder of the update_site project have been modified.</li>
+  <li>Commit all the modifications on the SVN repository
+    <ul>
+      <li>Richt-click on the project, Team &gt; Update</li>
+      <li>Richt-click on the project, Team &gt; Commit…</li>
+    </ul>
+  </li>
+</ul>
+
+<p>The plug-in is now available as an extension from the GAMA release.
+More details about the update of the GAMA realease are available <a href="Updating">on the dedicated page</a>.</p>
+</div></body></html>

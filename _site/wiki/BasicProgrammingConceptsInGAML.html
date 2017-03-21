@@ -1,0 +1,846 @@
+
+    <!doctype html><html lang="en"><head><meta charset="utf-8"><title>Basic programming concepts in GAML</title></head>
+    <body>
+    <link rel="stylesheet" href="/style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="//connect.facebook.net/en_US/all.js"></script>
+<script src="/linkify.min.js"></script>
+<script src="/linkify-jquery.min.js"></script>
+<script>
+  $(document).ready(function(){
+	  		$.getJSON('https://graph.facebook.com/238065426321929/feed?access_token=229040647557399|MQKFlFYX7YW25XGj4GUYZ7B1lcY', function(data) {
+		var ahtml="";
+		for(var i = 0; i < 5; i++) {
+			ahtml=ahtml+"<li>"+data["data"][i]["message"]+"</li>";
+		}
+		ahtml=ahtml+"";
+		$("#fbquotes").html(ahtml);
+		$("#fbquotes").linkify();
+	});
+	 
+		$.getJSON('https://api.github.com/repos/gama-platform/gama/commits', function(data) {
+			var ahtml="";
+			for(var i = 0; i < 5; i++) {
+				ahtml=ahtml+"<li>"+data[i]["commit"]["message"]+" by "+data[i]["commit"]["author"]["name"]+" <a href='"+data[i]["commit"]["html_url"]+"'> See more</a></li>";
+			}
+			ahtml=ahtml+"";
+			$("#commitquotes").html(ahtml);
+			$("#commitquotes").linkify();
+		});
+				
+				
+		$.getJSON('https://api.github.com/repos/gama-platform/gama/issues', function(data) {
+			var ahtml="";
+			for(var i = 0; i < 5; i++) {
+				ahtml=ahtml+"<li>"+data[i]["title"]+" by "+data[i]["user"]["login"]+" <a href='"+data[i]["html_url"]+"'> See more</a></li>";
+			}
+			ahtml=ahtml+"";
+			$("#issuequotes").html(ahtml);
+			$("#issuequotes").linkify();
+		});
+		
+		$.getJSON('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fgroups.google.com%2Fforum%2Ffeed%2Fgama-platform%2Ftopics%2Frss.xml%3Fnum%3D15', function(data) {
+			var ahtml="";
+			for(var i = 0; i < 5; i++) {
+				ahtml=ahtml+"<li>"+data["items"][i]["title"]+" by "+data["items"][i]["author"]+" <a href='"+data["items"][i]["link"]+"'> See more</a></li>";
+			}
+			ahtml=ahtml+"";
+			$("#googleusersquotes").html(ahtml);
+			$("#googleusersquotes").linkify();
+			
+		});
+ });
+  
+</script>
+
+      <div id="left">
+
+		<ul class="mcd-menu"><li><a href="/">Home</a></li><li><a href="/">Discussions</a></li>
+<li><a href='/wiki/Tutorials'>Tutorials
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/LearnGAMLStepByStep'>Learn GAML Step by Step
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/Introduction'>Introduction
+</a></li>
+<li><a href='/wiki/StartWithGAML'>Start with GAML
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/ModelOrganization'>Organization of a model
+</a></li>
+<li><a href='/wiki/BasicProgrammingConceptsInGAML'>Basic programming concepts in GAML
+</a></li>
+</ul>
+<li><a href='/wiki/ManipulateBasicSpecies'>Manipulate basic species
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/GlobalSpecies'>The global species
+</a></li>
+<li><a href='/wiki/RegularSpecies'>Regular species
+</a></li>
+<li><a href='/wiki/DefiningActionsAndBehaviors'>Defining actions and behaviors
+</a></li>
+<li><a href='/wiki/InteractionBetweenAgents'>Interaction between agents
+</a></li>
+<li><a href='/wiki/AttachingSkills'>Attaching Skills
+</a></li>
+<li><a href='/wiki/Inheritance'>Inheritance
+</a></li>
+</ul>
+<li><a href='/wiki/DefiningAdvancedSpecies'>Defining advanced species
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/GridSpecies'>Grid Species
+</a></li>
+<li><a href='/wiki/GraphSpecies'>Graph Species
+</a></li>
+<li><a href='/wiki/MirrorSpecies'>Mirror species
+</a></li>
+<li><a href='/wiki/MultiLevelArchitecture'>Multi-level architecture
+</a></li>
+</ul>
+<li><a href='/wiki/DefiningGUIExperiment'>Defining GUI Experiment
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/DefiningParameters'>Defining Parameters
+</a></li>
+<li><a href='/wiki/DefiningDisplaysGeneralities'>Defining displays (Generalities)
+</a></li>
+<li><a href='/wiki/DefiningCharts'>Defining Charts
+</a></li>
+<li><a href='/wiki/Defining3DDisplays'>Defining 3D Displays
+</a></li>
+<li><a href='/wiki/DefiningMonitorsAndInspectors'>Defining monitors and inspectors
+</a></li>
+<li><a href='/wiki/DefiningExportFiles'>Defining export files
+</a></li>
+<li><a href='/wiki/DefiningUserInteraction'>Defining user interaction
+</a></li>
+</ul>
+<li><a href='/wiki/ExploringModels'>Exploring Models
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/RunSeveralSimulations'>Run Several Simulations
+</a></li>
+<li><a href='/wiki/BatchExperiments'>Defining Batch Experiments
+</a></li>
+<li><a href='/wiki/ExplorationMethods'>Exploration Methods
+</a></li>
+</ul>
+<li><a href='/wiki/OptimizingModels'>Optimizing Models
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/RuntimeConcepts'>Runtime Concepts
+</a></li>
+<li><a href='/wiki/OptimizingModels'>Optimizing Models
+</a></li>
+</ul>
+<li><a href='/wiki/MultiParadigmModeling'>Multi-Paradigm Modeling
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/ControlArchitecture'>Control Architectures
+</a></li>
+<li><a href='/wiki/Equations'>Using Equations
+</a></li>
+</ul>
+</ul>
+<li><a href='/wiki/Recipes'>Recipes
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/ManipulateOSMDatas'>Manipulate OSM Datas
+</a></li>
+<li><a href='/wiki/Diffusion'>Implementing diffusion
+</a></li>
+<li><a href='/wiki/UsingDatabase'>Using Database Access
+</a></li>
+<li><a href='/wiki/CallingR'>Calling R
+</a></li>
+<li><a href='/wiki/UsingFIPAACL'>Using FIPA ACL
+</a></li>
+<li><a href='/wiki/GamAnalyzer'>Using GAMAnalyzer
+</a></li>
+<li><a href='/wiki/UsingBDI'>Using BDI
+</a></li>
+<li><a href='/wiki/UsingDrivingSkill'>Advanced Driving Skill
+</a></li>
+<li><a href='/wiki/ManipulateDates'>Manipulate Dates
+</a></li>
+<li><a href='/wiki/ManipulateLight'>Implementing light
+</a></li>
+<li><a href='/wiki/Comodel'>Using Comodel
+</a></li>
+</ul>
+<li><a href='/wiki/Tutorials'>Tutorials
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/LuneraysFlu'>Luneray's flu
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/LuneraysFlu_step1'>1. Creation of a first basic disease spreading model
+</a></li>
+<li><a href='/wiki/LuneraysFlu_step2'>2. Definition of monitors and chart outputs
+</a></li>
+<li><a href='/wiki/LuneraysFlu_step3'>3. Importation of GIS data
+</a></li>
+<li><a href='/wiki/LuneraysFlu_step4'>4. Use of a graph to constraint the movements of people]
+</a></li>
+<li><a href='/wiki/LuneraysFlu_step5'>5. Definition of 3D displays
+</a></li>
+</ul>
+<li><a href='/wiki/IncrementalModel'>Incremental Model
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/IncrementalModel_step1'>1. Simple SI Model
+</a></li>
+<li><a href='/wiki/IncrementalModel_step2'>2. Charts
+</a></li>
+<li><a href='/wiki/IncrementalModel_step3'>3. Integration of GIS Data
+</a></li>
+<li><a href='/wiki/IncrementalModel_step4'>4. Movement on Graph
+</a></li>
+<li><a href='/wiki/IncrementalModel_step5'>5. Visualizing in 3D
+</a></li>
+<li><a href='/wiki/IncrementalModel_step6'>6. Multi-Level
+</a></li>
+<li><a href='/wiki/IncrementalModel_step7'>7. Differential Equations
+</a></li>
+</ul>
+<li><a href='/wiki/PredatorPrey'>Predator Prey
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/PredatorPrey_step1'>1. Basic Model
+</a></li>
+<li><a href='/wiki/PredatorPrey_step2'>2. Vegetation Dynamic
+</a></li>
+<li><a href='/wiki/PredatorPrey_step3'>3. Prey Agent Behavior
+</a></li>
+<li><a href='/wiki/PredatorPrey_step4'>4. Inspectors and Monitors
+</a></li>
+<li><a href='/wiki/PredatorPrey_step5'>5. Predator Agent
+</a></li>
+<li><a href='/wiki/PredatorPrey_step6'>6. Breeding
+</a></li>
+<li><a href='/wiki/PredatorPrey_step7'>7. Agent Aspect
+</a></li>
+<li><a href='/wiki/PredatorPrey_step8'>8. Complex Behavior
+</a></li>
+<li><a href='/wiki/PredatorPrey_step9'>9. Stopping condition
+</a></li>
+<li><a href='/wiki/PredatorPrey_step10'>10. Charts
+</a></li>
+<li><a href='/wiki/PredatorPrey_step11'>11. Writing Files
+</a></li>
+<li><a href='/wiki/PredatorPrey_step12'>12. Image loading
+</a></li>
+</ul>
+<li><a href='/wiki/RoadTrafficModel'>Road Traffic
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/RoadTrafficModel_step1'>1. Loading of GIS Data
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step2'>2. People Agents
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step3'>3. Movement of People
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step4'>4. Weight for Road Network
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step5'>5. Dynamic weights
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step6'>6. Charts
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step7'>7. Automatic Road Repair
+</a></li>
+</ul>
+<li><a href='/wiki/ThreeD'>3D Tutorial
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/ThreeD_step1'>1. Basic Model
+</a></li>
+<li><a href='/wiki/ThreeD_step2'>2. Moving Cells
+</a></li>
+<li><a href='/wiki/ThreeD_step3'>3. Connections
+</a></li>
+</ul>
+</ul>
+</ul>
+<li><a href='/wiki/References'>References
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/PlatformDocumentation'>Platform
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/InstallationAndLaunching'>Installation and Launching
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/Installation'>Installation
+</a></li>
+<li><a href='/wiki/Launching'>Launching GAMA
+</a></li>
+<li><a href='/wiki/Headless'>Headless Mode
+</a></li>
+<li><a href='/wiki/Updating'>Updating GAMA
+</a></li>
+<li><a href='/wiki/InstallingPlugins'>Installing Plugins
+</a></li>
+<li><a href='/wiki/Troubleshooting'>Troubleshooting
+</a></li>
+</ul>
+<li><a href='/wiki/WorkspaceProjectsAndModels'>Workspace, Projects and Models
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/NavigatingWorkspace'>Navigating in the Workspace
+</a></li>
+<li><a href='/wiki/ChangingWorkspace'>Changing Workspace
+</a></li>
+<li><a href='/wiki/ImportingModels'>Importing Models
+</a></li>
+</ul>
+<li><a href='/wiki/EditingModels'>Editing models
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/GamlEditorGeneralities'>The GAML Editor - Generalities
+</a></li>
+<li><a href='/wiki/GamlEditorToolbar'>The GAML Editor Toolbar
+</a></li>
+<li><a href='/wiki/ValidationOfModels'>Validation of Models
+</a></li>
+</ul>
+<li><a href='/wiki/RunningExperiments'>Running Experiments
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/LaunchingExperiments'>Launching Experiments from the User Interface
+</a></li>
+<li><a href='/wiki/ExperimentsUserInterface'>Experiments User Interface
+</a></li>
+<li><a href='/wiki/MenusAndCommands'>Menus and Commands
+</a></li>
+<li><a href='/wiki/ParametersView'>Parameters View
+</a></li>
+<li><a href='/wiki/InspectorsAndMonitors'>Inspectors and monitors
+</a></li>
+<li><a href='/wiki/Displays'>Displays
+</a></li>
+<li><a href='/wiki/BatchSpecific'>Batch Specific UI
+</a></li>
+<li><a href='/wiki/ErrorsView'>Errors View
+</a></li>
+</ul>
+<li><a href='/wiki/Preferences'>Preferences
+</a></li>
+</ul>
+<li><a href='/wiki/GamlReferences'>Gaml Reference
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/BuiltInSpecies'>Built-in Species
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/AgentBuiltIn'>The 'agent' built-in species (Under Construction)
+</a></li>
+<li><a href='/wiki/ModelBuiltIn'>The 'model' built-in species (Under Construction)
+</a></li>
+<li><a href='/wiki/ExperimentBuiltIn'>The 'experiment' built-in species (Under Construction)
+</a></li>
+</ul>
+<li><a href='/wiki/BuiltInSkills'>Built-in Skills
+</a></li>
+<li><a href='/wiki/BuiltInArchitectures'>Built-in Architectures
+</a></li>
+<li><a href='/wiki/Statements'>Statements
+</a></li>
+<li><a href='/wiki/DataTypes'>Types
+</a></li>
+<li><a href='/wiki/FileTypes'>File Types
+</a></li>
+<li><a href='/wiki/Expressions'>Expressions
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/Literals'>Literals
+</a></li>
+<li><a href='/wiki/UnitsAndConstants'>Units and constants
+</a></li>
+<li><a href='/wiki/PseudoVariables'>Pseudo-variables
+</a></li>
+<li><a href='/wiki/VariablesAndAttributes'>Variables and Attributes
+</a></li>
+<li><a href='/wiki/Operators'>Operators 
+</a></li>
+</ul>
+</ul>
+</ul>
+<li>Community
+</li>
+<ul class='sub'>
+<li><a href='/wiki/Contribute'>Contribute
+</a></li>
+<li><a href='/wiki/Projects'>Projects
+</a></li>
+<li><a href='/wiki/TrainingSession'>Training Session
+</a></li>
+</ul></ul></div><div id="right">
+<h3>Facebook Activities</h3>
+<ul id="fbquotes">
+</ul>
+<h3>Commit Activities</h3>
+<ul id="commitquotes">
+</ul>
+<h3>Issue Activities</h3>
+<ul id="issuequotes">
+</ul>
+<h3>Gama Platform Users Activities</h3>
+<ul id="googleusersquotes">
+</ul>
+</div><div id="content"><h1 id="basic-programming-concepts-in-gaml">Basic programming concepts in GAML</h1>
+
+<p>In this part, we will focus on the very basic structures in GAML, such as how to declare a variable, how to use loops, or how to manipulate lists. 
+We will overfly quickly all those basic programming concepts, admitting that you already have some basics in coding.</p>
+
+<h2 id="index">Index</h2>
+
+<ul>
+  <li><a href="#variables">Variables</a>
+    <ul>
+      <li><a href="#basic-types">Basic types</a></li>
+      <li><a href="#the-point-type">The point type</a></li>
+      <li><a href="#a-word-about-dimensions">A word about dimensions</a></li>
+    </ul>
+  </li>
+  <li><a href="#declare-variables-using-facet">Declare variables using facet</a></li>
+  <li><a href="#operators-in-gama">Operators in GAMA</a>
+    <ul>
+      <li><a href="#logical-operators">Logical operators</a></li>
+      <li><a href="#comparison-operators">Comparison operators</a></li>
+      <li><a href="#type-casting-operators">Type casting operators</a></li>
+      <li><a href="#other-operators">Other operators</a></li>
+    </ul>
+  </li>
+  <li><a href="#conditional-structures">Conditional structures</a></li>
+  <li><a href="#loop">Loop</a></li>
+  <li><a href="#manipulate-containers">Manipulate containers</a></li>
+  <li><a href="#random-values">Random values</a></li>
+</ul>
+
+<h2 id="variables">Variables</h2>
+
+<p>Variables are declared very easily in GAML, starting with the keyword for the type, following by the name you want for your variable. 
+NB: The declaration has to be inside the <code class="highlighter-rouge">global</code> scope, or inside the <code class="highlighter-rouge">species</code> scope.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>typeName myVariableName;
+</code></pre>
+</div>
+
+<h3 id="basic-types">Basic types</h3>
+
+<p>All the “basic” types are present in GAML:<code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">bool</code>.
+The operator for the affectation in GAML is <code class="highlighter-rouge">&lt;-</code> (the operator <code class="highlighter-rouge">=</code> is used to test the equality).</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>int integerVariable &lt;- 3;
+float floatVariable &lt;- 2.5;
+string stringVariable &lt;- "test"; // you can also write simple ' : &lt;- 'test'
+bool booleanVariable &lt;- true; // or false
+</code></pre>
+</div>
+
+<p>To follow the behavior of variable, we can write their value in the console. Let’s go back to our basic skeleton of a model, and let’s create a reflex in the global scope (to be short, a reflex is a function that is executed in each step. We will come back to this concept later). The <code class="highlighter-rouge">write</code> function works very easily, simply writing down the keyword <code class="highlighter-rouge">write</code> and the name of the variable we want to be displayed.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>model firstModel
+
+global {
+	int integerVariable &lt;- 3;
+	float floatVariable &lt;- 2.5;
+	string stringVariable &lt;- "test"; // you can also write simple ' : &lt;- 'test'
+	bool booleanVariable &lt;- true; // or false
+	reflex writeDebug {
+		write integerVariable;
+		write floatVariable;
+		write stringVariable;
+		write booleanVariable;
+	}
+}
+
+experiment myExperiment
+{
+}
+</code></pre>
+</div>
+
+<p>The function <code class="highlighter-rouge">write</code> is overloaded for each type of variable (even for the more complex type, such as containers).</p>
+
+<p>Note that before being initialized, a variable has the value <code class="highlighter-rouge">nil</code>.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>reflex update {
+	string my_string;
+	write my_string; // this will write "nil".
+	int my_int;
+	write my_int; // this will write "0", which is the default value for int.
+}
+</code></pre>
+</div>
+
+<p><code class="highlighter-rouge">nil</code> is also a literal you can use to initialize your variable (you can learn more about the concept of literal in this <a href="Literals">page</a>).</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>reflex update {
+	string my_string &lt;- "a string";
+	my_string &lt;- nil;
+	write my_string; // this will write "nil".
+	int my_int &lt;- 6;
+	my_int &lt;- nil;
+	write my_int; // this will write "0", which is the default value for int.
+}
+</code></pre>
+</div>
+
+<h3 id="the-point-type">The point type</h3>
+
+<p>Another variable type you should know is the point variable. This type of variable is used to describe coordinates. It is in fact a complex variable, composed of two float variables (or three if you are working in 3D). To declare it, you have to use the curly bracket <code class="highlighter-rouge"><span class="p">{</span></code>:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>point p &lt;- {0.2,2.4};
+</code></pre>
+</div>
+
+<p>The first field is related to the x value, and the second, to the y value. You can easily get this value as following:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>point p &lt;- {0.2,2.4};
+write p.x; // the output will be 0.2
+write p.y; // the output will be 2.4
+</code></pre>
+</div>
+
+<p>You can’t modify directly the value. But if you want, you can do a simple operation to get what you want:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>point p &lt;- {0.2,2.4};
+p &lt;- p + {0.0,1.0};
+write p.y; // the output will be 3.4
+</code></pre>
+</div>
+
+<h3 id="a-world-about-dimensions">A world about dimensions</h3>
+
+<p>When manipulating float values, you can specify the dimension of your value. Dimensions are preceded by # or ° (exactly the same).</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>float a &lt;- 5°m;
+float b &lt;- 4#cm;
+float c &lt;- a + b; // c is equal to 5.0399999 (it's not equal to 5.04 because it is a float value, not as precise as int)
+</code></pre>
+</div>
+
+<h2 id="declare-variables-using-facet">Declare variables using facet</h2>
+
+<p>Facets are used to describe the behavior of a variable during its declaration, by adding the keyword <code class="highlighter-rouge">facet</code> just after the variable name, followed by the value you want for the facet (or also just after the initial value).</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>type variableName &lt;- initialValue facet1:valueForFacet1 facet2:valueForFacet2;
+// or:
+type variableName facet1:valueForFacet1 facet2:valueForFacet2;
+variableName &lt;- initialValue;
+</code></pre>
+</div>
+
+<p>You can use the facet <code class="highlighter-rouge">update</code> if you want to change the value of your variable. For example, to increment your integer variable each step, you can do as follow:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>int integerVariable &lt;- 3 min:0 max:10 update:integerVariable+1;
+// nb: the operator "++" doesn't exist in gaml.
+</code></pre>
+</div>
+
+<p>You can use the facet <code class="highlighter-rouge">min</code> and <code class="highlighter-rouge">max</code> to constraint the value in a specific range of values:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>int integerVariable &lt;- 3 min:0 max:10 update:integerVariable+1;
+// the result will be 3 - 4 - 5 - 6 - 7 - 8 - 9 - 10 - 10 - 10 - ...
+</code></pre>
+</div>
+
+<p>The facet <code class="highlighter-rouge">among</code> can also be useful (that can be seen as an enum):</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>string fruits &lt;- "banana" among:["pear","apple","banana"];
+</code></pre>
+</div>
+
+<h2 id="operators-in-gama">Operators in GAMA</h2>
+
+<p>In GAML language, you can use a lot of different operators. They are all listed in this <a href="Operators">page</a>, but here are the most useful ones:</p>
+
+<p><strong>-	Mathematical operators</strong></p>
+
+<p>The basic arithmetical operators, such as <code class="highlighter-rouge">+</code>(add), <code class="highlighter-rouge">-</code>(substract), <code class="highlighter-rouge">*</code>(multiply), <code class="highlighter-rouge">/</code>(divide), <code class="highlighter-rouge">^</code>(power) are used this way:</p>
+
+<p>FirstOperand Operator SecondOperand –&gt; ex: 5 * 3; // return 15</p>
+
+<p>Some other operators, such as <code class="highlighter-rouge">cos</code>(cosinus), <code class="highlighter-rouge">sin</code>(sinus), <code class="highlighter-rouge">tan</code>(tangent), <code class="highlighter-rouge">sqrt</code>(square root), <code class="highlighter-rouge">round</code>(rounding) etc… are used this way:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Operator(Operand) --&gt; ex: sqrt(49); // return 7
+</code></pre>
+</div>
+
+<h3 id="logical-operators">Logical operators</h3>
+
+<p>Logical operators such as <code class="highlighter-rouge">and</code>(and), <code class="highlighter-rouge">or</code>(inclusive or) are used the same way as basic arithmetical operators. The operator <code class="highlighter-rouge">!</code>(negation) has to be placed just before the operand. They return a boolean result.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>FirstOperand Operator SecondOperand --&gt; ex: true or false; // return true
+NegationOperator Operand --&gt; ex: !(true or false); // return false
+</code></pre>
+</div>
+
+<h3 id="comparison-operators">Comparison operators</h3>
+
+<p>The comparison operators <code class="highlighter-rouge">!=</code>(different than), <code class="highlighter-rouge">&lt;</code>(smaller than), <code class="highlighter-rouge">&lt;=</code>(smaller of equal), <code class="highlighter-rouge">=</code>(equal), <code class="highlighter-rouge">&gt;</code>(bigger than), <code class="highlighter-rouge">&gt;=</code>(bigger or equal) are used the same way as basic arithmetical operators:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>FirstOperand Operator SecondOperand --&gt; ex: 5 &lt; 3; // return false
+</code></pre>
+</div>
+
+<h3 id="type-casting-operators">Type casting operators</h3>
+
+<p>You can cast an operand to a special type using casting operator:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Operator(Operand); --&gt; ex: int(2.1); // return 2
+</code></pre>
+</div>
+
+<h3 id="other-operators">Other operators</h3>
+
+<p>A lot of other operators exist in GAML. The standard way to use those operators is as followed:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Operator(FirstOperand,SecondOperand,...) --&gt; ex: rnd(1,8);
+</code></pre>
+</div>
+
+<p>Some others are used in a more intuitive way:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>FirstOperand Operator SecondOperand --&gt; ex: 2[6,4,5] contains(5);
+</code></pre>
+</div>
+
+<h2 id="conditional-structures">Conditional structures</h2>
+
+<p>You can write if/else if/else in GAML:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>if (integerVariable&lt;0) {
+	write "my value is negative !! The exact value is " + integerVariable;
+}
+else if (integerVariable&gt;0) {
+	write "my value is positive !! The exact value is " + integerVariable;
+}
+else if (integerVariable=0) {
+	write "my value is equal to 0 !!";
+}
+else {
+	write "hey... This is not possible, right ?";
+}
+</code></pre>
+</div>
+
+<p>GAML also accepts ternary operator:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>stringVariable &lt;- (booleanVariable) ? "booleanVariable = true" : "booleanVariable = false";
+</code></pre>
+</div>
+
+<h2 id="loop">Loop</h2>
+
+<p>Loops in GAML are designed by the keyword <code class="highlighter-rouge">loop</code>. As for variables, a loop have multiple facet to determine its behavior:</p>
+
+<ul>
+  <li>The facet <code class="highlighter-rouge">times</code>, to repeat a fixed number of times a set of statements:</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>loop times: 2 {
+write "helloWorld";
+} 
+// the output will be helloWorld - helloWorld
+</code></pre>
+</div>
+
+<ul>
+  <li>The facet <code class="highlighter-rouge">while</code>, to repeat a set of statements while a condition is true:</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>loop while: (true) {
+}
+// infinity loop
+</code></pre>
+</div>
+
+<ul>
+  <li>The facet <code class="highlighter-rouge">from</code> / <code class="highlighter-rouge">to</code>, to repeat a set of statements while an index iterates over a range of values with a fixed step of 1:</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>loop i from:0 to: 5 { // or loop name:i from:0 to:5 -&gt; the name is also a facet
+	write i;
+}
+// the output will be 0 - 1 - 2 - 3 - 4 - 5
+</code></pre>
+</div>
+
+<ul>
+  <li>The facet <code class="highlighter-rouge">from</code> / <code class="highlighter-rouge">to</code> combine with the facet <code class="highlighter-rouge">step</code> to choose the step:</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>loop i from:0 to: 5 step: 2 {
+	write i;
+}
+// the output will be 0 - 2 - 4
+</code></pre>
+</div>
+
+<ul>
+  <li>The facet over to browse containers, as we will see in the next part.</li>
+</ul>
+
+<p>Nb: you can interrupt a loop at any time by using the <code class="highlighter-rouge">break</code> statement.</p>
+
+<h2 id="manipulate-containers">Manipulate containers</h2>
+
+<p>We saw in the previous parts “simple” types of variable. You also have a multiple containers types, such as list, matrix, map, pair… In this section, we will only focus on the container <code class="highlighter-rouge">list</code> (you can learn the other by reading the <a href="DataTypes#complex-built-in-types">section about datatypes</a>).</p>
+
+<p><strong>How to declare a list?</strong></p>
+
+<p>To declare a list, you can either or not specify the type of the data of its elements:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>list&lt;int&gt; listOfInt &lt;- [5,4,9,8];
+list listWithoutType &lt;- [2,4.6,"oij",["hoh",0.0]];
+</code></pre>
+</div>
+
+<p><strong>How to know the number of elements of a list?</strong></p>
+
+<p>To know the number of element of a list, you can use the operator <code class="highlighter-rouge">length</code> that returns the number of elements (note that this operator also works with strings).</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>int numberOfElements &lt;- length([12,13]); // will return 2
+int numberOfElements &lt;- length([]); // will return 0
+int numberOfElements &lt;- length("stuff"); // will return 5
+</code></pre>
+</div>
+
+<p>There is an other operator, <code class="highlighter-rouge">empty</code>, that returns you a boolean telling you if the list is empty or not.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>bool isEmpty &lt;- empty([12,13]); // will return false
+bool isEmpty &lt;- empty([]); // will return true
+bool isEmpty &lt;- empty("stuff"); // will return false
+</code></pre>
+</div>
+
+<p><strong>How to get an element from a list?</strong></p>
+
+<p>To get an element from a list by its index, you have to use the operator <code class="highlighter-rouge">at</code> (nb: it is indeed an operator, and not a facet, so no “:” after the keyword).</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>int theFirstElementOfTheList &lt;- [5,4,9,8] at 0; // this will return 5
+int theThirdElementOfTheList &lt;- [5,4,9,8] at 2; // this will return 9
+</code></pre>
+</div>
+
+<p><strong>How to know the index of an element of a list?</strong></p>
+
+<p>You can know the index of the first occurrence of a value in a list using the operator <code class="highlighter-rouge">index_of</code>.
+You can know the index of the last occurrence of a value in a list using the operator <code class="highlighter-rouge">last_index_of</code>.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>int result &lt;- [4,2,3,4,5,4] last_index_of 4;  // result equals 5
+int result &lt;- [4,2,3,4,5,4] index_of 4;  // result equals 0
+</code></pre>
+</div>
+
+<p><strong>How to know if an element exists in a list?</strong></p>
+
+<p>You can use the operator <code class="highlighter-rouge">contains</code> (return a boolean):</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>bool result &lt;- [{1,2}, {3,4}, {5,6}] contains {3,4};  // result equals true
+</code></pre>
+</div>
+
+<p><strong>How to insert/remove an element to/from a list?</strong></p>
+
+<p>For those operation, no operator are available, but you can use a statement instead. The statements <code class="highlighter-rouge">add</code> and <code class="highlighter-rouge">put</code> are used to insert/modify an element, while the statement <code class="highlighter-rouge">remove</code> is used to remove an element. Here are some example of how to use those 3 statements with the most common facets:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>list&lt;int&gt; list_int &lt;- [1,5,7,6,7];
+remove from:list_int index:1; // remove the 2nd element of the list
+write list_int; // the output is : [1,7,6,7]
+remove item:7 from:list_int; // remove the 1st occurrence of 7
+write list_int; // the output is : [1,6,7]
+add item:9 to: list_int at: 2; // add 9 in the 3rd position
+write list_int; // the output is : [1,6,9,7]
+add 0 to: list_int; // add 0 in the last position
+write list_int; // the output is : [1,6,9,7,0]
+put 3 in: list_int at: 0; // put 3 in the 1st position
+write list_int; // the output is : [3,6,9,7,0]
+put 2 in: list_int key: 2; // put 2 in the 3rd position
+write list_int; // the output is : [3,6,2,7,0]
+</code></pre>
+</div>
+
+<p><strong>How to add 2 lists?</strong></p>
+
+<p>You can add 2 lists by creating a third one and browsing the 2 first one, but you can do it much easily by using the operator <code class="highlighter-rouge">+</code> :</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>list&lt;int&gt; list_int1 &lt;- [1,5,7,6,7];
+list&lt;int&gt; list_int2 &lt;- [6,9];
+list&lt;int&gt; list_int_result &lt;- list_int1 + list_int2;
+</code></pre>
+</div>
+
+<p><strong>How to browse a list?</strong></p>
+
+<p>You can use the facet <code class="highlighter-rouge">over</code> of a loop:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>list&lt;int&gt; exampleOfList &lt;- [4,2,3,4,5,4];
+loop i over:exampleOfList {
+	write i;
+}
+// the output will be 4 - 2 - 3 - 4 - 5 - 4
+</code></pre>
+</div>
+
+<p><strong>How to filter a list?</strong></p>
+
+<p>If you want to get all the elements of a list that fulfill a particular condition, you need the operator where. In the condition, you can design all the element of a particular list by using the pseudo variable <strong><code class="highlighter-rouge">each</code></strong> as followed:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>list&lt;int&gt; exampleOfList &lt;- [4,2,3,4,5,4] where (each &lt;= 3); 
+// the list is now [2,3]
+</code></pre>
+</div>
+
+<p>Other useful operators for the manipulation of lists:</p>
+
+<p>Here are some other operators which can be useful to manipulate lists: <code class="highlighter-rouge">sort</code>, <code class="highlighter-rouge">sort_by</code>, <code class="highlighter-rouge">shuffle</code>, <code class="highlighter-rouge">reverse</code>, <code class="highlighter-rouge">collect</code>, <code class="highlighter-rouge">accumulate</code>, <code class="highlighter-rouge">among</code>. Please read the GAML Reference if you want to know more about those operators.</p>
+
+<h2 id="random-values">Random values</h2>
+
+<p>When you will implement your model, you will have to manipulate some random values quite often.</p>
+
+<p>To get a random value in a range of value, use the operator <a href="Operators#rnd"><code class="highlighter-rouge">rnd</code></a>. You can use this operator in many ways:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>int var0 &lt;- rnd (2);    // var0 equals 0, 1 or 2
+float var1 &lt;- rnd (1000) / 1000;    // var1 equals a float between 0 and 1 with a precision of 0.001
+point var2 &lt;- rnd ({2.0, 4.0}, {2.0, 5.0, 10.0}, 1);    // var2 equals a point with x = 2.0, y equal to 2.0, 3.0 or 4.0 and z between 0.0 and 10.0 every 1.0
+float var3 &lt;- rnd (2.0, 4.0, 0.5);  // var3 equals a float number between 2.0 and 4.0 every 0.5
+float var4 &lt;- rnd(3.4);     // var4 equals a random float between 0.0 and 3.4
+int var5 &lt;- rnd (2, 12, 4);     // var5 equals 2, 6 or 10
+point var6 &lt;- rnd ({2.5,3, 0.0});   // var6 equals {x,y} with x in [0.0,2.0], y in [0.0,3.0], z = 0.0
+int var7 &lt;- rnd (2, 4);     // var7 equals 2, 3 or 4
+point var8 &lt;- rnd ({2.0, 4.0}, {2.0, 5.0, 10.0});   // var8 equals a point with x = 2.0, y between 2.0 and 4.0 and z between 0.0 and 10.0
+float var9 &lt;- rnd (2.0, 4.0);   // var9 equals a float number between 2.0 and 4.0
+</code></pre>
+</div>
+
+<p>Use the operator <a href="Operators#flip"><code class="highlighter-rouge">flip</code></a> if you want to pick a boolean value with a certain probability:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>bool result &lt;- flip(0.2); // result will have 20% of chance to be true
+</code></pre>
+</div>
+
+<p>You can use randomness in list, by using the operator <a href="Operators#shuffle"><code class="highlighter-rouge">shuffle</code></a>, or also by using the operator <a href="Operators#among"><code class="highlighter-rouge">among</code></a> to pick randomly one (or several) element of your list:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>list TwoRandomValuesFromTheList &lt;- 2 among [5,4,9,8];
+// the list will be for example [5,9].
+</code></pre>
+</div>
+
+<p>You can use probabilistic laws, using operators such as <a href="Operators#gauss"><code class="highlighter-rouge">gauss</code></a>, <a href="Operators#poisson"><code class="highlighter-rouge">poisson</code></a>, <a href="Operators#binomial"><code class="highlighter-rouge">binomial</code></a>, or <a href="Operators#truncated_gauss"><code class="highlighter-rouge">truncated_gauss</code></a> (we invite you to read the documentation for those operators).</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td><a href="# (keyword|concept_distribution)">//</a>: # (endConcept</td>
+      <td>programming_basis)</td>
+    </tr>
+  </tbody>
+</table>
+</div></body></html>

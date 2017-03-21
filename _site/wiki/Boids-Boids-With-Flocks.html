@@ -1,0 +1,852 @@
+
+    <!doctype html><html lang="en"><head><meta charset="utf-8"><title>Boids With Flocks</title></head>
+    <body>
+    <link rel="stylesheet" href="/style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="//connect.facebook.net/en_US/all.js"></script>
+<script src="/linkify.min.js"></script>
+<script src="/linkify-jquery.min.js"></script>
+<script>
+  $(document).ready(function(){
+	  		$.getJSON('https://graph.facebook.com/238065426321929/feed?access_token=229040647557399|MQKFlFYX7YW25XGj4GUYZ7B1lcY', function(data) {
+		var ahtml="";
+		for(var i = 0; i < 5; i++) {
+			ahtml=ahtml+"<li>"+data["data"][i]["message"]+"</li>";
+		}
+		ahtml=ahtml+"";
+		$("#fbquotes").html(ahtml);
+		$("#fbquotes").linkify();
+	});
+	 
+		$.getJSON('https://api.github.com/repos/gama-platform/gama/commits', function(data) {
+			var ahtml="";
+			for(var i = 0; i < 5; i++) {
+				ahtml=ahtml+"<li>"+data[i]["commit"]["message"]+" by "+data[i]["commit"]["author"]["name"]+" <a href='"+data[i]["commit"]["html_url"]+"'> See more</a></li>";
+			}
+			ahtml=ahtml+"";
+			$("#commitquotes").html(ahtml);
+			$("#commitquotes").linkify();
+		});
+				
+				
+		$.getJSON('https://api.github.com/repos/gama-platform/gama/issues', function(data) {
+			var ahtml="";
+			for(var i = 0; i < 5; i++) {
+				ahtml=ahtml+"<li>"+data[i]["title"]+" by "+data[i]["user"]["login"]+" <a href='"+data[i]["html_url"]+"'> See more</a></li>";
+			}
+			ahtml=ahtml+"";
+			$("#issuequotes").html(ahtml);
+			$("#issuequotes").linkify();
+		});
+		
+		$.getJSON('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fgroups.google.com%2Fforum%2Ffeed%2Fgama-platform%2Ftopics%2Frss.xml%3Fnum%3D15', function(data) {
+			var ahtml="";
+			for(var i = 0; i < 5; i++) {
+				ahtml=ahtml+"<li>"+data["items"][i]["title"]+" by "+data["items"][i]["author"]+" <a href='"+data["items"][i]["link"]+"'> See more</a></li>";
+			}
+			ahtml=ahtml+"";
+			$("#googleusersquotes").html(ahtml);
+			$("#googleusersquotes").linkify();
+			
+		});
+ });
+  
+</script>
+
+      <div id="left">
+
+		<ul class="mcd-menu"><li><a href="/">Home</a></li><li><a href="/">Discussions</a></li>
+<li><a href='/wiki/Tutorials'>Tutorials
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/LearnGAMLStepByStep'>Learn GAML Step by Step
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/Introduction'>Introduction
+</a></li>
+<li><a href='/wiki/StartWithGAML'>Start with GAML
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/ModelOrganization'>Organization of a model
+</a></li>
+<li><a href='/wiki/BasicProgrammingConceptsInGAML'>Basic programming concepts in GAML
+</a></li>
+</ul>
+<li><a href='/wiki/ManipulateBasicSpecies'>Manipulate basic species
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/GlobalSpecies'>The global species
+</a></li>
+<li><a href='/wiki/RegularSpecies'>Regular species
+</a></li>
+<li><a href='/wiki/DefiningActionsAndBehaviors'>Defining actions and behaviors
+</a></li>
+<li><a href='/wiki/InteractionBetweenAgents'>Interaction between agents
+</a></li>
+<li><a href='/wiki/AttachingSkills'>Attaching Skills
+</a></li>
+<li><a href='/wiki/Inheritance'>Inheritance
+</a></li>
+</ul>
+<li><a href='/wiki/DefiningAdvancedSpecies'>Defining advanced species
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/GridSpecies'>Grid Species
+</a></li>
+<li><a href='/wiki/GraphSpecies'>Graph Species
+</a></li>
+<li><a href='/wiki/MirrorSpecies'>Mirror species
+</a></li>
+<li><a href='/wiki/MultiLevelArchitecture'>Multi-level architecture
+</a></li>
+</ul>
+<li><a href='/wiki/DefiningGUIExperiment'>Defining GUI Experiment
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/DefiningParameters'>Defining Parameters
+</a></li>
+<li><a href='/wiki/DefiningDisplaysGeneralities'>Defining displays (Generalities)
+</a></li>
+<li><a href='/wiki/DefiningCharts'>Defining Charts
+</a></li>
+<li><a href='/wiki/Defining3DDisplays'>Defining 3D Displays
+</a></li>
+<li><a href='/wiki/DefiningMonitorsAndInspectors'>Defining monitors and inspectors
+</a></li>
+<li><a href='/wiki/DefiningExportFiles'>Defining export files
+</a></li>
+<li><a href='/wiki/DefiningUserInteraction'>Defining user interaction
+</a></li>
+</ul>
+<li><a href='/wiki/ExploringModels'>Exploring Models
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/RunSeveralSimulations'>Run Several Simulations
+</a></li>
+<li><a href='/wiki/BatchExperiments'>Defining Batch Experiments
+</a></li>
+<li><a href='/wiki/ExplorationMethods'>Exploration Methods
+</a></li>
+</ul>
+<li><a href='/wiki/OptimizingModels'>Optimizing Models
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/RuntimeConcepts'>Runtime Concepts
+</a></li>
+<li><a href='/wiki/OptimizingModels'>Optimizing Models
+</a></li>
+</ul>
+<li><a href='/wiki/MultiParadigmModeling'>Multi-Paradigm Modeling
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/ControlArchitecture'>Control Architectures
+</a></li>
+<li><a href='/wiki/Equations'>Using Equations
+</a></li>
+</ul>
+</ul>
+<li><a href='/wiki/Recipes'>Recipes
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/ManipulateOSMDatas'>Manipulate OSM Datas
+</a></li>
+<li><a href='/wiki/Diffusion'>Implementing diffusion
+</a></li>
+<li><a href='/wiki/UsingDatabase'>Using Database Access
+</a></li>
+<li><a href='/wiki/CallingR'>Calling R
+</a></li>
+<li><a href='/wiki/UsingFIPAACL'>Using FIPA ACL
+</a></li>
+<li><a href='/wiki/GamAnalyzer'>Using GAMAnalyzer
+</a></li>
+<li><a href='/wiki/UsingBDI'>Using BDI
+</a></li>
+<li><a href='/wiki/UsingDrivingSkill'>Advanced Driving Skill
+</a></li>
+<li><a href='/wiki/ManipulateDates'>Manipulate Dates
+</a></li>
+<li><a href='/wiki/ManipulateLight'>Implementing light
+</a></li>
+<li><a href='/wiki/Comodel'>Using Comodel
+</a></li>
+</ul>
+<li><a href='/wiki/Tutorials'>Tutorials
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/LuneraysFlu'>Luneray's flu
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/LuneraysFlu_step1'>1. Creation of a first basic disease spreading model
+</a></li>
+<li><a href='/wiki/LuneraysFlu_step2'>2. Definition of monitors and chart outputs
+</a></li>
+<li><a href='/wiki/LuneraysFlu_step3'>3. Importation of GIS data
+</a></li>
+<li><a href='/wiki/LuneraysFlu_step4'>4. Use of a graph to constraint the movements of people]
+</a></li>
+<li><a href='/wiki/LuneraysFlu_step5'>5. Definition of 3D displays
+</a></li>
+</ul>
+<li><a href='/wiki/IncrementalModel'>Incremental Model
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/IncrementalModel_step1'>1. Simple SI Model
+</a></li>
+<li><a href='/wiki/IncrementalModel_step2'>2. Charts
+</a></li>
+<li><a href='/wiki/IncrementalModel_step3'>3. Integration of GIS Data
+</a></li>
+<li><a href='/wiki/IncrementalModel_step4'>4. Movement on Graph
+</a></li>
+<li><a href='/wiki/IncrementalModel_step5'>5. Visualizing in 3D
+</a></li>
+<li><a href='/wiki/IncrementalModel_step6'>6. Multi-Level
+</a></li>
+<li><a href='/wiki/IncrementalModel_step7'>7. Differential Equations
+</a></li>
+</ul>
+<li><a href='/wiki/PredatorPrey'>Predator Prey
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/PredatorPrey_step1'>1. Basic Model
+</a></li>
+<li><a href='/wiki/PredatorPrey_step2'>2. Vegetation Dynamic
+</a></li>
+<li><a href='/wiki/PredatorPrey_step3'>3. Prey Agent Behavior
+</a></li>
+<li><a href='/wiki/PredatorPrey_step4'>4. Inspectors and Monitors
+</a></li>
+<li><a href='/wiki/PredatorPrey_step5'>5. Predator Agent
+</a></li>
+<li><a href='/wiki/PredatorPrey_step6'>6. Breeding
+</a></li>
+<li><a href='/wiki/PredatorPrey_step7'>7. Agent Aspect
+</a></li>
+<li><a href='/wiki/PredatorPrey_step8'>8. Complex Behavior
+</a></li>
+<li><a href='/wiki/PredatorPrey_step9'>9. Stopping condition
+</a></li>
+<li><a href='/wiki/PredatorPrey_step10'>10. Charts
+</a></li>
+<li><a href='/wiki/PredatorPrey_step11'>11. Writing Files
+</a></li>
+<li><a href='/wiki/PredatorPrey_step12'>12. Image loading
+</a></li>
+</ul>
+<li><a href='/wiki/RoadTrafficModel'>Road Traffic
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/RoadTrafficModel_step1'>1. Loading of GIS Data
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step2'>2. People Agents
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step3'>3. Movement of People
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step4'>4. Weight for Road Network
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step5'>5. Dynamic weights
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step6'>6. Charts
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step7'>7. Automatic Road Repair
+</a></li>
+</ul>
+<li><a href='/wiki/ThreeD'>3D Tutorial
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/ThreeD_step1'>1. Basic Model
+</a></li>
+<li><a href='/wiki/ThreeD_step2'>2. Moving Cells
+</a></li>
+<li><a href='/wiki/ThreeD_step3'>3. Connections
+</a></li>
+</ul>
+</ul>
+</ul>
+<li><a href='/wiki/References'>References
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/PlatformDocumentation'>Platform
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/InstallationAndLaunching'>Installation and Launching
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/Installation'>Installation
+</a></li>
+<li><a href='/wiki/Launching'>Launching GAMA
+</a></li>
+<li><a href='/wiki/Headless'>Headless Mode
+</a></li>
+<li><a href='/wiki/Updating'>Updating GAMA
+</a></li>
+<li><a href='/wiki/InstallingPlugins'>Installing Plugins
+</a></li>
+<li><a href='/wiki/Troubleshooting'>Troubleshooting
+</a></li>
+</ul>
+<li><a href='/wiki/WorkspaceProjectsAndModels'>Workspace, Projects and Models
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/NavigatingWorkspace'>Navigating in the Workspace
+</a></li>
+<li><a href='/wiki/ChangingWorkspace'>Changing Workspace
+</a></li>
+<li><a href='/wiki/ImportingModels'>Importing Models
+</a></li>
+</ul>
+<li><a href='/wiki/EditingModels'>Editing models
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/GamlEditorGeneralities'>The GAML Editor - Generalities
+</a></li>
+<li><a href='/wiki/GamlEditorToolbar'>The GAML Editor Toolbar
+</a></li>
+<li><a href='/wiki/ValidationOfModels'>Validation of Models
+</a></li>
+</ul>
+<li><a href='/wiki/RunningExperiments'>Running Experiments
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/LaunchingExperiments'>Launching Experiments from the User Interface
+</a></li>
+<li><a href='/wiki/ExperimentsUserInterface'>Experiments User Interface
+</a></li>
+<li><a href='/wiki/MenusAndCommands'>Menus and Commands
+</a></li>
+<li><a href='/wiki/ParametersView'>Parameters View
+</a></li>
+<li><a href='/wiki/InspectorsAndMonitors'>Inspectors and monitors
+</a></li>
+<li><a href='/wiki/Displays'>Displays
+</a></li>
+<li><a href='/wiki/BatchSpecific'>Batch Specific UI
+</a></li>
+<li><a href='/wiki/ErrorsView'>Errors View
+</a></li>
+</ul>
+<li><a href='/wiki/Preferences'>Preferences
+</a></li>
+</ul>
+<li><a href='/wiki/GamlReferences'>Gaml Reference
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/BuiltInSpecies'>Built-in Species
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/AgentBuiltIn'>The 'agent' built-in species (Under Construction)
+</a></li>
+<li><a href='/wiki/ModelBuiltIn'>The 'model' built-in species (Under Construction)
+</a></li>
+<li><a href='/wiki/ExperimentBuiltIn'>The 'experiment' built-in species (Under Construction)
+</a></li>
+</ul>
+<li><a href='/wiki/BuiltInSkills'>Built-in Skills
+</a></li>
+<li><a href='/wiki/BuiltInArchitectures'>Built-in Architectures
+</a></li>
+<li><a href='/wiki/Statements'>Statements
+</a></li>
+<li><a href='/wiki/DataTypes'>Types
+</a></li>
+<li><a href='/wiki/FileTypes'>File Types
+</a></li>
+<li><a href='/wiki/Expressions'>Expressions
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/Literals'>Literals
+</a></li>
+<li><a href='/wiki/UnitsAndConstants'>Units and constants
+</a></li>
+<li><a href='/wiki/PseudoVariables'>Pseudo-variables
+</a></li>
+<li><a href='/wiki/VariablesAndAttributes'>Variables and Attributes
+</a></li>
+<li><a href='/wiki/Operators'>Operators 
+</a></li>
+</ul>
+</ul>
+</ul>
+<li>Community
+</li>
+<ul class='sub'>
+<li><a href='/wiki/Contribute'>Contribute
+</a></li>
+<li><a href='/wiki/Projects'>Projects
+</a></li>
+<li><a href='/wiki/TrainingSession'>Training Session
+</a></li>
+</ul></ul></div><div id="right">
+<h3>Facebook Activities</h3>
+<ul id="fbquotes">
+</ul>
+<h3>Commit Activities</h3>
+<ul id="commitquotes">
+</ul>
+<h3>Issue Activities</h3>
+<ul id="issuequotes">
+</ul>
+<h3>Gama Platform Users Activities</h3>
+<ul id="googleusersquotes">
+</ul>
+</div><div id="content"><h1 id="boids-with-flocks">Boids With Flocks</h1>
+
+<p>_Author : _</p>
+
+<p>This model shows the movement of boids following a goal, and creating without their own volonty, a flock .</p>
+
+<p>Imported model :</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>
+model boids 
+global torus: torus_environment{ 
+	//Number of boids that will be created
+	int number_of_agents &lt;- 50 min: 1 max: 1000000;
+	//Number of obstacles for the boids movement to represent
+	int number_of_obstacles &lt;- 0 min: 0;
+	//Maximal speed of the boids
+	float maximal_speed &lt;- 15.0 min: 0.1 max: 15.0;
+	//Factors for the group of boids
+	int cohesion_factor &lt;- 200;
+	int alignment_factor &lt;- 100; 
+	//Variables for the movement of the boids
+	float minimal_distance &lt;- 10.0; 
+	int maximal_turn &lt;- 45 min: 0 max: 359; 
+	
+	int width_and_height_of_environment &lt;- 1000;  
+	bool torus_environment &lt;- false; 
+	bool apply_cohesion &lt;- true ;
+	bool apply_alignment &lt;- true ;
+	bool apply_separation &lt;- true;
+	bool apply_avoid &lt;- true;  
+	bool apply_wind &lt;- true;   
+	bool moving_obstacles &lt;- false;   
+	int bounds &lt;- int(width_and_height_of_environment / 20); 
+	//Vector for the wind
+	point wind_vector &lt;- {0,0}; 
+	list images of: image_file &lt;- [file('../images/bird1.png'),file('../images/bird2.png'),file('../images/bird3.png')]; 
+	int xmin &lt;- bounds;   
+	int ymin &lt;- bounds;  
+	int xmax &lt;- (width_and_height_of_environment - bounds);     
+	int ymax &lt;- (width_and_height_of_environment - bounds);   
+	
+	//Action to move the goal to the mouse location
+	action move_goal(point mouse) {
+		ask first(boids_goal) {
+			do goto target: mouse speed: 30;
+		}
+	}
+	
+	geometry shape &lt;- square(width_and_height_of_environment);
+	
+	init { 
+		//Create the boids agents
+		create boids number: number_of_agents { 
+			 location &lt;- {rnd (width_and_height_of_environment - 2) + 1, rnd (width_and_height_of_environment -2) + 1 };
+		} 
+		//Create the obstacles agents
+		create obstacle number: number_of_obstacles {
+			location &lt;- {rnd (width_and_height_of_environment - 2) + 1, rnd (width_and_height_of_environment -2) + 1 }; 
+		}
+		//Create the goal that boids will follow
+		create  boids_goal;	
+	}	
+}
+
+//Species boids goal which represents the goal that will be followed by boids agents using the skill moving
+species boids_goal skills: [moving] {
+	float range  &lt;- 20.0;
+	
+	//If the mouse is not used, then the goal just wander
+	reflex wander {  
+		do  wander amplitude: 45 speed: 20;  
+	}
+	
+	aspect default {
+		draw circle(10) color: #red ;
+		draw circle(40) color: #orange empty: true;
+	}
+} 
+//Species boids which represents the boids agents whom follow the boid goal agents, using the skill moving
+species boids skills: [moving] {
+	//Speed of the boids agents
+	float speed max: maximal_speed &lt;- maximal_speed;
+	//Range used to consider the group of the agent
+	float range &lt;- minimal_distance * 2;
+	point velocity &lt;- {0,0};
+		
+	//Reflex used when the separation is applied to change the velocity of the boid
+	reflex separation when: apply_separation {
+		point acc &lt;- {0,0};
+		ask (boids overlapping (circle(minimal_distance)))  {
+			acc &lt;- acc - ((location) - myself.location);
+		}  
+		velocity &lt;- velocity + acc;
+	}
+	
+	//Reflex to align the boid with the other boids in the range
+	reflex alignment when: apply_alignment {
+		list others  &lt;- ((boids overlapping (circle (range)))  - self);
+		point acc &lt;- mean (others collect (each.velocity)) - velocity;
+		velocity &lt;- velocity + (acc / alignment_factor);
+	}
+	 
+	//Reflex to apply the cohesion of the boids group in the range of the agent
+	reflex cohesion when: apply_cohesion {
+		list others &lt;- ((boids overlapping (circle (range)))  - self);
+		point mass_center &lt;- (length(others) &gt; 0) ? mean (others collect (each.location)) : location;
+
+		point acc &lt;- mass_center - location;
+		acc &lt;- acc / cohesion_factor; 
+		velocity &lt;- velocity + acc;   
+	}
+	
+	//Reflex to avoid the obstacles
+	reflex avoid when: apply_avoid { 
+		point acc &lt;- {0,0};
+		list&lt;obstacle&gt; nearby_obstacles &lt;- (obstacle overlapping (circle (range)) );
+		loop obs over: nearby_obstacles {
+			acc &lt;- acc - ((location of obs) - my (location));
+		}
+		velocity &lt;- velocity + acc; 
+	}
+	
+	//action to represent the bounding of the environment considering the velocity of the boid
+	action bounding {
+		if  !(torus_environment) {
+			if  (location.x) &lt; xmin {
+				velocity &lt;- velocity + {bounds,0};
+			} else if (location.x) &gt; xmax {
+				velocity &lt;- velocity - {bounds,0};
+			}
+			
+			if (location.y) &lt; ymin {
+				velocity &lt;- velocity + {0,bounds};
+			} else if (location.y) &gt; ymax {
+				velocity &lt;- velocity - {0,bounds};
+			}
+			
+		}
+	}
+	//Reflex to follow the goal 
+	reflex follow_goal {
+		velocity &lt;- velocity + ((first(boids_goal).location - location) / cohesion_factor);
+	}
+	//Reflex to apply the wind vector on the velocity
+	reflex wind when: apply_wind {
+		velocity &lt;- velocity + wind_vector;
+	}
+	
+	//Action to move the agent  
+	action do_move {  
+		if (((velocity.x) as int) = 0) and (((velocity.y) as int) = 0) {
+			velocity &lt;- {(rnd(4)) -2, (rnd(4)) - 2};
+		}
+		point old_location &lt;- copy(location);
+		do goto target: location + velocity;
+		velocity &lt;- location - old_location;
+	}
+	
+	//Reflex to apply the movement by calling the do_move action
+	reflex movement {
+		do do_move;
+	}
+	
+	aspect image {
+		draw (images at (rnd(2))) size: {50,50} rotate: heading ;      
+	}
+	aspect circle { 
+		draw circle(15)  color: #red;
+	}
+	
+	aspect default { 
+		draw circle(20) color: #lightblue empty: true;
+	}
+} 
+
+//Species obstacle that represents the obstacles avoided by the boids agents using the skill moving
+species obstacle skills: [moving] {
+	float speed &lt;- 2.0;
+	geometry shape &lt;- triangle(15);
+	
+	//Reflex to move the obstacles if it is available
+	reflex move_obstacles when: moving_obstacles {
+		//Will make the agent go to a boid with a 50% probability
+		if flip(0.5)  
+		{ 
+			do goto target: one_of(boids);
+		} 
+		else{ 
+			do wander amplitude: 360;   
+		}
+	}
+	aspect default {
+		draw  triangle(20) color: #black ;
+	}
+
+}
+
+
+experiment boids_gui type: gui {
+	parameter 'Number of agents' var: number_of_agents;
+	parameter 'Number of obstacles' var: number_of_obstacles;
+	parameter 'Maximal speed' var: maximal_speed;
+	parameter 'Cohesion Factor' var: cohesion_factor;
+	parameter 'Alignment Factor' var: alignment_factor; 
+	parameter 'Minimal Distance'  var: minimal_distance; 
+	parameter 'Maximal Turn'  var: maximal_turn; 
+	parameter 'Width/Height of the Environment' var: width_and_height_of_environment ;  
+	parameter 'Toroidal Environment ?'  var: torus_environment ; 
+	parameter 'Apply Cohesion ?' var: apply_cohesion ;
+	parameter 'Apply Alignment ?' var: apply_alignment ;   
+	parameter 'Apply Separation ?' var: apply_separation ;   
+	parameter 'Apply Avoidance ?' var: apply_avoid ;   
+	parameter 'Apply Wind ?' var: apply_wind ;     
+	parameter 'Moving Obstacles ?' var: moving_obstacles  ;    
+	parameter 'Direction of the wind' var: wind_vector ;  
+	
+	//Minimum duration of a step to better see the movements
+	float minimum_cycle_duration &lt;- 0.01;
+
+	output {
+		display Sky  background: #blue type: opengl { 
+			image '../images/sky.jpg' refresh: false;
+			species boids aspect: image trace: 10 fading: true ;
+			species boids_goal;
+			species obstacle;
+			//Event to call the action move_goal in global if the mouse move within the experiment
+			event mouse_move action: move_goal;
+		}
+
+	}
+}
+</code></pre>
+</div>
+
+<p>Code of the model :</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>model boids_flock
+//Import the boids model
+import "Boids.gaml"
+global {
+	//Size of the boids
+	float boids_size &lt;- float(3);
+	//Shape of the boids
+	geometry boids_shape &lt;- circle(boids_size);
+	//Separation between boids
+	float boids_separation &lt;- 4 * boids_size;
+	//Distance to allow creation of the flock 
+	int flock_creation_distance &lt;- int(boids_separation + 1);
+	//Minimum number of member among a flock
+	int min_group_member &lt;- 3;
+	//Frequency of update for the flock
+	int update_frequency &lt;- 10;
+	//Frequency of merge for the flock
+	int merge_frequency &lt;- 10;
+	//Allow the creation of flock
+	bool create_flocks &lt;- false;
+	//Perception range of the boids
+	int base_perception_range &lt;- int(xmax / 100) min: 1;
+	
+	init {
+		//Creation of the different agents viewer
+		create boids_agents_viewer;
+		create flock_agents_viewer;
+		create boids_in_flock_viewer;
+	}
+	//Reflex to create the flocks if it is available
+	reflex create_flocks when: create_flocks {
+		
+		if (length(boids) &gt; 1) {
+			//Clustering by distance of the boids to determine the satisfying boids groups
+			list&lt;list&lt;boids&gt;&gt; satisfying_boids_groups &lt;- (boids.population simple_clustering_by_distance flock_creation_distance) where ((length(each)) &gt; min_group_member);
+			loop one_group over: satisfying_boids_groups {
+				
+				geometry potential_flock_polygon &lt;- convex_hull(solid(polygon(one_group collect boids(each).location)) + (base_perception_range + 5));
+				//If there is no obstacle between the boids of a potential flock, then the flock is created and all the boids become boids in flock
+				if (empty(obstacle overlapping potential_flock_polygon)) {
+					create flock {
+						capture one_group as: boids_in_flock;
+					}
+				}
+
+			}
+
+		}
+
+	}
+
+}
+
+//Species flock which represent the flock of boids, using the skill moving
+species flock skills: [moving] {
+	rgb color &lt;- rgb(rnd(255), rnd(255), rnd(255));
+	geometry shape &lt;- polygon(((boids_in_flock))) buffer 10;
+	//Range of perception of the flock
+	float perception_range &lt;- float(base_perception_range + (rnd(5)));
+	//Speed of the flock
+	float speed update: mean(boids_in_flock collect each.speed);
+	//Reflex to disaggregate the flock if there is a obstacle in the flock
+	reflex disaggregate {
+		geometry buffered_shape &lt;- shape + perception_range;
+		if !(empty(obstacle overlapping buffered_shape)) {
+			release members as: boids in: world;
+			do die;
+		}
+
+	}
+	//Reflex to capture the boids nearby in the range of perception with an update_frequency
+	reflex capture_nearby_boids when: ((cycle mod update_frequency) = 0) {
+		geometry buffered_shape &lt;- shape + perception_range;
+		list&lt;boids&gt; nearby_boids &lt;- (boids overlapping buffered_shape);
+		if (!(empty(nearby_boids))) {
+			geometry new_polygon &lt;- convex_hull(solid(shape + polygon(nearby_boids collect (each.location))));
+			if (empty(obstacle overlapping new_polygon)) {
+				capture nearby_boids as: boids_in_flock;
+			}
+
+		}
+
+	}
+	//Reflex to merge the intersecting flocks
+	reflex merge_nearby_flocks when: ((cycle mod merge_frequency) = 0) 
+	{
+		loop f over: (flock) {
+			if (f != self and (shape intersects f.shape)) {
+				geometry new_shape &lt;- convex_hull(polygon(shape.points + f.shape.points));
+				if empty(obstacle overlapping new_shape) {
+					list&lt;boids&gt; released_boids;
+					ask f {
+						release members as: boids in: world returns: released_coms;
+						released_boids &lt;- list(released_coms);
+						do die;
+					}
+
+					if (!empty(released_boids)) {
+						capture released_boids as: boids_in_flock;
+					}
+
+					shape &lt;- convex_hull(polygon(members collect (boids_in_flock(each).location)));
+				}
+
+			}
+
+		}
+
+	}
+	//Reflex to make the flock follow the goal
+	reflex chase_goal {
+		int direction_to_nearest_ball &lt;- (self towards (first(boids_goal)));
+		float step_distance &lt;- speed * step;
+		float dx &lt;- step_distance * (cos(direction_to_nearest_ball));
+		float dy &lt;- step_distance * (sin(direction_to_nearest_ball));
+		geometry envelope &lt;- shape.envelope;
+		float min_y &lt;- (envelope.points with_min_of (each.y)).y;
+		float min_x &lt;- (envelope.points with_min_of (each.x)).x;
+		float max_x &lt;- (envelope.points with_max_of (each.x)).x;
+		float max_y &lt;- (envelope.points with_max_of (each.y)).y;
+		if (((dx + min_x) &lt; xmin) and min_x &gt; xmin) or (((dx + max_x) &gt; xmax) and max_x &lt; xmax) {
+			dx &lt;- 0.0;
+		}
+		if (((dy + min_y) &lt; ymin) and min_y &gt; ymin) or (((dy + max_y) &gt; ymax) and max_y &lt; ymax) {
+			dy &lt;- 0.0;
+		}
+		
+		loop com over: boids_in_flock {
+			(boids_in_flock(com)).location &lt;- (boids_in_flock(com)).location + { dx, dy };
+		}
+
+		shape &lt;- convex_hull(polygon(list(boids_in_flock) collect (each.location)));
+	}
+
+	aspect default {
+		draw shape color: color;
+	}
+	//Species boids_in_flock which represents the boids agents captured by the flock
+	species boids_in_flock parent: boids {
+		float my_age &lt;- 1.0 update: my_age + 0.01;
+		reflex separation when: apply_separation {
+		}
+
+		reflex alignment when: apply_alignment {
+		}
+
+		reflex cohesion when: apply_cohesion {
+		}
+
+		reflex avoid when: apply_avoid {
+		}
+
+		reflex follow_goal  {
+		}
+
+		reflex wind when: apply_wind {
+		}
+
+		action do_move {
+		}
+
+		reflex movement {
+			do do_move;
+		}
+
+		aspect default {
+			draw circle(my_age) color: ((host as flock).color).darker;
+		}
+
+	}
+
+}
+//Species flock agents viewer which draw the flock information
+species flock_agents_viewer {
+	aspect default {
+		draw "Flocks: " + (string(length(list(flock)))) at: { width_and_height_of_environment - 810, (width_and_height_of_environment) - 5 } color: #blue size: 80 ;
+	}
+
+}
+//Species boids agents viewer which draw the boids information
+species boids_agents_viewer {
+	aspect default {
+		draw "Boids: " + (string(length(list(boids)))) at: { width_and_height_of_environment - 810, (width_and_height_of_environment) - 165 } color: #blue size: 80 ;
+	}
+
+}
+
+//Species boids_in_flock_viewer which draw the boids in flock information
+species boids_in_flock_viewer {
+	aspect default {
+		draw "Boids in flocks: " + (string(number_of_agents - (length(list(boids))))) at: { width_and_height_of_environment - 810, width_and_height_of_environment - 85 } color:
+		#blue size: 80 ;
+	}
+
+}
+
+
+experiment boids_flocks type: gui {
+	parameter "Create flock?" var: create_flocks &lt;- true;
+	parameter "Number of boids" var: number_of_agents &lt;- 300;
+	parameter "Environment size" var: width_and_height_of_environment &lt;- 1600;
+	parameter "Moving obstacles?" var: moving_obstacles &lt;- true;
+	parameter "Torus environment?" var: torus_environment &lt;- false;
+	parameter "Number of obstacles" var: number_of_obstacles &lt;- 5;
+	output {
+		display default_display {
+			species boids_goal;
+			species boids aspect: image;
+			species obstacle;
+			species flock aspect: default transparency: 0.5 {
+				species boids_in_flock aspect: default;
+			}
+
+			species flock_agents_viewer;
+			species boids_agents_viewer;
+			species boids_in_flock_viewer;
+		}
+
+	}
+
+}
+</code></pre>
+</div>
+</div></body></html>

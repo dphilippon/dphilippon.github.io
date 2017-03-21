@@ -1,0 +1,620 @@
+
+    <!doctype html><html lang="en"><head><meta charset="utf-8"><title>Implementing light</title></head>
+    <body>
+    <link rel="stylesheet" href="/style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="//connect.facebook.net/en_US/all.js"></script>
+<script src="/linkify.min.js"></script>
+<script src="/linkify-jquery.min.js"></script>
+<script>
+  $(document).ready(function(){
+	  		$.getJSON('https://graph.facebook.com/238065426321929/feed?access_token=229040647557399|MQKFlFYX7YW25XGj4GUYZ7B1lcY', function(data) {
+		var ahtml="";
+		for(var i = 0; i < 5; i++) {
+			ahtml=ahtml+"<li>"+data["data"][i]["message"]+"</li>";
+		}
+		ahtml=ahtml+"";
+		$("#fbquotes").html(ahtml);
+		$("#fbquotes").linkify();
+	});
+	 
+		$.getJSON('https://api.github.com/repos/gama-platform/gama/commits', function(data) {
+			var ahtml="";
+			for(var i = 0; i < 5; i++) {
+				ahtml=ahtml+"<li>"+data[i]["commit"]["message"]+" by "+data[i]["commit"]["author"]["name"]+" <a href='"+data[i]["commit"]["html_url"]+"'> See more</a></li>";
+			}
+			ahtml=ahtml+"";
+			$("#commitquotes").html(ahtml);
+			$("#commitquotes").linkify();
+		});
+				
+				
+		$.getJSON('https://api.github.com/repos/gama-platform/gama/issues', function(data) {
+			var ahtml="";
+			for(var i = 0; i < 5; i++) {
+				ahtml=ahtml+"<li>"+data[i]["title"]+" by "+data[i]["user"]["login"]+" <a href='"+data[i]["html_url"]+"'> See more</a></li>";
+			}
+			ahtml=ahtml+"";
+			$("#issuequotes").html(ahtml);
+			$("#issuequotes").linkify();
+		});
+		
+		$.getJSON('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fgroups.google.com%2Fforum%2Ffeed%2Fgama-platform%2Ftopics%2Frss.xml%3Fnum%3D15', function(data) {
+			var ahtml="";
+			for(var i = 0; i < 5; i++) {
+				ahtml=ahtml+"<li>"+data["items"][i]["title"]+" by "+data["items"][i]["author"]+" <a href='"+data["items"][i]["link"]+"'> See more</a></li>";
+			}
+			ahtml=ahtml+"";
+			$("#googleusersquotes").html(ahtml);
+			$("#googleusersquotes").linkify();
+			
+		});
+ });
+  
+</script>
+
+      <div id="left">
+
+		<ul class="mcd-menu"><li><a href="/">Home</a></li><li><a href="/">Discussions</a></li>
+<li><a href='/wiki/Tutorials'>Tutorials
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/LearnGAMLStepByStep'>Learn GAML Step by Step
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/Introduction'>Introduction
+</a></li>
+<li><a href='/wiki/StartWithGAML'>Start with GAML
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/ModelOrganization'>Organization of a model
+</a></li>
+<li><a href='/wiki/BasicProgrammingConceptsInGAML'>Basic programming concepts in GAML
+</a></li>
+</ul>
+<li><a href='/wiki/ManipulateBasicSpecies'>Manipulate basic species
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/GlobalSpecies'>The global species
+</a></li>
+<li><a href='/wiki/RegularSpecies'>Regular species
+</a></li>
+<li><a href='/wiki/DefiningActionsAndBehaviors'>Defining actions and behaviors
+</a></li>
+<li><a href='/wiki/InteractionBetweenAgents'>Interaction between agents
+</a></li>
+<li><a href='/wiki/AttachingSkills'>Attaching Skills
+</a></li>
+<li><a href='/wiki/Inheritance'>Inheritance
+</a></li>
+</ul>
+<li><a href='/wiki/DefiningAdvancedSpecies'>Defining advanced species
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/GridSpecies'>Grid Species
+</a></li>
+<li><a href='/wiki/GraphSpecies'>Graph Species
+</a></li>
+<li><a href='/wiki/MirrorSpecies'>Mirror species
+</a></li>
+<li><a href='/wiki/MultiLevelArchitecture'>Multi-level architecture
+</a></li>
+</ul>
+<li><a href='/wiki/DefiningGUIExperiment'>Defining GUI Experiment
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/DefiningParameters'>Defining Parameters
+</a></li>
+<li><a href='/wiki/DefiningDisplaysGeneralities'>Defining displays (Generalities)
+</a></li>
+<li><a href='/wiki/DefiningCharts'>Defining Charts
+</a></li>
+<li><a href='/wiki/Defining3DDisplays'>Defining 3D Displays
+</a></li>
+<li><a href='/wiki/DefiningMonitorsAndInspectors'>Defining monitors and inspectors
+</a></li>
+<li><a href='/wiki/DefiningExportFiles'>Defining export files
+</a></li>
+<li><a href='/wiki/DefiningUserInteraction'>Defining user interaction
+</a></li>
+</ul>
+<li><a href='/wiki/ExploringModels'>Exploring Models
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/RunSeveralSimulations'>Run Several Simulations
+</a></li>
+<li><a href='/wiki/BatchExperiments'>Defining Batch Experiments
+</a></li>
+<li><a href='/wiki/ExplorationMethods'>Exploration Methods
+</a></li>
+</ul>
+<li><a href='/wiki/OptimizingModels'>Optimizing Models
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/RuntimeConcepts'>Runtime Concepts
+</a></li>
+<li><a href='/wiki/OptimizingModels'>Optimizing Models
+</a></li>
+</ul>
+<li><a href='/wiki/MultiParadigmModeling'>Multi-Paradigm Modeling
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/ControlArchitecture'>Control Architectures
+</a></li>
+<li><a href='/wiki/Equations'>Using Equations
+</a></li>
+</ul>
+</ul>
+<li><a href='/wiki/Recipes'>Recipes
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/ManipulateOSMDatas'>Manipulate OSM Datas
+</a></li>
+<li><a href='/wiki/Diffusion'>Implementing diffusion
+</a></li>
+<li><a href='/wiki/UsingDatabase'>Using Database Access
+</a></li>
+<li><a href='/wiki/CallingR'>Calling R
+</a></li>
+<li><a href='/wiki/UsingFIPAACL'>Using FIPA ACL
+</a></li>
+<li><a href='/wiki/GamAnalyzer'>Using GAMAnalyzer
+</a></li>
+<li><a href='/wiki/UsingBDI'>Using BDI
+</a></li>
+<li><a href='/wiki/UsingDrivingSkill'>Advanced Driving Skill
+</a></li>
+<li><a href='/wiki/ManipulateDates'>Manipulate Dates
+</a></li>
+<li><a href='/wiki/ManipulateLight'>Implementing light
+</a></li>
+<li><a href='/wiki/Comodel'>Using Comodel
+</a></li>
+</ul>
+<li><a href='/wiki/Tutorials'>Tutorials
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/LuneraysFlu'>Luneray's flu
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/LuneraysFlu_step1'>1. Creation of a first basic disease spreading model
+</a></li>
+<li><a href='/wiki/LuneraysFlu_step2'>2. Definition of monitors and chart outputs
+</a></li>
+<li><a href='/wiki/LuneraysFlu_step3'>3. Importation of GIS data
+</a></li>
+<li><a href='/wiki/LuneraysFlu_step4'>4. Use of a graph to constraint the movements of people]
+</a></li>
+<li><a href='/wiki/LuneraysFlu_step5'>5. Definition of 3D displays
+</a></li>
+</ul>
+<li><a href='/wiki/IncrementalModel'>Incremental Model
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/IncrementalModel_step1'>1. Simple SI Model
+</a></li>
+<li><a href='/wiki/IncrementalModel_step2'>2. Charts
+</a></li>
+<li><a href='/wiki/IncrementalModel_step3'>3. Integration of GIS Data
+</a></li>
+<li><a href='/wiki/IncrementalModel_step4'>4. Movement on Graph
+</a></li>
+<li><a href='/wiki/IncrementalModel_step5'>5. Visualizing in 3D
+</a></li>
+<li><a href='/wiki/IncrementalModel_step6'>6. Multi-Level
+</a></li>
+<li><a href='/wiki/IncrementalModel_step7'>7. Differential Equations
+</a></li>
+</ul>
+<li><a href='/wiki/PredatorPrey'>Predator Prey
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/PredatorPrey_step1'>1. Basic Model
+</a></li>
+<li><a href='/wiki/PredatorPrey_step2'>2. Vegetation Dynamic
+</a></li>
+<li><a href='/wiki/PredatorPrey_step3'>3. Prey Agent Behavior
+</a></li>
+<li><a href='/wiki/PredatorPrey_step4'>4. Inspectors and Monitors
+</a></li>
+<li><a href='/wiki/PredatorPrey_step5'>5. Predator Agent
+</a></li>
+<li><a href='/wiki/PredatorPrey_step6'>6. Breeding
+</a></li>
+<li><a href='/wiki/PredatorPrey_step7'>7. Agent Aspect
+</a></li>
+<li><a href='/wiki/PredatorPrey_step8'>8. Complex Behavior
+</a></li>
+<li><a href='/wiki/PredatorPrey_step9'>9. Stopping condition
+</a></li>
+<li><a href='/wiki/PredatorPrey_step10'>10. Charts
+</a></li>
+<li><a href='/wiki/PredatorPrey_step11'>11. Writing Files
+</a></li>
+<li><a href='/wiki/PredatorPrey_step12'>12. Image loading
+</a></li>
+</ul>
+<li><a href='/wiki/RoadTrafficModel'>Road Traffic
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/RoadTrafficModel_step1'>1. Loading of GIS Data
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step2'>2. People Agents
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step3'>3. Movement of People
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step4'>4. Weight for Road Network
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step5'>5. Dynamic weights
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step6'>6. Charts
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step7'>7. Automatic Road Repair
+</a></li>
+</ul>
+<li><a href='/wiki/ThreeD'>3D Tutorial
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/ThreeD_step1'>1. Basic Model
+</a></li>
+<li><a href='/wiki/ThreeD_step2'>2. Moving Cells
+</a></li>
+<li><a href='/wiki/ThreeD_step3'>3. Connections
+</a></li>
+</ul>
+</ul>
+</ul>
+<li><a href='/wiki/References'>References
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/PlatformDocumentation'>Platform
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/InstallationAndLaunching'>Installation and Launching
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/Installation'>Installation
+</a></li>
+<li><a href='/wiki/Launching'>Launching GAMA
+</a></li>
+<li><a href='/wiki/Headless'>Headless Mode
+</a></li>
+<li><a href='/wiki/Updating'>Updating GAMA
+</a></li>
+<li><a href='/wiki/InstallingPlugins'>Installing Plugins
+</a></li>
+<li><a href='/wiki/Troubleshooting'>Troubleshooting
+</a></li>
+</ul>
+<li><a href='/wiki/WorkspaceProjectsAndModels'>Workspace, Projects and Models
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/NavigatingWorkspace'>Navigating in the Workspace
+</a></li>
+<li><a href='/wiki/ChangingWorkspace'>Changing Workspace
+</a></li>
+<li><a href='/wiki/ImportingModels'>Importing Models
+</a></li>
+</ul>
+<li><a href='/wiki/EditingModels'>Editing models
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/GamlEditorGeneralities'>The GAML Editor - Generalities
+</a></li>
+<li><a href='/wiki/GamlEditorToolbar'>The GAML Editor Toolbar
+</a></li>
+<li><a href='/wiki/ValidationOfModels'>Validation of Models
+</a></li>
+</ul>
+<li><a href='/wiki/RunningExperiments'>Running Experiments
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/LaunchingExperiments'>Launching Experiments from the User Interface
+</a></li>
+<li><a href='/wiki/ExperimentsUserInterface'>Experiments User Interface
+</a></li>
+<li><a href='/wiki/MenusAndCommands'>Menus and Commands
+</a></li>
+<li><a href='/wiki/ParametersView'>Parameters View
+</a></li>
+<li><a href='/wiki/InspectorsAndMonitors'>Inspectors and monitors
+</a></li>
+<li><a href='/wiki/Displays'>Displays
+</a></li>
+<li><a href='/wiki/BatchSpecific'>Batch Specific UI
+</a></li>
+<li><a href='/wiki/ErrorsView'>Errors View
+</a></li>
+</ul>
+<li><a href='/wiki/Preferences'>Preferences
+</a></li>
+</ul>
+<li><a href='/wiki/GamlReferences'>Gaml Reference
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/BuiltInSpecies'>Built-in Species
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/AgentBuiltIn'>The 'agent' built-in species (Under Construction)
+</a></li>
+<li><a href='/wiki/ModelBuiltIn'>The 'model' built-in species (Under Construction)
+</a></li>
+<li><a href='/wiki/ExperimentBuiltIn'>The 'experiment' built-in species (Under Construction)
+</a></li>
+</ul>
+<li><a href='/wiki/BuiltInSkills'>Built-in Skills
+</a></li>
+<li><a href='/wiki/BuiltInArchitectures'>Built-in Architectures
+</a></li>
+<li><a href='/wiki/Statements'>Statements
+</a></li>
+<li><a href='/wiki/DataTypes'>Types
+</a></li>
+<li><a href='/wiki/FileTypes'>File Types
+</a></li>
+<li><a href='/wiki/Expressions'>Expressions
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/Literals'>Literals
+</a></li>
+<li><a href='/wiki/UnitsAndConstants'>Units and constants
+</a></li>
+<li><a href='/wiki/PseudoVariables'>Pseudo-variables
+</a></li>
+<li><a href='/wiki/VariablesAndAttributes'>Variables and Attributes
+</a></li>
+<li><a href='/wiki/Operators'>Operators 
+</a></li>
+</ul>
+</ul>
+</ul>
+<li>Community
+</li>
+<ul class='sub'>
+<li><a href='/wiki/Contribute'>Contribute
+</a></li>
+<li><a href='/wiki/Projects'>Projects
+</a></li>
+<li><a href='/wiki/TrainingSession'>Training Session
+</a></li>
+</ul></ul></div><div id="right">
+<h3>Facebook Activities</h3>
+<ul id="fbquotes">
+</ul>
+<h3>Commit Activities</h3>
+<ul id="commitquotes">
+</ul>
+<h3>Issue Activities</h3>
+<ul id="issuequotes">
+</ul>
+<h3>Gama Platform Users Activities</h3>
+<ul id="googleusersquotes">
+</ul>
+</div><div id="content"><h1 id="implementing-light">Implementing light</h1>
+
+<p>When using opengl display, GAMA provides you the possibility to manipulate one or several lights, making your display more realistic.
+Most of the following screenshots will be taken with the following short example gaml :</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>model test_light
+
+grid cells {
+	aspect base {
+		draw square(1) at:{grid_x,grid_y} color:#white;
+	}
+}
+experiment my_experiment type:gui{
+	output {
+		display my_display type:opengl background:#darkblue {
+			species cells aspect:base;
+			graphics "my_layer" {
+				draw square(100) color:#white at:{50,50};
+				draw cube(5) color:#lightgrey at:{50,30};
+				draw cube(5) color:#lightgrey at:{30,35};
+				draw cube(5) color:#lightgrey at:{60,35};
+				draw sphere(5) color:#lightgrey at:{10,10,2.5};
+				draw sphere(5) color:#lightgrey at:{20,30,2.5};
+				draw sphere(5) color:#lightgrey at:{40,30,2.5};
+				draw sphere(5) color:#lightgrey at:{40,60,2.5};
+				draw cone3D(5,5) color:#lightgrey at:{55,10,0};
+				draw cylinder(5,5) color:#lightgrey at:{10,60,0};
+			}
+		}
+	}
+}
+</code></pre>
+</div>
+
+<h2 id="index">Index</h2>
+
+<ul>
+  <li><a href="#light-generalities">Light generalities</a></li>
+  <li><a href="#default-light">Default light</a></li>
+  <li><a href="#custom-lights">Custom lights</a></li>
+</ul>
+
+<h2 id="light-generalities">Light generalities</h2>
+
+<p>Before going deep into the code, here is a quick explanation about how light works in opengl.
+First of all, you need to know that there are 3 types of lights you can manipulate : the <strong>ambient light</strong>, the <strong>diffuse light</strong> and the <strong>specular light</strong>. Each “light” in opengl is in fact composed of those 3 types of lights.</p>
+
+<h3 id="ambient-light">Ambient light</h3>
+
+<p>The <strong>ambient light</strong> is the light of your world without any lighting. If a face of a cube is not stricken by the light rays for instance, this face will appear totally black if there is no ambient light. To make your world more realistic, it is better to have an ambient light.
+An ambient light has then no position or direction. It is equally distributed to all the objects of your scene.</p>
+
+<p>Here is an example of our GAML scene using only ambient light (color red) :</p>
+
+<p><img src="resources/images/lightRecipes/ambient_light.png" alt="resources/images/lightRecipes/ambient_light.png" /></p>
+
+<h3 id="diffuse-light">Diffuse light</h3>
+
+<p>The <strong>diffuse light</strong> can be seen as the light rays : if a face of a cube is stricken by the diffuse light, it will take the color of this diffuse light. You have to know that the more perpendicular the face of your object will be to the light ray, the more lightened the face will be.</p>
+
+<p>A diffuse light has then a direction. It can have also a position.
+Your have 2 categories of diffuse light : the <strong>positional lights</strong>, and the <strong>directional lights</strong>.</p>
+
+<h4 id="positional-lights">Positional lights</h4>
+
+<p>Those lights have a position in your world. It is the case of <strong>point lights</strong> and <strong>spot lights</strong>.</p>
+
+<ul>
+  <li>Point lights</li>
+</ul>
+
+<p>Points lights can be seen as a candle in your world, diffusing the light equally in all the direction.</p>
+
+<p>Here is an example of our GAML scene using only diffuse light, with a point light (color red, the light source is displayed as a red sphere) :</p>
+
+<p><img src="resources/images/lightRecipes/point_light.png" alt="resources/images/lightRecipes/point_light.png" /></p>
+
+<ul>
+  <li>Spot lights</li>
+</ul>
+
+<p>Spot lights can be seen as a torch light in your world. It needs a position, and also a direction and an angle.</p>
+
+<p>Here is an example of our GAML scene using only diffusion light, with a spot light (color red, the light source is displayed as a red cone) :</p>
+
+<p><img src="resources/images/lightRecipes/spot_light.png" alt="resources/images/lightRecipes/spot_light.png" /></p>
+
+<p>Positional lights, as they have a position, can also have an attenuation according to the distance between the light source and the object. The value of positional lights are computed with the following formula :
+diffuse_light = diffuse_light * ( 1 / (1 + constante_attenuation + linear_attenuation * d + quadratic_attenuation * d))
+By changing those 3 values (constante_attenuation, linear_attenuation and quadratic_attenuation), you can control the way light is diffused over your world (if your world is “foggy” for instance, you may turn your linear and quadratic attenuation on). Note that by default, all those attenuation are equal to 0.</p>
+
+<p>Here is an example of our GAML scene using only diffusion light, with a point light with linear attenuation (color red, the light source is displayed as a red sphere) :</p>
+
+<p><img src="resources/images/lightRecipes/point_light_with_attenuation.png" alt="resources/images/lightRecipes/point_light_with_attenuation.png" /></p>
+
+<h4 id="directional-lights">Directional lights</h4>
+
+<p>Directional lights have no real “position” : they only have a direction. A directional light will strike all the objects of your world with the same direction. An example of directional light you have in the real world would be the light of the sun : the sun is so far away from us that you can consider that the rays have the same direction and the same intensity wherever they strike.
+Since there is no position for directional lights, there is no attenuation either.</p>
+
+<p>Here is an example of our GAML scene using only diffusion light, with a directional light (color red) :</p>
+
+<p><img src="resources/images/lightRecipes/direction_light.png" alt="resources/images/lightRecipes/direction_light.png" /></p>
+
+<h3 id="specular-light">Specular light</h3>
+
+<p>This is a more advanced concept, giving an aspect a little bit “shinny” to the objects stricken by the specular light. It is used to simulate the interaction between the light and a special material (ex : wood, steel, rubber…).
+This specular light is not implemented yet in gama, only the two others are.</p>
+
+<h2 id="default-light">Default light</h2>
+
+<p>In your opengl display, without specifying any light, you will have only one light, with those following properties :</p>
+
+<p>Those values have been chosen in order to have the same visual effect in both opengl and java2D displays, when you display 2D objects, and also to have a nice “3D effect” when using the opengl displays. We chose the following setting by default :</p>
+<ul>
+  <li>The ambient light value : rgb(127,127,127,255)</li>
+  <li>diffuse light value : rgb(127,127,127,255)</li>
+  <li>type of light : direction</li>
+  <li>direction of the light : (0.5,0.5,-1);</li>
+</ul>
+
+<p>Here is an example of our GAML scene using the default light :</p>
+
+<p><img src="resources/images/lightRecipes/default_light.png" alt="resources/images/lightRecipes/default_light.png" /></p>
+
+<h2 id="custom-lights">Custom lights</h2>
+
+<p>In your opengl display, you can create up to 8 lights, giving them the properties you want.</p>
+
+<h3 id="ambient-light-1">Ambient light</h3>
+
+<p>In order to keep it simple, the ambient light can be set directly when you are declaring your display, through the facet <code class="highlighter-rouge">ambient_light</code>. You will have one only ambient light.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>experiment my_experiment type:gui {
+	output {
+		display "my_display" type:opengl ambient_light:100 {
+		}
+	}
+}
+</code></pre>
+</div>
+
+<p><em>Note for developers</em> : Note that this ambient light is set to the GL_LIGHT0. This GL_LIGHT0 only contains an ambient light, and no either diffuse nor specular light.</p>
+
+<h3 id="diffuse-light-1">Diffuse light</h3>
+
+<p>In order to add lights, or modifying the existing lights, you can use the statement <code class="highlighter-rouge">light</code>, inside your <code class="highlighter-rouge">display</code> scope :</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>experiment my_experiment type:gui {
+	output {
+		display "my_display" type:opengl {
+			light id:0;
+		}
+	}
+}
+</code></pre>
+</div>
+
+<p>This statement has just one non-optional facet : the facet “id”. Through this facet, you can specify which light you want. You can control 7 lights, through an integer value between 1 and 7.
+Once you are manipulating a light through the <code class="highlighter-rouge">light</code> statement, the light is turned on. To switch off the light, you have to add the facet <code class="highlighter-rouge">active</code>, and turn it to <code class="highlighter-rouge">false</code>.
+The light you are declaring through the <code class="highlighter-rouge">light</code> statement is in fact a “diffuse” light. You can specify the color of the diffuse light through the facet <code class="highlighter-rouge">color</code> (by default, the color will be turn to white).
+An other very important facet is the <code class="highlighter-rouge">type</code> facet. This facet accepts a value among <code class="highlighter-rouge">direction</code>, <code class="highlighter-rouge">point</code> and <code class="highlighter-rouge">spot</code>.</p>
+
+<h4 id="declaring-direction-light">Declaring direction light</h4>
+
+<p>A direction light, as explained in the first part, is a light without any position. Instead of the facet <code class="highlighter-rouge">position</code>, you will use the facet <code class="highlighter-rouge">direction</code>, giving a 3D vector.</p>
+
+<p>Example of implementation :</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>light id:1 type:direction direction:{1,1,1} color:rgb(255,0,0);
+</code></pre>
+</div>
+
+<h4 id="declaring-point-light">Declaring point light</h4>
+
+<p>A point light will need a facet <code class="highlighter-rouge">position</code>, in order to give the position of the light source.</p>
+
+<p>Example of implementation of a basic point light :</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>light id:1 type:point position:{10,20,10} color:rgb(255,0,0);
+</code></pre>
+</div>
+
+<p>You can add, if you want, a custom attenuation of the light, through the facets <code class="highlighter-rouge">linear_attenuation</code> or <code class="highlighter-rouge">quadratic_attenuation</code>.</p>
+
+<p>Example of implementation of a point light with attenuation :</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>light id:1 type:point position:{10,20,10} color:rgb(255,0,0) linear_attenuation:0.1;
+</code></pre>
+</div>
+
+<h4 id="declaring-spot-light">Declaring spot light</h4>
+
+<p>A spot light will need the facet <code class="highlighter-rouge">position</code> (a spot light is a positionnal light) and the facet <code class="highlighter-rouge">direction</code>. A spot light will also need a special facet <code class="highlighter-rouge">spot_angle</code> to determine the angle of the spot (by default, this value is set to 45 degree).</p>
+
+<p>Example of implementation of a basic spot light :</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>light id:1 type:spot position:{0,0,10} direction:{1,1,1} color:rgb(255,0,0) spot_angle:20;
+</code></pre>
+</div>
+
+<p>Same as for point light, you can specify an attenuation for a spot light.</p>
+
+<p>Example of implementation of a spot light with attenuation :</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>light id:1 type:spot position:{0,0,10} direction:{1,1,1} color:rgb(255,0,0) spot_angle:20;
+</code></pre>
+</div>
+
+<p>Note that when you are working with lights, you can display your lights through the facet <code class="highlighter-rouge">draw light</code> to help you implementing your model. The three types of lights are displayed differently :</p>
+<ul>
+  <li>The <strong>point</strong> light is represented by a sphere with the color of the diffuse light you specified, in the position of your light source.</li>
+  <li>The <strong>spot</strong> light is represented by a cone with the color of the diffuse light you specified, in the position of your light source, the orientation of your light source. The size of the base of the cone will depend of the angle you specified.</li>
+  <li>The <strong>direction</strong> light, as it has no real position, is represented with arrows a bit above the world, with the direction of your direction light, and the color of the diffuse light you specified.</li>
+</ul>
+
+<p><img src="resources/images/lightRecipes/draw_light.png" alt="resources/images/lightRecipes/draw_light.png" /></p>
+
+<p><em>Note for developers</em> : Note that, since the GL_LIGHT0 is already reserved for the ambient light (only !), all the other lights (from 1 to 7) are the lights from GL_LIGHT1 to GL_LIGHT7.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td><a href="# (keyword|statement_light)">//</a>: # (endConcept</td>
+      <td>light)</td>
+    </tr>
+  </tbody>
+</table>
+</div></body></html>

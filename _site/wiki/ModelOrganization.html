@@ -1,0 +1,552 @@
+
+    <!doctype html><html lang="en"><head><meta charset="utf-8"><title>Organization of a model</title></head>
+    <body>
+    <link rel="stylesheet" href="/style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="//connect.facebook.net/en_US/all.js"></script>
+<script src="/linkify.min.js"></script>
+<script src="/linkify-jquery.min.js"></script>
+<script>
+  $(document).ready(function(){
+	  		$.getJSON('https://graph.facebook.com/238065426321929/feed?access_token=229040647557399|MQKFlFYX7YW25XGj4GUYZ7B1lcY', function(data) {
+		var ahtml="";
+		for(var i = 0; i < 5; i++) {
+			ahtml=ahtml+"<li>"+data["data"][i]["message"]+"</li>";
+		}
+		ahtml=ahtml+"";
+		$("#fbquotes").html(ahtml);
+		$("#fbquotes").linkify();
+	});
+	 
+		$.getJSON('https://api.github.com/repos/gama-platform/gama/commits', function(data) {
+			var ahtml="";
+			for(var i = 0; i < 5; i++) {
+				ahtml=ahtml+"<li>"+data[i]["commit"]["message"]+" by "+data[i]["commit"]["author"]["name"]+" <a href='"+data[i]["commit"]["html_url"]+"'> See more</a></li>";
+			}
+			ahtml=ahtml+"";
+			$("#commitquotes").html(ahtml);
+			$("#commitquotes").linkify();
+		});
+				
+				
+		$.getJSON('https://api.github.com/repos/gama-platform/gama/issues', function(data) {
+			var ahtml="";
+			for(var i = 0; i < 5; i++) {
+				ahtml=ahtml+"<li>"+data[i]["title"]+" by "+data[i]["user"]["login"]+" <a href='"+data[i]["html_url"]+"'> See more</a></li>";
+			}
+			ahtml=ahtml+"";
+			$("#issuequotes").html(ahtml);
+			$("#issuequotes").linkify();
+		});
+		
+		$.getJSON('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fgroups.google.com%2Fforum%2Ffeed%2Fgama-platform%2Ftopics%2Frss.xml%3Fnum%3D15', function(data) {
+			var ahtml="";
+			for(var i = 0; i < 5; i++) {
+				ahtml=ahtml+"<li>"+data["items"][i]["title"]+" by "+data["items"][i]["author"]+" <a href='"+data["items"][i]["link"]+"'> See more</a></li>";
+			}
+			ahtml=ahtml+"";
+			$("#googleusersquotes").html(ahtml);
+			$("#googleusersquotes").linkify();
+			
+		});
+ });
+  
+</script>
+
+      <div id="left">
+
+		<ul class="mcd-menu"><li><a href="/">Home</a></li><li><a href="/">Discussions</a></li>
+<li><a href='/wiki/Tutorials'>Tutorials
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/LearnGAMLStepByStep'>Learn GAML Step by Step
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/Introduction'>Introduction
+</a></li>
+<li><a href='/wiki/StartWithGAML'>Start with GAML
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/ModelOrganization'>Organization of a model
+</a></li>
+<li><a href='/wiki/BasicProgrammingConceptsInGAML'>Basic programming concepts in GAML
+</a></li>
+</ul>
+<li><a href='/wiki/ManipulateBasicSpecies'>Manipulate basic species
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/GlobalSpecies'>The global species
+</a></li>
+<li><a href='/wiki/RegularSpecies'>Regular species
+</a></li>
+<li><a href='/wiki/DefiningActionsAndBehaviors'>Defining actions and behaviors
+</a></li>
+<li><a href='/wiki/InteractionBetweenAgents'>Interaction between agents
+</a></li>
+<li><a href='/wiki/AttachingSkills'>Attaching Skills
+</a></li>
+<li><a href='/wiki/Inheritance'>Inheritance
+</a></li>
+</ul>
+<li><a href='/wiki/DefiningAdvancedSpecies'>Defining advanced species
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/GridSpecies'>Grid Species
+</a></li>
+<li><a href='/wiki/GraphSpecies'>Graph Species
+</a></li>
+<li><a href='/wiki/MirrorSpecies'>Mirror species
+</a></li>
+<li><a href='/wiki/MultiLevelArchitecture'>Multi-level architecture
+</a></li>
+</ul>
+<li><a href='/wiki/DefiningGUIExperiment'>Defining GUI Experiment
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/DefiningParameters'>Defining Parameters
+</a></li>
+<li><a href='/wiki/DefiningDisplaysGeneralities'>Defining displays (Generalities)
+</a></li>
+<li><a href='/wiki/DefiningCharts'>Defining Charts
+</a></li>
+<li><a href='/wiki/Defining3DDisplays'>Defining 3D Displays
+</a></li>
+<li><a href='/wiki/DefiningMonitorsAndInspectors'>Defining monitors and inspectors
+</a></li>
+<li><a href='/wiki/DefiningExportFiles'>Defining export files
+</a></li>
+<li><a href='/wiki/DefiningUserInteraction'>Defining user interaction
+</a></li>
+</ul>
+<li><a href='/wiki/ExploringModels'>Exploring Models
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/RunSeveralSimulations'>Run Several Simulations
+</a></li>
+<li><a href='/wiki/BatchExperiments'>Defining Batch Experiments
+</a></li>
+<li><a href='/wiki/ExplorationMethods'>Exploration Methods
+</a></li>
+</ul>
+<li><a href='/wiki/OptimizingModels'>Optimizing Models
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/RuntimeConcepts'>Runtime Concepts
+</a></li>
+<li><a href='/wiki/OptimizingModels'>Optimizing Models
+</a></li>
+</ul>
+<li><a href='/wiki/MultiParadigmModeling'>Multi-Paradigm Modeling
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/ControlArchitecture'>Control Architectures
+</a></li>
+<li><a href='/wiki/Equations'>Using Equations
+</a></li>
+</ul>
+</ul>
+<li><a href='/wiki/Recipes'>Recipes
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/ManipulateOSMDatas'>Manipulate OSM Datas
+</a></li>
+<li><a href='/wiki/Diffusion'>Implementing diffusion
+</a></li>
+<li><a href='/wiki/UsingDatabase'>Using Database Access
+</a></li>
+<li><a href='/wiki/CallingR'>Calling R
+</a></li>
+<li><a href='/wiki/UsingFIPAACL'>Using FIPA ACL
+</a></li>
+<li><a href='/wiki/GamAnalyzer'>Using GAMAnalyzer
+</a></li>
+<li><a href='/wiki/UsingBDI'>Using BDI
+</a></li>
+<li><a href='/wiki/UsingDrivingSkill'>Advanced Driving Skill
+</a></li>
+<li><a href='/wiki/ManipulateDates'>Manipulate Dates
+</a></li>
+<li><a href='/wiki/ManipulateLight'>Implementing light
+</a></li>
+<li><a href='/wiki/Comodel'>Using Comodel
+</a></li>
+</ul>
+<li><a href='/wiki/Tutorials'>Tutorials
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/LuneraysFlu'>Luneray's flu
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/LuneraysFlu_step1'>1. Creation of a first basic disease spreading model
+</a></li>
+<li><a href='/wiki/LuneraysFlu_step2'>2. Definition of monitors and chart outputs
+</a></li>
+<li><a href='/wiki/LuneraysFlu_step3'>3. Importation of GIS data
+</a></li>
+<li><a href='/wiki/LuneraysFlu_step4'>4. Use of a graph to constraint the movements of people]
+</a></li>
+<li><a href='/wiki/LuneraysFlu_step5'>5. Definition of 3D displays
+</a></li>
+</ul>
+<li><a href='/wiki/IncrementalModel'>Incremental Model
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/IncrementalModel_step1'>1. Simple SI Model
+</a></li>
+<li><a href='/wiki/IncrementalModel_step2'>2. Charts
+</a></li>
+<li><a href='/wiki/IncrementalModel_step3'>3. Integration of GIS Data
+</a></li>
+<li><a href='/wiki/IncrementalModel_step4'>4. Movement on Graph
+</a></li>
+<li><a href='/wiki/IncrementalModel_step5'>5. Visualizing in 3D
+</a></li>
+<li><a href='/wiki/IncrementalModel_step6'>6. Multi-Level
+</a></li>
+<li><a href='/wiki/IncrementalModel_step7'>7. Differential Equations
+</a></li>
+</ul>
+<li><a href='/wiki/PredatorPrey'>Predator Prey
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/PredatorPrey_step1'>1. Basic Model
+</a></li>
+<li><a href='/wiki/PredatorPrey_step2'>2. Vegetation Dynamic
+</a></li>
+<li><a href='/wiki/PredatorPrey_step3'>3. Prey Agent Behavior
+</a></li>
+<li><a href='/wiki/PredatorPrey_step4'>4. Inspectors and Monitors
+</a></li>
+<li><a href='/wiki/PredatorPrey_step5'>5. Predator Agent
+</a></li>
+<li><a href='/wiki/PredatorPrey_step6'>6. Breeding
+</a></li>
+<li><a href='/wiki/PredatorPrey_step7'>7. Agent Aspect
+</a></li>
+<li><a href='/wiki/PredatorPrey_step8'>8. Complex Behavior
+</a></li>
+<li><a href='/wiki/PredatorPrey_step9'>9. Stopping condition
+</a></li>
+<li><a href='/wiki/PredatorPrey_step10'>10. Charts
+</a></li>
+<li><a href='/wiki/PredatorPrey_step11'>11. Writing Files
+</a></li>
+<li><a href='/wiki/PredatorPrey_step12'>12. Image loading
+</a></li>
+</ul>
+<li><a href='/wiki/RoadTrafficModel'>Road Traffic
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/RoadTrafficModel_step1'>1. Loading of GIS Data
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step2'>2. People Agents
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step3'>3. Movement of People
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step4'>4. Weight for Road Network
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step5'>5. Dynamic weights
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step6'>6. Charts
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step7'>7. Automatic Road Repair
+</a></li>
+</ul>
+<li><a href='/wiki/ThreeD'>3D Tutorial
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/ThreeD_step1'>1. Basic Model
+</a></li>
+<li><a href='/wiki/ThreeD_step2'>2. Moving Cells
+</a></li>
+<li><a href='/wiki/ThreeD_step3'>3. Connections
+</a></li>
+</ul>
+</ul>
+</ul>
+<li><a href='/wiki/References'>References
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/PlatformDocumentation'>Platform
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/InstallationAndLaunching'>Installation and Launching
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/Installation'>Installation
+</a></li>
+<li><a href='/wiki/Launching'>Launching GAMA
+</a></li>
+<li><a href='/wiki/Headless'>Headless Mode
+</a></li>
+<li><a href='/wiki/Updating'>Updating GAMA
+</a></li>
+<li><a href='/wiki/InstallingPlugins'>Installing Plugins
+</a></li>
+<li><a href='/wiki/Troubleshooting'>Troubleshooting
+</a></li>
+</ul>
+<li><a href='/wiki/WorkspaceProjectsAndModels'>Workspace, Projects and Models
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/NavigatingWorkspace'>Navigating in the Workspace
+</a></li>
+<li><a href='/wiki/ChangingWorkspace'>Changing Workspace
+</a></li>
+<li><a href='/wiki/ImportingModels'>Importing Models
+</a></li>
+</ul>
+<li><a href='/wiki/EditingModels'>Editing models
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/GamlEditorGeneralities'>The GAML Editor - Generalities
+</a></li>
+<li><a href='/wiki/GamlEditorToolbar'>The GAML Editor Toolbar
+</a></li>
+<li><a href='/wiki/ValidationOfModels'>Validation of Models
+</a></li>
+</ul>
+<li><a href='/wiki/RunningExperiments'>Running Experiments
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/LaunchingExperiments'>Launching Experiments from the User Interface
+</a></li>
+<li><a href='/wiki/ExperimentsUserInterface'>Experiments User Interface
+</a></li>
+<li><a href='/wiki/MenusAndCommands'>Menus and Commands
+</a></li>
+<li><a href='/wiki/ParametersView'>Parameters View
+</a></li>
+<li><a href='/wiki/InspectorsAndMonitors'>Inspectors and monitors
+</a></li>
+<li><a href='/wiki/Displays'>Displays
+</a></li>
+<li><a href='/wiki/BatchSpecific'>Batch Specific UI
+</a></li>
+<li><a href='/wiki/ErrorsView'>Errors View
+</a></li>
+</ul>
+<li><a href='/wiki/Preferences'>Preferences
+</a></li>
+</ul>
+<li><a href='/wiki/GamlReferences'>Gaml Reference
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/BuiltInSpecies'>Built-in Species
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/AgentBuiltIn'>The 'agent' built-in species (Under Construction)
+</a></li>
+<li><a href='/wiki/ModelBuiltIn'>The 'model' built-in species (Under Construction)
+</a></li>
+<li><a href='/wiki/ExperimentBuiltIn'>The 'experiment' built-in species (Under Construction)
+</a></li>
+</ul>
+<li><a href='/wiki/BuiltInSkills'>Built-in Skills
+</a></li>
+<li><a href='/wiki/BuiltInArchitectures'>Built-in Architectures
+</a></li>
+<li><a href='/wiki/Statements'>Statements
+</a></li>
+<li><a href='/wiki/DataTypes'>Types
+</a></li>
+<li><a href='/wiki/FileTypes'>File Types
+</a></li>
+<li><a href='/wiki/Expressions'>Expressions
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/Literals'>Literals
+</a></li>
+<li><a href='/wiki/UnitsAndConstants'>Units and constants
+</a></li>
+<li><a href='/wiki/PseudoVariables'>Pseudo-variables
+</a></li>
+<li><a href='/wiki/VariablesAndAttributes'>Variables and Attributes
+</a></li>
+<li><a href='/wiki/Operators'>Operators 
+</a></li>
+</ul>
+</ul>
+</ul>
+<li>Community
+</li>
+<ul class='sub'>
+<li><a href='/wiki/Contribute'>Contribute
+</a></li>
+<li><a href='/wiki/Projects'>Projects
+</a></li>
+<li><a href='/wiki/TrainingSession'>Training Session
+</a></li>
+</ul></ul></div><div id="right">
+<h3>Facebook Activities</h3>
+<ul id="fbquotes">
+</ul>
+<h3>Commit Activities</h3>
+<ul id="commitquotes">
+</ul>
+<h3>Issue Activities</h3>
+<ul id="issuequotes">
+</ul>
+<h3>Gama Platform Users Activities</h3>
+<ul id="googleusersquotes">
+</ul>
+</div><div id="content"><h1 id="organization-of-a-model">Organization of a model</h1>
+
+<p>As already extensively detailed in the <a href="Introduction">introduction page</a>, defining a model in GAML amounts to defining a <em>model species</em>, which later allows to instantiate a <em>model agent</em> (aka a <em>simulation</em>), which may or may not contain micro-species, and which can be flanked by <em>experiment plans</em> in order to be simulated.</p>
+
+<p>This conceptual structure is respected in the definition of model files, which follows a similar pattern:</p>
+
+<ol>
+  <li>Definition of the <em>global species</em>, preceded by a <em>header</em>, in order to represent the <em>model species</em></li>
+  <li>Definition of the different micro-species (either nested inside the <em>global species</em> or at the same level)</li>
+  <li>Definition of the different <em>experiment plans</em> that target this model</li>
+</ol>
+
+<h2 id="table-of-contents">Table of contents</h2>
+
+<ul>
+  <li><a href="#model-header-model-species">Model Header (model species)</a></li>
+  <li><a href="#species-declarations">Species declarations</a></li>
+  <li><a href="#experiment-declarations">Experiment declarations</a></li>
+  <li><a href="#basic-skeleton-of_a_model">Basic skeleton of a model</a></li>
+</ul>
+
+<h2 id="model-header-model-species">Model Header (<em>model species</em>)</h2>
+
+<p>The header of a model file begins with the declaration of the name of the model. Contrarily to other statements, this declaration <strong>does not</strong> end with a semi-colon.</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>model name_of_the_model
+</code></pre>
+</div>
+<p>The name of the model is not necessarily the same as the name of the file. It must conform to the general rule for naming species, i.e. be a valid identifier (beginning with a letter, containing only letters, digits and dashes). This name will be used for building the name of the model species, from which <em>simulations</em> will be instantiated. For instance, the following declaration:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>model dummy
+</code></pre>
+</div>
+<p>will internally create a species called <code class="highlighter-rouge">dummy_model</code>, child of the abstract species <code class="highlighter-rouge">model</code>, from which simulations (called <code class="highlighter-rouge">dummy_model0</code>, <code class="highlighter-rouge">dummy_model1</code>, etc.) will be instantiated.</p>
+
+<p>This declaration is followed by optional import statements that indicate which other models this model is importing. Import statements <strong>do not</strong> end with a semi-colon.</p>
+
+<p>Importing a model can take two forms. The first one, called <em>inheritance import</em>, is declared as follows:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>import "relative_path_to_a_model_file"
+import "relative_path_to_another_model_file"
+</code></pre>
+</div>
+<p>The second one, called <em>usage import</em>, is declared as follows:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>import "relative_path_to_a_model_file" as model_identifier
+</code></pre>
+</div>
+<p>When importing models using the first form, all the declarations of the model(s) imported will be merged with those of the current model (in the order with which the import statements are declared, i.e. the latest definitions of global attributes or behaviors superseding the previous ones).
+The second form is reserved for using models as <em>micro-models</em> of the current model. This possibility is still experimental in the current version of GAMA.</p>
+
+<p>The last part of the <em>header</em> is the definition of the <a href="GlobalSpecies"><code class="highlighter-rouge">global</code> species</a>, which is the actual definition of the <em>model species</em> itself.</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>global {
+    // Definition of [global attributes](GlobalSpecies#declaration), [actions and behaviors](DefiningActionsAndBehaviors)
+}
+</code></pre>
+</div>
+
+<p>Note that neither the imports nor the definition of <code class="highlighter-rouge">global</code> are mandatory. Only the <code class="highlighter-rouge">model</code> statement is.</p>
+
+<h2 id="species-declarations">Species declarations</h2>
+
+<p>The header is followed by the declaration of the different species of agents that populate the model.</p>
+
+<p>The <a href="GlobalSpecies">special species <code class="highlighter-rouge">global</code></a> is the world species. You will declare here all the global attributes/actions/behaviors. The global species does not have name, and is unique in your model.</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>global {
+    // definition of global attributes, actions, behaviors
+}
+</code></pre>
+</div>
+<p><a href="RegularSpecies">Regular species</a> can be declared with the keyword <code class="highlighter-rouge">species</code>. You can declare several regular species, and they all have to be named.</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>species nameOfSpecies {
+	// definition of your [species attributes](RegularSpecies#declaration), [actions and behaviors](DefiningActionsAndBehaviors)
+}
+</code></pre>
+</div>
+<p>Note that the possibility to define the species <em>after</em> the <code class="highlighter-rouge">global</code> definition is actually a convenience: these species are micro-species of the model species and, hence, could be perfectly defined as nested species of <code class="highlighter-rouge">global</code>. For instance:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>global {
+    // definition of global attributes, actions, behaviors
+}
+
+species A {...}
+
+species B {...}
+</code></pre>
+</div>
+<p>is completely equivalent to:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>global {
+    // definition of [global attributes](GlobalSpecies#declaration), actions, behaviors
+
+    species A {...}
+
+    species B {...}
+}
+</code></pre>
+</div>
+
+<h2 id="experiment-declarations">Experiment declarations</h2>
+
+<p>Experiments are usually declared at the end of the file. They start with the keyword <code class="highlighter-rouge">experiment</code>. They contains the <a href="DefiningParameters">simulation parameters</a>, and the definition of the output (such as <a href="DefiningDisplaysGeneralities">displays</a>, <a href="DefiningMonitorsAndInspectors">monitors or inspectors</a>). You can declare as much experiments as you want.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>experiment first_experiment {
+    // definition of parameters (intputs)
+
+    // definition of output
+    output {...}
+}
+
+experiment second_experiment {
+    // definition of parameters (inputs)
+
+    // definition of output
+}
+</code></pre>
+</div>
+
+<p>Note that you have two types of experiments:
+A <a href="DefiningGUIExperiment">GUI experiment</a> allows to display a graphical interface with input parameters and outputs. It is declared with the following structure :</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>experiment gui_experiment type:gui {
+	[...]
+}
+</code></pre>
+</div>
+<p>A <a href="BatchExperiments">Batch experiment</a> allows to execute numerous successive simulation runs (often used for model exploration). It is declared with the following structure :</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>experiment batch_experiment type:batch {
+	[...]
+}
+</code></pre>
+</div>
+
+<h2 id="basic-skeleton-of-a-model">Basic skeleton of a model</h2>
+
+<p>Here is the basic skeleton of a model :</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>model name_of_the_model
+
+global {
+	// definition of [global attributes](GlobalSpecies#declaration), actions, behaviours
+}
+
+species my_specie {
+	// definition of attributes, actions, behaviours
+}
+
+experiment my_experiment /* + specify the type : "type:gui" or "type:batch" */
+{
+	// here the definition of your experiment, with...
+	// ... your inputs
+	output {
+		// ... and your outputs
+	}
+}
+</code></pre>
+</div>
+<p>Don’t forget this structure ! This will be the basis for all the models you will create from now.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td><a href="# (keyword|concept_import)">//</a>: # (endConcept</td>
+      <td>model_structure)</td>
+    </tr>
+  </tbody>
+</table>
+</div></body></html>

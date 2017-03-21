@@ -1,0 +1,1117 @@
+
+    <!doctype html><html lang="en"><head><meta charset="utf-8"><title>Built-in Skills</title></head>
+    <body>
+    <link rel="stylesheet" href="/style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="//connect.facebook.net/en_US/all.js"></script>
+<script src="/linkify.min.js"></script>
+<script src="/linkify-jquery.min.js"></script>
+<script>
+  $(document).ready(function(){
+	  		$.getJSON('https://graph.facebook.com/238065426321929/feed?access_token=229040647557399|MQKFlFYX7YW25XGj4GUYZ7B1lcY', function(data) {
+		var ahtml="";
+		for(var i = 0; i < 5; i++) {
+			ahtml=ahtml+"<li>"+data["data"][i]["message"]+"</li>";
+		}
+		ahtml=ahtml+"";
+		$("#fbquotes").html(ahtml);
+		$("#fbquotes").linkify();
+	});
+	 
+		$.getJSON('https://api.github.com/repos/gama-platform/gama/commits', function(data) {
+			var ahtml="";
+			for(var i = 0; i < 5; i++) {
+				ahtml=ahtml+"<li>"+data[i]["commit"]["message"]+" by "+data[i]["commit"]["author"]["name"]+" <a href='"+data[i]["commit"]["html_url"]+"'> See more</a></li>";
+			}
+			ahtml=ahtml+"";
+			$("#commitquotes").html(ahtml);
+			$("#commitquotes").linkify();
+		});
+				
+				
+		$.getJSON('https://api.github.com/repos/gama-platform/gama/issues', function(data) {
+			var ahtml="";
+			for(var i = 0; i < 5; i++) {
+				ahtml=ahtml+"<li>"+data[i]["title"]+" by "+data[i]["user"]["login"]+" <a href='"+data[i]["html_url"]+"'> See more</a></li>";
+			}
+			ahtml=ahtml+"";
+			$("#issuequotes").html(ahtml);
+			$("#issuequotes").linkify();
+		});
+		
+		$.getJSON('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fgroups.google.com%2Fforum%2Ffeed%2Fgama-platform%2Ftopics%2Frss.xml%3Fnum%3D15', function(data) {
+			var ahtml="";
+			for(var i = 0; i < 5; i++) {
+				ahtml=ahtml+"<li>"+data["items"][i]["title"]+" by "+data["items"][i]["author"]+" <a href='"+data["items"][i]["link"]+"'> See more</a></li>";
+			}
+			ahtml=ahtml+"";
+			$("#googleusersquotes").html(ahtml);
+			$("#googleusersquotes").linkify();
+			
+		});
+ });
+  
+</script>
+
+      <div id="left">
+
+		<ul class="mcd-menu"><li><a href="/">Home</a></li><li><a href="/">Discussions</a></li>
+<li><a href='/wiki/Tutorials'>Tutorials
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/LearnGAMLStepByStep'>Learn GAML Step by Step
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/Introduction'>Introduction
+</a></li>
+<li><a href='/wiki/StartWithGAML'>Start with GAML
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/ModelOrganization'>Organization of a model
+</a></li>
+<li><a href='/wiki/BasicProgrammingConceptsInGAML'>Basic programming concepts in GAML
+</a></li>
+</ul>
+<li><a href='/wiki/ManipulateBasicSpecies'>Manipulate basic species
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/GlobalSpecies'>The global species
+</a></li>
+<li><a href='/wiki/RegularSpecies'>Regular species
+</a></li>
+<li><a href='/wiki/DefiningActionsAndBehaviors'>Defining actions and behaviors
+</a></li>
+<li><a href='/wiki/InteractionBetweenAgents'>Interaction between agents
+</a></li>
+<li><a href='/wiki/AttachingSkills'>Attaching Skills
+</a></li>
+<li><a href='/wiki/Inheritance'>Inheritance
+</a></li>
+</ul>
+<li><a href='/wiki/DefiningAdvancedSpecies'>Defining advanced species
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/GridSpecies'>Grid Species
+</a></li>
+<li><a href='/wiki/GraphSpecies'>Graph Species
+</a></li>
+<li><a href='/wiki/MirrorSpecies'>Mirror species
+</a></li>
+<li><a href='/wiki/MultiLevelArchitecture'>Multi-level architecture
+</a></li>
+</ul>
+<li><a href='/wiki/DefiningGUIExperiment'>Defining GUI Experiment
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/DefiningParameters'>Defining Parameters
+</a></li>
+<li><a href='/wiki/DefiningDisplaysGeneralities'>Defining displays (Generalities)
+</a></li>
+<li><a href='/wiki/DefiningCharts'>Defining Charts
+</a></li>
+<li><a href='/wiki/Defining3DDisplays'>Defining 3D Displays
+</a></li>
+<li><a href='/wiki/DefiningMonitorsAndInspectors'>Defining monitors and inspectors
+</a></li>
+<li><a href='/wiki/DefiningExportFiles'>Defining export files
+</a></li>
+<li><a href='/wiki/DefiningUserInteraction'>Defining user interaction
+</a></li>
+</ul>
+<li><a href='/wiki/ExploringModels'>Exploring Models
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/RunSeveralSimulations'>Run Several Simulations
+</a></li>
+<li><a href='/wiki/BatchExperiments'>Defining Batch Experiments
+</a></li>
+<li><a href='/wiki/ExplorationMethods'>Exploration Methods
+</a></li>
+</ul>
+<li><a href='/wiki/OptimizingModels'>Optimizing Models
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/RuntimeConcepts'>Runtime Concepts
+</a></li>
+<li><a href='/wiki/OptimizingModels'>Optimizing Models
+</a></li>
+</ul>
+<li><a href='/wiki/MultiParadigmModeling'>Multi-Paradigm Modeling
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/ControlArchitecture'>Control Architectures
+</a></li>
+<li><a href='/wiki/Equations'>Using Equations
+</a></li>
+</ul>
+</ul>
+<li><a href='/wiki/Recipes'>Recipes
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/ManipulateOSMDatas'>Manipulate OSM Datas
+</a></li>
+<li><a href='/wiki/Diffusion'>Implementing diffusion
+</a></li>
+<li><a href='/wiki/UsingDatabase'>Using Database Access
+</a></li>
+<li><a href='/wiki/CallingR'>Calling R
+</a></li>
+<li><a href='/wiki/UsingFIPAACL'>Using FIPA ACL
+</a></li>
+<li><a href='/wiki/GamAnalyzer'>Using GAMAnalyzer
+</a></li>
+<li><a href='/wiki/UsingBDI'>Using BDI
+</a></li>
+<li><a href='/wiki/UsingDrivingSkill'>Advanced Driving Skill
+</a></li>
+<li><a href='/wiki/ManipulateDates'>Manipulate Dates
+</a></li>
+<li><a href='/wiki/ManipulateLight'>Implementing light
+</a></li>
+<li><a href='/wiki/Comodel'>Using Comodel
+</a></li>
+</ul>
+<li><a href='/wiki/Tutorials'>Tutorials
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/LuneraysFlu'>Luneray's flu
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/LuneraysFlu_step1'>1. Creation of a first basic disease spreading model
+</a></li>
+<li><a href='/wiki/LuneraysFlu_step2'>2. Definition of monitors and chart outputs
+</a></li>
+<li><a href='/wiki/LuneraysFlu_step3'>3. Importation of GIS data
+</a></li>
+<li><a href='/wiki/LuneraysFlu_step4'>4. Use of a graph to constraint the movements of people]
+</a></li>
+<li><a href='/wiki/LuneraysFlu_step5'>5. Definition of 3D displays
+</a></li>
+</ul>
+<li><a href='/wiki/IncrementalModel'>Incremental Model
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/IncrementalModel_step1'>1. Simple SI Model
+</a></li>
+<li><a href='/wiki/IncrementalModel_step2'>2. Charts
+</a></li>
+<li><a href='/wiki/IncrementalModel_step3'>3. Integration of GIS Data
+</a></li>
+<li><a href='/wiki/IncrementalModel_step4'>4. Movement on Graph
+</a></li>
+<li><a href='/wiki/IncrementalModel_step5'>5. Visualizing in 3D
+</a></li>
+<li><a href='/wiki/IncrementalModel_step6'>6. Multi-Level
+</a></li>
+<li><a href='/wiki/IncrementalModel_step7'>7. Differential Equations
+</a></li>
+</ul>
+<li><a href='/wiki/PredatorPrey'>Predator Prey
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/PredatorPrey_step1'>1. Basic Model
+</a></li>
+<li><a href='/wiki/PredatorPrey_step2'>2. Vegetation Dynamic
+</a></li>
+<li><a href='/wiki/PredatorPrey_step3'>3. Prey Agent Behavior
+</a></li>
+<li><a href='/wiki/PredatorPrey_step4'>4. Inspectors and Monitors
+</a></li>
+<li><a href='/wiki/PredatorPrey_step5'>5. Predator Agent
+</a></li>
+<li><a href='/wiki/PredatorPrey_step6'>6. Breeding
+</a></li>
+<li><a href='/wiki/PredatorPrey_step7'>7. Agent Aspect
+</a></li>
+<li><a href='/wiki/PredatorPrey_step8'>8. Complex Behavior
+</a></li>
+<li><a href='/wiki/PredatorPrey_step9'>9. Stopping condition
+</a></li>
+<li><a href='/wiki/PredatorPrey_step10'>10. Charts
+</a></li>
+<li><a href='/wiki/PredatorPrey_step11'>11. Writing Files
+</a></li>
+<li><a href='/wiki/PredatorPrey_step12'>12. Image loading
+</a></li>
+</ul>
+<li><a href='/wiki/RoadTrafficModel'>Road Traffic
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/RoadTrafficModel_step1'>1. Loading of GIS Data
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step2'>2. People Agents
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step3'>3. Movement of People
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step4'>4. Weight for Road Network
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step5'>5. Dynamic weights
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step6'>6. Charts
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step7'>7. Automatic Road Repair
+</a></li>
+</ul>
+<li><a href='/wiki/ThreeD'>3D Tutorial
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/ThreeD_step1'>1. Basic Model
+</a></li>
+<li><a href='/wiki/ThreeD_step2'>2. Moving Cells
+</a></li>
+<li><a href='/wiki/ThreeD_step3'>3. Connections
+</a></li>
+</ul>
+</ul>
+</ul>
+<li><a href='/wiki/References'>References
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/PlatformDocumentation'>Platform
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/InstallationAndLaunching'>Installation and Launching
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/Installation'>Installation
+</a></li>
+<li><a href='/wiki/Launching'>Launching GAMA
+</a></li>
+<li><a href='/wiki/Headless'>Headless Mode
+</a></li>
+<li><a href='/wiki/Updating'>Updating GAMA
+</a></li>
+<li><a href='/wiki/InstallingPlugins'>Installing Plugins
+</a></li>
+<li><a href='/wiki/Troubleshooting'>Troubleshooting
+</a></li>
+</ul>
+<li><a href='/wiki/WorkspaceProjectsAndModels'>Workspace, Projects and Models
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/NavigatingWorkspace'>Navigating in the Workspace
+</a></li>
+<li><a href='/wiki/ChangingWorkspace'>Changing Workspace
+</a></li>
+<li><a href='/wiki/ImportingModels'>Importing Models
+</a></li>
+</ul>
+<li><a href='/wiki/EditingModels'>Editing models
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/GamlEditorGeneralities'>The GAML Editor - Generalities
+</a></li>
+<li><a href='/wiki/GamlEditorToolbar'>The GAML Editor Toolbar
+</a></li>
+<li><a href='/wiki/ValidationOfModels'>Validation of Models
+</a></li>
+</ul>
+<li><a href='/wiki/RunningExperiments'>Running Experiments
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/LaunchingExperiments'>Launching Experiments from the User Interface
+</a></li>
+<li><a href='/wiki/ExperimentsUserInterface'>Experiments User Interface
+</a></li>
+<li><a href='/wiki/MenusAndCommands'>Menus and Commands
+</a></li>
+<li><a href='/wiki/ParametersView'>Parameters View
+</a></li>
+<li><a href='/wiki/InspectorsAndMonitors'>Inspectors and monitors
+</a></li>
+<li><a href='/wiki/Displays'>Displays
+</a></li>
+<li><a href='/wiki/BatchSpecific'>Batch Specific UI
+</a></li>
+<li><a href='/wiki/ErrorsView'>Errors View
+</a></li>
+</ul>
+<li><a href='/wiki/Preferences'>Preferences
+</a></li>
+</ul>
+<li><a href='/wiki/GamlReferences'>Gaml Reference
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/BuiltInSpecies'>Built-in Species
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/AgentBuiltIn'>The 'agent' built-in species (Under Construction)
+</a></li>
+<li><a href='/wiki/ModelBuiltIn'>The 'model' built-in species (Under Construction)
+</a></li>
+<li><a href='/wiki/ExperimentBuiltIn'>The 'experiment' built-in species (Under Construction)
+</a></li>
+</ul>
+<li><a href='/wiki/BuiltInSkills'>Built-in Skills
+</a></li>
+<li><a href='/wiki/BuiltInArchitectures'>Built-in Architectures
+</a></li>
+<li><a href='/wiki/Statements'>Statements
+</a></li>
+<li><a href='/wiki/DataTypes'>Types
+</a></li>
+<li><a href='/wiki/FileTypes'>File Types
+</a></li>
+<li><a href='/wiki/Expressions'>Expressions
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/Literals'>Literals
+</a></li>
+<li><a href='/wiki/UnitsAndConstants'>Units and constants
+</a></li>
+<li><a href='/wiki/PseudoVariables'>Pseudo-variables
+</a></li>
+<li><a href='/wiki/VariablesAndAttributes'>Variables and Attributes
+</a></li>
+<li><a href='/wiki/Operators'>Operators 
+</a></li>
+</ul>
+</ul>
+</ul>
+<li>Community
+</li>
+<ul class='sub'>
+<li><a href='/wiki/Contribute'>Contribute
+</a></li>
+<li><a href='/wiki/Projects'>Projects
+</a></li>
+<li><a href='/wiki/TrainingSession'>Training Session
+</a></li>
+</ul></ul></div><div id="right">
+<h3>Facebook Activities</h3>
+<ul id="fbquotes">
+</ul>
+<h3>Commit Activities</h3>
+<ul id="commitquotes">
+</ul>
+<h3>Issue Activities</h3>
+<ul id="issuequotes">
+</ul>
+<h3>Gama Platform Users Activities</h3>
+<ul id="googleusersquotes">
+</ul>
+</div><div id="content"><h1 id="built-in-skills">Built-in Skills</h1>
+
+<hr />
+
+<p><strong>This file is automatically generated from java files. Do Not Edit It.</strong></p>
+
+<hr />
+
+<h2 id="introduction">Introduction</h2>
+
+<p>Skills are built-in modules, written in Java, that provide a set of related built-in variables and built-in actions (in addition to those already provided by GAMA) to the species that declare them. A declaration of skill is done by filling the skills attribute in the species definition:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>species my_species skills: [skill1, skill2] {
+    ...
+}
+</code></pre>
+</div>
+
+<p>Skills have been designed to be mutually compatible so that any combination of them will result in a functional species. An example of skill is the <code class="highlighter-rouge">moving</code> skill.</p>
+
+<p>So, for instance, if a species is declared as:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>species foo skills: [moving]{
+...
+}
+</code></pre>
+</div>
+
+<p>Its agents will automatically be provided with the following variables : <code class="highlighter-rouge">speed</code>, <code class="highlighter-rouge">heading</code>, <code class="highlighter-rouge">destination</code> and the following actions: <code class="highlighter-rouge">move</code>, <code class="highlighter-rouge">goto</code>, <code class="highlighter-rouge">wander</code>, <code class="highlighter-rouge">follow</code> in addition to those built-in in species and declared by the modeller. Most of these variables, except the ones marked read-only, can be customized and modified like normal variables by the modeller. For instance, one could want to set a maximum for the speed; this would be done by redeclaring it like this:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>float speed max:100 min:0;
+</code></pre>
+</div>
+
+<p>Or, to obtain a speed increasing at each simulation step:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>float speed max:100 min:0  &lt;- 1 update: speed * 1.01;
+</code></pre>
+</div>
+
+<p>Or, to change the speed in a behavior:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>if speed = 5 {
+    speed &lt;- 10;
+}
+</code></pre>
+</div>
+
+<hr />
+
+<h2 id="table-of-contents">Table of Contents</h2>
+<wiki:toc max_depth="3" />
+
+<p><a href="#advanced_driving">advanced_driving</a>, <a href="#driving">driving</a>, <a href="#fipa">fipa</a>, <a href="#gamasql">GAMASQL</a>, <a href="#grid">grid</a>, <a href="#mdxskill">MDXSKILL</a>, <a href="#messaging">messaging</a>, <a href="#moving">moving</a>, <a href="#moving3d">moving3D</a>, <a href="#physics">physics</a>, <a href="#skill_road">skill_road</a>, <a href="#skill_road_node">skill_road_node</a>, <a href="#sqlskill">SQLSKILL</a>,</p>
+
+<hr />
+
+<h2 id="advanced_driving">advanced_driving</h2>
+
+<h3 id="variables">Variables</h3>
+
+<ul>
+  <li><strong><code class="highlighter-rouge">current_index</code></strong> (<code class="highlighter-rouge">int</code>): the current index of the agent target (according to the targets list)</li>
+  <li><strong><code class="highlighter-rouge">current_lane</code></strong> (<code class="highlighter-rouge">int</code>): the current lane on which the agent is</li>
+  <li><strong><code class="highlighter-rouge">current_path</code></strong> (<code class="highlighter-rouge">path</code>): the current path that tha agent follow</li>
+  <li><strong><code class="highlighter-rouge">current_road</code></strong> (<code class="highlighter-rouge">agent</code>): current road on which the agent is</li>
+  <li><strong><code class="highlighter-rouge">current_target</code></strong> (<code class="highlighter-rouge">point</code>): the current target of the agent</li>
+  <li><strong><code class="highlighter-rouge">distance_to_goal</code></strong> (<code class="highlighter-rouge">float</code>): euclidean distance to the next point of the current segment</li>
+  <li><strong><code class="highlighter-rouge">final_target</code></strong> (<code class="highlighter-rouge">point</code>): the final target of the agent</li>
+  <li><strong><code class="highlighter-rouge">max_acceleration</code></strong> (<code class="highlighter-rouge">float</code>): maximum acceleration of the car for a cycle</li>
+  <li><strong><code class="highlighter-rouge">max_speed</code></strong> (<code class="highlighter-rouge">float</code>): maximal speed of the vehicle</li>
+  <li><strong><code class="highlighter-rouge">on_linked_road</code></strong> (<code class="highlighter-rouge">boolean</code>): is the agent on the linked road?</li>
+  <li><strong><code class="highlighter-rouge">proba_block_node</code></strong> (<code class="highlighter-rouge">float</code>): probability to block a node (do not let other driver cross the crossroad)</li>
+  <li><strong><code class="highlighter-rouge">proba_lane_change_down</code></strong> (<code class="highlighter-rouge">float</code>): probability to change lane to a lower lane (right lane if right side driving) if necessary</li>
+  <li><strong><code class="highlighter-rouge">proba_lane_change_up</code></strong> (<code class="highlighter-rouge">float</code>): probability to change lane to a upper lane (left lane if right side driving) if necessary</li>
+  <li><strong><code class="highlighter-rouge">proba_respect_priorities</code></strong> (<code class="highlighter-rouge">float</code>): probability to respect priority (right or left) laws</li>
+  <li><strong><code class="highlighter-rouge">proba_respect_stops</code></strong> (<code class="highlighter-rouge">list</code>): probability to respect stop laws - one value for each type of stop</li>
+  <li><strong><code class="highlighter-rouge">proba_use_linked_road</code></strong> (<code class="highlighter-rouge">float</code>): probability to change lane to a linked road lane if necessary</li>
+  <li><strong><code class="highlighter-rouge">real_speed</code></strong> (<code class="highlighter-rouge">float</code>): real speed of the agent (in meter/second)</li>
+  <li><strong><code class="highlighter-rouge">right_side_driving</code></strong> (<code class="highlighter-rouge">boolean</code>): are drivers driving on the right size of the road?</li>
+  <li><strong><code class="highlighter-rouge">security_distance_coeff</code></strong> (<code class="highlighter-rouge">float</code>): the coefficient for the computation of the the min distance between two drivers (according to the vehicle speed - security_distance = 1#m + security_distance_coeff <code class="highlighter-rouge">*</code> real_speed )</li>
+  <li><strong><code class="highlighter-rouge">segment_index_on_road</code></strong> (<code class="highlighter-rouge">int</code>): current segment index of the agent on the current road</li>
+  <li><strong><code class="highlighter-rouge">speed</code></strong> (<code class="highlighter-rouge">float</code>): the speed of the agent (in meter/second)</li>
+  <li><strong><code class="highlighter-rouge">speed_coeff</code></strong> (<code class="highlighter-rouge">float</code>): speed coefficient for the speed that the driver want to reach (according to the max speed of the road)</li>
+  <li><strong><code class="highlighter-rouge">targets</code></strong> (<code class="highlighter-rouge">list</code>): the current list of points that the agent has to reach (path)</li>
+  <li><strong><code class="highlighter-rouge">vehicle_length</code></strong> (<code class="highlighter-rouge">float</code>): the length of the vehicle (in meters)</li>
+</ul>
+
+<h3 id="actions">Actions</h3>
+
+<h4 id="advanced_follow_driving"><strong><code class="highlighter-rouge">advanced_follow_driving</code></strong></h4>
+<p>moves the agent towards along the path passed in the arguments while considering the other agents in the network (only for graph topology)</p>
+
+<ul>
+  <li>returns: float</li>
+  <li><strong><code class="highlighter-rouge">path</code></strong> (path): a path to be followed.</li>
+  <li><strong><code class="highlighter-rouge">target</code></strong> (point): the target to reach</li>
+  <li><strong><code class="highlighter-rouge">speed</code></strong> (float): the speed to use for this move (replaces the current value of speed)</li>
+  <li><strong><code class="highlighter-rouge">time</code></strong> (float): time to travel</li>
+</ul>
+
+<h4 id="compute_path"><strong><code class="highlighter-rouge">compute_path</code></strong></h4>
+<p>action to compute a path to a target location according to a given graph</p>
+
+<ul>
+  <li>returns: path</li>
+  <li><strong><code class="highlighter-rouge">graph</code></strong> (graph): the graph on wich compute the path</li>
+  <li><strong><code class="highlighter-rouge">target</code></strong> (agent): the target node to reach</li>
+  <li><strong><code class="highlighter-rouge">source</code></strong> (agent): the source node (optional, if not defined, closest node to the agent location)</li>
+  <li><strong><code class="highlighter-rouge">on_road</code></strong> (agent): the road on which the agent is located (optional)</li>
+</ul>
+
+<h4 id="drive"><strong><code class="highlighter-rouge">drive</code></strong></h4>
+<p>action to drive toward the final target</p>
+
+<ul>
+  <li>returns: void</li>
+</ul>
+
+<h4 id="external_factor_impact"><strong><code class="highlighter-rouge">external_factor_impact</code></strong></h4>
+<p>action that allows to define how the remaining time is impacted by external factor</p>
+
+<ul>
+  <li>returns: float</li>
+  <li><strong><code class="highlighter-rouge">new_road</code></strong> (agent): the road on which to the driver wants to go</li>
+  <li><strong><code class="highlighter-rouge">remaining_time</code></strong> (float): the remaining time</li>
+</ul>
+
+<h4 id="is_ready_next_road"><strong><code class="highlighter-rouge">is_ready_next_road</code></strong></h4>
+<p>action to test if the driver can take the given road at the given lane</p>
+
+<ul>
+  <li>returns: bool</li>
+  <li><strong><code class="highlighter-rouge">new_road</code></strong> (agent): the road to test</li>
+  <li><strong><code class="highlighter-rouge">lane</code></strong> (int): the lane to test</li>
+</ul>
+
+<h4 id="lane_choice"><strong><code class="highlighter-rouge">lane_choice</code></strong></h4>
+<p>action to choose a lane</p>
+
+<ul>
+  <li>returns: int</li>
+  <li><strong><code class="highlighter-rouge">new_road</code></strong> (agent): the road on which to choose the lane</li>
+</ul>
+
+<h4 id="path_from_nodes"><strong><code class="highlighter-rouge">path_from_nodes</code></strong></h4>
+<p>action to compute a path from a list of nodes according to a given graph</p>
+
+<ul>
+  <li>returns: path</li>
+  <li><strong><code class="highlighter-rouge">graph</code></strong> (graph): the graph on wich compute the path</li>
+  <li><strong><code class="highlighter-rouge">nodes</code></strong> (list): the list of nodes composing the path</li>
+</ul>
+
+<h4 id="speed_choice"><strong><code class="highlighter-rouge">speed_choice</code></strong></h4>
+<p>action to choose a speed</p>
+
+<ul>
+  <li>returns: float</li>
+  <li><strong><code class="highlighter-rouge">new_road</code></strong> (agent): the road on which to choose the speed</li>
+</ul>
+
+<h4 id="test_next_road"><strong><code class="highlighter-rouge">test_next_road</code></strong></h4>
+<p>action to test if the driver can take the given road</p>
+
+<ul>
+  <li>returns: bool</li>
+  <li><strong><code class="highlighter-rouge">new_road</code></strong> (agent): the road to test</li>
+</ul>
+
+<hr />
+
+<h2 id="driving">driving</h2>
+
+<h3 id="variables-1">Variables</h3>
+
+<ul>
+  <li><strong><code class="highlighter-rouge">lanes_attribute</code></strong> (<code class="highlighter-rouge">string</code>): the name of the attribut of the road agent that determine the number of road lanes</li>
+  <li><strong><code class="highlighter-rouge">living_space</code></strong> (<code class="highlighter-rouge">float</code>): the min distance between the agent and an obstacle (in meter)</li>
+  <li><strong><code class="highlighter-rouge">obstacle_species</code></strong> (<code class="highlighter-rouge">list</code>): the list of species that are considered as obstacles</li>
+  <li><strong><code class="highlighter-rouge">speed</code></strong> (<code class="highlighter-rouge">float</code>): the speed of the agent (in meter/second)</li>
+  <li><strong><code class="highlighter-rouge">tolerance</code></strong> (<code class="highlighter-rouge">float</code>): the tolerance distance used for the computation (in meter)</li>
+</ul>
+
+<h3 id="actions-1">Actions</h3>
+
+<h4 id="follow_driving"><strong><code class="highlighter-rouge">follow_driving</code></strong></h4>
+<p>moves the agent along a given path passed in the arguments while considering the other agents in the network.</p>
+
+<ul>
+  <li>returns: path</li>
+  <li><strong><code class="highlighter-rouge">speed</code></strong> (float): the speed to use for this move (replaces the current value of speed)</li>
+  <li><strong><code class="highlighter-rouge">path</code></strong> (path): a path to be followed.</li>
+  <li><strong><code class="highlighter-rouge">return_path</code></strong> (boolean): if true, return the path followed (by default: false)</li>
+  <li><strong><code class="highlighter-rouge">move_weights</code></strong> (map): Weigths used for the moving.</li>
+  <li><strong><code class="highlighter-rouge">living_space</code></strong> (float): min distance between the agent and an obstacle (replaces the current value of living_space)</li>
+  <li><strong><code class="highlighter-rouge">tolerance</code></strong> (float): tolerance distance used for the computation (replaces the current value of tolerance)</li>
+  <li><strong><code class="highlighter-rouge">lanes_attribute</code></strong> (string): the name of the attribut of the road agent that determine the number of road lanes (replaces the current value of lanes_attribute)</li>
+</ul>
+
+<h4 id="goto_driving"><strong><code class="highlighter-rouge">goto_driving</code></strong></h4>
+<p>moves the agent towards the target passed in the arguments while considering the other agents in the network (only for graph topology)</p>
+
+<ul>
+  <li>returns: path</li>
+  <li><strong><code class="highlighter-rouge">target</code></strong> (point,geometry,agent): the location or entity towards which to move.</li>
+  <li><strong><code class="highlighter-rouge">speed</code></strong> (float): the speed to use for this move (replaces the current value of speed)</li>
+  <li><strong><code class="highlighter-rouge">on</code></strong> (list,agent,graph,geometry): list, agent, graph, geometry that restrains this move (the agent moves inside this geometry)</li>
+  <li><strong><code class="highlighter-rouge">return_path</code></strong> (boolean): if true, return the path followed (by default: false)</li>
+  <li><strong><code class="highlighter-rouge">move_weights</code></strong> (map): Weigths used for the moving.</li>
+  <li><strong><code class="highlighter-rouge">living_space</code></strong> (float): min distance between the agent and an obstacle (replaces the current value of living_space)</li>
+  <li><strong><code class="highlighter-rouge">tolerance</code></strong> (float): tolerance distance used for the computation (replaces the current value of tolerance)</li>
+  <li><strong><code class="highlighter-rouge">lanes_attribute</code></strong> (string): the name of the attribut of the road agent that determine the number of road lanes (replaces the current value of lanes_attribute)</li>
+</ul>
+
+<hr />
+
+<h2 id="fipa">fipa</h2>
+<p>The fipa skill offers some primitives and built-in variables which enable agent to communicate with each other using the FIPA interaction protocol.</p>
+
+<h3 id="variables-2">Variables</h3>
+
+<ul>
+  <li><strong><code class="highlighter-rouge">accept_proposals</code></strong> (<code class="highlighter-rouge">list</code>): A list of ‘accept_proposal’ performative messages of the agent’s mailbox having .</li>
+  <li><strong><code class="highlighter-rouge">agrees</code></strong> (<code class="highlighter-rouge">list</code>): A list of ‘accept_proposal’ performative messages.</li>
+  <li><strong><code class="highlighter-rouge">cancels</code></strong> (<code class="highlighter-rouge">list</code>): A list of ‘cancel’ performative messages.</li>
+  <li><strong><code class="highlighter-rouge">cfps</code></strong> (<code class="highlighter-rouge">list</code>): A list of ‘cfp’ (call for proposal) performative messages.</li>
+  <li><strong><code class="highlighter-rouge">conversations</code></strong> (<code class="highlighter-rouge">list</code>): A list containing the current conversations of agent. Ended conversations are automatically removed from this list.</li>
+  <li><strong><code class="highlighter-rouge">failures</code></strong> (<code class="highlighter-rouge">list</code>): A list of ‘failure’ performative messages.</li>
+  <li><strong><code class="highlighter-rouge">informs</code></strong> (<code class="highlighter-rouge">list</code>): A list of ‘inform’ performative messages.</li>
+  <li><strong><code class="highlighter-rouge">proposes</code></strong> (<code class="highlighter-rouge">list</code>): A list of ‘propose’ performative messages .</li>
+  <li><strong><code class="highlighter-rouge">queries</code></strong> (<code class="highlighter-rouge">list</code>): A list of ‘query’ performative messages.</li>
+  <li><strong><code class="highlighter-rouge">refuses</code></strong> (<code class="highlighter-rouge">list</code>): A list of ‘propose’ performative messages.</li>
+  <li><strong><code class="highlighter-rouge">reject_proposals</code></strong> (<code class="highlighter-rouge">list</code>): A list of ‘reject_proposals’ performative messages.</li>
+  <li><strong><code class="highlighter-rouge">requests</code></strong> (<code class="highlighter-rouge">list</code>): A list of ‘request’ performative messages.</li>
+  <li><strong><code class="highlighter-rouge">requestWhens</code></strong> (<code class="highlighter-rouge">list</code>): A list of ‘request-when’ performative messages.</li>
+  <li><strong><code class="highlighter-rouge">subscribes</code></strong> (<code class="highlighter-rouge">list</code>): A list of ‘subscribe’ performative messages.</li>
+</ul>
+
+<h3 id="actions-2">Actions</h3>
+
+<h4 id="accept_proposal"><strong><code class="highlighter-rouge">accept_proposal</code></strong></h4>
+<p>Replies a message with an ‘accept_proposal’ performative message.</p>
+
+<ul>
+  <li>returns: unknown</li>
+  <li><strong><code class="highlighter-rouge">message</code></strong> (24): The message to be replied</li>
+  <li><strong><code class="highlighter-rouge">contents</code></strong> (list): The content of the replying message</li>
+</ul>
+
+<h4 id="agree"><strong><code class="highlighter-rouge">agree</code></strong></h4>
+<p>Replies a message with an ‘agree’ performative message.</p>
+
+<ul>
+  <li>returns: unknown</li>
+  <li><strong><code class="highlighter-rouge">message</code></strong> (24): The message to be replied</li>
+  <li><strong><code class="highlighter-rouge">contents</code></strong> (list): The content of the replying message</li>
+</ul>
+
+<h4 id="cancel"><strong><code class="highlighter-rouge">cancel</code></strong></h4>
+<p>Replies a message with a ‘cancel’ peformative message.</p>
+
+<ul>
+  <li>returns: unknown</li>
+  <li><strong><code class="highlighter-rouge">message</code></strong> (24): The message to be replied</li>
+  <li><strong><code class="highlighter-rouge">contents</code></strong> (list): The content of the replying message</li>
+</ul>
+
+<h4 id="cfp"><strong><code class="highlighter-rouge">cfp</code></strong></h4>
+<p>Replies a message with a ‘cfp’ performative message.</p>
+
+<ul>
+  <li>returns: unknown</li>
+  <li><strong><code class="highlighter-rouge">message</code></strong> (24): The message to be replied</li>
+  <li><strong><code class="highlighter-rouge">contents</code></strong> (list): The content of the replying message</li>
+</ul>
+
+<h4 id="end_conversation"><strong><code class="highlighter-rouge">end_conversation</code></strong></h4>
+<p>Reply a message with an ‘end_conversation’ peprformative message. This message marks the end of a conversation. In a ‘no-protocol’ conversation, it is the responsible of the modeler to explicitly send this message to mark the end of a conversation/interaction protocol.</p>
+
+<ul>
+  <li>returns: unknown</li>
+  <li><strong><code class="highlighter-rouge">message</code></strong> (24): The message to be replied</li>
+  <li><strong><code class="highlighter-rouge">contents</code></strong> (list): The content of the replying message</li>
+</ul>
+
+<h4 id="failure"><strong><code class="highlighter-rouge">failure</code></strong></h4>
+<p>Replies a message with a ‘failure’ performative message.</p>
+
+<ul>
+  <li>returns: unknown</li>
+  <li><strong><code class="highlighter-rouge">message</code></strong> (24): The message to be replied</li>
+  <li><strong><code class="highlighter-rouge">contents</code></strong> (list): The content of the replying message</li>
+</ul>
+
+<h4 id="inform"><strong><code class="highlighter-rouge">inform</code></strong></h4>
+<p>Replies a message with an ‘inform’ performative message.</p>
+
+<ul>
+  <li>returns: unknown</li>
+  <li><strong><code class="highlighter-rouge">message</code></strong> (24): The message to be replied</li>
+  <li><strong><code class="highlighter-rouge">contents</code></strong> (list): The content of the replying message</li>
+</ul>
+
+<h4 id="propose"><strong><code class="highlighter-rouge">propose</code></strong></h4>
+<p>Replies a message with a ‘propose’ performative message.</p>
+
+<ul>
+  <li>returns: unknown</li>
+  <li><strong><code class="highlighter-rouge">message</code></strong> (24): The message to be replied</li>
+  <li><strong><code class="highlighter-rouge">contents</code></strong> (list): The content of the replying message</li>
+</ul>
+
+<h4 id="query"><strong><code class="highlighter-rouge">query</code></strong></h4>
+<p>Replies a message with a ‘query’ performative message.</p>
+
+<ul>
+  <li>returns: unknown</li>
+  <li><strong><code class="highlighter-rouge">message</code></strong> (24): The message to be replied</li>
+  <li><strong><code class="highlighter-rouge">contents</code></strong> (list): The content of the replying message</li>
+</ul>
+
+<h4 id="refuse"><strong><code class="highlighter-rouge">refuse</code></strong></h4>
+<p>Replies a message with a ‘refuse’ performative message.</p>
+
+<ul>
+  <li>returns: unknown</li>
+  <li><strong><code class="highlighter-rouge">message</code></strong> (24): The message to be replied</li>
+  <li><strong><code class="highlighter-rouge">contents</code></strong> (list): The contents of the replying message</li>
+</ul>
+
+<h4 id="reject_proposal"><strong><code class="highlighter-rouge">reject_proposal</code></strong></h4>
+<p>Replies a message with a ‘reject_proposal’ performative message.</p>
+
+<ul>
+  <li>returns: unknown</li>
+  <li><strong><code class="highlighter-rouge">message</code></strong> (24): The message to be replied</li>
+  <li><strong><code class="highlighter-rouge">contents</code></strong> (list): The content of the replying message</li>
+</ul>
+
+<h4 id="reply"><strong><code class="highlighter-rouge">reply</code></strong></h4>
+<p>Replies a message. This action should be only used to reply a message in a ‘no-protocol’ conversation and with a ‘user defined performative’. For performatives supported by GAMA (i.e., standard FIPA performatives), please use the ‘action’ with the same name of ‘performative’. For example, to reply a message with a ‘request’ performative message, the modeller should use the ‘request’ action.</p>
+
+<ul>
+  <li>returns: unknown</li>
+  <li><strong><code class="highlighter-rouge">message</code></strong> (24): The message to be replied</li>
+  <li><strong><code class="highlighter-rouge">performative</code></strong> (string): The performative of the replying message</li>
+  <li><strong><code class="highlighter-rouge">contents</code></strong> (list): The content of the replying message</li>
+</ul>
+
+<h4 id="request"><strong><code class="highlighter-rouge">request</code></strong></h4>
+<p>Replies a message with a ‘request’ performative message.</p>
+
+<ul>
+  <li>returns: unknown</li>
+  <li><strong><code class="highlighter-rouge">message</code></strong> (24): The message to be replied</li>
+  <li><strong><code class="highlighter-rouge">contents</code></strong> (list): The content of the replying message</li>
+</ul>
+
+<h4 id="send"><strong><code class="highlighter-rouge">send</code></strong></h4>
+<p>Starts a conversation/interaction protocol.</p>
+
+<ul>
+  <li>returns: msi.gaml.extensions.fipa.FIPAMessage</li>
+  <li><strong><code class="highlighter-rouge">to</code></strong> (list): A list of receiver agents</li>
+  <li><strong><code class="highlighter-rouge">contents</code></strong> (list): The content of the message. A list of any GAML type</li>
+  <li><strong><code class="highlighter-rouge">performative</code></strong> (string): A string, representing the message performative</li>
+  <li><strong><code class="highlighter-rouge">protocol</code></strong> (string): A string representing the name of interaction protocol</li>
+</ul>
+
+<h4 id="start_conversation"><strong><code class="highlighter-rouge">start_conversation</code></strong></h4>
+<p>Starts a conversation/interaction protocol.</p>
+
+<ul>
+  <li>returns: msi.gaml.extensions.fipa.FIPAMessage</li>
+  <li><strong><code class="highlighter-rouge">to</code></strong> (list): A list of receiver agents</li>
+  <li><strong><code class="highlighter-rouge">contents</code></strong> (list): The content of the message. A list of any GAML type</li>
+  <li><strong><code class="highlighter-rouge">performative</code></strong> (string): A string, representing the message performative</li>
+  <li><strong><code class="highlighter-rouge">protocol</code></strong> (string): A string representing the name of interaction protocol</li>
+</ul>
+
+<h4 id="subscribe"><strong><code class="highlighter-rouge">subscribe</code></strong></h4>
+<p>Replies a message with a ‘subscribe’ performative message.</p>
+
+<ul>
+  <li>returns: unknown</li>
+  <li><strong><code class="highlighter-rouge">message</code></strong> (24): The message to be replied</li>
+  <li><strong><code class="highlighter-rouge">contents</code></strong> (list): The content of the replying message</li>
+</ul>
+
+<hr />
+
+<h2 id="gamasql">GAMASQL</h2>
+
+<h3 id="variables-3">Variables</h3>
+
+<h3 id="actions-3">Actions</h3>
+
+<h4 id="read"><strong><code class="highlighter-rouge">read</code></strong></h4>
+
+<ul>
+  <li>returns: void</li>
+  <li><strong><code class="highlighter-rouge">params</code></strong> (map): Connection parameters</li>
+  <li><strong><code class="highlighter-rouge">table</code></strong> (string): select string with question marks</li>
+  <li><strong><code class="highlighter-rouge">filter</code></strong> (list): List of values that are used to replace question marks</li>
+</ul>
+
+<h4 id="sqlobject"><strong><code class="highlighter-rouge">SqlObject</code></strong></h4>
+
+<ul>
+  <li>returns: msi.gama.database.geosql.GamaSqlConnection</li>
+  <li><strong><code class="highlighter-rouge">params</code></strong> (map): Connection parameters</li>
+  <li><strong><code class="highlighter-rouge">table</code></strong> (string): select string with question marks</li>
+  <li><strong><code class="highlighter-rouge">filter</code></strong> (string): Filter for select</li>
+</ul>
+
+<h4 id="testconnection"><strong><code class="highlighter-rouge">testConnection</code></strong></h4>
+
+<ul>
+  <li>returns: bool</li>
+  <li><strong><code class="highlighter-rouge">params</code></strong> (map): Connection parameters</li>
+</ul>
+
+<hr />
+
+<h2 id="grid">grid</h2>
+
+<h3 id="variables-4">Variables</h3>
+
+<ul>
+  <li><strong><code class="highlighter-rouge">bands</code></strong> (<code class="highlighter-rouge">list</code>): Represents the values of the different bands of the cell (list of floating point value automatically set when the grid is initialized from a grid file)</li>
+  <li><strong><code class="highlighter-rouge">color</code></strong> (<code class="highlighter-rouge">rgb</code>): Represents the color of the cell, used by default to represent the grid on displays</li>
+  <li><strong><code class="highlighter-rouge">grid_value</code></strong> (<code class="highlighter-rouge">float</code>): Represents a floating point value (automatically set when the grid is initialized from a grid file, and used by default to represent the elevation of the cell when displaying it on a display)</li>
+  <li><strong><code class="highlighter-rouge">grid_x</code></strong> (<code class="highlighter-rouge">int</code>): Returns the 0-based index of the column of the cell in the grid</li>
+  <li><strong><code class="highlighter-rouge">grid_y</code></strong> (<code class="highlighter-rouge">int</code>): Returns the 0-based index of the row of the cell in the grid</li>
+  <li><strong><code class="highlighter-rouge">neighbors</code></strong> (<code class="highlighter-rouge">list</code>): Represents the neighbor at distance 1 of the cell</li>
+</ul>
+
+<h3 id="actions-4">Actions</h3>
+
+<hr />
+
+<h2 id="mdxskill">MDXSKILL</h2>
+
+<h3 id="variables-5">Variables</h3>
+
+<h3 id="actions-5">Actions</h3>
+
+<h4 id="select"><strong><code class="highlighter-rouge">select</code></strong></h4>
+
+<ul>
+  <li>returns: list</li>
+  <li><strong><code class="highlighter-rouge">params</code></strong> (map): Connection parameters</li>
+  <li><strong><code class="highlighter-rouge">onColumns</code></strong> (string): select string with question marks</li>
+  <li><strong><code class="highlighter-rouge">onRows</code></strong> (list): List of values that are used to replace question marks</li>
+  <li><strong><code class="highlighter-rouge">from</code></strong> (list): List of values that are used to replace question marks</li>
+  <li><strong><code class="highlighter-rouge">where</code></strong> (list): List of values that are used to replace question marks</li>
+  <li><strong><code class="highlighter-rouge">values</code></strong> (list): List of values that are used to replace question marks</li>
+</ul>
+
+<h4 id="testconnection-1"><strong><code class="highlighter-rouge">testConnection</code></strong></h4>
+
+<ul>
+  <li>returns: bool</li>
+  <li><strong><code class="highlighter-rouge">params</code></strong> (map): Connection parameters</li>
+</ul>
+
+<h4 id="timestamp"><strong><code class="highlighter-rouge">timeStamp</code></strong></h4>
+
+<ul>
+  <li>returns: float</li>
+</ul>
+
+<hr />
+
+<h2 id="messaging">messaging</h2>
+<p>A simple skill that provides agents with a mailbox than can be filled with messages</p>
+
+<h3 id="variables-6">Variables</h3>
+
+<ul>
+  <li><strong><code class="highlighter-rouge">mailbox</code></strong> (<code class="highlighter-rouge">list</code>): The list of messages that can be consulted by the agent</li>
+</ul>
+
+<h3 id="actions-6">Actions</h3>
+
+<h4 id="send-1"><strong><code class="highlighter-rouge">send</code></strong></h4>
+
+<ul>
+  <li>returns: msi.gama.extensions.messaging.GamaMessage</li>
+  <li><strong><code class="highlighter-rouge">to</code></strong> (any type): The agent, or server, to which this message will be sent to</li>
+  <li><strong><code class="highlighter-rouge">contents</code></strong> (any type): The contents of the message, an arbitrary object</li>
+</ul>
+
+<hr />
+
+<h2 id="moving">moving</h2>
+<p>The moving skill is intended to define the minimal set of behaviours required for agents that are able to move on different topologies</p>
+
+<h3 id="variables-7">Variables</h3>
+
+<ul>
+  <li><strong><code class="highlighter-rouge">destination</code></strong> (<code class="highlighter-rouge">point</code>): Represents the next location of the agent if it keeps its current speed and heading (read-only)</li>
+  <li><strong><code class="highlighter-rouge">heading</code></strong> (<code class="highlighter-rouge">int</code>): Represents the absolute heading of the agent in degrees.</li>
+  <li><strong><code class="highlighter-rouge">location</code></strong> (<code class="highlighter-rouge">point</code>): Represents the current position of the agent</li>
+  <li><strong><code class="highlighter-rouge">speed</code></strong> (<code class="highlighter-rouge">float</code>): Represents the speed of the agent (in meter/second)</li>
+</ul>
+
+<h3 id="actions-7">Actions</h3>
+
+<h4 id="follow"><strong><code class="highlighter-rouge">follow</code></strong></h4>
+<p>moves the agent along a given path passed in the arguments.</p>
+
+<ul>
+  <li>returns: path</li>
+  <li><strong><code class="highlighter-rouge">speed</code></strong> (float): the speed to use for this move (replaces the current value of speed)</li>
+  <li><strong><code class="highlighter-rouge">path</code></strong> (path): a path to be followed.</li>
+  <li><strong><code class="highlighter-rouge">move_weights</code></strong> (map): Weights used for the moving.</li>
+  <li><strong><code class="highlighter-rouge">return_path</code></strong> (boolean): if true, return the path followed (by default: false)</li>
+</ul>
+
+<h4 id="goto"><strong><code class="highlighter-rouge">goto</code></strong></h4>
+<p>moves the agent towards the target passed in the arguments.</p>
+
+<ul>
+  <li>returns: path</li>
+  <li><strong><code class="highlighter-rouge">target</code></strong> (agent,point,geometry): the location or entity towards which to move.</li>
+  <li><strong><code class="highlighter-rouge">speed</code></strong> (float): the speed to use for this move (replaces the current value of speed)</li>
+  <li><strong><code class="highlighter-rouge">on</code></strong> (graph): graph that restrains this move</li>
+  <li><strong><code class="highlighter-rouge">recompute_path</code></strong> (boolean): if false, the path is not recompute even if the graph is modified (by default: true)</li>
+  <li><strong><code class="highlighter-rouge">return_path</code></strong> (boolean): if true, return the path followed (by default: false)</li>
+  <li><strong><code class="highlighter-rouge">move_weights</code></strong> (map): Weights used for the moving.</li>
+</ul>
+
+<h4 id="move"><strong><code class="highlighter-rouge">move</code></strong></h4>
+<p>moves the agent forward, the distance being computed with respect to its speed and heading. The value of the corresponding variables are used unless arguments are passed.</p>
+
+<ul>
+  <li>returns: path</li>
+  <li><strong><code class="highlighter-rouge">speed</code></strong> (float): the speed to use for this move (replaces the current value of speed)</li>
+  <li><strong><code class="highlighter-rouge">heading</code></strong> (int): the angle (in degree) of the target direction.</li>
+  <li><strong><code class="highlighter-rouge">bounds</code></strong> (geometry,agent): the geometry (the localized entity geometry) that restrains this move (the agent moves inside this geometry</li>
+</ul>
+
+<h4 id="wander"><strong><code class="highlighter-rouge">wander</code></strong></h4>
+<p>Moves the agent towards a random location at the maximum distance (with respect to its speed). The heading of the agent is chosen randomly if no amplitude is specified. This action changes the value of heading.</p>
+
+<ul>
+  <li>returns: void</li>
+  <li><strong><code class="highlighter-rouge">speed</code></strong> (float): the speed to use for this move (replaces the current value of speed)</li>
+  <li><strong><code class="highlighter-rouge">amplitude</code></strong> (int): a restriction placed on the random heading choice. The new heading is chosen in the range (heading - amplitude/2, heading+amplitude/2)</li>
+  <li><strong><code class="highlighter-rouge">bounds</code></strong> (agent,geometry): the geometry (the localized entity geometry) that restrains this move (the agent moves inside this geometry</li>
+</ul>
+
+<hr />
+
+<h2 id="moving3d">moving3D</h2>
+<p>The moving skill 3D is intended to define the minimal set of behaviours required for agents that are able to move on different topologies</p>
+
+<h3 id="variables-8">Variables</h3>
+
+<ul>
+  <li><strong><code class="highlighter-rouge">destination</code></strong> (<code class="highlighter-rouge">point</code>): continuously updated destination of the agent with respect to its speed and heading (read-only)</li>
+  <li><strong><code class="highlighter-rouge">heading</code></strong> (<code class="highlighter-rouge">int</code>): the absolute heading of the agent in degrees (in the range 0-359)</li>
+  <li><strong><code class="highlighter-rouge">pitch</code></strong> (<code class="highlighter-rouge">int</code>): the absolute pitch of the agent in degrees (in the range 0-359)</li>
+  <li><strong><code class="highlighter-rouge">roll</code></strong> (<code class="highlighter-rouge">int</code>): the absolute roll of the agent in degrees (in the range 0-359)</li>
+  <li><strong><code class="highlighter-rouge">speed</code></strong> (<code class="highlighter-rouge">float</code>): the speed of the agent (in meter/second)</li>
+</ul>
+
+<h3 id="actions-8">Actions</h3>
+
+<h4 id="move-1"><strong><code class="highlighter-rouge">move</code></strong></h4>
+<p>moves the agent forward, the distance being computed with respect to its speed and heading. The value of the corresponding variables are used unless arguments are passed.</p>
+
+<ul>
+  <li>returns: path</li>
+  <li><strong><code class="highlighter-rouge">speed</code></strong> (float): the speed to use for this move (replaces the current value of speed)</li>
+  <li><strong><code class="highlighter-rouge">heading</code></strong> (int): int, optional, the direction to take for this move (replaces the current value of heading)</li>
+  <li><strong><code class="highlighter-rouge">pitch</code></strong> (int): int, optional, the direction to take for this move (replaces the current value of pitch)</li>
+  <li><strong><code class="highlighter-rouge">heading</code></strong> (int): int, optional, the direction to take for this move (replaces the current value of roll)</li>
+  <li><strong><code class="highlighter-rouge">bounds</code></strong> (geometry,agent): the geometry (the localized entity geometry) that restrains this move (the agent moves inside this geometry</li>
+</ul>
+
+<hr />
+
+<h2 id="physics">physics</h2>
+
+<h3 id="variables-9">Variables</h3>
+
+<ul>
+  <li><strong><code class="highlighter-rouge">collisionBound</code></strong> (<code class="highlighter-rouge">map</code>):</li>
+  <li><strong><code class="highlighter-rouge">density</code></strong> (<code class="highlighter-rouge">float</code>):</li>
+  <li><strong><code class="highlighter-rouge">mass</code></strong> (<code class="highlighter-rouge">float</code>):</li>
+  <li><strong><code class="highlighter-rouge">motor</code></strong> (<code class="highlighter-rouge">point</code>):</li>
+  <li><strong><code class="highlighter-rouge">space</code></strong> (<code class="highlighter-rouge">agent</code>):</li>
+  <li><strong><code class="highlighter-rouge">velocity</code></strong> (<code class="highlighter-rouge">list</code>):</li>
+</ul>
+
+<h3 id="actions-9">Actions</h3>
+
+<hr />
+
+<h2 id="skill_road">skill_road</h2>
+
+<h3 id="variables-10">Variables</h3>
+
+<ul>
+  <li><strong><code class="highlighter-rouge">agents_on</code></strong> (<code class="highlighter-rouge">list</code>): for each lane of the road, the list of agents for each segment</li>
+  <li><strong><code class="highlighter-rouge">all_agents</code></strong> (<code class="highlighter-rouge">list</code>): the list of agents on the road</li>
+  <li><strong><code class="highlighter-rouge">lanes</code></strong> (<code class="highlighter-rouge">int</code>): the number of lanes</li>
+  <li><strong><code class="highlighter-rouge">linked_road</code></strong> (<code class="highlighter-rouge">-18</code>): the linked road: the lanes of this linked road will be usable by drivers on the road</li>
+  <li><strong><code class="highlighter-rouge">maxspeed</code></strong> (<code class="highlighter-rouge">float</code>): the maximal speed on the road</li>
+  <li><strong><code class="highlighter-rouge">source_node</code></strong> (<code class="highlighter-rouge">agent</code>): the source node of the road</li>
+  <li><strong><code class="highlighter-rouge">target_node</code></strong> (<code class="highlighter-rouge">agent</code>): the target node of the road</li>
+</ul>
+
+<h3 id="actions-10">Actions</h3>
+
+<h4 id="register"><strong><code class="highlighter-rouge">register</code></strong></h4>
+<p>register the agent on the road at the given lane</p>
+
+<ul>
+  <li>returns: void</li>
+  <li><strong><code class="highlighter-rouge">agent</code></strong> (agent): the agent to register on the road.</li>
+  <li><strong><code class="highlighter-rouge">lane</code></strong> (int): the lane index on which to register; if lane index &gt;= number of lanes, then register on the linked road</li>
+</ul>
+
+<h4 id="unregister"><strong><code class="highlighter-rouge">unregister</code></strong></h4>
+<p>unregister the agent on the road</p>
+
+<ul>
+  <li>returns: void</li>
+  <li><strong><code class="highlighter-rouge">agent</code></strong> (agent): the agent to unregister on the road.</li>
+</ul>
+
+<hr />
+
+<h2 id="skill_road_node">skill_road_node</h2>
+
+<h3 id="variables-11">Variables</h3>
+
+<ul>
+  <li><strong><code class="highlighter-rouge">block</code></strong> (<code class="highlighter-rouge">map</code>): define the list of agents blocking the node, and for each agent, the list of concerned roads</li>
+  <li><strong><code class="highlighter-rouge">priority_roads</code></strong> (<code class="highlighter-rouge">list</code>): the list of priority roads</li>
+  <li><strong><code class="highlighter-rouge">roads_in</code></strong> (<code class="highlighter-rouge">list</code>): the list of input roads</li>
+  <li><strong><code class="highlighter-rouge">roads_out</code></strong> (<code class="highlighter-rouge">list</code>): the list of output roads</li>
+  <li><strong><code class="highlighter-rouge">stop</code></strong> (<code class="highlighter-rouge">list</code>): define for each type of stop, the list of concerned roads</li>
+</ul>
+
+<h3 id="actions-11">Actions</h3>
+
+<hr />
+
+<h2 id="sqlskill">SQLSKILL</h2>
+
+<h3 id="variables-12">Variables</h3>
+
+<h3 id="actions-12">Actions</h3>
+
+<h4 id="executeupdate"><strong><code class="highlighter-rouge">executeUpdate</code></strong></h4>
+
+<ul>
+  <li>returns: int</li>
+  <li><strong><code class="highlighter-rouge">params</code></strong> (map): Connection parameters</li>
+  <li><strong><code class="highlighter-rouge">updateComm</code></strong> (string): SQL commands such as Create, Update, Delete, Drop with question mark</li>
+  <li><strong><code class="highlighter-rouge">values</code></strong> (list): List of values that are used to replace question mark</li>
+</ul>
+
+<h4 id="getcurrentdatetime"><strong><code class="highlighter-rouge">getCurrentDateTime</code></strong></h4>
+
+<ul>
+  <li>returns: string</li>
+  <li><strong><code class="highlighter-rouge">dateFormat</code></strong> (string): date format examples: ‘yyyy-MM-dd’ , ‘yyyy-MM-dd HH:mm:ss’</li>
+</ul>
+
+<h4 id="getdateoffset"><strong><code class="highlighter-rouge">getDateOffset</code></strong></h4>
+
+<ul>
+  <li>returns: string</li>
+  <li><strong><code class="highlighter-rouge">dateFormat</code></strong> (string): date format examples: ‘yyyy-MM-dd’ , ‘yyyy-MM-dd HH:mm:ss’</li>
+  <li><strong><code class="highlighter-rouge">dateStr</code></strong> (string): Start date</li>
+  <li><strong><code class="highlighter-rouge">offset</code></strong> (string): number on day to increase or decrease</li>
+</ul>
+
+<h4 id="insert"><strong><code class="highlighter-rouge">insert</code></strong></h4>
+
+<ul>
+  <li>returns: int</li>
+  <li><strong><code class="highlighter-rouge">params</code></strong> (map): Connection parameters</li>
+  <li><strong><code class="highlighter-rouge">into</code></strong> (string): Table name</li>
+  <li><strong><code class="highlighter-rouge">columns</code></strong> (list): List of column name of table</li>
+  <li><strong><code class="highlighter-rouge">values</code></strong> (list): List of values that are used to insert into table. Columns and values must have same size</li>
+</ul>
+
+<h4 id="list2matrix"><strong><code class="highlighter-rouge">list2Matrix</code></strong></h4>
+
+<ul>
+  <li>returns: matrix</li>
+  <li><strong><code class="highlighter-rouge">param</code></strong> (list): Param: a list of records and metadata</li>
+  <li><strong><code class="highlighter-rouge">getName</code></strong> (boolean): getType: a boolean value, optional parameter</li>
+  <li><strong><code class="highlighter-rouge">getType</code></strong> (boolean): getType: a boolean value, optional parameter</li>
+</ul>
+
+<h4 id="select-1"><strong><code class="highlighter-rouge">select</code></strong></h4>
+
+<ul>
+  <li>returns: container</li>
+  <li><strong><code class="highlighter-rouge">params</code></strong> (map): Connection parameters</li>
+  <li><strong><code class="highlighter-rouge">select</code></strong> (string): select string with question marks</li>
+  <li><strong><code class="highlighter-rouge">values</code></strong> (list): List of values that are used to replace question marks</li>
+</ul>
+
+<h4 id="testconnection-2"><strong><code class="highlighter-rouge">testConnection</code></strong></h4>
+
+<ul>
+  <li>returns: bool</li>
+  <li><strong><code class="highlighter-rouge">params</code></strong> (map): Connection parameters</li>
+</ul>
+
+<h4 id="timestamp-1"><strong><code class="highlighter-rouge">timeStamp</code></strong></h4>
+
+<ul>
+  <li>returns: float</li>
+</ul>
+</div></body></html>

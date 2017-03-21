@@ -1,0 +1,877 @@
+
+    <!doctype html><html lang="en"><head><meta charset="utf-8"><title>Extension</title></head>
+    <body>
+    <link rel="stylesheet" href="/style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="//connect.facebook.net/en_US/all.js"></script>
+<script src="/linkify.min.js"></script>
+<script src="/linkify-jquery.min.js"></script>
+<script>
+  $(document).ready(function(){
+	  		$.getJSON('https://graph.facebook.com/238065426321929/feed?access_token=229040647557399|MQKFlFYX7YW25XGj4GUYZ7B1lcY', function(data) {
+		var ahtml="";
+		for(var i = 0; i < 5; i++) {
+			ahtml=ahtml+"<li>"+data["data"][i]["message"]+"</li>";
+		}
+		ahtml=ahtml+"";
+		$("#fbquotes").html(ahtml);
+		$("#fbquotes").linkify();
+	});
+	 
+		$.getJSON('https://api.github.com/repos/gama-platform/gama/commits', function(data) {
+			var ahtml="";
+			for(var i = 0; i < 5; i++) {
+				ahtml=ahtml+"<li>"+data[i]["commit"]["message"]+" by "+data[i]["commit"]["author"]["name"]+" <a href='"+data[i]["commit"]["html_url"]+"'> See more</a></li>";
+			}
+			ahtml=ahtml+"";
+			$("#commitquotes").html(ahtml);
+			$("#commitquotes").linkify();
+		});
+				
+				
+		$.getJSON('https://api.github.com/repos/gama-platform/gama/issues', function(data) {
+			var ahtml="";
+			for(var i = 0; i < 5; i++) {
+				ahtml=ahtml+"<li>"+data[i]["title"]+" by "+data[i]["user"]["login"]+" <a href='"+data[i]["html_url"]+"'> See more</a></li>";
+			}
+			ahtml=ahtml+"";
+			$("#issuequotes").html(ahtml);
+			$("#issuequotes").linkify();
+		});
+		
+		$.getJSON('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fgroups.google.com%2Fforum%2Ffeed%2Fgama-platform%2Ftopics%2Frss.xml%3Fnum%3D15', function(data) {
+			var ahtml="";
+			for(var i = 0; i < 5; i++) {
+				ahtml=ahtml+"<li>"+data["items"][i]["title"]+" by "+data["items"][i]["author"]+" <a href='"+data["items"][i]["link"]+"'> See more</a></li>";
+			}
+			ahtml=ahtml+"";
+			$("#googleusersquotes").html(ahtml);
+			$("#googleusersquotes").linkify();
+			
+		});
+ });
+  
+</script>
+
+      <div id="left">
+
+		<ul class="mcd-menu"><li><a href="/">Home</a></li><li><a href="/">Discussions</a></li>
+<li><a href='/wiki/Tutorials'>Tutorials
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/LearnGAMLStepByStep'>Learn GAML Step by Step
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/Introduction'>Introduction
+</a></li>
+<li><a href='/wiki/StartWithGAML'>Start with GAML
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/ModelOrganization'>Organization of a model
+</a></li>
+<li><a href='/wiki/BasicProgrammingConceptsInGAML'>Basic programming concepts in GAML
+</a></li>
+</ul>
+<li><a href='/wiki/ManipulateBasicSpecies'>Manipulate basic species
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/GlobalSpecies'>The global species
+</a></li>
+<li><a href='/wiki/RegularSpecies'>Regular species
+</a></li>
+<li><a href='/wiki/DefiningActionsAndBehaviors'>Defining actions and behaviors
+</a></li>
+<li><a href='/wiki/InteractionBetweenAgents'>Interaction between agents
+</a></li>
+<li><a href='/wiki/AttachingSkills'>Attaching Skills
+</a></li>
+<li><a href='/wiki/Inheritance'>Inheritance
+</a></li>
+</ul>
+<li><a href='/wiki/DefiningAdvancedSpecies'>Defining advanced species
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/GridSpecies'>Grid Species
+</a></li>
+<li><a href='/wiki/GraphSpecies'>Graph Species
+</a></li>
+<li><a href='/wiki/MirrorSpecies'>Mirror species
+</a></li>
+<li><a href='/wiki/MultiLevelArchitecture'>Multi-level architecture
+</a></li>
+</ul>
+<li><a href='/wiki/DefiningGUIExperiment'>Defining GUI Experiment
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/DefiningParameters'>Defining Parameters
+</a></li>
+<li><a href='/wiki/DefiningDisplaysGeneralities'>Defining displays (Generalities)
+</a></li>
+<li><a href='/wiki/DefiningCharts'>Defining Charts
+</a></li>
+<li><a href='/wiki/Defining3DDisplays'>Defining 3D Displays
+</a></li>
+<li><a href='/wiki/DefiningMonitorsAndInspectors'>Defining monitors and inspectors
+</a></li>
+<li><a href='/wiki/DefiningExportFiles'>Defining export files
+</a></li>
+<li><a href='/wiki/DefiningUserInteraction'>Defining user interaction
+</a></li>
+</ul>
+<li><a href='/wiki/ExploringModels'>Exploring Models
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/RunSeveralSimulations'>Run Several Simulations
+</a></li>
+<li><a href='/wiki/BatchExperiments'>Defining Batch Experiments
+</a></li>
+<li><a href='/wiki/ExplorationMethods'>Exploration Methods
+</a></li>
+</ul>
+<li><a href='/wiki/OptimizingModels'>Optimizing Models
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/RuntimeConcepts'>Runtime Concepts
+</a></li>
+<li><a href='/wiki/OptimizingModels'>Optimizing Models
+</a></li>
+</ul>
+<li><a href='/wiki/MultiParadigmModeling'>Multi-Paradigm Modeling
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/ControlArchitecture'>Control Architectures
+</a></li>
+<li><a href='/wiki/Equations'>Using Equations
+</a></li>
+</ul>
+</ul>
+<li><a href='/wiki/Recipes'>Recipes
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/ManipulateOSMDatas'>Manipulate OSM Datas
+</a></li>
+<li><a href='/wiki/Diffusion'>Implementing diffusion
+</a></li>
+<li><a href='/wiki/UsingDatabase'>Using Database Access
+</a></li>
+<li><a href='/wiki/CallingR'>Calling R
+</a></li>
+<li><a href='/wiki/UsingFIPAACL'>Using FIPA ACL
+</a></li>
+<li><a href='/wiki/GamAnalyzer'>Using GAMAnalyzer
+</a></li>
+<li><a href='/wiki/UsingBDI'>Using BDI
+</a></li>
+<li><a href='/wiki/UsingDrivingSkill'>Advanced Driving Skill
+</a></li>
+<li><a href='/wiki/ManipulateDates'>Manipulate Dates
+</a></li>
+<li><a href='/wiki/ManipulateLight'>Implementing light
+</a></li>
+<li><a href='/wiki/Comodel'>Using Comodel
+</a></li>
+</ul>
+<li><a href='/wiki/Tutorials'>Tutorials
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/LuneraysFlu'>Luneray's flu
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/LuneraysFlu_step1'>1. Creation of a first basic disease spreading model
+</a></li>
+<li><a href='/wiki/LuneraysFlu_step2'>2. Definition of monitors and chart outputs
+</a></li>
+<li><a href='/wiki/LuneraysFlu_step3'>3. Importation of GIS data
+</a></li>
+<li><a href='/wiki/LuneraysFlu_step4'>4. Use of a graph to constraint the movements of people]
+</a></li>
+<li><a href='/wiki/LuneraysFlu_step5'>5. Definition of 3D displays
+</a></li>
+</ul>
+<li><a href='/wiki/IncrementalModel'>Incremental Model
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/IncrementalModel_step1'>1. Simple SI Model
+</a></li>
+<li><a href='/wiki/IncrementalModel_step2'>2. Charts
+</a></li>
+<li><a href='/wiki/IncrementalModel_step3'>3. Integration of GIS Data
+</a></li>
+<li><a href='/wiki/IncrementalModel_step4'>4. Movement on Graph
+</a></li>
+<li><a href='/wiki/IncrementalModel_step5'>5. Visualizing in 3D
+</a></li>
+<li><a href='/wiki/IncrementalModel_step6'>6. Multi-Level
+</a></li>
+<li><a href='/wiki/IncrementalModel_step7'>7. Differential Equations
+</a></li>
+</ul>
+<li><a href='/wiki/PredatorPrey'>Predator Prey
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/PredatorPrey_step1'>1. Basic Model
+</a></li>
+<li><a href='/wiki/PredatorPrey_step2'>2. Vegetation Dynamic
+</a></li>
+<li><a href='/wiki/PredatorPrey_step3'>3. Prey Agent Behavior
+</a></li>
+<li><a href='/wiki/PredatorPrey_step4'>4. Inspectors and Monitors
+</a></li>
+<li><a href='/wiki/PredatorPrey_step5'>5. Predator Agent
+</a></li>
+<li><a href='/wiki/PredatorPrey_step6'>6. Breeding
+</a></li>
+<li><a href='/wiki/PredatorPrey_step7'>7. Agent Aspect
+</a></li>
+<li><a href='/wiki/PredatorPrey_step8'>8. Complex Behavior
+</a></li>
+<li><a href='/wiki/PredatorPrey_step9'>9. Stopping condition
+</a></li>
+<li><a href='/wiki/PredatorPrey_step10'>10. Charts
+</a></li>
+<li><a href='/wiki/PredatorPrey_step11'>11. Writing Files
+</a></li>
+<li><a href='/wiki/PredatorPrey_step12'>12. Image loading
+</a></li>
+</ul>
+<li><a href='/wiki/RoadTrafficModel'>Road Traffic
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/RoadTrafficModel_step1'>1. Loading of GIS Data
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step2'>2. People Agents
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step3'>3. Movement of People
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step4'>4. Weight for Road Network
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step5'>5. Dynamic weights
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step6'>6. Charts
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step7'>7. Automatic Road Repair
+</a></li>
+</ul>
+<li><a href='/wiki/ThreeD'>3D Tutorial
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/ThreeD_step1'>1. Basic Model
+</a></li>
+<li><a href='/wiki/ThreeD_step2'>2. Moving Cells
+</a></li>
+<li><a href='/wiki/ThreeD_step3'>3. Connections
+</a></li>
+</ul>
+</ul>
+</ul>
+<li><a href='/wiki/References'>References
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/PlatformDocumentation'>Platform
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/InstallationAndLaunching'>Installation and Launching
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/Installation'>Installation
+</a></li>
+<li><a href='/wiki/Launching'>Launching GAMA
+</a></li>
+<li><a href='/wiki/Headless'>Headless Mode
+</a></li>
+<li><a href='/wiki/Updating'>Updating GAMA
+</a></li>
+<li><a href='/wiki/InstallingPlugins'>Installing Plugins
+</a></li>
+<li><a href='/wiki/Troubleshooting'>Troubleshooting
+</a></li>
+</ul>
+<li><a href='/wiki/WorkspaceProjectsAndModels'>Workspace, Projects and Models
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/NavigatingWorkspace'>Navigating in the Workspace
+</a></li>
+<li><a href='/wiki/ChangingWorkspace'>Changing Workspace
+</a></li>
+<li><a href='/wiki/ImportingModels'>Importing Models
+</a></li>
+</ul>
+<li><a href='/wiki/EditingModels'>Editing models
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/GamlEditorGeneralities'>The GAML Editor - Generalities
+</a></li>
+<li><a href='/wiki/GamlEditorToolbar'>The GAML Editor Toolbar
+</a></li>
+<li><a href='/wiki/ValidationOfModels'>Validation of Models
+</a></li>
+</ul>
+<li><a href='/wiki/RunningExperiments'>Running Experiments
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/LaunchingExperiments'>Launching Experiments from the User Interface
+</a></li>
+<li><a href='/wiki/ExperimentsUserInterface'>Experiments User Interface
+</a></li>
+<li><a href='/wiki/MenusAndCommands'>Menus and Commands
+</a></li>
+<li><a href='/wiki/ParametersView'>Parameters View
+</a></li>
+<li><a href='/wiki/InspectorsAndMonitors'>Inspectors and monitors
+</a></li>
+<li><a href='/wiki/Displays'>Displays
+</a></li>
+<li><a href='/wiki/BatchSpecific'>Batch Specific UI
+</a></li>
+<li><a href='/wiki/ErrorsView'>Errors View
+</a></li>
+</ul>
+<li><a href='/wiki/Preferences'>Preferences
+</a></li>
+</ul>
+<li><a href='/wiki/GamlReferences'>Gaml Reference
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/BuiltInSpecies'>Built-in Species
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/AgentBuiltIn'>The 'agent' built-in species (Under Construction)
+</a></li>
+<li><a href='/wiki/ModelBuiltIn'>The 'model' built-in species (Under Construction)
+</a></li>
+<li><a href='/wiki/ExperimentBuiltIn'>The 'experiment' built-in species (Under Construction)
+</a></li>
+</ul>
+<li><a href='/wiki/BuiltInSkills'>Built-in Skills
+</a></li>
+<li><a href='/wiki/BuiltInArchitectures'>Built-in Architectures
+</a></li>
+<li><a href='/wiki/Statements'>Statements
+</a></li>
+<li><a href='/wiki/DataTypes'>Types
+</a></li>
+<li><a href='/wiki/FileTypes'>File Types
+</a></li>
+<li><a href='/wiki/Expressions'>Expressions
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/Literals'>Literals
+</a></li>
+<li><a href='/wiki/UnitsAndConstants'>Units and constants
+</a></li>
+<li><a href='/wiki/PseudoVariables'>Pseudo-variables
+</a></li>
+<li><a href='/wiki/VariablesAndAttributes'>Variables and Attributes
+</a></li>
+<li><a href='/wiki/Operators'>Operators 
+</a></li>
+</ul>
+</ul>
+</ul>
+<li>Community
+</li>
+<ul class='sub'>
+<li><a href='/wiki/Contribute'>Contribute
+</a></li>
+<li><a href='/wiki/Projects'>Projects
+</a></li>
+<li><a href='/wiki/TrainingSession'>Training Session
+</a></li>
+</ul></ul></div><div id="right">
+<h3>Facebook Activities</h3>
+<ul id="fbquotes">
+</ul>
+<h3>Commit Activities</h3>
+<ul id="commitquotes">
+</ul>
+<h3>Issue Activities</h3>
+<ul id="issuequotes">
+</ul>
+<h3>Gama Platform Users Activities</h3>
+<ul id="googleusersquotes">
+</ul>
+</div><div id="content"><h1 id="extension">Extension</h1>
+
+<hr />
+
+<p>ummisco.gaml.extensions.stats</p>
+
+<h2 id="table-of-contents">Table of Contents</h2>
+<h3 id="operators">Operators</h3>
+<p><a href="#auto_correlation">auto_correlation</a>, <a href="#beta">beta</a>, <a href="#binomial_coeff">binomial_coeff</a>, <a href="#binomial_complemented">binomial_complemented</a>, <a href="#binomial_sum">binomial_sum</a>, <a href="#chi_square">chi_square</a>, <a href="#chi_square_complemented">chi_square_complemented</a>, <a href="#correlation">correlation</a>, <a href="#covariance">covariance</a>, <a href="#dnorm">dnorm</a>, <a href="#durbin_watson">durbin_watson</a>, <a href="#gamma">gamma</a>, <a href="#gamma_distribution">gamma_distribution</a>, <a href="#gamma_distribution_complemented">gamma_distribution_complemented</a>, <a href="#incomplete_beta">incomplete_beta</a>, <a href="#incomplete_gamma">incomplete_gamma</a>, <a href="#incomplete_gamma_complement">incomplete_gamma_complement</a>, <a href="#kurtosis">kurtosis</a>, <a href="#lgamma">lgamma</a>, <a href="#log_gamma">log_gamma</a>, <a href="#moment">moment</a>, <a href="#normal_area">normal_area</a>, <a href="#normal_density">normal_density</a>, <a href="#normal_inverse">normal_inverse</a>, <a href="#pbinom">pbinom</a>, <a href="#pchisq">pchisq</a>, <a href="#percentile">percentile</a>, <a href="#pgamma">pgamma</a>, <a href="#pnorm">pnorm</a>, <a href="#pvalue_for_fstat">pValue_for_fStat</a>, <a href="#pvalue_for_tstat">pValue_for_tStat</a>, <a href="#quantile">quantile</a>, <a href="#quantile_inverse">quantile_inverse</a>, <a href="#rank_interpolated">rank_interpolated</a>, <a href="#rms">rms</a>, <a href="#skew">skew</a>, <a href="#student_area">student_area</a>, <a href="#student_t_inverse">student_t_inverse</a>, <a href="#variance">variance</a>,</p>
+
+<h3 id="statements">Statements</h3>
+
+<h3 id="skills">Skills</h3>
+
+<h3 id="architectures">Architectures</h3>
+
+<h3 id="species">Species</h3>
+
+<hr />
+
+<h2 id="operators-1">Operators</h2>
+
+<hr />
+
+<h3 id="auto_correlation"><code class="highlighter-rouge">auto_correlation</code></h3>
+
+<h4 id="possible-use">Possible use:</h4>
+<ul>
+  <li><code class="highlighter-rouge">container</code> <strong><code class="highlighter-rouge">auto_correlation</code></strong> <code class="highlighter-rouge">int</code> —&gt;  <code class="highlighter-rouge">float</code></li>
+  <li><strong><code class="highlighter-rouge">auto_correlation</code></strong> (<code class="highlighter-rouge">container</code> , <code class="highlighter-rouge">int</code>) —&gt;  <code class="highlighter-rouge">float</code></li>
+</ul>
+
+<h4 id="result">Result:</h4>
+<p>Returns the auto-correlation of a data sequence</p>
+
+<hr />
+
+<h3 id="beta"><code class="highlighter-rouge">beta</code></h3>
+
+<h4 id="possible-use-1">Possible use:</h4>
+<ul>
+  <li><code class="highlighter-rouge">float</code> <strong><code class="highlighter-rouge">beta</code></strong> <code class="highlighter-rouge">float</code> —&gt;  <code class="highlighter-rouge">float</code></li>
+  <li><strong><code class="highlighter-rouge">beta</code></strong> (<code class="highlighter-rouge">float</code> , <code class="highlighter-rouge">float</code>) —&gt;  <code class="highlighter-rouge">float</code></li>
+</ul>
+
+<h4 id="result-1">Result:</h4>
+<p>Returns the beta function with arguments a, b.</p>
+
+<hr />
+
+<h3 id="binomial_coeff"><code class="highlighter-rouge">binomial_coeff</code></h3>
+
+<h4 id="possible-use-2">Possible use:</h4>
+<ul>
+  <li><code class="highlighter-rouge">int</code> <strong><code class="highlighter-rouge">binomial_coeff</code></strong> <code class="highlighter-rouge">int</code> —&gt;  <code class="highlighter-rouge">float</code></li>
+  <li><strong><code class="highlighter-rouge">binomial_coeff</code></strong> (<code class="highlighter-rouge">int</code> , <code class="highlighter-rouge">int</code>) —&gt;  <code class="highlighter-rouge">float</code></li>
+</ul>
+
+<h4 id="result-2">Result:</h4>
+<p>Returns n choose k as a double. Note the integerization of the double return value.</p>
+
+<hr />
+
+<h3 id="binomial_complemented"><code class="highlighter-rouge">binomial_complemented</code></h3>
+
+<h4 id="possible-use-3">Possible use:</h4>
+<ul>
+  <li><strong><code class="highlighter-rouge">binomial_complemented</code></strong> (<code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>) —&gt;  <code class="highlighter-rouge">float</code></li>
+</ul>
+
+<h4 id="result-3">Result:</h4>
+<p>Returns the sum of the terms k+1 through n of the Binomial probability density, where n is the number of trials and P is the probability of success in the range 0 to 1.</p>
+
+<hr />
+
+<h3 id="binomial_sum"><code class="highlighter-rouge">binomial_sum</code></h3>
+
+<h4 id="possible-use-4">Possible use:</h4>
+<ul>
+  <li><strong><code class="highlighter-rouge">binomial_sum</code></strong> (<code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>) —&gt;  <code class="highlighter-rouge">float</code></li>
+</ul>
+
+<h4 id="result-4">Result:</h4>
+<p>Returns the sum of the terms 0 through k of the Binomial probability density, where n is the number of trials and p is the probability of success in the range 0 to 1.</p>
+
+<hr />
+
+<h3 id="chi_square"><code class="highlighter-rouge">chi_square</code></h3>
+
+<h4 id="possible-use-5">Possible use:</h4>
+<ul>
+  <li><code class="highlighter-rouge">float</code> <strong><code class="highlighter-rouge">chi_square</code></strong> <code class="highlighter-rouge">float</code> —&gt;  <code class="highlighter-rouge">float</code></li>
+  <li><strong><code class="highlighter-rouge">chi_square</code></strong> (<code class="highlighter-rouge">float</code> , <code class="highlighter-rouge">float</code>) —&gt;  <code class="highlighter-rouge">float</code></li>
+</ul>
+
+<h4 id="result-5">Result:</h4>
+<p>Returns the area under the left hand tail (from 0 to x) of the Chi square probability density function with df degrees of freedom.</p>
+
+<hr />
+
+<h3 id="chi_square_complemented"><code class="highlighter-rouge">chi_square_complemented</code></h3>
+
+<h4 id="possible-use-6">Possible use:</h4>
+<ul>
+  <li><code class="highlighter-rouge">float</code> <strong><code class="highlighter-rouge">chi_square_complemented</code></strong> <code class="highlighter-rouge">float</code> —&gt;  <code class="highlighter-rouge">float</code></li>
+  <li><strong><code class="highlighter-rouge">chi_square_complemented</code></strong> (<code class="highlighter-rouge">float</code> , <code class="highlighter-rouge">float</code>) —&gt;  <code class="highlighter-rouge">float</code></li>
+</ul>
+
+<h4 id="result-6">Result:</h4>
+<p>Returns the area under the right hand tail (from x to infinity) of the Chi square probability density function with df degrees of freedom.</p>
+
+<hr />
+
+<h3 id="correlation"><code class="highlighter-rouge">correlation</code></h3>
+
+<h4 id="possible-use-7">Possible use:</h4>
+<ul>
+  <li><code class="highlighter-rouge">container</code> <strong><code class="highlighter-rouge">correlation</code></strong> <code class="highlighter-rouge">container</code> —&gt;  <code class="highlighter-rouge">float</code></li>
+  <li><strong><code class="highlighter-rouge">correlation</code></strong> (<code class="highlighter-rouge">container</code> , <code class="highlighter-rouge">container</code>) —&gt;  <code class="highlighter-rouge">float</code></li>
+</ul>
+
+<h4 id="result-7">Result:</h4>
+<p>Returns the correlation of two data sequences</p>
+
+<hr />
+
+<h3 id="covariance"><code class="highlighter-rouge">covariance</code></h3>
+
+<h4 id="possible-use-8">Possible use:</h4>
+<ul>
+  <li><code class="highlighter-rouge">container</code> <strong><code class="highlighter-rouge">covariance</code></strong> <code class="highlighter-rouge">container</code> —&gt;  <code class="highlighter-rouge">float</code></li>
+  <li><strong><code class="highlighter-rouge">covariance</code></strong> (<code class="highlighter-rouge">container</code> , <code class="highlighter-rouge">container</code>) —&gt;  <code class="highlighter-rouge">float</code></li>
+</ul>
+
+<h4 id="result-8">Result:</h4>
+<p>Returns the covariance of two data sequences</p>
+
+<hr />
+
+<h3 id="dnorm"><code class="highlighter-rouge">dnorm</code></h3>
+<p>Same signification as <a href="#normal_density">normal_density</a></p>
+
+<hr />
+
+<h3 id="durbin_watson"><code class="highlighter-rouge">durbin_watson</code></h3>
+
+<h4 id="possible-use-9">Possible use:</h4>
+<ul>
+  <li><strong><code class="highlighter-rouge">durbin_watson</code></strong> (<code class="highlighter-rouge">container</code>) —&gt;  <code class="highlighter-rouge">float</code></li>
+</ul>
+
+<h4 id="result-9">Result:</h4>
+<p>Durbin-Watson computation</p>
+
+<hr />
+
+<h3 id="gamma"><code class="highlighter-rouge">gamma</code></h3>
+
+<h4 id="possible-use-10">Possible use:</h4>
+<ul>
+  <li><strong><code class="highlighter-rouge">gamma</code></strong> (<code class="highlighter-rouge">float</code>) —&gt;  <code class="highlighter-rouge">float</code></li>
+</ul>
+
+<h4 id="result-10">Result:</h4>
+<p>Returns the value of the Gamma function at x.</p>
+
+<hr />
+
+<h3 id="gamma_distribution"><code class="highlighter-rouge">gamma_distribution</code></h3>
+
+<h4 id="possible-use-11">Possible use:</h4>
+<ul>
+  <li><strong><code class="highlighter-rouge">gamma_distribution</code></strong> (<code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">float</code>) —&gt;  <code class="highlighter-rouge">float</code></li>
+</ul>
+
+<h4 id="result-11">Result:</h4>
+<p>Returns the integral from zero to x of the gamma probability density function.</p>
+
+<h4 id="comment">Comment:</h4>
+<p>incomplete_gamma(a,x) is equal to pgamma(a,1,x).</p>
+
+<hr />
+
+<h3 id="gamma_distribution_complemented"><code class="highlighter-rouge">gamma_distribution_complemented</code></h3>
+
+<h4 id="possible-use-12">Possible use:</h4>
+<ul>
+  <li><strong><code class="highlighter-rouge">gamma_distribution_complemented</code></strong> (<code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">float</code>) —&gt;  <code class="highlighter-rouge">float</code></li>
+</ul>
+
+<h4 id="result-12">Result:</h4>
+<p>Returns the integral from x to infinity of the gamma probability density function.</p>
+
+<hr />
+
+<h3 id="incomplete_beta"><code class="highlighter-rouge">incomplete_beta</code></h3>
+
+<h4 id="possible-use-13">Possible use:</h4>
+<ul>
+  <li><strong><code class="highlighter-rouge">incomplete_beta</code></strong> (<code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">float</code>) —&gt;  <code class="highlighter-rouge">float</code></li>
+</ul>
+
+<h4 id="result-13">Result:</h4>
+<p>Returns the regularized integral of the beta function with arguments a and b, from zero to x.</p>
+
+<hr />
+
+<h3 id="incomplete_gamma"><code class="highlighter-rouge">incomplete_gamma</code></h3>
+
+<h4 id="possible-use-14">Possible use:</h4>
+<ul>
+  <li><code class="highlighter-rouge">float</code> <strong><code class="highlighter-rouge">incomplete_gamma</code></strong> <code class="highlighter-rouge">float</code> —&gt;  <code class="highlighter-rouge">float</code></li>
+  <li><strong><code class="highlighter-rouge">incomplete_gamma</code></strong> (<code class="highlighter-rouge">float</code> , <code class="highlighter-rouge">float</code>) —&gt;  <code class="highlighter-rouge">float</code></li>
+</ul>
+
+<h4 id="result-14">Result:</h4>
+<p>Returns the regularized integral of the Gamma function with argument a to the integration end point x.</p>
+
+<hr />
+
+<h3 id="incomplete_gamma_complement"><code class="highlighter-rouge">incomplete_gamma_complement</code></h3>
+
+<h4 id="possible-use-15">Possible use:</h4>
+<ul>
+  <li><code class="highlighter-rouge">float</code> <strong><code class="highlighter-rouge">incomplete_gamma_complement</code></strong> <code class="highlighter-rouge">float</code> —&gt;  <code class="highlighter-rouge">float</code></li>
+  <li><strong><code class="highlighter-rouge">incomplete_gamma_complement</code></strong> (<code class="highlighter-rouge">float</code> , <code class="highlighter-rouge">float</code>) —&gt;  <code class="highlighter-rouge">float</code></li>
+</ul>
+
+<h4 id="result-15">Result:</h4>
+<p>Returns the complemented regularized incomplete Gamma function of the argument a and integration start point x.</p>
+
+<hr />
+
+<h3 id="kurtosis"><code class="highlighter-rouge">kurtosis</code></h3>
+
+<h4 id="possible-use-16">Possible use:</h4>
+<ul>
+  <li><strong><code class="highlighter-rouge">kurtosis</code></strong> (<code class="highlighter-rouge">container</code>) —&gt;  <code class="highlighter-rouge">float</code></li>
+  <li><code class="highlighter-rouge">float</code> <strong><code class="highlighter-rouge">kurtosis</code></strong> <code class="highlighter-rouge">float</code> —&gt;  <code class="highlighter-rouge">float</code></li>
+  <li><strong><code class="highlighter-rouge">kurtosis</code></strong> (<code class="highlighter-rouge">float</code> , <code class="highlighter-rouge">float</code>) —&gt;  <code class="highlighter-rouge">float</code></li>
+</ul>
+
+<h4 id="result-16">Result:</h4>
+<p>Returns the kurtosis (aka excess) of a data sequence
+Returns the kurtosis (aka excess) of a data sequence</p>
+
+<hr />
+
+<h3 id="lgamma"><code class="highlighter-rouge">lgamma</code></h3>
+<p>Same signification as <a href="#log_gamma">log_gamma</a></p>
+
+<hr />
+
+<h3 id="log_gamma"><code class="highlighter-rouge">log_gamma</code></h3>
+
+<h4 id="possible-use-17">Possible use:</h4>
+<ul>
+  <li><strong><code class="highlighter-rouge">log_gamma</code></strong> (<code class="highlighter-rouge">float</code>) —&gt;  <code class="highlighter-rouge">float</code></li>
+</ul>
+
+<h4 id="result-17">Result:</h4>
+<p>Returns the log of the value of the Gamma function at x.</p>
+
+<hr />
+
+<h3 id="moment"><code class="highlighter-rouge">moment</code></h3>
+
+<h4 id="possible-use-18">Possible use:</h4>
+<ul>
+  <li><strong><code class="highlighter-rouge">moment</code></strong> (<code class="highlighter-rouge">container</code>, <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>) —&gt;  <code class="highlighter-rouge">float</code></li>
+</ul>
+
+<h4 id="result-18">Result:</h4>
+<p>Returns the moment of k-th order with constant c of a data sequence</p>
+
+<hr />
+
+<h3 id="normal_area"><code class="highlighter-rouge">normal_area</code></h3>
+
+<h4 id="possible-use-19">Possible use:</h4>
+<ul>
+  <li><strong><code class="highlighter-rouge">normal_area</code></strong> (<code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">float</code>) —&gt;  <code class="highlighter-rouge">float</code></li>
+</ul>
+
+<h4 id="result-19">Result:</h4>
+<p>Returns the area to the left of x in the normal distribution with the given mean and standard deviation.</p>
+
+<hr />
+
+<h3 id="normal_density"><code class="highlighter-rouge">normal_density</code></h3>
+
+<h4 id="possible-use-20">Possible use:</h4>
+<ul>
+  <li><strong><code class="highlighter-rouge">normal_density</code></strong> (<code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">float</code>) —&gt;  <code class="highlighter-rouge">float</code></li>
+</ul>
+
+<h4 id="result-20">Result:</h4>
+<p>Returns the probability of x in the normal distribution with the given mean and standard deviation.</p>
+
+<hr />
+
+<h3 id="normal_inverse"><code class="highlighter-rouge">normal_inverse</code></h3>
+
+<h4 id="possible-use-21">Possible use:</h4>
+<ul>
+  <li><strong><code class="highlighter-rouge">normal_inverse</code></strong> (<code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">float</code>) —&gt;  <code class="highlighter-rouge">float</code></li>
+</ul>
+
+<h4 id="result-21">Result:</h4>
+<p>Returns the x in the normal distribution with the given mean and standard deviation, to the left of which lies the given area. normal.Inverse returns the value in terms of standard deviations from the mean, so we need to adjust it for the given mean and standard deviation.</p>
+
+<hr />
+
+<h3 id="pbinom"><code class="highlighter-rouge">pbinom</code></h3>
+<p>Same signification as <a href="#binomial_sum">binomial_sum</a></p>
+
+<hr />
+
+<h3 id="pchisq"><code class="highlighter-rouge">pchisq</code></h3>
+<p>Same signification as <a href="#chi_square">chi_square</a></p>
+
+<hr />
+
+<h3 id="percentile"><code class="highlighter-rouge">percentile</code></h3>
+<p>Same signification as <a href="#quantile_inverse">quantile_inverse</a></p>
+
+<hr />
+
+<h3 id="pgamma"><code class="highlighter-rouge">pgamma</code></h3>
+<p>Same signification as <a href="#gamma_distribution">gamma_distribution</a></p>
+
+<hr />
+
+<h3 id="pnorm"><code class="highlighter-rouge">pnorm</code></h3>
+<p>Same signification as <a href="#normal_area">normal_area</a></p>
+
+<hr />
+
+<h3 id="pvalue_for_fstat"><code class="highlighter-rouge">pValue_for_fStat</code></h3>
+
+<h4 id="possible-use-22">Possible use:</h4>
+<ul>
+  <li><strong><code class="highlighter-rouge">pValue_for_fStat</code></strong> (<code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">int</code>) —&gt;  <code class="highlighter-rouge">float</code></li>
+</ul>
+
+<h4 id="result-22">Result:</h4>
+<p>Returns the P value of F statistic fstat with numerator degrees of freedom dfn and denominator degress of freedom dfd. Uses the incomplete Beta function.</p>
+
+<hr />
+
+<h3 id="pvalue_for_tstat"><code class="highlighter-rouge">pValue_for_tStat</code></h3>
+
+<h4 id="possible-use-23">Possible use:</h4>
+<ul>
+  <li><code class="highlighter-rouge">float</code> <strong><code class="highlighter-rouge">pValue_for_tStat</code></strong> <code class="highlighter-rouge">int</code> —&gt;  <code class="highlighter-rouge">float</code></li>
+  <li><strong><code class="highlighter-rouge">pValue_for_tStat</code></strong> (<code class="highlighter-rouge">float</code> , <code class="highlighter-rouge">int</code>) —&gt;  <code class="highlighter-rouge">float</code></li>
+</ul>
+
+<h4 id="result-23">Result:</h4>
+<p>Returns the P value of the T statistic tstat with df degrees of freedom. This is a two-tailed test so we just double the right tail which is given by studentT of -|tstat|.</p>
+
+<hr />
+
+<h3 id="quantile"><code class="highlighter-rouge">quantile</code></h3>
+
+<h4 id="possible-use-24">Possible use:</h4>
+<ul>
+  <li><code class="highlighter-rouge">container</code> <strong><code class="highlighter-rouge">quantile</code></strong> <code class="highlighter-rouge">float</code> —&gt;  <code class="highlighter-rouge">float</code></li>
+  <li><strong><code class="highlighter-rouge">quantile</code></strong> (<code class="highlighter-rouge">container</code> , <code class="highlighter-rouge">float</code>) —&gt;  <code class="highlighter-rouge">float</code></li>
+</ul>
+
+<h4 id="result-24">Result:</h4>
+<p>Returns the phi-quantile; that is, an element elem for which holds that phi percent of data elements are less than elem. The quantile need not necessarily be contained in the data sequence, it can be a linear interpolation.</p>
+
+<hr />
+
+<h3 id="quantile_inverse"><code class="highlighter-rouge">quantile_inverse</code></h3>
+
+<h4 id="possible-use-25">Possible use:</h4>
+<ul>
+  <li><code class="highlighter-rouge">container</code> <strong><code class="highlighter-rouge">quantile_inverse</code></strong> <code class="highlighter-rouge">float</code> —&gt;  <code class="highlighter-rouge">float</code></li>
+  <li><strong><code class="highlighter-rouge">quantile_inverse</code></strong> (<code class="highlighter-rouge">container</code> , <code class="highlighter-rouge">float</code>) —&gt;  <code class="highlighter-rouge">float</code></li>
+</ul>
+
+<h4 id="result-25">Result:</h4>
+<p>Returns how many percent of the elements contained in the receiver are &lt;= element. Does linear interpolation if the element is not contained but lies in between two contained elements.</p>
+
+<hr />
+
+<h3 id="rank_interpolated"><code class="highlighter-rouge">rank_interpolated</code></h3>
+
+<h4 id="possible-use-26">Possible use:</h4>
+<ul>
+  <li><code class="highlighter-rouge">container</code> <strong><code class="highlighter-rouge">rank_interpolated</code></strong> <code class="highlighter-rouge">float</code> —&gt;  <code class="highlighter-rouge">float</code></li>
+  <li><strong><code class="highlighter-rouge">rank_interpolated</code></strong> (<code class="highlighter-rouge">container</code> , <code class="highlighter-rouge">float</code>) —&gt;  <code class="highlighter-rouge">float</code></li>
+</ul>
+
+<h4 id="result-26">Result:</h4>
+<p>Returns the linearly interpolated number of elements in a list less or equal to a given element. The rank is the number of elements &lt;= element. Ranks are of the form {0, 1, 2,…, sortedList.size()}. If no element is &lt;= element, then the rank is zero. If the element lies in between two contained elements, then linear interpolation is used and a non integer value is returned.</p>
+
+<hr />
+
+<h3 id="rms"><code class="highlighter-rouge">rms</code></h3>
+
+<h4 id="possible-use-27">Possible use:</h4>
+<ul>
+  <li><code class="highlighter-rouge">int</code> <strong><code class="highlighter-rouge">rms</code></strong> <code class="highlighter-rouge">float</code> —&gt;  <code class="highlighter-rouge">float</code></li>
+  <li><strong><code class="highlighter-rouge">rms</code></strong> (<code class="highlighter-rouge">int</code> , <code class="highlighter-rouge">float</code>) —&gt;  <code class="highlighter-rouge">float</code></li>
+</ul>
+
+<h4 id="result-27">Result:</h4>
+<p>Returns the RMS (Root-Mean-Square) of a data sequence. The RMS of data sequence is the square-root of the mean of the squares of the elements in the data sequence. It is a measure of the average size of the elements of a data sequence.</p>
+
+<hr />
+
+<h3 id="skew"><code class="highlighter-rouge">skew</code></h3>
+
+<h4 id="possible-use-28">Possible use:</h4>
+<ul>
+  <li><strong><code class="highlighter-rouge">skew</code></strong> (<code class="highlighter-rouge">container</code>) —&gt;  <code class="highlighter-rouge">float</code></li>
+  <li><code class="highlighter-rouge">float</code> <strong><code class="highlighter-rouge">skew</code></strong> <code class="highlighter-rouge">float</code> —&gt;  <code class="highlighter-rouge">float</code></li>
+  <li><strong><code class="highlighter-rouge">skew</code></strong> (<code class="highlighter-rouge">float</code> , <code class="highlighter-rouge">float</code>) —&gt;  <code class="highlighter-rouge">float</code></li>
+</ul>
+
+<h4 id="result-28">Result:</h4>
+<p>Returns the skew of a data sequence.
+Returns the skew of a data sequence, which is moment(data,3,mean) / standardDeviation3</p>
+
+<hr />
+
+<h3 id="student_area"><code class="highlighter-rouge">student_area</code></h3>
+
+<h4 id="possible-use-29">Possible use:</h4>
+<ul>
+  <li><code class="highlighter-rouge">float</code> <strong><code class="highlighter-rouge">student_area</code></strong> <code class="highlighter-rouge">int</code> —&gt;  <code class="highlighter-rouge">float</code></li>
+  <li><strong><code class="highlighter-rouge">student_area</code></strong> (<code class="highlighter-rouge">float</code> , <code class="highlighter-rouge">int</code>) —&gt;  <code class="highlighter-rouge">float</code></li>
+</ul>
+
+<h4 id="result-29">Result:</h4>
+<p>Returns the area to the left of x in the Student T distribution with the given degrees of freedom.</p>
+
+<hr />
+
+<h3 id="student_t_inverse"><code class="highlighter-rouge">student_t_inverse</code></h3>
+
+<h4 id="possible-use-30">Possible use:</h4>
+<ul>
+  <li><code class="highlighter-rouge">float</code> <strong><code class="highlighter-rouge">student_t_inverse</code></strong> <code class="highlighter-rouge">int</code> —&gt;  <code class="highlighter-rouge">float</code></li>
+  <li><strong><code class="highlighter-rouge">student_t_inverse</code></strong> (<code class="highlighter-rouge">float</code> , <code class="highlighter-rouge">int</code>) —&gt;  <code class="highlighter-rouge">float</code></li>
+</ul>
+
+<h4 id="result-30">Result:</h4>
+<p>Returns the value, t, for which the area under the Student-t probability density function (integrated from minus infinity to t) is equal to x.</p>
+
+<hr />
+
+<h3 id="variance"><code class="highlighter-rouge">variance</code></h3>
+
+<h4 id="possible-use-31">Possible use:</h4>
+<ul>
+  <li><strong><code class="highlighter-rouge">variance</code></strong> (<code class="highlighter-rouge">float</code>) —&gt;  <code class="highlighter-rouge">float</code></li>
+  <li><strong><code class="highlighter-rouge">variance</code></strong> (<code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">float</code>) —&gt;  <code class="highlighter-rouge">float</code></li>
+</ul>
+
+<h4 id="result-31">Result:</h4>
+<p>Returns the variance of a data sequence. That is (sumOfSquares - mean*sum) / size with mean = sum/size.
+Returns the variance from a standard deviation.</p>
+
+<hr />
+
+<h2 id="skills-1">Skills</h2>
+
+<hr />
+
+<h2 id="statements-1">Statements</h2>
+
+<hr />
+
+<h2 id="species-1">Species</h2>
+
+<hr />
+
+<h2 id="architectures-1">Architectures</h2>
+
+</div></body></html>

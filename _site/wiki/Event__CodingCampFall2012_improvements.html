@@ -1,0 +1,601 @@
+
+    <!doctype html><html lang="en"><head><meta charset="utf-8"><title>Possibility to directly create agents from a CSV file</title></head>
+    <body>
+    <link rel="stylesheet" href="/style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="//connect.facebook.net/en_US/all.js"></script>
+<script src="/linkify.min.js"></script>
+<script src="/linkify-jquery.min.js"></script>
+<script>
+  $(document).ready(function(){
+	  		$.getJSON('https://graph.facebook.com/238065426321929/feed?access_token=229040647557399|MQKFlFYX7YW25XGj4GUYZ7B1lcY', function(data) {
+		var ahtml="";
+		for(var i = 0; i < 5; i++) {
+			ahtml=ahtml+"<li>"+data["data"][i]["message"]+"</li>";
+		}
+		ahtml=ahtml+"";
+		$("#fbquotes").html(ahtml);
+		$("#fbquotes").linkify();
+	});
+	 
+		$.getJSON('https://api.github.com/repos/gama-platform/gama/commits', function(data) {
+			var ahtml="";
+			for(var i = 0; i < 5; i++) {
+				ahtml=ahtml+"<li>"+data[i]["commit"]["message"]+" by "+data[i]["commit"]["author"]["name"]+" <a href='"+data[i]["commit"]["html_url"]+"'> See more</a></li>";
+			}
+			ahtml=ahtml+"";
+			$("#commitquotes").html(ahtml);
+			$("#commitquotes").linkify();
+		});
+				
+				
+		$.getJSON('https://api.github.com/repos/gama-platform/gama/issues', function(data) {
+			var ahtml="";
+			for(var i = 0; i < 5; i++) {
+				ahtml=ahtml+"<li>"+data[i]["title"]+" by "+data[i]["user"]["login"]+" <a href='"+data[i]["html_url"]+"'> See more</a></li>";
+			}
+			ahtml=ahtml+"";
+			$("#issuequotes").html(ahtml);
+			$("#issuequotes").linkify();
+		});
+		
+		$.getJSON('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fgroups.google.com%2Fforum%2Ffeed%2Fgama-platform%2Ftopics%2Frss.xml%3Fnum%3D15', function(data) {
+			var ahtml="";
+			for(var i = 0; i < 5; i++) {
+				ahtml=ahtml+"<li>"+data["items"][i]["title"]+" by "+data["items"][i]["author"]+" <a href='"+data["items"][i]["link"]+"'> See more</a></li>";
+			}
+			ahtml=ahtml+"";
+			$("#googleusersquotes").html(ahtml);
+			$("#googleusersquotes").linkify();
+			
+		});
+ });
+  
+</script>
+
+      <div id="left">
+
+		<ul class="mcd-menu"><li><a href="/">Home</a></li><li><a href="/">Discussions</a></li>
+<li><a href='/wiki/Tutorials'>Tutorials
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/LearnGAMLStepByStep'>Learn GAML Step by Step
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/Introduction'>Introduction
+</a></li>
+<li><a href='/wiki/StartWithGAML'>Start with GAML
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/ModelOrganization'>Organization of a model
+</a></li>
+<li><a href='/wiki/BasicProgrammingConceptsInGAML'>Basic programming concepts in GAML
+</a></li>
+</ul>
+<li><a href='/wiki/ManipulateBasicSpecies'>Manipulate basic species
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/GlobalSpecies'>The global species
+</a></li>
+<li><a href='/wiki/RegularSpecies'>Regular species
+</a></li>
+<li><a href='/wiki/DefiningActionsAndBehaviors'>Defining actions and behaviors
+</a></li>
+<li><a href='/wiki/InteractionBetweenAgents'>Interaction between agents
+</a></li>
+<li><a href='/wiki/AttachingSkills'>Attaching Skills
+</a></li>
+<li><a href='/wiki/Inheritance'>Inheritance
+</a></li>
+</ul>
+<li><a href='/wiki/DefiningAdvancedSpecies'>Defining advanced species
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/GridSpecies'>Grid Species
+</a></li>
+<li><a href='/wiki/GraphSpecies'>Graph Species
+</a></li>
+<li><a href='/wiki/MirrorSpecies'>Mirror species
+</a></li>
+<li><a href='/wiki/MultiLevelArchitecture'>Multi-level architecture
+</a></li>
+</ul>
+<li><a href='/wiki/DefiningGUIExperiment'>Defining GUI Experiment
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/DefiningParameters'>Defining Parameters
+</a></li>
+<li><a href='/wiki/DefiningDisplaysGeneralities'>Defining displays (Generalities)
+</a></li>
+<li><a href='/wiki/DefiningCharts'>Defining Charts
+</a></li>
+<li><a href='/wiki/Defining3DDisplays'>Defining 3D Displays
+</a></li>
+<li><a href='/wiki/DefiningMonitorsAndInspectors'>Defining monitors and inspectors
+</a></li>
+<li><a href='/wiki/DefiningExportFiles'>Defining export files
+</a></li>
+<li><a href='/wiki/DefiningUserInteraction'>Defining user interaction
+</a></li>
+</ul>
+<li><a href='/wiki/ExploringModels'>Exploring Models
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/RunSeveralSimulations'>Run Several Simulations
+</a></li>
+<li><a href='/wiki/BatchExperiments'>Defining Batch Experiments
+</a></li>
+<li><a href='/wiki/ExplorationMethods'>Exploration Methods
+</a></li>
+</ul>
+<li><a href='/wiki/OptimizingModels'>Optimizing Models
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/RuntimeConcepts'>Runtime Concepts
+</a></li>
+<li><a href='/wiki/OptimizingModels'>Optimizing Models
+</a></li>
+</ul>
+<li><a href='/wiki/MultiParadigmModeling'>Multi-Paradigm Modeling
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/ControlArchitecture'>Control Architectures
+</a></li>
+<li><a href='/wiki/Equations'>Using Equations
+</a></li>
+</ul>
+</ul>
+<li><a href='/wiki/Recipes'>Recipes
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/ManipulateOSMDatas'>Manipulate OSM Datas
+</a></li>
+<li><a href='/wiki/Diffusion'>Implementing diffusion
+</a></li>
+<li><a href='/wiki/UsingDatabase'>Using Database Access
+</a></li>
+<li><a href='/wiki/CallingR'>Calling R
+</a></li>
+<li><a href='/wiki/UsingFIPAACL'>Using FIPA ACL
+</a></li>
+<li><a href='/wiki/GamAnalyzer'>Using GAMAnalyzer
+</a></li>
+<li><a href='/wiki/UsingBDI'>Using BDI
+</a></li>
+<li><a href='/wiki/UsingDrivingSkill'>Advanced Driving Skill
+</a></li>
+<li><a href='/wiki/ManipulateDates'>Manipulate Dates
+</a></li>
+<li><a href='/wiki/ManipulateLight'>Implementing light
+</a></li>
+<li><a href='/wiki/Comodel'>Using Comodel
+</a></li>
+</ul>
+<li><a href='/wiki/Tutorials'>Tutorials
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/LuneraysFlu'>Luneray's flu
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/LuneraysFlu_step1'>1. Creation of a first basic disease spreading model
+</a></li>
+<li><a href='/wiki/LuneraysFlu_step2'>2. Definition of monitors and chart outputs
+</a></li>
+<li><a href='/wiki/LuneraysFlu_step3'>3. Importation of GIS data
+</a></li>
+<li><a href='/wiki/LuneraysFlu_step4'>4. Use of a graph to constraint the movements of people]
+</a></li>
+<li><a href='/wiki/LuneraysFlu_step5'>5. Definition of 3D displays
+</a></li>
+</ul>
+<li><a href='/wiki/IncrementalModel'>Incremental Model
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/IncrementalModel_step1'>1. Simple SI Model
+</a></li>
+<li><a href='/wiki/IncrementalModel_step2'>2. Charts
+</a></li>
+<li><a href='/wiki/IncrementalModel_step3'>3. Integration of GIS Data
+</a></li>
+<li><a href='/wiki/IncrementalModel_step4'>4. Movement on Graph
+</a></li>
+<li><a href='/wiki/IncrementalModel_step5'>5. Visualizing in 3D
+</a></li>
+<li><a href='/wiki/IncrementalModel_step6'>6. Multi-Level
+</a></li>
+<li><a href='/wiki/IncrementalModel_step7'>7. Differential Equations
+</a></li>
+</ul>
+<li><a href='/wiki/PredatorPrey'>Predator Prey
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/PredatorPrey_step1'>1. Basic Model
+</a></li>
+<li><a href='/wiki/PredatorPrey_step2'>2. Vegetation Dynamic
+</a></li>
+<li><a href='/wiki/PredatorPrey_step3'>3. Prey Agent Behavior
+</a></li>
+<li><a href='/wiki/PredatorPrey_step4'>4. Inspectors and Monitors
+</a></li>
+<li><a href='/wiki/PredatorPrey_step5'>5. Predator Agent
+</a></li>
+<li><a href='/wiki/PredatorPrey_step6'>6. Breeding
+</a></li>
+<li><a href='/wiki/PredatorPrey_step7'>7. Agent Aspect
+</a></li>
+<li><a href='/wiki/PredatorPrey_step8'>8. Complex Behavior
+</a></li>
+<li><a href='/wiki/PredatorPrey_step9'>9. Stopping condition
+</a></li>
+<li><a href='/wiki/PredatorPrey_step10'>10. Charts
+</a></li>
+<li><a href='/wiki/PredatorPrey_step11'>11. Writing Files
+</a></li>
+<li><a href='/wiki/PredatorPrey_step12'>12. Image loading
+</a></li>
+</ul>
+<li><a href='/wiki/RoadTrafficModel'>Road Traffic
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/RoadTrafficModel_step1'>1. Loading of GIS Data
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step2'>2. People Agents
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step3'>3. Movement of People
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step4'>4. Weight for Road Network
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step5'>5. Dynamic weights
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step6'>6. Charts
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step7'>7. Automatic Road Repair
+</a></li>
+</ul>
+<li><a href='/wiki/ThreeD'>3D Tutorial
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/ThreeD_step1'>1. Basic Model
+</a></li>
+<li><a href='/wiki/ThreeD_step2'>2. Moving Cells
+</a></li>
+<li><a href='/wiki/ThreeD_step3'>3. Connections
+</a></li>
+</ul>
+</ul>
+</ul>
+<li><a href='/wiki/References'>References
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/PlatformDocumentation'>Platform
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/InstallationAndLaunching'>Installation and Launching
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/Installation'>Installation
+</a></li>
+<li><a href='/wiki/Launching'>Launching GAMA
+</a></li>
+<li><a href='/wiki/Headless'>Headless Mode
+</a></li>
+<li><a href='/wiki/Updating'>Updating GAMA
+</a></li>
+<li><a href='/wiki/InstallingPlugins'>Installing Plugins
+</a></li>
+<li><a href='/wiki/Troubleshooting'>Troubleshooting
+</a></li>
+</ul>
+<li><a href='/wiki/WorkspaceProjectsAndModels'>Workspace, Projects and Models
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/NavigatingWorkspace'>Navigating in the Workspace
+</a></li>
+<li><a href='/wiki/ChangingWorkspace'>Changing Workspace
+</a></li>
+<li><a href='/wiki/ImportingModels'>Importing Models
+</a></li>
+</ul>
+<li><a href='/wiki/EditingModels'>Editing models
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/GamlEditorGeneralities'>The GAML Editor - Generalities
+</a></li>
+<li><a href='/wiki/GamlEditorToolbar'>The GAML Editor Toolbar
+</a></li>
+<li><a href='/wiki/ValidationOfModels'>Validation of Models
+</a></li>
+</ul>
+<li><a href='/wiki/RunningExperiments'>Running Experiments
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/LaunchingExperiments'>Launching Experiments from the User Interface
+</a></li>
+<li><a href='/wiki/ExperimentsUserInterface'>Experiments User Interface
+</a></li>
+<li><a href='/wiki/MenusAndCommands'>Menus and Commands
+</a></li>
+<li><a href='/wiki/ParametersView'>Parameters View
+</a></li>
+<li><a href='/wiki/InspectorsAndMonitors'>Inspectors and monitors
+</a></li>
+<li><a href='/wiki/Displays'>Displays
+</a></li>
+<li><a href='/wiki/BatchSpecific'>Batch Specific UI
+</a></li>
+<li><a href='/wiki/ErrorsView'>Errors View
+</a></li>
+</ul>
+<li><a href='/wiki/Preferences'>Preferences
+</a></li>
+</ul>
+<li><a href='/wiki/GamlReferences'>Gaml Reference
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/BuiltInSpecies'>Built-in Species
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/AgentBuiltIn'>The 'agent' built-in species (Under Construction)
+</a></li>
+<li><a href='/wiki/ModelBuiltIn'>The 'model' built-in species (Under Construction)
+</a></li>
+<li><a href='/wiki/ExperimentBuiltIn'>The 'experiment' built-in species (Under Construction)
+</a></li>
+</ul>
+<li><a href='/wiki/BuiltInSkills'>Built-in Skills
+</a></li>
+<li><a href='/wiki/BuiltInArchitectures'>Built-in Architectures
+</a></li>
+<li><a href='/wiki/Statements'>Statements
+</a></li>
+<li><a href='/wiki/DataTypes'>Types
+</a></li>
+<li><a href='/wiki/FileTypes'>File Types
+</a></li>
+<li><a href='/wiki/Expressions'>Expressions
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/Literals'>Literals
+</a></li>
+<li><a href='/wiki/UnitsAndConstants'>Units and constants
+</a></li>
+<li><a href='/wiki/PseudoVariables'>Pseudo-variables
+</a></li>
+<li><a href='/wiki/VariablesAndAttributes'>Variables and Attributes
+</a></li>
+<li><a href='/wiki/Operators'>Operators 
+</a></li>
+</ul>
+</ul>
+</ul>
+<li>Community
+</li>
+<ul class='sub'>
+<li><a href='/wiki/Contribute'>Contribute
+</a></li>
+<li><a href='/wiki/Projects'>Projects
+</a></li>
+<li><a href='/wiki/TrainingSession'>Training Session
+</a></li>
+</ul></ul></div><div id="right">
+<h3>Facebook Activities</h3>
+<ul id="fbquotes">
+</ul>
+<h3>Commit Activities</h3>
+<ul id="commitquotes">
+</ul>
+<h3>Issue Activities</h3>
+<ul id="issuequotes">
+</ul>
+<h3>Gama Platform Users Activities</h3>
+<ul id="googleusersquotes">
+</ul>
+</div><div id="content"><p>Improvements and Enhancements</p>
+
+<h1 id="possibility-to-directly-create-agents-from-a-csv-file">Possibility to directly create agents from a CSV file</h1>
+<p>The create statement has been extended in order to let the possibility to create agents of specified species directly from a CSV file.
+An agent is created by line of the CSV file. It is also possible to read the different column of the file using the read operator: <strong>read (column_index) (start at 0)</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>read(1)
+</code></pre>
+</div>
+
+<p>For example:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>create people from: "data_file.csv" with: [speed::read(0), age:: read(1)];
+</code></pre>
+</div>
+
+<p>It is also possible to specify that the CSV file has a header that can give the name of the different column using the <strong>header</strong> facet (<strong>boolean</strong>). It this case, it is possible to directly use this name to read the column value: <strong>read(“attribute1”)</strong>.</p>
+
+<p>For example:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>create people from: "data_file.csv" with: [speed::read("SPEED"), age:: read("AGE")] header: true;
+</code></pre>
+</div>
+
+<h1 id="improving-and-simplifying-the-syntax-of-gaml">Improving and simplifying the syntax of GAML</h1>
+<p>New features:</p>
+<ul>
+  <li>Possibility to define 3D points with the <strong>{x,y,z}</strong> syntax:
+    <div class="highlighter-rouge"><pre class="highlight"><code>let pt type: point &lt;- {2, 5, 3};
+</code></pre>
+    </div>
+    <h1 id="documenting-and-enhancing-the-command-line-version">Documenting and enhancing the command line version</h1>
+  </li>
+</ul>
+
+<p>#summary One-sentence summary of this page.</p>
+
+<p>The aim of this feature is to run models and experiments on a grid or a cluster without GUI and to take advantages of High Performance Computing. It promises efficient running by accelerating each simulation and experiment plan computing. The GUI is not loaded and managed. Several simulations could be run in parallel, at same time.</p>
+
+<p>There is two ways to run a GAMA experiment in headless mode: using command-line launcher or Java command line. These commands take 2 arguments: an experiment file and an output directory.</p>
+
+<p>For the command-line :</p>
+<div class="highlighter-rouge"><pre class="highlight"><code> sh gamaHeadless.sh $1 $2
+</code></pre>
+</div>
+<ul>
+  <li>with:
+    <ul>
+      <li>$1 input parameter file : an xml file determining experiment parameters and attended outputs</li>
+      <li>$2 output directory path : a directory which contains simulation results (numerical data and simulation snapshot)</li>
+    </ul>
+  </li>
+</ul>
+
+<p><a href="Headless">go to headless documentation</a></p>
+
+<h1 id="torus-environment">Torus environment</h1>
+<p>It is now possible to use toroidal environment for grid and continuous environments (even with complex GIS geometries).  The only thing to do is to use the <strong>torus</strong> facet.</p>
+
+<p>For a grid:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>grid cell width: 5 height: 5 neighbours: 8 torus: true 
+</code></pre>
+</div>
+
+<p>For the continuous environment:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>environment bounds: {50,50} torus: true;
+</code></pre>
+</div>
+
+<p>Be careful concerning toroidal continuous environment: the computation required by these environment is high, thus they should be used only when they are really necessary.</p>
+
+<p>A demonstration of a continuous toroidal environment is given in the experimental model: testTorus-&gt; continuous_torus.</p>
+
+<p><img src="http://gama-platform.googlecode.com/files/toroidalEnv.png" alt="http://gama-platform.googlecode.com/files/toroidalEnv.png" /></p>
+
+<h1 id="communication-skill">Communication Skill</h1>
+<p>Plugin-needed: msi.gaml.extensions.fipa</p>
+
+<p>The communicating skill now re-works on GAMA 1.5. Sample toy models are found in “models/fipa”.</p>
+
+<h1 id="update-of-the-trust-skill-to-gama-15">Update of the Trust Skill to Gama 1.5</h1>
+
+<h1 id="hexgonal-geometry-and-grid">Hexgonal geometry and grid</h1>
+<p>It is now possible to create a hexagon of with the given width and height (point) thanks to the operator <strong>hexagon({width, height})</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>hexagon({3,4})
+</code></pre>
+</div>
+
+<p>In the same way, an operator has been defined in order to decomposed a geometry into a set of hexagons of a given a number of columns and rows. This operator returns a set of hexagons: geometry as_hexagonal_grid({nb_cols, nb_rows})</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>shape as_hexagonal_grid({50, 40})
+</code></pre>
+</div>
+
+<p>At last, it is now possible to define a hexagonal grid. To do so, the neighbors should is set to <strong>6</strong>. It is possible to use torus environment with hexagonal grid.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>grid cell width: 20 height: 20 neighbours: 6 torus: true;
+</code></pre>
+</div>
+
+<p><img src="http://gama-platform.googlecode.com/files/imageHexGrid.png" alt="http://gama-platform.googlecode.com/files/imageHexGrid.png" /></p>
+
+<h1 id="using-hsb-color">Using HSB color</h1>
+
+<p>Add <a href="http://en.wikipedia.org/wiki/HSL_and_HSV">HSB</a> color to be able to iterate through colors and use it to represent qualitative data.</p>
+
+<p>Example:</p>
+
+<p>The association of the orientation of agents is enhanced by mapping the orientation of the agent to a hue.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>color hsb_to_rgb ([heading/360,1.0,1.0]);
+</code></pre>
+</div>
+
+<p>In the following example boids are represented by a triangle with the colors depending on their heading. <a href="http://gama-platform.googlecode.com/files/Dynamic_Color_HSB.mov"><img src="http://gama-platform.googlecode.com/files/HSB_Color.png" alt="" /></a></p>
+
+<h1 id="multicore-runner-in-headless-mode">Multicore runner in Headless Mode</h1>
+<p>Results: distribution of command-line version on multicore machine, integration with GAMA interface, visualisation of outputs.</p>
+
+<h1 id="defining-interaction-in-a-model">Defining interaction in a model</h1>
+
+<p>One statement have been added to facilitate the proposal of serious game on which user could interact through a map. It is now possible to catch event done on 2D display in order to do an action and to modify clicked agent attributes.</p>
+
+<h2 id="attributes">Attributes</h2>
+<ul>
+  <li><strong>name</strong> (omissible) ` [mouse_down , mouse_up] `</li>
+  <li><strong>action</strong> name of the action to be run</li>
+</ul>
+
+<h2 id="definition">Definition</h2>
+<p>Allows to interact with the simulation by capturing mouse event and do an action. This action could apply a change on environment or on agents, according to the goal.</p>
+
+<p>Events are determine for a display. Thus, they can be play a different behavior</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>event [event_type] action: myAction
+</code></pre>
+</div>
+<ul>
+  <li>event_type (mouse_down or mouse_up</li>
+  <li>myAction is an action written in the global block. This action have to follow the specification below.</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>
+ global
+ {
+   ...
+   action myAction 
+   {
+     arg location type: point; // contains le location of the click in the environment
+     arg selected_agents type: list; // contains agents clicked by the event
+    
+    ... //code written by the authors ...
+   } 
+ }
+
+ experiment Simple type:gui {
+	parameter 'Evaporation Rate:' var: evaporation_rate;
+	parameter 'Diffusion Rate:' var: diffusion_rate;
+	output { 
+		display Ants refresh_every: 2 { 
+			grid ant_grid;
+			species ant aspect: default;
+			text tt value: string ( food_remaining ) size: 24.0 position: { 20 , 20 } color: rgb ( 'white' );
+			event mouse_up action: myAction;
+		}  
+
+...
+
+</code></pre>
+</div>
+
+<h1 id="driving-skill-in-2d-skill-driving2d">Driving skill in 2D (skill: driving2d)</h1>
+
+<p>A skill (inherited from moving skill) permits agent to move to the target and avoid the others.</p>
+
+<h2 id="attributes-1">Attributes</h2>
+<ul>
+  <li><strong>heading</strong> initial heading of agent</li>
+  <li><strong>obstacle_species</strong> list of species to avoid</li>
+  <li><strong>background_species</strong> list of species on which agent move</li>
+</ul>
+
+<h2 id="action">Action</h2>
+<p>The action inherits the “goto” action of moving skill.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>do vehicle_goto target: target on: the_graph speed: speed target_type: true returns: moving_status;
+</code></pre>
+</div>
+
+<ul>
+  <li><strong>target</strong> the goal (in type of location) for agent to go</li>
+  <li><strong>speed</strong> maximum of moving distance for each step</li>
+  <li><strong>on</strong> the topology on which agent moves. By default, the topology is the graph and agent uses the shortest path algorithm to move</li>
+  <li><strong>target_type</strong> if “true”, agent goes to the exact location of the target. Otherwise (in the case of false target), agent go to an point on the topology that is nearest to the target.</li>
+  <li><strong>returns</strong> the action returns an integer with the meaning: -1: failed to move; 0: success to move closer and closer to the target; 1: arrive the false target; 2: arrive the target</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>
+ reflex move_with_vehicle_goto when: target != nil{
+			let moving_status type: int &lt;- -1;
+			do vehicle_goto target: target on: the_graph speed: speed target_type: true returns: moving_status;
+			if (int(moving_status) &gt; 0){
+				let temp_targets &lt;- list(targetpoint) - target;
+				set target &lt;- one_of(temp_targets);
+			}
+			
+		}
+</code></pre>
+</div>
+</div></body></html>

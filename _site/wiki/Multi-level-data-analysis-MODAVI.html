@@ -1,0 +1,696 @@
+
+    <!doctype html><html lang="en"><head><meta charset="utf-8"><title>Modavi</title></head>
+    <body>
+    <link rel="stylesheet" href="/style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="//connect.facebook.net/en_US/all.js"></script>
+<script src="/linkify.min.js"></script>
+<script src="/linkify-jquery.min.js"></script>
+<script>
+  $(document).ready(function(){
+	  		$.getJSON('https://graph.facebook.com/238065426321929/feed?access_token=229040647557399|MQKFlFYX7YW25XGj4GUYZ7B1lcY', function(data) {
+		var ahtml="";
+		for(var i = 0; i < 5; i++) {
+			ahtml=ahtml+"<li>"+data["data"][i]["message"]+"</li>";
+		}
+		ahtml=ahtml+"";
+		$("#fbquotes").html(ahtml);
+		$("#fbquotes").linkify();
+	});
+	 
+		$.getJSON('https://api.github.com/repos/gama-platform/gama/commits', function(data) {
+			var ahtml="";
+			for(var i = 0; i < 5; i++) {
+				ahtml=ahtml+"<li>"+data[i]["commit"]["message"]+" by "+data[i]["commit"]["author"]["name"]+" <a href='"+data[i]["commit"]["html_url"]+"'> See more</a></li>";
+			}
+			ahtml=ahtml+"";
+			$("#commitquotes").html(ahtml);
+			$("#commitquotes").linkify();
+		});
+				
+				
+		$.getJSON('https://api.github.com/repos/gama-platform/gama/issues', function(data) {
+			var ahtml="";
+			for(var i = 0; i < 5; i++) {
+				ahtml=ahtml+"<li>"+data[i]["title"]+" by "+data[i]["user"]["login"]+" <a href='"+data[i]["html_url"]+"'> See more</a></li>";
+			}
+			ahtml=ahtml+"";
+			$("#issuequotes").html(ahtml);
+			$("#issuequotes").linkify();
+		});
+		
+		$.getJSON('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fgroups.google.com%2Fforum%2Ffeed%2Fgama-platform%2Ftopics%2Frss.xml%3Fnum%3D15', function(data) {
+			var ahtml="";
+			for(var i = 0; i < 5; i++) {
+				ahtml=ahtml+"<li>"+data["items"][i]["title"]+" by "+data["items"][i]["author"]+" <a href='"+data["items"][i]["link"]+"'> See more</a></li>";
+			}
+			ahtml=ahtml+"";
+			$("#googleusersquotes").html(ahtml);
+			$("#googleusersquotes").linkify();
+			
+		});
+ });
+  
+</script>
+
+      <div id="left">
+
+		<ul class="mcd-menu"><li><a href="/">Home</a></li><li><a href="/">Discussions</a></li>
+<li><a href='/wiki/Tutorials'>Tutorials
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/LearnGAMLStepByStep'>Learn GAML Step by Step
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/Introduction'>Introduction
+</a></li>
+<li><a href='/wiki/StartWithGAML'>Start with GAML
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/ModelOrganization'>Organization of a model
+</a></li>
+<li><a href='/wiki/BasicProgrammingConceptsInGAML'>Basic programming concepts in GAML
+</a></li>
+</ul>
+<li><a href='/wiki/ManipulateBasicSpecies'>Manipulate basic species
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/GlobalSpecies'>The global species
+</a></li>
+<li><a href='/wiki/RegularSpecies'>Regular species
+</a></li>
+<li><a href='/wiki/DefiningActionsAndBehaviors'>Defining actions and behaviors
+</a></li>
+<li><a href='/wiki/InteractionBetweenAgents'>Interaction between agents
+</a></li>
+<li><a href='/wiki/AttachingSkills'>Attaching Skills
+</a></li>
+<li><a href='/wiki/Inheritance'>Inheritance
+</a></li>
+</ul>
+<li><a href='/wiki/DefiningAdvancedSpecies'>Defining advanced species
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/GridSpecies'>Grid Species
+</a></li>
+<li><a href='/wiki/GraphSpecies'>Graph Species
+</a></li>
+<li><a href='/wiki/MirrorSpecies'>Mirror species
+</a></li>
+<li><a href='/wiki/MultiLevelArchitecture'>Multi-level architecture
+</a></li>
+</ul>
+<li><a href='/wiki/DefiningGUIExperiment'>Defining GUI Experiment
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/DefiningParameters'>Defining Parameters
+</a></li>
+<li><a href='/wiki/DefiningDisplaysGeneralities'>Defining displays (Generalities)
+</a></li>
+<li><a href='/wiki/DefiningCharts'>Defining Charts
+</a></li>
+<li><a href='/wiki/Defining3DDisplays'>Defining 3D Displays
+</a></li>
+<li><a href='/wiki/DefiningMonitorsAndInspectors'>Defining monitors and inspectors
+</a></li>
+<li><a href='/wiki/DefiningExportFiles'>Defining export files
+</a></li>
+<li><a href='/wiki/DefiningUserInteraction'>Defining user interaction
+</a></li>
+</ul>
+<li><a href='/wiki/ExploringModels'>Exploring Models
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/RunSeveralSimulations'>Run Several Simulations
+</a></li>
+<li><a href='/wiki/BatchExperiments'>Defining Batch Experiments
+</a></li>
+<li><a href='/wiki/ExplorationMethods'>Exploration Methods
+</a></li>
+</ul>
+<li><a href='/wiki/OptimizingModels'>Optimizing Models
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/RuntimeConcepts'>Runtime Concepts
+</a></li>
+<li><a href='/wiki/OptimizingModels'>Optimizing Models
+</a></li>
+</ul>
+<li><a href='/wiki/MultiParadigmModeling'>Multi-Paradigm Modeling
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/ControlArchitecture'>Control Architectures
+</a></li>
+<li><a href='/wiki/Equations'>Using Equations
+</a></li>
+</ul>
+</ul>
+<li><a href='/wiki/Recipes'>Recipes
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/ManipulateOSMDatas'>Manipulate OSM Datas
+</a></li>
+<li><a href='/wiki/Diffusion'>Implementing diffusion
+</a></li>
+<li><a href='/wiki/UsingDatabase'>Using Database Access
+</a></li>
+<li><a href='/wiki/CallingR'>Calling R
+</a></li>
+<li><a href='/wiki/UsingFIPAACL'>Using FIPA ACL
+</a></li>
+<li><a href='/wiki/GamAnalyzer'>Using GAMAnalyzer
+</a></li>
+<li><a href='/wiki/UsingBDI'>Using BDI
+</a></li>
+<li><a href='/wiki/UsingDrivingSkill'>Advanced Driving Skill
+</a></li>
+<li><a href='/wiki/ManipulateDates'>Manipulate Dates
+</a></li>
+<li><a href='/wiki/ManipulateLight'>Implementing light
+</a></li>
+<li><a href='/wiki/Comodel'>Using Comodel
+</a></li>
+</ul>
+<li><a href='/wiki/Tutorials'>Tutorials
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/LuneraysFlu'>Luneray's flu
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/LuneraysFlu_step1'>1. Creation of a first basic disease spreading model
+</a></li>
+<li><a href='/wiki/LuneraysFlu_step2'>2. Definition of monitors and chart outputs
+</a></li>
+<li><a href='/wiki/LuneraysFlu_step3'>3. Importation of GIS data
+</a></li>
+<li><a href='/wiki/LuneraysFlu_step4'>4. Use of a graph to constraint the movements of people]
+</a></li>
+<li><a href='/wiki/LuneraysFlu_step5'>5. Definition of 3D displays
+</a></li>
+</ul>
+<li><a href='/wiki/IncrementalModel'>Incremental Model
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/IncrementalModel_step1'>1. Simple SI Model
+</a></li>
+<li><a href='/wiki/IncrementalModel_step2'>2. Charts
+</a></li>
+<li><a href='/wiki/IncrementalModel_step3'>3. Integration of GIS Data
+</a></li>
+<li><a href='/wiki/IncrementalModel_step4'>4. Movement on Graph
+</a></li>
+<li><a href='/wiki/IncrementalModel_step5'>5. Visualizing in 3D
+</a></li>
+<li><a href='/wiki/IncrementalModel_step6'>6. Multi-Level
+</a></li>
+<li><a href='/wiki/IncrementalModel_step7'>7. Differential Equations
+</a></li>
+</ul>
+<li><a href='/wiki/PredatorPrey'>Predator Prey
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/PredatorPrey_step1'>1. Basic Model
+</a></li>
+<li><a href='/wiki/PredatorPrey_step2'>2. Vegetation Dynamic
+</a></li>
+<li><a href='/wiki/PredatorPrey_step3'>3. Prey Agent Behavior
+</a></li>
+<li><a href='/wiki/PredatorPrey_step4'>4. Inspectors and Monitors
+</a></li>
+<li><a href='/wiki/PredatorPrey_step5'>5. Predator Agent
+</a></li>
+<li><a href='/wiki/PredatorPrey_step6'>6. Breeding
+</a></li>
+<li><a href='/wiki/PredatorPrey_step7'>7. Agent Aspect
+</a></li>
+<li><a href='/wiki/PredatorPrey_step8'>8. Complex Behavior
+</a></li>
+<li><a href='/wiki/PredatorPrey_step9'>9. Stopping condition
+</a></li>
+<li><a href='/wiki/PredatorPrey_step10'>10. Charts
+</a></li>
+<li><a href='/wiki/PredatorPrey_step11'>11. Writing Files
+</a></li>
+<li><a href='/wiki/PredatorPrey_step12'>12. Image loading
+</a></li>
+</ul>
+<li><a href='/wiki/RoadTrafficModel'>Road Traffic
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/RoadTrafficModel_step1'>1. Loading of GIS Data
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step2'>2. People Agents
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step3'>3. Movement of People
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step4'>4. Weight for Road Network
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step5'>5. Dynamic weights
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step6'>6. Charts
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step7'>7. Automatic Road Repair
+</a></li>
+</ul>
+<li><a href='/wiki/ThreeD'>3D Tutorial
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/ThreeD_step1'>1. Basic Model
+</a></li>
+<li><a href='/wiki/ThreeD_step2'>2. Moving Cells
+</a></li>
+<li><a href='/wiki/ThreeD_step3'>3. Connections
+</a></li>
+</ul>
+</ul>
+</ul>
+<li><a href='/wiki/References'>References
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/PlatformDocumentation'>Platform
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/InstallationAndLaunching'>Installation and Launching
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/Installation'>Installation
+</a></li>
+<li><a href='/wiki/Launching'>Launching GAMA
+</a></li>
+<li><a href='/wiki/Headless'>Headless Mode
+</a></li>
+<li><a href='/wiki/Updating'>Updating GAMA
+</a></li>
+<li><a href='/wiki/InstallingPlugins'>Installing Plugins
+</a></li>
+<li><a href='/wiki/Troubleshooting'>Troubleshooting
+</a></li>
+</ul>
+<li><a href='/wiki/WorkspaceProjectsAndModels'>Workspace, Projects and Models
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/NavigatingWorkspace'>Navigating in the Workspace
+</a></li>
+<li><a href='/wiki/ChangingWorkspace'>Changing Workspace
+</a></li>
+<li><a href='/wiki/ImportingModels'>Importing Models
+</a></li>
+</ul>
+<li><a href='/wiki/EditingModels'>Editing models
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/GamlEditorGeneralities'>The GAML Editor - Generalities
+</a></li>
+<li><a href='/wiki/GamlEditorToolbar'>The GAML Editor Toolbar
+</a></li>
+<li><a href='/wiki/ValidationOfModels'>Validation of Models
+</a></li>
+</ul>
+<li><a href='/wiki/RunningExperiments'>Running Experiments
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/LaunchingExperiments'>Launching Experiments from the User Interface
+</a></li>
+<li><a href='/wiki/ExperimentsUserInterface'>Experiments User Interface
+</a></li>
+<li><a href='/wiki/MenusAndCommands'>Menus and Commands
+</a></li>
+<li><a href='/wiki/ParametersView'>Parameters View
+</a></li>
+<li><a href='/wiki/InspectorsAndMonitors'>Inspectors and monitors
+</a></li>
+<li><a href='/wiki/Displays'>Displays
+</a></li>
+<li><a href='/wiki/BatchSpecific'>Batch Specific UI
+</a></li>
+<li><a href='/wiki/ErrorsView'>Errors View
+</a></li>
+</ul>
+<li><a href='/wiki/Preferences'>Preferences
+</a></li>
+</ul>
+<li><a href='/wiki/GamlReferences'>Gaml Reference
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/BuiltInSpecies'>Built-in Species
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/AgentBuiltIn'>The 'agent' built-in species (Under Construction)
+</a></li>
+<li><a href='/wiki/ModelBuiltIn'>The 'model' built-in species (Under Construction)
+</a></li>
+<li><a href='/wiki/ExperimentBuiltIn'>The 'experiment' built-in species (Under Construction)
+</a></li>
+</ul>
+<li><a href='/wiki/BuiltInSkills'>Built-in Skills
+</a></li>
+<li><a href='/wiki/BuiltInArchitectures'>Built-in Architectures
+</a></li>
+<li><a href='/wiki/Statements'>Statements
+</a></li>
+<li><a href='/wiki/DataTypes'>Types
+</a></li>
+<li><a href='/wiki/FileTypes'>File Types
+</a></li>
+<li><a href='/wiki/Expressions'>Expressions
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/Literals'>Literals
+</a></li>
+<li><a href='/wiki/UnitsAndConstants'>Units and constants
+</a></li>
+<li><a href='/wiki/PseudoVariables'>Pseudo-variables
+</a></li>
+<li><a href='/wiki/VariablesAndAttributes'>Variables and Attributes
+</a></li>
+<li><a href='/wiki/Operators'>Operators 
+</a></li>
+</ul>
+</ul>
+</ul>
+<li>Community
+</li>
+<ul class='sub'>
+<li><a href='/wiki/Contribute'>Contribute
+</a></li>
+<li><a href='/wiki/Projects'>Projects
+</a></li>
+<li><a href='/wiki/TrainingSession'>Training Session
+</a></li>
+</ul></ul></div><div id="right">
+<h3>Facebook Activities</h3>
+<ul id="fbquotes">
+</ul>
+<h3>Commit Activities</h3>
+<ul id="commitquotes">
+</ul>
+<h3>Issue Activities</h3>
+<ul id="issuequotes">
+</ul>
+<h3>Gama Platform Users Activities</h3>
+<ul id="googleusersquotes">
+</ul>
+</div><div id="content"><h1 id="modavi">Modavi</h1>
+
+<p><em>Author : Arnaud Grignard</em></p>
+
+<p>From a reference model with node of a given class, a spatial graph is created (or a barabasi graph if spatialGraph is set to false) in the advanced view to represent the interaction in the reference model.An abstract view/controller is created to summarize the interaction in the advanced viewin a macro graph and control the reference model by defining an action (user_command) for each macroNode and macroEdge.</p>
+
+<p>Code of the model :</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>
+model modavi
+ 
+global {
+	//Graph of the agents
+	graph&lt;node_agent,edge_agent&gt; my_graph ;
+	
+	//Number of agents to create
+	int nbAgent parameter: 'Number of Agents' min: 1 &lt;- 500 category: 'Model';
+	//Number of value per class
+	int nbValuePerClass parameter: 'Number of value per class' min: 1 max:100 &lt;- 15 category: 'Model';
+	//Boolean to know if we display a spatial graph or not
+	bool spatialGraph parameter: 'Spatial Graph' &lt;- true category: 'Model';
+	//Distance to link two node agents
+	float distance parameter: 'Distance' min: 1.0&lt;- 10.0 category: 'Model';
+	//Threshold
+	int threshold parameter: 'Threshold' min: 0 &lt;- 0 category: 'Model';
+
+	//Size of a node agent
+	int nodeSize parameter: 'Node size' min: 1 &lt;- 1 category: 'Aspect';
+	//Size of a macro node agent
+	int macroNodeSize parameter: 'Macro Node size' min: 1 &lt;- 2 category: 'Aspect';
+	
+	//Number of type of class
+	int nbTypeOfClass &lt;-1;
+	
+	//Zoom factor
+	int zoomFactor &lt;- nbTypeOfClass;
+
+	//List of the different interaction matrices
+	list&lt;matrix&lt;int&gt;&gt; interactionMatrix &lt;-list_with(nbTypeOfClass,matrix([0]));
+	//Number maximum of edges
+    int nbEdgeMax;
+    
+    //Reflex to update the interaction matrix list
+    reflex updateInteractionMatrix{
+    	//Ask for each edge agent to update it sources and destination to create the matrix
+    	ask edge_agent{
+			loop i from:0 to: nbTypeOfClass-1{															
+				src &lt;- my_graph source_of(self);
+				dest &lt;- my_graph target_of(self);
+				int tmp &lt;- (interactionMatrix[i]  at {(src.classVector[i]-1),(dest.classVector[i]-1)});
+				interactionMatrix[i][src.classVector[i]-1,dest.classVector[i]-1] &lt;- (tmp+1);
+			}
+		}
+	}
+	
+	//Reflex to compute te maximum number of edges
+	reflex computeNbEdgeMax{
+		//Number maximum of edges
+		nbEdgeMax &lt;-1;
+		//Ask for each macro edge its aggregated link list number
+		ask macroEdge{
+			if(nbAggregatedLinkList[0] &gt; nbEdgeMax){
+				nbEdgeMax &lt;-nbAggregatedLinkList[0];
+			}	
+		}
+	}
+
+	//Initialization of the model
+	init {
+		//Initialization of the matrix
+		do InitInteractionMatrix;
+		//If we want a spatial graph in that case we create a graph according to their distance, else we create a barabasi albert graph
+		if(spatialGraph){
+			create node_agent number:nbAgent;
+			my_graph &lt;- graph&lt;node_agent, edge_agent&gt;(as_distance_graph(node_agent, (["distance"::distance, "species"::edge_agent])));
+			
+		}
+        else{
+          my_graph &lt;- graph&lt;node_agent, edge_agent&gt;(generate_barabasi_albert(node_agent,edge_agent,nbAgent,2,true));	
+        }
+        
+		//For each node agent, we compute its class value
+		ask node_agent as list{
+			loop i from:0 to:nbTypeOfClass-1{
+				classVector[i] &lt;- rnd(nbValuePerClass-1)+1;
+ 			}		
+		}
+
+		int i&lt;-1;
+		//Creation of the macronode according to the number of value per class
+		create macroNode number: nbValuePerClass{	 
+			class &lt;-i;
+			location &lt;- {(cos (((class-1)/nbValuePerClass)*360)*50 +50),(sin (((class-1)/nbValuePerClass)*360)*50+50),0};
+			color &lt;- hsb (i/nbValuePerClass,1.0,1.0);
+			do updatemyNodes;
+			i&lt;-i+1;	
+		}
+		//We finally create the macroGraph
+		create macroGraph;
+	 }
+	 //Action to initialize the interaction Matrix according to the number of type of classes
+	 action InitInteractionMatrix{
+		 loop i from:0 to:nbTypeOfClass-1{
+				interactionMatrix[i] &lt;- 0 as_matrix({nbValuePerClass,nbValuePerClass});
+ 		  }	
+	}
+}
+
+
+	//Species to represent the node_agent
+	species node_agent  {
+		//Color of the node agent
+		rgb color;
+		//List of the class
+		list&lt;int&gt; classVector &lt;- list_with (nbTypeOfClass,0);
+		//List of the position
+		list&lt;point&gt; posVector &lt;- list_with (nbTypeOfClass,{0,0});
+		//List of the color
+		list&lt;rgb&gt; colorList &lt;- list_with (nbTypeOfClass, rgb(0,0,0));
+								
+		//Shuffle the classes of the node_agent
+		reflex shuffleClass{
+			loop i from:0 to: nbTypeOfClass-1{
+				classVector[i] &lt;- rnd(nbValuePerClass-1)+1;
+			}	
+		}
+ 		
+		aspect real {			 
+			draw sphere(nodeSize) color: colorList[0];
+		} 
+								
+		aspect coloredByClass{
+			loop i from:0 to: nbTypeOfClass-1{
+			    colorList[i]&lt;- hsb (classVector[i]/nbValuePerClass,1.0,1.0);					
+			    posVector[i] &lt;- {(location.x+i*110)*(1/zoomFactor),(location.y)*(1/zoomFactor),0};  
+			    draw sphere(nodeSize/zoomFactor) color: colorList[i] at: posVector[i] ;   
+			}
+		}
+	
+	}
+	
+	//Species edge_agent to represent the edge of the graph
+	species edge_agent { 
+		rgb color;
+		//Source of the edge
+		node_agent src;
+		//Target of the edge
+		node_agent dest;
+			 
+		aspect base {
+			draw shape color: rgb(125,125,125);
+		}	
+		
+		aspect edgeGenericSpatialized{
+			loop i from:0 to: nbTypeOfClass-1{
+			  if ((src != nil) and (dest !=nil) ){
+				draw line( [ (src.posVector[i]) , (dest.posVector[i])] ) color:rgb(125,125,125);
+			  }
+			}
+		}
+	}
+	//Species representing the macro node agents
+	species macroNode{
+		rgb color;
+		int class;
+		//List of all the aggregated nodes
+		list&lt;int&gt; nbAggregatedNodes &lt;- list_with(nbTypeOfClass,0);
+		//List of all the position
+		list&lt;point&gt; posVector &lt;-list_with(nbTypeOfClass,{0,0});
+		 
+		//Update the nodes of the agents
+		reflex update{
+			do updatemyNodes;
+		}
+		//For each classes, find all the nodes with the same classes
+		action updatemyNodes{
+			loop i from:0 to: nbTypeOfClass-1{			
+				nbAggregatedNodes[i]&lt;-0;
+				ask node_agent as list{
+				  if	(classVector[i] = myself.class) {
+					myself.nbAggregatedNodes[i] &lt;- myself.nbAggregatedNodes[i]+1;
+				  }	 
+			    }
+		    }	    
+		} 
+		
+		aspect sphere{
+			draw sphere((nbAggregatedNodes[0]/10)*macroNodeSize) color: color at: point([location.x,location.y]) ;
+		}
+		
+		aspect Generic{
+			loop i from:0 to: nbTypeOfClass-1
+			{
+			posVector[i] &lt;- {(location.x+i*150)*(1/zoomFactor),(location.y)*(1/zoomFactor),0};	
+			draw sphere((nbAggregatedNodes[i]/10)*macroNodeSize*(1/zoomFactor)) color: color at: posVector[i] ;
+			}
+		}
+		
+		//This action only works when having nbTypeOfClass=1
+		action removeMicroNode{
+			ask node_agent as list{
+				  if	(classVector[0] = myself.class) {
+				      do die;
+				  }	 
+	         }
+		}
+		
+		user_command "Remove all micro node" action: removeMicroNode;
+	}
+	
+	//Species macroEdge representing the macro edges agents
+	species macroEdge  { 
+		rgb color &lt;- #black;
+		//Source of the macroedge
+		macroNode src;
+		//Destination of the macroedge
+		macroNode dest;
+		//List of all the aggregated links
+		list&lt;int&gt; nbAggregatedLinkList &lt;- list_with(nbTypeOfClass,0);
+		
+		aspect base {
+			loop i from:0 to: nbTypeOfClass-1{
+				if(nbAggregatedLinkList[i]&gt;threshold){
+				draw (line([src.posVector[i],dest.posVector[i]]) buffer ((nbAggregatedLinkList[i])/((length(edge_agent)))*nbEdgeMax)) color: rgb(125,125,125) border:rgb(125,125,125); 	
+				}
+			}
+		}
+		
+		//Action to remove a micro edge
+		action removeMicroEdge{
+			ask edge_agent as list{
+				  if	((self.src.classVector[0] =  myself.src.class) and (self.dest.classVector[0] =  myself.dest.class)) {
+				      do die;
+				  }	 
+	         }
+		}
+		
+		user_command "Remove all micro edge" action: removeMicroEdge;	
+	}
+	
+	//Species macroGraph representing the macro graph composed of macroNode and macroEdge
+	species macroGraph {
+		
+
+  	//Reflex to update the graph by killing all the previous edges first 
+   reflex updateAllMacroEdge {	
+	 	ask macroEdge as list{
+	 		do die;
+	 	}
+	 	
+	 	loop h from:0 to: nbTypeOfClass-1{
+		 	loop i from: 0 to: nbValuePerClass-1{
+		      loop j from: 0 to: nbValuePerClass-1{
+		        int tmp &lt;- interactionMatrix[h] at {i,j}; 
+
+		        if(i!=j){
+		            create macroEdge{
+		              nbAggregatedLinkList[h] &lt;- tmp;
+		              src &lt;- macroNode[i];
+				      dest &lt;- macroNode[j];
+		            }	  
+		        }      
+		      }
+		    }
+	    }
+  	}
+  	//Reflex to initialize the matrix
+  	reflex initMatrix{
+  		loop i from:0 to:nbTypeOfClass-1{
+  		  interactionMatrix[i] &lt;- 0 as_matrix({nbValuePerClass,nbValuePerClass});	
+  		}	
+	  }	
+	}
+
+
+
+experiment MODAVI type: gui {
+	output {			
+		display MODAVI type:opengl draw_env:false {
+			graphics 'ReferenceModel'{
+				draw "Reference model" at:{200,50,0} size:5 color: #black perspective:false;
+			}
+			species node_agent aspect: real position:{100,0,0.01} ;
+			
+			graphics 'View1'{
+				draw "Advanced view" at:{50,210,0} size:5 color: #black perspective:false;
+			}
+			species node_agent aspect: coloredByClass position: {0,100,0.02};
+			species edge_agent aspect: edgeGenericSpatialized position: {0,100,0.02};
+			
+			graphics 'AbstractView'{
+				draw "Abstract view/controller" at:{250,210,0} size:5 color: #black perspective:false;
+			}
+			species macroNode aspect:Generic position: {200,100,0.01};
+			species macroEdge aspect:base position: {200,100,0.01};	
+		}
+	}		
+}
+
+
+
+</code></pre>
+</div>
+</div></body></html>

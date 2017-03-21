@@ -1,0 +1,620 @@
+
+    <!doctype html><html lang="en"><head><meta charset="utf-8"><title>Displays</title></head>
+    <body>
+    <link rel="stylesheet" href="/style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="//connect.facebook.net/en_US/all.js"></script>
+<script src="/linkify.min.js"></script>
+<script src="/linkify-jquery.min.js"></script>
+<script>
+  $(document).ready(function(){
+	  		$.getJSON('https://graph.facebook.com/238065426321929/feed?access_token=229040647557399|MQKFlFYX7YW25XGj4GUYZ7B1lcY', function(data) {
+		var ahtml="";
+		for(var i = 0; i < 5; i++) {
+			ahtml=ahtml+"<li>"+data["data"][i]["message"]+"</li>";
+		}
+		ahtml=ahtml+"";
+		$("#fbquotes").html(ahtml);
+		$("#fbquotes").linkify();
+	});
+	 
+		$.getJSON('https://api.github.com/repos/gama-platform/gama/commits', function(data) {
+			var ahtml="";
+			for(var i = 0; i < 5; i++) {
+				ahtml=ahtml+"<li>"+data[i]["commit"]["message"]+" by "+data[i]["commit"]["author"]["name"]+" <a href='"+data[i]["commit"]["html_url"]+"'> See more</a></li>";
+			}
+			ahtml=ahtml+"";
+			$("#commitquotes").html(ahtml);
+			$("#commitquotes").linkify();
+		});
+				
+				
+		$.getJSON('https://api.github.com/repos/gama-platform/gama/issues', function(data) {
+			var ahtml="";
+			for(var i = 0; i < 5; i++) {
+				ahtml=ahtml+"<li>"+data[i]["title"]+" by "+data[i]["user"]["login"]+" <a href='"+data[i]["html_url"]+"'> See more</a></li>";
+			}
+			ahtml=ahtml+"";
+			$("#issuequotes").html(ahtml);
+			$("#issuequotes").linkify();
+		});
+		
+		$.getJSON('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fgroups.google.com%2Fforum%2Ffeed%2Fgama-platform%2Ftopics%2Frss.xml%3Fnum%3D15', function(data) {
+			var ahtml="";
+			for(var i = 0; i < 5; i++) {
+				ahtml=ahtml+"<li>"+data["items"][i]["title"]+" by "+data["items"][i]["author"]+" <a href='"+data["items"][i]["link"]+"'> See more</a></li>";
+			}
+			ahtml=ahtml+"";
+			$("#googleusersquotes").html(ahtml);
+			$("#googleusersquotes").linkify();
+			
+		});
+ });
+  
+</script>
+
+      <div id="left">
+
+		<ul class="mcd-menu"><li><a href="/">Home</a></li><li><a href="/">Discussions</a></li>
+<li><a href='/wiki/Tutorials'>Tutorials
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/LearnGAMLStepByStep'>Learn GAML Step by Step
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/Introduction'>Introduction
+</a></li>
+<li><a href='/wiki/StartWithGAML'>Start with GAML
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/ModelOrganization'>Organization of a model
+</a></li>
+<li><a href='/wiki/BasicProgrammingConceptsInGAML'>Basic programming concepts in GAML
+</a></li>
+</ul>
+<li><a href='/wiki/ManipulateBasicSpecies'>Manipulate basic species
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/GlobalSpecies'>The global species
+</a></li>
+<li><a href='/wiki/RegularSpecies'>Regular species
+</a></li>
+<li><a href='/wiki/DefiningActionsAndBehaviors'>Defining actions and behaviors
+</a></li>
+<li><a href='/wiki/InteractionBetweenAgents'>Interaction between agents
+</a></li>
+<li><a href='/wiki/AttachingSkills'>Attaching Skills
+</a></li>
+<li><a href='/wiki/Inheritance'>Inheritance
+</a></li>
+</ul>
+<li><a href='/wiki/DefiningAdvancedSpecies'>Defining advanced species
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/GridSpecies'>Grid Species
+</a></li>
+<li><a href='/wiki/GraphSpecies'>Graph Species
+</a></li>
+<li><a href='/wiki/MirrorSpecies'>Mirror species
+</a></li>
+<li><a href='/wiki/MultiLevelArchitecture'>Multi-level architecture
+</a></li>
+</ul>
+<li><a href='/wiki/DefiningGUIExperiment'>Defining GUI Experiment
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/DefiningParameters'>Defining Parameters
+</a></li>
+<li><a href='/wiki/DefiningDisplaysGeneralities'>Defining displays (Generalities)
+</a></li>
+<li><a href='/wiki/DefiningCharts'>Defining Charts
+</a></li>
+<li><a href='/wiki/Defining3DDisplays'>Defining 3D Displays
+</a></li>
+<li><a href='/wiki/DefiningMonitorsAndInspectors'>Defining monitors and inspectors
+</a></li>
+<li><a href='/wiki/DefiningExportFiles'>Defining export files
+</a></li>
+<li><a href='/wiki/DefiningUserInteraction'>Defining user interaction
+</a></li>
+</ul>
+<li><a href='/wiki/ExploringModels'>Exploring Models
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/RunSeveralSimulations'>Run Several Simulations
+</a></li>
+<li><a href='/wiki/BatchExperiments'>Defining Batch Experiments
+</a></li>
+<li><a href='/wiki/ExplorationMethods'>Exploration Methods
+</a></li>
+</ul>
+<li><a href='/wiki/OptimizingModels'>Optimizing Models
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/RuntimeConcepts'>Runtime Concepts
+</a></li>
+<li><a href='/wiki/OptimizingModels'>Optimizing Models
+</a></li>
+</ul>
+<li><a href='/wiki/MultiParadigmModeling'>Multi-Paradigm Modeling
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/ControlArchitecture'>Control Architectures
+</a></li>
+<li><a href='/wiki/Equations'>Using Equations
+</a></li>
+</ul>
+</ul>
+<li><a href='/wiki/Recipes'>Recipes
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/ManipulateOSMDatas'>Manipulate OSM Datas
+</a></li>
+<li><a href='/wiki/Diffusion'>Implementing diffusion
+</a></li>
+<li><a href='/wiki/UsingDatabase'>Using Database Access
+</a></li>
+<li><a href='/wiki/CallingR'>Calling R
+</a></li>
+<li><a href='/wiki/UsingFIPAACL'>Using FIPA ACL
+</a></li>
+<li><a href='/wiki/GamAnalyzer'>Using GAMAnalyzer
+</a></li>
+<li><a href='/wiki/UsingBDI'>Using BDI
+</a></li>
+<li><a href='/wiki/UsingDrivingSkill'>Advanced Driving Skill
+</a></li>
+<li><a href='/wiki/ManipulateDates'>Manipulate Dates
+</a></li>
+<li><a href='/wiki/ManipulateLight'>Implementing light
+</a></li>
+<li><a href='/wiki/Comodel'>Using Comodel
+</a></li>
+</ul>
+<li><a href='/wiki/Tutorials'>Tutorials
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/LuneraysFlu'>Luneray's flu
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/LuneraysFlu_step1'>1. Creation of a first basic disease spreading model
+</a></li>
+<li><a href='/wiki/LuneraysFlu_step2'>2. Definition of monitors and chart outputs
+</a></li>
+<li><a href='/wiki/LuneraysFlu_step3'>3. Importation of GIS data
+</a></li>
+<li><a href='/wiki/LuneraysFlu_step4'>4. Use of a graph to constraint the movements of people]
+</a></li>
+<li><a href='/wiki/LuneraysFlu_step5'>5. Definition of 3D displays
+</a></li>
+</ul>
+<li><a href='/wiki/IncrementalModel'>Incremental Model
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/IncrementalModel_step1'>1. Simple SI Model
+</a></li>
+<li><a href='/wiki/IncrementalModel_step2'>2. Charts
+</a></li>
+<li><a href='/wiki/IncrementalModel_step3'>3. Integration of GIS Data
+</a></li>
+<li><a href='/wiki/IncrementalModel_step4'>4. Movement on Graph
+</a></li>
+<li><a href='/wiki/IncrementalModel_step5'>5. Visualizing in 3D
+</a></li>
+<li><a href='/wiki/IncrementalModel_step6'>6. Multi-Level
+</a></li>
+<li><a href='/wiki/IncrementalModel_step7'>7. Differential Equations
+</a></li>
+</ul>
+<li><a href='/wiki/PredatorPrey'>Predator Prey
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/PredatorPrey_step1'>1. Basic Model
+</a></li>
+<li><a href='/wiki/PredatorPrey_step2'>2. Vegetation Dynamic
+</a></li>
+<li><a href='/wiki/PredatorPrey_step3'>3. Prey Agent Behavior
+</a></li>
+<li><a href='/wiki/PredatorPrey_step4'>4. Inspectors and Monitors
+</a></li>
+<li><a href='/wiki/PredatorPrey_step5'>5. Predator Agent
+</a></li>
+<li><a href='/wiki/PredatorPrey_step6'>6. Breeding
+</a></li>
+<li><a href='/wiki/PredatorPrey_step7'>7. Agent Aspect
+</a></li>
+<li><a href='/wiki/PredatorPrey_step8'>8. Complex Behavior
+</a></li>
+<li><a href='/wiki/PredatorPrey_step9'>9. Stopping condition
+</a></li>
+<li><a href='/wiki/PredatorPrey_step10'>10. Charts
+</a></li>
+<li><a href='/wiki/PredatorPrey_step11'>11. Writing Files
+</a></li>
+<li><a href='/wiki/PredatorPrey_step12'>12. Image loading
+</a></li>
+</ul>
+<li><a href='/wiki/RoadTrafficModel'>Road Traffic
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/RoadTrafficModel_step1'>1. Loading of GIS Data
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step2'>2. People Agents
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step3'>3. Movement of People
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step4'>4. Weight for Road Network
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step5'>5. Dynamic weights
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step6'>6. Charts
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step7'>7. Automatic Road Repair
+</a></li>
+</ul>
+<li><a href='/wiki/ThreeD'>3D Tutorial
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/ThreeD_step1'>1. Basic Model
+</a></li>
+<li><a href='/wiki/ThreeD_step2'>2. Moving Cells
+</a></li>
+<li><a href='/wiki/ThreeD_step3'>3. Connections
+</a></li>
+</ul>
+</ul>
+</ul>
+<li><a href='/wiki/References'>References
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/PlatformDocumentation'>Platform
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/InstallationAndLaunching'>Installation and Launching
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/Installation'>Installation
+</a></li>
+<li><a href='/wiki/Launching'>Launching GAMA
+</a></li>
+<li><a href='/wiki/Headless'>Headless Mode
+</a></li>
+<li><a href='/wiki/Updating'>Updating GAMA
+</a></li>
+<li><a href='/wiki/InstallingPlugins'>Installing Plugins
+</a></li>
+<li><a href='/wiki/Troubleshooting'>Troubleshooting
+</a></li>
+</ul>
+<li><a href='/wiki/WorkspaceProjectsAndModels'>Workspace, Projects and Models
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/NavigatingWorkspace'>Navigating in the Workspace
+</a></li>
+<li><a href='/wiki/ChangingWorkspace'>Changing Workspace
+</a></li>
+<li><a href='/wiki/ImportingModels'>Importing Models
+</a></li>
+</ul>
+<li><a href='/wiki/EditingModels'>Editing models
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/GamlEditorGeneralities'>The GAML Editor - Generalities
+</a></li>
+<li><a href='/wiki/GamlEditorToolbar'>The GAML Editor Toolbar
+</a></li>
+<li><a href='/wiki/ValidationOfModels'>Validation of Models
+</a></li>
+</ul>
+<li><a href='/wiki/RunningExperiments'>Running Experiments
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/LaunchingExperiments'>Launching Experiments from the User Interface
+</a></li>
+<li><a href='/wiki/ExperimentsUserInterface'>Experiments User Interface
+</a></li>
+<li><a href='/wiki/MenusAndCommands'>Menus and Commands
+</a></li>
+<li><a href='/wiki/ParametersView'>Parameters View
+</a></li>
+<li><a href='/wiki/InspectorsAndMonitors'>Inspectors and monitors
+</a></li>
+<li><a href='/wiki/Displays'>Displays
+</a></li>
+<li><a href='/wiki/BatchSpecific'>Batch Specific UI
+</a></li>
+<li><a href='/wiki/ErrorsView'>Errors View
+</a></li>
+</ul>
+<li><a href='/wiki/Preferences'>Preferences
+</a></li>
+</ul>
+<li><a href='/wiki/GamlReferences'>Gaml Reference
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/BuiltInSpecies'>Built-in Species
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/AgentBuiltIn'>The 'agent' built-in species (Under Construction)
+</a></li>
+<li><a href='/wiki/ModelBuiltIn'>The 'model' built-in species (Under Construction)
+</a></li>
+<li><a href='/wiki/ExperimentBuiltIn'>The 'experiment' built-in species (Under Construction)
+</a></li>
+</ul>
+<li><a href='/wiki/BuiltInSkills'>Built-in Skills
+</a></li>
+<li><a href='/wiki/BuiltInArchitectures'>Built-in Architectures
+</a></li>
+<li><a href='/wiki/Statements'>Statements
+</a></li>
+<li><a href='/wiki/DataTypes'>Types
+</a></li>
+<li><a href='/wiki/FileTypes'>File Types
+</a></li>
+<li><a href='/wiki/Expressions'>Expressions
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/Literals'>Literals
+</a></li>
+<li><a href='/wiki/UnitsAndConstants'>Units and constants
+</a></li>
+<li><a href='/wiki/PseudoVariables'>Pseudo-variables
+</a></li>
+<li><a href='/wiki/VariablesAndAttributes'>Variables and Attributes
+</a></li>
+<li><a href='/wiki/Operators'>Operators 
+</a></li>
+</ul>
+</ul>
+</ul>
+<li>Community
+</li>
+<ul class='sub'>
+<li><a href='/wiki/Contribute'>Contribute
+</a></li>
+<li><a href='/wiki/Projects'>Projects
+</a></li>
+<li><a href='/wiki/TrainingSession'>Training Session
+</a></li>
+</ul></ul></div><div id="right">
+<h3>Facebook Activities</h3>
+<ul id="fbquotes">
+</ul>
+<h3>Commit Activities</h3>
+<ul id="commitquotes">
+</ul>
+<h3>Issue Activities</h3>
+<ul id="issuequotes">
+</ul>
+<h3>Gama Platform Users Activities</h3>
+<ul id="googleusersquotes">
+</ul>
+</div><div id="content"><h1 id="displays">Displays</h1>
+
+<p>GAMA allows modelers to <a href="DefiningDisplaysGeneralities">define several and several kinds of displays</a> in a <a href="DefiningGUIExperiment">GUI experiment</a>:</p>
+<ul>
+  <li>java 2D displays</li>
+  <li>OpenGL displays</li>
+</ul>
+
+<p>These 2 kinds of display allows the modeler to display the same objects (agents, charts, texts …). The OpenGL display offers extended features in particular in terms of 3D visualisation.
+The OpenGL displays offers in addition better performance when zooming in and out.</p>
+
+<h2 id="table-of-contents">Table of contents</h2>
+
+<ul>
+  <li><a href="#displays">Displays</a>
+    <ul>
+      <li><a href="#classical-displays-java2d">Classical displays (java2D)</a></li>
+      <li><a href="#opengl-displays">OpenGL displays</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="classical-displays-java2d">Classical displays (java2D)</h2>
+
+<p>The classical displays displaying any kind of content can be manipulated via the mouse (if no mouse event has been defined):</p>
+<ul>
+  <li>the <strong>mouse left</strong> press and move allows to move the camera (in 2D),</li>
+  <li>the <strong>mouse right</strong> click opens a context menu allowing the modeler to inspect displayed agents,</li>
+  <li>the <strong>wheel</strong> allows the modeler to zoom in or out.</li>
+</ul>
+
+<p><img src="resources/images/runningExperiments/display-java2D.png" alt="images/display-java2D.png" /></p>
+
+<p>Each display provides several buttons to manipulate the display (from left to right):</p>
+<ul>
+  <li><strong>Show/hide side bar</strong>,</li>
+  <li><strong>Show/hide overlay</strong>,</li>
+  <li><strong>Browse through all displayed agents</strong>: open a context menu to inspect agents,</li>
+  <li><strong>Update every X step</strong>: configure the refresh frequence of the display,</li>
+  <li><strong>Pause the-display</strong>: when pressed, the display will not be displayed anymore, the simulation is still running,</li>
+  <li><strong>Synchronize the display and the execution of the model</strong>,</li>
+  <li><strong>Zoom in</strong>,</li>
+  <li><strong>Zoom to fit view</strong>,</li>
+  <li><strong>Zoom out</strong>,</li>
+  <li><strong>Take a snapshot</strong>: take a snapshot saved as a png image in the <code class="highlighter-rouge">snapshots</code> folder of the models folder.</li>
+</ul>
+
+<p>The Show/Hide side bar button opens a side panel in the display allowing the modeler to configure:</p>
+<ul>
+  <li><strong>Properties</strong> of the display: background and highlight color, display the scale bar</li>
+  <li>For each layer, we can configure visibility, transparency, position and size of the layer. For grid layers, we can in addition show/hide grids. For species layers, we can also configure the displayed aspect. For text layers, we can the expression displayed with the color and the font.</li>
+</ul>
+
+<p>The bottom overlay bar displays information about the way it is displayed:</p>
+<ul>
+  <li>the position of the mouse in the display,</li>
+  <li>the zoom ratio,</li>
+  <li>the scale of the display (depending on the zoom).</li>
+</ul>
+
+<p><img src="resources/images/runningExperiments/display-sidebar-overlay.png" alt="images/display-sidebar-overlay.png" /></p>
+
+<h2 id="opengl-displays">OpenGL displays</h2>
+
+<p>The OpenGL display has an additional button <strong>3D Options</strong> providing 3D features:</p>
+<ul>
+  <li><strong>Use FreeFly camera</strong>/<strong>Use Arcball camera</strong>: switch between cameras, the default camera is the Arcball one,</li>
+  <li><strong>Use mouse to rotate</strong>/<strong>Use mouse to drag</strong> (only with Arcball camera): use left click for one of the 2 actions, left click + Ctrl for the other of the 2 actions.</li>
+  <li><strong>Apply inertia</strong> (only with Arcball camera): in inertia mode, when the modeler stops moving the camera, there is no straight halt but a kind of inertia.</li>
+  <li><strong>Rotate scene</strong>: rotate the scene around an axis orthogonal to the scene,</li>
+  <li><strong>Split layers</strong>/<strong>Merge layers</strong>: display each layer at a distinct height,</li>
+  <li><strong>Triangulate scene</strong>: display the polygon primitives.</li>
+</ul>
+
+<p><img src="resources/images/runningExperiments/display-OpenGL.png" alt="images/display-OpenGL.png" /></p>
+
+<p>In addition, the bottom overlay bar provides the Camera position in 3D.</p>
+
+<h3 id="freefly-camera-commands">FreeFly camera commands</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left"><strong>Key</strong></th>
+      <th style="text-align: left"><strong>Function</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><strong>Double Click</strong></td>
+      <td style="text-align: left">Zoom Fit</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>+</strong></td>
+      <td style="text-align: left">Zoom In</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>-</strong></td>
+      <td style="text-align: left">Zoom Out</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Up</strong></td>
+      <td style="text-align: left">Move forward</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Down</strong></td>
+      <td style="text-align: left">Move backward</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Left</strong></td>
+      <td style="text-align: left">Strafe left</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Right</strong></td>
+      <td style="text-align: left">Strafe right</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>SHIFT+Up</strong></td>
+      <td style="text-align: left">Look up</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>SHIFT+Down</strong></td>
+      <td style="text-align: left">Look down</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>SHIFT+Left</strong></td>
+      <td style="text-align: left">Look left</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>SHIFT+Right</strong></td>
+      <td style="text-align: left">Look right</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>MOUSE</strong></td>
+      <td style="text-align: left">Makes the camera look up, down, left and right</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>MouseWheel</strong></td>
+      <td style="text-align: left">Zoom-in/out to the current target (center of the screen)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="arcball-camera-commands">ArcBall camera commands</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left"><strong>Key</strong></th>
+      <th style="text-align: left"><strong>Function</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><strong>Double Click</strong></td>
+      <td style="text-align: left">Zoom Fit</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>+</strong></td>
+      <td style="text-align: left">Zoom In</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>-</strong></td>
+      <td style="text-align: left">Zoom Out</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Up</strong></td>
+      <td style="text-align: left">Horizontal movement to the top</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Down</strong></td>
+      <td style="text-align: left">Horizontal movement to the bottom</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Left</strong></td>
+      <td style="text-align: left">Horizontal movement to the left</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Right</strong></td>
+      <td style="text-align: left">Horizontal movement to the right</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>SHIFT+Up</strong></td>
+      <td style="text-align: left">Rotate the model up (decrease the phi angle of the spherical coordinates)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>SHIFT+Down</strong></td>
+      <td style="text-align: left">Rotate the model down (increase the phi angle of the spherical coordinates)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>SHIFT+Left</strong></td>
+      <td style="text-align: left">Rotate the model left (increase the theta angle of the spherical coordinates)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>SHIFT+Right</strong></td>
+      <td style="text-align: left">Rotate the model right (decrease the theta angle of the spherical coordinates)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>SPACE</strong></td>
+      <td style="text-align: left">Reset the pivot to the center of the envelope</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>KEYPAD 2,4,6,8</strong></td>
+      <td style="text-align: left">Quick rotation (increase/decrease phi/theta by 30°)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>CMD+MOUSE1</strong></td>
+      <td style="text-align: left">Makes the camera rotate around the model</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>ALT+LEFT_MOUSE</strong></td>
+      <td style="text-align: left">Enables ROI Agent Selection</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>SHIFT+LEFT_MOUSE</strong></td>
+      <td style="text-align: left">Enables ROI Zoom</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>SCROLL</strong></td>
+      <td style="text-align: left">Zoom-in/out to the current target (center of the sphere)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>WHEEL CLICK</strong></td>
+      <td style="text-align: left">Reset the pivot to the center of the envelope</td>
+    </tr>
+  </tbody>
+</table>
+</div></body></html>

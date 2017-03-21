@@ -1,0 +1,879 @@
+
+    <!doctype html><html lang="en"><head><meta charset="utf-8"><title>_team2strategy</title></head>
+    <body>
+    <link rel="stylesheet" href="/style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="//connect.facebook.net/en_US/all.js"></script>
+<script src="/linkify.min.js"></script>
+<script src="/linkify-jquery.min.js"></script>
+<script>
+  $(document).ready(function(){
+	  		$.getJSON('https://graph.facebook.com/238065426321929/feed?access_token=229040647557399|MQKFlFYX7YW25XGj4GUYZ7B1lcY', function(data) {
+		var ahtml="";
+		for(var i = 0; i < 5; i++) {
+			ahtml=ahtml+"<li>"+data["data"][i]["message"]+"</li>";
+		}
+		ahtml=ahtml+"";
+		$("#fbquotes").html(ahtml);
+		$("#fbquotes").linkify();
+	});
+	 
+		$.getJSON('https://api.github.com/repos/gama-platform/gama/commits', function(data) {
+			var ahtml="";
+			for(var i = 0; i < 5; i++) {
+				ahtml=ahtml+"<li>"+data[i]["commit"]["message"]+" by "+data[i]["commit"]["author"]["name"]+" <a href='"+data[i]["commit"]["html_url"]+"'> See more</a></li>";
+			}
+			ahtml=ahtml+"";
+			$("#commitquotes").html(ahtml);
+			$("#commitquotes").linkify();
+		});
+				
+				
+		$.getJSON('https://api.github.com/repos/gama-platform/gama/issues', function(data) {
+			var ahtml="";
+			for(var i = 0; i < 5; i++) {
+				ahtml=ahtml+"<li>"+data[i]["title"]+" by "+data[i]["user"]["login"]+" <a href='"+data[i]["html_url"]+"'> See more</a></li>";
+			}
+			ahtml=ahtml+"";
+			$("#issuequotes").html(ahtml);
+			$("#issuequotes").linkify();
+		});
+		
+		$.getJSON('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fgroups.google.com%2Fforum%2Ffeed%2Fgama-platform%2Ftopics%2Frss.xml%3Fnum%3D15', function(data) {
+			var ahtml="";
+			for(var i = 0; i < 5; i++) {
+				ahtml=ahtml+"<li>"+data["items"][i]["title"]+" by "+data["items"][i]["author"]+" <a href='"+data["items"][i]["link"]+"'> See more</a></li>";
+			}
+			ahtml=ahtml+"";
+			$("#googleusersquotes").html(ahtml);
+			$("#googleusersquotes").linkify();
+			
+		});
+ });
+  
+</script>
+
+      <div id="left">
+
+		<ul class="mcd-menu"><li><a href="/">Home</a></li><li><a href="/">Discussions</a></li>
+<li><a href='/wiki/Tutorials'>Tutorials
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/LearnGAMLStepByStep'>Learn GAML Step by Step
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/Introduction'>Introduction
+</a></li>
+<li><a href='/wiki/StartWithGAML'>Start with GAML
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/ModelOrganization'>Organization of a model
+</a></li>
+<li><a href='/wiki/BasicProgrammingConceptsInGAML'>Basic programming concepts in GAML
+</a></li>
+</ul>
+<li><a href='/wiki/ManipulateBasicSpecies'>Manipulate basic species
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/GlobalSpecies'>The global species
+</a></li>
+<li><a href='/wiki/RegularSpecies'>Regular species
+</a></li>
+<li><a href='/wiki/DefiningActionsAndBehaviors'>Defining actions and behaviors
+</a></li>
+<li><a href='/wiki/InteractionBetweenAgents'>Interaction between agents
+</a></li>
+<li><a href='/wiki/AttachingSkills'>Attaching Skills
+</a></li>
+<li><a href='/wiki/Inheritance'>Inheritance
+</a></li>
+</ul>
+<li><a href='/wiki/DefiningAdvancedSpecies'>Defining advanced species
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/GridSpecies'>Grid Species
+</a></li>
+<li><a href='/wiki/GraphSpecies'>Graph Species
+</a></li>
+<li><a href='/wiki/MirrorSpecies'>Mirror species
+</a></li>
+<li><a href='/wiki/MultiLevelArchitecture'>Multi-level architecture
+</a></li>
+</ul>
+<li><a href='/wiki/DefiningGUIExperiment'>Defining GUI Experiment
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/DefiningParameters'>Defining Parameters
+</a></li>
+<li><a href='/wiki/DefiningDisplaysGeneralities'>Defining displays (Generalities)
+</a></li>
+<li><a href='/wiki/DefiningCharts'>Defining Charts
+</a></li>
+<li><a href='/wiki/Defining3DDisplays'>Defining 3D Displays
+</a></li>
+<li><a href='/wiki/DefiningMonitorsAndInspectors'>Defining monitors and inspectors
+</a></li>
+<li><a href='/wiki/DefiningExportFiles'>Defining export files
+</a></li>
+<li><a href='/wiki/DefiningUserInteraction'>Defining user interaction
+</a></li>
+</ul>
+<li><a href='/wiki/ExploringModels'>Exploring Models
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/RunSeveralSimulations'>Run Several Simulations
+</a></li>
+<li><a href='/wiki/BatchExperiments'>Defining Batch Experiments
+</a></li>
+<li><a href='/wiki/ExplorationMethods'>Exploration Methods
+</a></li>
+</ul>
+<li><a href='/wiki/OptimizingModels'>Optimizing Models
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/RuntimeConcepts'>Runtime Concepts
+</a></li>
+<li><a href='/wiki/OptimizingModels'>Optimizing Models
+</a></li>
+</ul>
+<li><a href='/wiki/MultiParadigmModeling'>Multi-Paradigm Modeling
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/ControlArchitecture'>Control Architectures
+</a></li>
+<li><a href='/wiki/Equations'>Using Equations
+</a></li>
+</ul>
+</ul>
+<li><a href='/wiki/Recipes'>Recipes
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/ManipulateOSMDatas'>Manipulate OSM Datas
+</a></li>
+<li><a href='/wiki/Diffusion'>Implementing diffusion
+</a></li>
+<li><a href='/wiki/UsingDatabase'>Using Database Access
+</a></li>
+<li><a href='/wiki/CallingR'>Calling R
+</a></li>
+<li><a href='/wiki/UsingFIPAACL'>Using FIPA ACL
+</a></li>
+<li><a href='/wiki/GamAnalyzer'>Using GAMAnalyzer
+</a></li>
+<li><a href='/wiki/UsingBDI'>Using BDI
+</a></li>
+<li><a href='/wiki/UsingDrivingSkill'>Advanced Driving Skill
+</a></li>
+<li><a href='/wiki/ManipulateDates'>Manipulate Dates
+</a></li>
+<li><a href='/wiki/ManipulateLight'>Implementing light
+</a></li>
+<li><a href='/wiki/Comodel'>Using Comodel
+</a></li>
+</ul>
+<li><a href='/wiki/Tutorials'>Tutorials
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/LuneraysFlu'>Luneray's flu
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/LuneraysFlu_step1'>1. Creation of a first basic disease spreading model
+</a></li>
+<li><a href='/wiki/LuneraysFlu_step2'>2. Definition of monitors and chart outputs
+</a></li>
+<li><a href='/wiki/LuneraysFlu_step3'>3. Importation of GIS data
+</a></li>
+<li><a href='/wiki/LuneraysFlu_step4'>4. Use of a graph to constraint the movements of people]
+</a></li>
+<li><a href='/wiki/LuneraysFlu_step5'>5. Definition of 3D displays
+</a></li>
+</ul>
+<li><a href='/wiki/IncrementalModel'>Incremental Model
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/IncrementalModel_step1'>1. Simple SI Model
+</a></li>
+<li><a href='/wiki/IncrementalModel_step2'>2. Charts
+</a></li>
+<li><a href='/wiki/IncrementalModel_step3'>3. Integration of GIS Data
+</a></li>
+<li><a href='/wiki/IncrementalModel_step4'>4. Movement on Graph
+</a></li>
+<li><a href='/wiki/IncrementalModel_step5'>5. Visualizing in 3D
+</a></li>
+<li><a href='/wiki/IncrementalModel_step6'>6. Multi-Level
+</a></li>
+<li><a href='/wiki/IncrementalModel_step7'>7. Differential Equations
+</a></li>
+</ul>
+<li><a href='/wiki/PredatorPrey'>Predator Prey
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/PredatorPrey_step1'>1. Basic Model
+</a></li>
+<li><a href='/wiki/PredatorPrey_step2'>2. Vegetation Dynamic
+</a></li>
+<li><a href='/wiki/PredatorPrey_step3'>3. Prey Agent Behavior
+</a></li>
+<li><a href='/wiki/PredatorPrey_step4'>4. Inspectors and Monitors
+</a></li>
+<li><a href='/wiki/PredatorPrey_step5'>5. Predator Agent
+</a></li>
+<li><a href='/wiki/PredatorPrey_step6'>6. Breeding
+</a></li>
+<li><a href='/wiki/PredatorPrey_step7'>7. Agent Aspect
+</a></li>
+<li><a href='/wiki/PredatorPrey_step8'>8. Complex Behavior
+</a></li>
+<li><a href='/wiki/PredatorPrey_step9'>9. Stopping condition
+</a></li>
+<li><a href='/wiki/PredatorPrey_step10'>10. Charts
+</a></li>
+<li><a href='/wiki/PredatorPrey_step11'>11. Writing Files
+</a></li>
+<li><a href='/wiki/PredatorPrey_step12'>12. Image loading
+</a></li>
+</ul>
+<li><a href='/wiki/RoadTrafficModel'>Road Traffic
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/RoadTrafficModel_step1'>1. Loading of GIS Data
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step2'>2. People Agents
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step3'>3. Movement of People
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step4'>4. Weight for Road Network
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step5'>5. Dynamic weights
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step6'>6. Charts
+</a></li>
+<li><a href='/wiki/RoadTrafficModel_step7'>7. Automatic Road Repair
+</a></li>
+</ul>
+<li><a href='/wiki/ThreeD'>3D Tutorial
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/ThreeD_step1'>1. Basic Model
+</a></li>
+<li><a href='/wiki/ThreeD_step2'>2. Moving Cells
+</a></li>
+<li><a href='/wiki/ThreeD_step3'>3. Connections
+</a></li>
+</ul>
+</ul>
+</ul>
+<li><a href='/wiki/References'>References
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/PlatformDocumentation'>Platform
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/InstallationAndLaunching'>Installation and Launching
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/Installation'>Installation
+</a></li>
+<li><a href='/wiki/Launching'>Launching GAMA
+</a></li>
+<li><a href='/wiki/Headless'>Headless Mode
+</a></li>
+<li><a href='/wiki/Updating'>Updating GAMA
+</a></li>
+<li><a href='/wiki/InstallingPlugins'>Installing Plugins
+</a></li>
+<li><a href='/wiki/Troubleshooting'>Troubleshooting
+</a></li>
+</ul>
+<li><a href='/wiki/WorkspaceProjectsAndModels'>Workspace, Projects and Models
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/NavigatingWorkspace'>Navigating in the Workspace
+</a></li>
+<li><a href='/wiki/ChangingWorkspace'>Changing Workspace
+</a></li>
+<li><a href='/wiki/ImportingModels'>Importing Models
+</a></li>
+</ul>
+<li><a href='/wiki/EditingModels'>Editing models
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/GamlEditorGeneralities'>The GAML Editor - Generalities
+</a></li>
+<li><a href='/wiki/GamlEditorToolbar'>The GAML Editor Toolbar
+</a></li>
+<li><a href='/wiki/ValidationOfModels'>Validation of Models
+</a></li>
+</ul>
+<li><a href='/wiki/RunningExperiments'>Running Experiments
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/LaunchingExperiments'>Launching Experiments from the User Interface
+</a></li>
+<li><a href='/wiki/ExperimentsUserInterface'>Experiments User Interface
+</a></li>
+<li><a href='/wiki/MenusAndCommands'>Menus and Commands
+</a></li>
+<li><a href='/wiki/ParametersView'>Parameters View
+</a></li>
+<li><a href='/wiki/InspectorsAndMonitors'>Inspectors and monitors
+</a></li>
+<li><a href='/wiki/Displays'>Displays
+</a></li>
+<li><a href='/wiki/BatchSpecific'>Batch Specific UI
+</a></li>
+<li><a href='/wiki/ErrorsView'>Errors View
+</a></li>
+</ul>
+<li><a href='/wiki/Preferences'>Preferences
+</a></li>
+</ul>
+<li><a href='/wiki/GamlReferences'>Gaml Reference
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/BuiltInSpecies'>Built-in Species
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/AgentBuiltIn'>The 'agent' built-in species (Under Construction)
+</a></li>
+<li><a href='/wiki/ModelBuiltIn'>The 'model' built-in species (Under Construction)
+</a></li>
+<li><a href='/wiki/ExperimentBuiltIn'>The 'experiment' built-in species (Under Construction)
+</a></li>
+</ul>
+<li><a href='/wiki/BuiltInSkills'>Built-in Skills
+</a></li>
+<li><a href='/wiki/BuiltInArchitectures'>Built-in Architectures
+</a></li>
+<li><a href='/wiki/Statements'>Statements
+</a></li>
+<li><a href='/wiki/DataTypes'>Types
+</a></li>
+<li><a href='/wiki/FileTypes'>File Types
+</a></li>
+<li><a href='/wiki/Expressions'>Expressions
+</a></li>
+<ul class='sub'>
+<li><a href='/wiki/Literals'>Literals
+</a></li>
+<li><a href='/wiki/UnitsAndConstants'>Units and constants
+</a></li>
+<li><a href='/wiki/PseudoVariables'>Pseudo-variables
+</a></li>
+<li><a href='/wiki/VariablesAndAttributes'>Variables and Attributes
+</a></li>
+<li><a href='/wiki/Operators'>Operators 
+</a></li>
+</ul>
+</ul>
+</ul>
+<li>Community
+</li>
+<ul class='sub'>
+<li><a href='/wiki/Contribute'>Contribute
+</a></li>
+<li><a href='/wiki/Projects'>Projects
+</a></li>
+<li><a href='/wiki/TrainingSession'>Training Session
+</a></li>
+</ul></ul></div><div id="right">
+<h3>Facebook Activities</h3>
+<ul id="fbquotes">
+</ul>
+<h3>Commit Activities</h3>
+<ul id="commitquotes">
+</ul>
+<h3>Issue Activities</h3>
+<ul id="issuequotes">
+</ul>
+<h3>Gama Platform Users Activities</h3>
+<ul id="googleusersquotes">
+</ul>
+</div><div id="content"><h1 id="_team2strategy">_team2strategy</h1>
+
+<p><em>Author : Julien</em></p>
+
+<p>This model contains one of the 2 team strategy. This strategy is very stupid : when you have the ball, run to the ennemy goal, else run to the ball</p>
+
+<p>Imported model :</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>
+model soccerbase
+
+species soccer_game {
+	// contains the global informations of the game
+	rgb back_color_team;
+	rgb front_color_team;
+	
+	ball_sp ball; // the ball agent
+	goal_sp front_goal; // contains the goal at the front of the field (y = 120)
+	goal_sp back_goal; // contains the goal at the back of the field (y = 0)
+	list&lt;base_team&gt; teams; // contains the 2 teams
+	list&lt;base_player&gt; players; // contains all the players of the game
+	
+	base_team team_possession; // the last team which possess the ball. This value is used to determine if the behavior of the team has to be defensive or offensive.
+	
+	init {
+		// create the entities ball and the 2 goals
+		create ball_sp with:[location::world.location] returns:var_ball;
+		ball &lt;- first(var_ball);
+		create goal_sp with:[location::{world.location.x,120},position::"front"] returns:var_goal1;
+		front_goal &lt;- first(var_goal1);
+		create goal_sp with:[location::{world.location.x,0},position::"back"] returns:var_goal2;
+		back_goal &lt;- first(var_goal2);
+	}
+	
+	action reinit_phase {
+		// this action is called when a goal has been scored : the players are placed with their initial position, and the ball is reset to the center
+		ask players {
+			location &lt;- init_pos;
+			previous_pos &lt;- init_pos;
+		}
+		ball.location &lt;- world.location;
+		ball.destination &lt;- world.location;
+		ball.speed &lt;- 0.0;
+	}
+}
+
+species base_player skills:[moving] {
+	// ATTRIBUTES ////////////////////////////////////////////////
+	
+	// ATTRIBUTES ONLY USED IN THIS BASE CLASSE, SHOULD NEVER BEEN CALLED IN STRATEGY FILE
+	float recuperation_ability &lt;- 0.2; // a mark from 0 to 1 to be able to catch the ball if another player has it
+	float speed_without_ball;
+	float speed_with_ball;
+	point previous_pos; // used to apply inertia
+	bool displacement_effectued&lt;-false update:false; // we can apply only one displacement by step !
+	
+	// ATTRIBUTE USEFUL TO BE READ IN THE TEAM STRATEGY FILE (READ ONLY !)
+	base_team team;
+	soccer_game game;
+	base_team ennemy_team &lt;- nil update:first(game.teams where (each.position != team.position));
+	ball_sp ball &lt;- nil update:first(ball_sp);
+	goal_sp own_goal &lt;- nil update:first(goal_sp where (each.position = team.position));
+	goal_sp ennemy_goal &lt;- nil update:first(goal_sp where (each.position != team.position));
+	// ratio of avancement of the ball (from the point of view of the current team)
+	float ball_advancement &lt;- 0.0 update:(team.position = "back") ? ball.location.y / 120 : 1 - ball.location.y / 120;
+	
+	bool possess_ball;
+	point init_pos;
+	point init_pos_in_percent;
+	float distance_to_closest_ennemy_player &lt;- 100.0 update:self distance_to closest_ennemy_player;
+	// the number of ennemy players in a range of 15 meters
+	int number_of_ennemy_player_in_range &lt;- 0 update:length((game.players where (each.team != team)) where ((each intersects circle(15))=true));
+	float distance_to_ball &lt;- 100.0 update:(ball = nil) ? 100.0 : self distance_to ball;
+	float distance_to_goal &lt;- 100.0 update:(ennemy_goal = nil) ? 100.0 : self distance_to ennemy_goal;
+	// the closest player of this team
+	base_player closest_friend_player &lt;- nil update:(ball = nil) ? base_player(nil) : first( (game.players where (each.team = team and each != self)) 
+		where (each distance_to self = min( (game.players where (each.team = team and each != self)) collect (each distance_to self) ) ) 
+	);
+	// the closest ennemy player
+	base_player closest_ennemy_player &lt;- nil update:(ball = nil) ? base_player(nil) : first( (game.players where (each.team != team and each != self)) 
+		where (each distance_to self = min( (game.players where (each.team != team and each != self)) collect (each distance_to self) ) ) 
+	);
+	// the player of this team wich has the best "position_mark"
+	base_player best_position_player &lt;- nil update:first((team.players where (each != self)) 
+		where (each.position_mark = max((team.players where (each != self)) collect (each.position_mark)))
+	);
+	float current_speed&lt;-1.0 update:(possess_ball) ? speed_with_ball : speed_without_ball;
+	
+	// ATTRIBUTES WICH CAN BE CHANGED FROM THE TEAM STRAGEGY FILE
+	float position_mark &lt;- 0.0 update:-distance_to_goal; // a mark attributed according to the position of the player (the higher the note is, the best the position is). 
+	// By default, this mark is equal to -distance_to_goal.
+	string status &lt;- ""; // the current status of the player (can be useful to build the model)
+	geometry influence_area &lt;- nil update:circle(15); // the area of interest of the player. By default, this area is a circle 15m diameter centered in the player location.
+
+	
+	// CONSTRUCTOR /////////////////////////////////////////////
+	init {
+		init_pos &lt;- location;
+		previous_pos &lt;- location;
+		possess_ball &lt;- false;
+		speed_with_ball &lt;- 0.4;
+		speed_without_ball &lt;- 0.5;
+	}
+	
+	// ACTIONS ////////////////////////////////////////////////////
+	
+	// ACTIONS TO CALL FROM THE STRATEGY FILE
+	// action to run to a particular position
+	action run_to(point target) {
+		if (!displacement_effectued) {
+				do goto target:target speed:current_speed;
+			if (possess_ball) {
+				ball.location &lt;- location;
+			}
+			displacement_effectued &lt;- true;
+		}
+		else {
+			write "WARNING : only ONE action of displacement is allowed each step";
+		}
+	}
+	
+	// action to run to the ball
+	action run_to_ball {
+		point targetPos;
+		if (ball.ball_direction intersects circle(1)) {
+			targetPos &lt;- ball.location;
+		}
+		else {
+			targetPos &lt;- (ball.ball_direction closest_points_with self) at 0;
+		}
+		do run_to(targetPos);
+	}
+	
+	// action to run to the ennemy goal
+	action run_to_ennemy_goal {
+		do run_to( ennemy_goal.location );
+	}
+	
+	// action to run to its own goal
+	action run_to_own_goal {
+		do run_to( own_goal.location );
+	}
+	
+	// action to mark a player
+	action mark_player (base_player player) {
+		float rnd_area &lt;- 4.0; // the player will choose a position in a square of rnd_area m.
+		point pos &lt;- (team.position = "front") ? {player.location.x,player.location.y-rnd_area/2} : {player.location.x,player.location.y+rnd_area/2};
+		do run_to( {pos.x-rnd_area/2+rnd(rnd_area),pos.y-rnd_area/2+rnd(rnd_area)} );
+	}
+	
+	// action ot shoot the ball to the ennemy goal
+	action shoot {
+		do loose_ball;
+		ask ball {
+			do shooted speed_atr:3.0 target_position:myself.ennemy_goal.location;
+		}
+	}
+	
+	// action to pass the ball to an ally
+	action pass_the_ball (base_player target_player) {
+		do loose_ball;
+		ask ball {
+			do shooted target_position:target_player.location speed_atr:target_player.distance_to_ball/15;
+		}
+		team.called_player &lt;- target_player;
+	}
+	
+	// action to pass the ball to an ally
+	action pass_the_ball_ahead (base_player target_player,float number_of_meter_ahead) {
+		do loose_ball;
+		ask ball {
+			float offset &lt;- ((myself.team.position = "back") ? number_of_meter_ahead : -number_of_meter_ahead);
+			point target_point &lt;- {target_player.location.x,target_player.location.y+offset};
+			do shooted target_position:target_point speed_atr:target_player.distance_to_ball/15;
+		}
+		team.called_player &lt;- target_player;
+	}
+	
+	// ACTION AUTOMATICALLY CALLED IN THE BASE CLASSE
+	// try to take the ball if it is close enough
+	action try_to_take_ball {
+		// if no player has the ball
+		if (!team.possess_ball and !ennemy_team.possess_ball) {
+			// if the player is the one called (result of a pass)
+			if (team.called_player = self) {
+				do take_ball;
+			}
+			// if the player is not the one called (interception of the ball), probability to catch the ball inversly proportionnal with the speed of the ball
+			else {
+				if (flip(1/(1+2*ball.speed))) {
+					do take_ball;
+				}
+			}
+		}
+		// the ball is possessed by the ennemy team
+		else if (ennemy_team.possess_ball) {
+			// try to catch the ball from the other player
+			if flip(recuperation_ability) {
+				do take_ball;
+			}
+		}
+	}
+	
+	// action of taking the ball
+	action take_ball {
+		if (ennemy_team.possess_ball) {
+			ask ennemy_team.player_with_ball {
+				do loose_ball;
+			}
+		}
+		possess_ball &lt;- true;
+		ball.speed &lt;- 0.0;
+		ball.destination &lt;- ball.location;
+		team.called_player &lt;- nil;
+		team.player_with_ball &lt;- self;
+		team.possess_ball &lt;- true;
+		game.team_possession &lt;- team;
+	}
+	
+	// action of loosing the ball
+	action loose_ball {
+		possess_ball &lt;- false;
+		team.player_with_ball &lt;- nil;
+		team.possess_ball &lt;- false;
+	}
+	
+	// apply the inertia
+	action apply_inertia {
+		point prev_pos &lt;- location;
+		point inertia_vect &lt;- {(location.x-previous_pos.x)*0.7,(location.y-previous_pos.y)*0.7};
+		float max_inertia &lt;- current_speed;
+		if (norm(inertia_vect) &gt; max_inertia) {
+			float inertia_x &lt;-  sqrt(abs(max_inertia*max_inertia-inertia_vect.y*inertia_vect.y));
+			float inertia_y &lt;-  sqrt(abs(max_inertia*max_inertia-inertia_vect.x*inertia_vect.x));
+			inertia_x &lt;- (inertia_vect.x &lt; 0) ? -inertia_x : inertia_x;
+			inertia_y &lt;- (inertia_vect.y &lt; 0) ? -inertia_y : inertia_y;
+			inertia_vect &lt;- {inertia_x,inertia_y};
+		}
+		location &lt;- location + inertia_vect;
+		previous_pos &lt;- prev_pos;
+	}
+	
+	// useful functions
+	// this function returns the real x if we pass a percentage : 0 is the extreme left point, 100 is the extreme right point.
+	float getXPos(float x_ratio) {
+		float result;
+		if (team.position="back") {
+			result &lt;- 90-x_ratio*90;
+		}
+		else {
+			result &lt;- x_ratio*90;
+		}
+		return result;
+	}
+	
+	// this function returns the real y if we pass a percentage : 0 is the extreme defensive point, 100 is the extreme attack point.
+	float getYPos(float y_ratio) {
+		float result;
+		if (team.position="back") {
+			result &lt;- y_ratio*120;
+		}
+		else {
+			result &lt;- 120-y_ratio*120;
+		}
+		return result;
+	}
+	
+	///////////////////////////////////////////////////////
+	
+	// The update function, calls the adequate behavior
+	reflex update when:cycle&gt;1 {
+		do apply_inertia;
+		// verify if it is a non-offside position
+		if ( (((team.position = "back") and (location.y &gt; team.offside_pos))
+			or ((team.position = "front") and (location.y &lt; team.offside_pos))) 
+			and (!possess_ball) and (self != team.called_player)
+		) {
+			// offside position, go back to a correct position
+			point target_pos &lt;- {location.x,(team.position = "back") ? location.y-current_speed:location.y+current_speed};
+			do run_to(target_pos);
+			status &lt;- "offside position !";
+		}
+		else if ((distance_to_ball &lt; 2) and !possess_ball) {
+			do try_to_take_ball;
+		}
+		else if (game.team_possession = team) {
+			do offensive_behavior;
+		}
+		else {
+			do defensive_behavior;
+		}
+	}
+	
+	// defensive behavior, need to be redefined in the strategy file.
+	// this action is called when the last player who was holding the ball was a player of the ennemy team
+	action defensive_behavior virtual:true {
+		
+	}
+	// defensive behavior, need to be redefined in the strategy file.
+	// this action is called when the last player who was holding the ball was a player of this team
+	action offensive_behavior virtual:true {
+		
+	}
+	
+	
+	// ASPECT ////////////////////////////////////////////////////////
+	aspect player {
+		// the player wich possess the ball is displayed with a square. It is displayed with a circle otherwise.
+		if (possess_ball) {
+			draw square(2) color:(team.position = "back") ? game.back_color_team : game.front_color_team;
+		}
+		else {
+			draw circle(1) color:(team.position = "back") ? game.back_color_team : game.front_color_team;
+		}
+	}
+}
+
+
+
+species base_team {
+	// ATTRIBUTES ////////////////////////////////////////////////
+	
+	// ATTRIBUTES ONLY USED IN THIS BASE CLASSE, SHOULD NEVER BEEN CALLED IN STRATEGY FILE
+	float offside_pos &lt;- 0.0 update: (position = "back") ? max((game.players where (each.team != self)) collect (each.location.y))
+		: min((game.players where (each.team != self)) collect (each.location.y));
+	
+	// ATTRIBUTES USEFUL TO BE READ IN THE TEAM STRATEGY FILE (READ ONLY !)
+	string position; // can be "front" or "back".
+	list&lt;base_player&gt; players; // all the players of the team.
+	soccer_game game;
+	
+	base_player closest_player_to_ball &lt;- first(players) update: first( players where (each distance_to each.ball = min (players collect (each distance_to each.ball) ) ) );
+	base_player called_player;
+	bool possess_ball &lt;- false;// update: ! empty ( players where (each.possess_ball=true) );
+	base_player player_with_ball &lt;- nil;// update: first(players where (each.possess_ball = true));
+	
+	// ATTRIBUTES WICH CAN BE CHANGED FROM THE TEAM STRATEGY FILE
+	list&lt;point&gt; player_init_position;
+}
+
+species ball_sp skills:[moving] {
+	// The ball agent.
+	float speed &lt;- 0.0;
+	geometry ball_direction; // the direction of the ball is used to be followed by the player
+	reflex update {
+		speed &lt;- speed*0.95;
+		float future_speed &lt;- speed;
+		point tmpPos&lt;-location;
+		loop i from:0 to:10 {
+			tmpPos &lt;- {tmpPos.x+cos(heading)*speed,tmpPos.y+sin(heading)*speed};
+			future_speed &lt;- future_speed*0.9;
+		}
+		ball_direction &lt;- line([location,tmpPos]);
+		do wander amplitude:1;
+		
+		// anticipation of the ball position to detect a goal
+		if ((location.y+sin(heading)*speed) &gt; 120) {
+			write "back team score a goal !!";
+			ask first(soccer_game) {
+				do reinit_phase;
+			}
+		}
+		if ((location.y+sin(heading)*speed) &lt; 0) {
+			write "front team score a goal !!";
+			ask first(soccer_game) {
+				do reinit_phase;
+			}
+		}
+	}
+	action shooted (point target_position, float speed_atr) {
+		// action called when a player shoots the ball
+		speed &lt;- speed_atr;
+		do goto target:target_position;
+	}
+	
+	aspect ball {
+		draw circle(0.5) color:#white;
+	}
+}
+
+species goal_sp {
+	string position; // can be "front" or "back".
+	
+	init {
+		create goal_keeper with:[position::position];
+	}
+	
+	aspect goal {
+		draw rectangle(7.32,1.0) color:#black;
+	}
+}
+
+species goal_keeper {
+	// the goal has a basic behavior : he tries to catch the ball when it is close enough, and when 
+	string position; // can be "front" or "back".
+	ball_sp ball &lt;- nil update:first(ball_sp);
+	
+	reflex update when:cycle&gt;0 {
+		location &lt;- {ball.location.x/90*12+(90-12)/2,location.y};
+		if (ball distance_to self &lt; 2) {
+			if (flip(1/(1+2*ball.speed))) {
+				first(soccer_game).team_possession &lt;- first(first(soccer_game).teams where (each.position = position));
+				ask ball {
+					do shooted ({30+rnd(30),60},5.0);
+				}
+			}
+		}
+	}
+	
+	init {
+		location &lt;- {45,(position="front") ? 117 : 3};
+	}
+	
+	action offensive_behavior {
+	}
+	
+	action defensive_behavior {
+	}
+	
+	aspect goal_keeper {
+		draw circle(1) color:(position = "back") ? first(soccer_game).back_color_team : first(soccer_game).front_color_team;
+	}
+}
+</code></pre>
+</div>
+
+<p>Code of the model :</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>
+model team2strategy
+
+import "./soccer_base.gaml"
+
+species player_stupidTeam parent:base_player {
+	// READ ONLY ATTRIBUTES :
+	// position : can be "front" or "back".
+	// players : list of all the players of the team.
+	// game
+	//closest_player_to_ball
+	// called_player : the player called for a pass
+	// possess_ball : true or false
+	// player_with_ball : player currently with the ball
+	
+	// READ AND WRITE ATTRIBUTES :
+	// position_mark
+	// status : the current status of the player (can be useful to build the model)
+	// influence_area : the area of interest of the player. By default, this area is a circle 15m diameter centered in the player location.	
+	
+	action defensive_behavior {	
+		// very basic defensive behavior : run to the ball
+		do run_to_ball;
+	}
+	
+	action offensive_behavior {	
+		// very basic offensive behavior : run to the ennemy goal, or shoot the ball when close enough from the ennemy goal.
+		if ((possess_ball) and (distance_to_goal &lt; 30)) {
+			do shoot;
+		}
+		else {
+			do run_to_ennemy_goal;
+		}
+	}
+	
+}
+
+species stupidTeam parent:base_team {
+	// READ ONLY ATTRIBUTES :
+	// position : can be "front" or "back".
+	// players : list of all the players of the team.
+	// game.
+	// closest_player_to_ball.
+	// called_player : the player called for a pass.
+	// possess_ball : true when a player of the team possess the ball.
+	// player_with_ball
+	
+	// READ AND WRITE ATTRIBUTES :
+	// player_init_position
+	
+	// initial position of the player in percentage : for each point,
+	//    the first value corresponds to the percentage from left to right (0 for the point the most in the left side)
+	//    the second value corresponds to the percentage from the goal position to the mid position (0 for the goal position)
+	list&lt;point&gt; player_init_position &lt;- [{20,20},{50,20},{80,20},{30,50},{70,50},{50,70},{30,90},{50,90},{70,90}];
+}
+
+</code></pre>
+</div>
+</div></body></html>
