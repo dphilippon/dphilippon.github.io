@@ -1,1 +1,1 @@
-script: - rake wiki
+script: rake wiki
