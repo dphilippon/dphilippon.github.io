@@ -1,20 +1,38 @@
 require 'yaml'
 require 'uri'
-
 # use Jekyll configuration file
 CONFIG = YAML.load_file("_config.yml")
 URL_LAYOUT_DEFAULT = "../_layouts/default.html"
 URL_MENU_FILE = "./WebsiteTreeStructure.txt"
 task default: :build_dev
 
-# == Helpers ===========================================
+
+#-----------------------------------------
+#                TOOLS
+#-----------------------------------------
 def check_configuration
   if CONFIG['wikiToJekyll'].nil? or CONFIG['wikiToJekyll'].empty?
     raise "Please set your configuration in _config.yml. See the readme."
   end
 end
+def build_jekyll
+  system 'jekyll build'
+end
 
-# shortener to get configuration parameter
+def deploy
+    puts "deploying"
+    system "git add -A"
+    message = "Site wiki update #{Time.now.utc}"
+    puts "\n## :Committing => #{message}"
+    system "git commit -m \"#{message}\""
+    puts "\n## Pushing website"
+    system "git push #{g('deploy_remote')} #{g('deploy_branch')}"
+    puts "\n## Github Pages deploy complete"
+end
+
+def count_em(string, substring)
+  string.scan(/(?=#{substring})/).count
+end
 def g(key)
   CONFIG['wikiToJekyll'][ key ]
 end
@@ -27,10 +45,6 @@ def get_wiki_repository_url
   
 end
 
-# IMPORTANT ++++++++++++++++
-# you submodule MUST be added with the :https =>// scheme
-# git add submoudle :https =>//github.com/userName/RepositoryName.wiki.git
-# otherwise you will have github errors
 def update_wiki_submodule
   cd g('wiki_source') do
     pullCommand = 'git pull origin master'
@@ -43,16 +57,18 @@ def update_wiki_submodule
   end
 end
 
+
+#-----------------------------------------
+#     Clean the destination folder
+#-----------------------------------------
 def clean_wiki_folders
   if File.exist?(g('wiki_dest'))
     removeFolder("")    
   end
-  puts "create the dest dir for wiki pages"
   FileUtils.mkdir(g('wiki_dest'))
 end
 
 def removeFolder(folder)
-  puts "removing "+File.join("#{g('wiki_dest')}",folder)
   subdir_list=Dir.entries(File.join("#{g('wiki_source')}",folder)).select {|entry| File.directory? File.join("#{g('wiki_source')}",folder,entry) and !(entry =='.'||entry =='.git' || entry == '..') }
   subdir_list.each do |subfolder| 
     removeFolder(File.join(folder,subfolder))
@@ -63,6 +79,10 @@ def removeFolder(folder)
   FileUtils.rm_rf(File.join("#{g('wiki_dest')}",folder))
 end
 
+
+#-----------------------------------------
+#    Copy the wiki pages and resources
+#-----------------------------------------
 def copy_wiki_pages
   findPages("")
   copyResources()
@@ -130,9 +150,15 @@ def findPages(folder)
     end
   end
 end
-def count_em(string, substring)
-  string.scan(/(?=#{substring})/).count
+def wikibuildfunction
+  clean_wiki_folders
+  copy_wiki_pages
+  build_jekyll
 end
+
+#-----------------------------------------
+#      Creation of the Menu Layout
+#-----------------------------------------
 def defineLayoutMenu
   
   rm_rf File.join("#{g('wiki_source')}",URL_LAYOUT_DEFAULT)
@@ -196,34 +222,24 @@ def defineLayoutMenu
   
  
 end
-def build_jekyll
-  system 'jekyll build'
-end
 
-def deploy
-    puts "deploying"
-    system "git add -A"
-    message = "Site wiki update #{Time.now.utc}"
-    puts "\n## :Committing => #{message}"
-    system "git commit -m \"#{message}\""
-    puts "\n## Pushing website"
-    system "git push #{g('deploy_remote')} #{g('deploy_branch')}"
-    puts "\n## Github Pages deploy complete"
-end
-
-# synch repository wiki pages with Jekyll
-# needs a public wiki
+#-----------------------------------------
+#               Tasks
+#-----------------------------------------
+#Function to synchronise the git
 task :wiki do |t|
+    puts "Checking Configuration"
     check_configuration
-    update_wiki_submodule
-    :Rake ::Task[:wikibuild].execute
+    #puts "Updating Submodule"
+    #update_wiki_submodule
+    puts "Executing Wikibuild"
+    wikibuildfunction
     if g('commit_and_push') == true
         deploy
     end
     puts "Wiki synchronisation success !"
 end
-
-# add wiki as a submodule
+#Function to add the git of the wiki to a folder
 task :wikisub do |t|
 
   puts "adding wiki as submodule"
@@ -244,17 +260,14 @@ task :wikisub do |t|
 end
 
 
+
+#Function to build the wiki
 task :wikibuild do |t|
   puts ':rake =>wikibuild'
-  clean_wiki_folders
-  copy_wiki_pages
-  build_jekyll
+  wikibuildfunction
 end
 
-task :build_dev do |t|
-  puts "Building with dev parameters"
-  sh 'jekyll build --config _config.yml,_config_dev.yml --trace'
-end
+
 
 task :prod do |t|
   puts "Building with production parameters"
