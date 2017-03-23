@@ -91,8 +91,7 @@ def copy_wiki_pages
   findPages("")
   copyResources()
   defineLayoutMenu()
-  FileUtils.cp(File.join("#{g('wiki_dest')}","Home.md"),"index.md")
-  rm_rf File.join("#{g('wiki_dest')}","Home.md")
+  FileUtils.cp(File.join("#{g('wiki_source')}","Home.md"),"../index.md")
 end
 def copyResources()
   folderResources = "resources"
