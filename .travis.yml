@@ -1,3 +1,1 @@
-script: - bundle install 
-        - bundle update
-        - rake wiki
+script: - rake wiki
