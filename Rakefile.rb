@@ -32,7 +32,7 @@ def deploy
     puts "\n## :Committing => #{message}"
     system "git commit -m \"#{message}\""
     puts "\n## Pushing website"
-    system "git push #{g('deploy_remote')} #{g('deploy_branch')}"
+    system "git push master origin"
     puts "\n## Github Pages deploy complete"
 end
 
