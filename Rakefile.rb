@@ -21,6 +21,8 @@ end
 
 def deploy
     puts "deploying"
+    system 'git config user.name "Travis CI"'
+    system 'git config user.email "damien.philippon.dev@gmail.com"'
     system "git add -A"
     message = "Site wiki update #{Time.now.utc}"
     puts "\n## :Committing => #{message}"
@@ -239,9 +241,8 @@ task :wiki do |t|
     #update_wiki_submodule
     puts "Executing Wikibuild"
     wikibuildfunction
-    if g('commit_and_push') == true
-        deploy
-    end
+    puts "Deploying"
+    deploy
     puts "Wiki synchronisation success !"
 end
 #Function to add the git of the wiki to a folder
