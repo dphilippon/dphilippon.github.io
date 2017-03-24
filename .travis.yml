@@ -4,3 +4,10 @@ notifications:
 rvm:
   - 2.4.0
 script: rake wiki
+deploy:
+  provider: pages
+  user: "damien.philippon.dev@gmail.com"
+  password: "4SSpas6B"
+  skip_cleanup: true
+  on:
+    branch: master
