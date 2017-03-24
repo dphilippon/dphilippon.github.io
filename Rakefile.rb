@@ -32,7 +32,7 @@ def deploy
     puts "\n## :Committing => #{message}"
     system "git commit -m \"#{message}\""
     puts "\n## Pushing website"
-    system "git push master origin"
+    system "git push"
     puts "\n## Github Pages deploy complete"
 end
 
