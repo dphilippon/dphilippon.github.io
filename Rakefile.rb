@@ -66,24 +66,27 @@ end
 #     Clean the destination folder
 #-----------------------------------------
 def clean_wiki_folders
+  puts "Trying to clean the wiki"
   if File.exist?(g('wiki_dest'))
+    puts "Removing Folder "+g('wiki_dest')
     removeFolder("")    
   end
+  puts "Creating Folder "+g('wiki_dest')
   FileUtils.mkdir(g('wiki_dest'))
 end
 
 def removeFolder(folder)
-  puts "removing "+folder
+  puts "Inside "+folder
   subdir_list=Dir.entries(File.join("#{g('wiki_source')}",folder)).select {|entry| File.directory? File.join("#{g('wiki_source')}",folder,entry) and !(entry =='.'||entry =='.git' || entry == '..') }
   subdir_list.each do |subfolder| 
     removeFolder(File.join(folder,subfolder))
   end
   Dir.glob(File.join("#{g('wiki_dest')}",folder,"/*.md")) do |wikiPage|
-    puts "Page : "+wikiPage
+    puts "Removing Page : "+wikiPage
     FileUtils.rm_rf(wikiPage)
   end
   FileUtils.rm_rf(File.join("#{g('wiki_dest')}",folder))
-  puts "Folder : "+folder
+  puts "Removing Folder : "+folder
 end
 
 
@@ -105,14 +108,14 @@ def copyResources()
   findResources(folderResources)
 end
 def findResources(folder)
-  puts "Looking for resources in "+folderResources
+  puts "Looking for resources in "+folder
   FileUtils.mkdir(File.join("#{g('wiki_dest')}",folder))
   subdir_list = Dir.entries(File.join("#{g('wiki_source')}",folder)).select {|entry| File.directory? File.join("#{g('wiki_source')}",folder,entry) and !(entry =='.'||entry =='.git' || entry == '..') }
   subdir_list.each do |subfolder|
     findResources(File.join(folder,subfolder))
   end
   Dir.glob(File.join("#{g('wiki_source')}",folder,"[A-Za-z]*.*")) do |aResource|
-    puts "Resource : "+aResource
+    puts "Copying Resource : "+aResource
     FileUtils.cp(aResource,File.join("#{g('wiki_dest')}",folder,File.basename(aResource)))
   end
 end
@@ -123,7 +126,7 @@ def findPages(folder)
     findPages(File.join(folder,subfolder))
   end
   Dir.glob(File.join("#{g('wiki_source')}",folder,"[A-Za-z]*.*")) do |aFile|
-    puts "Page :  "+aFile
+    puts "Copying Page :  "+aFile
     wikiPageFileName = File.basename(aFile).gsub(" ","-")
     wikiPagePath     = File.join("#{g('wiki_dest')}", wikiPageFileName)
     if(File.extname(aFile)==".md")
