@@ -111,7 +111,7 @@ def findResources(folder)
     findResources(File.join(folder,subfolder))
   end
   Dir.glob(File.join("#{g('wiki_source')}",folder,"[A-Za-z]*.*")) do |aResource|
-    puts "Copying Resource : "+aResource
+    puts "Copying Resource : "+aResource+" to "+File.join("#{g('wiki_dest')}",folder,File.basename(aResource))
     FileUtils.cp(aResource,File.join("#{g('wiki_dest')}",folder,File.basename(aResource)))
   end
 end
@@ -122,9 +122,9 @@ def findPages(folder)
     findPages(File.join(folder,subfolder))
   end
   Dir.glob(File.join("#{g('wiki_source')}",folder,"[A-Za-z]*.*")) do |aFile|
-    puts "Copying Page :  "+aFile
     wikiPageFileName = File.basename(aFile).gsub(" ","-")
     wikiPagePath     = File.join("#{g('wiki_dest')}", wikiPageFileName)
+    puts "Copying Page :  "+aFile+" to "+wikiPagePath
     if(File.extname(aFile)==".md")
       # remove extension
       wikiPageName    = wikiPageFileName.sub(/.[^.]+\z/,'')
