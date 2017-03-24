@@ -77,10 +77,6 @@ end
 
 def removeFolder(folder)
   puts "Inside "+folder
-  subdir_list=Dir.entries(File.join("#{g('wiki_source')}",folder)).select {|entry| File.directory? File.join("#{g('wiki_source')}",folder,entry) and !(entry =='.'||entry =='.git' || entry == '..') }
-  subdir_list.each do |subfolder| 
-    removeFolder(File.join(folder,subfolder))
-  end
   Dir.glob(File.join("#{g('wiki_dest')}",folder,"/*.md")) do |wikiPage|
     puts "Removing Page : "+wikiPage
     FileUtils.rm_rf(wikiPage)
