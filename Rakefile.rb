@@ -24,7 +24,7 @@ def deploy
     open(".gitignore", 'w') do |gitPage|
         gitPage.puts "vendor/*"
     end
-    system 'git config user.name "Travis CI"'
+    system 'git config user.name "dphilippon"'
     system 'git config user.email "damien.philippon.dev@gmail.com"'
     system 'git config user.password "4SSpas6B"'
     system "git add -A"
