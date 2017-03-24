@@ -1,12 +1,9 @@
 title: GamaPlatform
 email: your-email@domain.com
-description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-baseurl: "dphilippon.github.io" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
+description: Gama Test Version
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://dphilippon.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: gama
 github_username:  dphilippon
 
 # Build settings
@@ -22,10 +19,10 @@ exclude:
   - Gemfile
   - Gemfile.lock
 wikiToJekyll:
-    user_name: dphilippon
-    repository_name: gama-platform/gama
+    user_name: gama-platform
+    repository_name: gama
     deploy_remote: "origin"
-    deploy_branch: "gh-pages"
+    deploy_branch: "master"
     wiki_repository_url: ":https://github.com/gama-platform/gama.wiki.git"
     wiki_source: "_wiki"
     wiki_dest: "wiki"

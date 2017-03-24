@@ -73,14 +73,17 @@ def clean_wiki_folders
 end
 
 def removeFolder(folder)
+  puts "removing "+folder
   subdir_list=Dir.entries(File.join("#{g('wiki_source')}",folder)).select {|entry| File.directory? File.join("#{g('wiki_source')}",folder,entry) and !(entry =='.'||entry =='.git' || entry == '..') }
   subdir_list.each do |subfolder| 
     removeFolder(File.join(folder,subfolder))
   end
   Dir.glob(File.join("#{g('wiki_dest')}",folder,"/*.md")) do |wikiPage|
-    rm_rf wikiPage
+    puts "Page : "+wikiPage
+    FileUtils.rm_rf(wikiPage)
   end
   FileUtils.rm_rf(File.join("#{g('wiki_dest')}",folder))
+  puts "Folder : "+folder
 end
 
 
@@ -88,35 +91,39 @@ end
 #    Copy the wiki pages and resources
 #-----------------------------------------
 def copy_wiki_pages
+  puts "--------------------FINDING PAGES--------------------"
   findPages("")
+  puts "--------------------COPYING RESOURCES--------------------"
   copyResources()
+  puts "--------------------GENERATING MENU--------------------"
   defineLayoutMenu()
+  puts "Copying Home to Index"
   FileUtils.cp(File.join("#{g('wiki_source')}","Home.md"),File.join("#{g('wiki_source')}","../index-2.md"))
 end
 def copyResources()
   folderResources = "resources"
-  FileUtils.mkdir(File.join("#{g('wiki_dest')}",folderResources))
-  subdir_list = Dir.entries(File.join("#{g('wiki_source')}",folderResources)).select {|entry| File.directory? File.join("#{g('wiki_source')}",folderResources,entry) and !(entry =='.'||entry =='.git' || entry == '..' || entry =="resources") }
-  subdir_list.each do |subfolder|
-    findResources(File.join(folderResources,subfolder))
-  end
+  findResources(folderResources)
 end
 def findResources(folder)
+  puts "Looking for resources in "+folderResources
   FileUtils.mkdir(File.join("#{g('wiki_dest')}",folder))
   subdir_list = Dir.entries(File.join("#{g('wiki_source')}",folder)).select {|entry| File.directory? File.join("#{g('wiki_source')}",folder,entry) and !(entry =='.'||entry =='.git' || entry == '..') }
   subdir_list.each do |subfolder|
     findResources(File.join(folder,subfolder))
   end
   Dir.glob(File.join("#{g('wiki_source')}",folder,"[A-Za-z]*.*")) do |aResource|
+    puts "Resource : "+aResource
     FileUtils.cp(aResource,File.join("#{g('wiki_dest')}",folder,File.basename(aResource)))
   end
 end
 def findPages(folder)
+  puts "Looking for pages in "+folder
   subdir_list = Dir.entries(File.join("#{g('wiki_source')}",folder)).select {|entry| File.directory? File.join("#{g('wiki_source')}",folder,entry) and !(entry =='.'||entry =='.git' || entry == '..' || entry =="resources") }
   subdir_list.each do |subfolder|
     findPages(File.join(folder,subfolder))
   end
   Dir.glob(File.join("#{g('wiki_source')}",folder,"[A-Za-z]*.*")) do |aFile|
+    puts "Page :  "+aFile
     wikiPageFileName = File.basename(aFile).gsub(" ","-")
     wikiPagePath     = File.join("#{g('wiki_dest')}", wikiPageFileName)
     if(File.extname(aFile)==".md")
@@ -158,8 +165,9 @@ end
 #      Creation of the Menu Layout
 #-----------------------------------------
 def defineLayoutMenu
-  
+  puts "Removing Old Menu"
   rm_rf File.join("#{g('wiki_source')}",URL_LAYOUT_DEFAULT)
+  puts "Generating New Menu"
   open(File.join("#{g('wiki_source')}",URL_LAYOUT_DEFAULT), 'w') do |newLayout|
     newLayout.puts '
     <!doctype html><html lang="en"><head><meta charset="utf-8"><title>{{ page.title }}</title></head>
