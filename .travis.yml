@@ -6,8 +6,8 @@ rvm:
 script: rake wiki
 deploy:
   provider: pages
+  api_key: "32a33e15e3b80434838bd931b6d541e44966ebe7"
   user: "damien.philippon.dev@gmail.com"
-  password: "4SSpas6B"
   skip_cleanup: true
   on:
     branch: master
