@@ -24,6 +24,7 @@ def deploy
     open(".gitignore", 'w') do |gitPage|
         gitPage.puts "vendor/*"
     end
+    system 'git remote add origin https://${GH_TOKEN}@github.com/dphilippon/dphilippon.github.io.git'
     system 'git config user.name "Travis CI"'
     system 'git config user.email "travis@travis-ci.org"'
     system "git add -A"
@@ -31,7 +32,7 @@ def deploy
     puts "\n## :Committing => #{message}"
     system "git commit -m \"#{message}\""
     puts "\n## Pushing website"
-    system "git push"
+    system "git push origin --quiet"
     puts "\n## Github Pages deploy complete"
 end
 
@@ -245,7 +246,7 @@ task :wiki do |t|
     puts "Executing Wikibuild"
     wikibuildfunction
     puts "Deploying"
-    #deploy
+    deploy
     puts "Wiki synchronisation success !"
 end
 #Function to add the git of the wiki to a folder

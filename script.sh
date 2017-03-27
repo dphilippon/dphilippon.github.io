@@ -6,13 +6,13 @@ setup_git() {
 }
 
 commit_website_files() {
-  git checkout -b gh-pages
+  git checkout -b
   git add -A
   git commit --message "Travis build #{Time.now.utc}"
 }
 
 upload_files() {
-  git remote add origin-pages https://${GH_TOKEN}@github.com/dphilippon/dphilippon.github.io.git > /dev/null 2>&1
+  git remote add origin https://${GH_TOKEN}@github.com/dphilippon/dphilippon.github.io.git
   git push --quiet --set-upstream origin-pages gh-pages 
 }
 
