@@ -4,18 +4,8 @@ notifications:
 rvm:
 - 2.4.0
 script: rake wiki
-deploy:
-  provider: pages
-  user: damien.philippon.dev@gmail.com
-  skip_cleanup: true
-  on:
-    branch: master
+after_success:
+  - ./script.sh
 env:
   global:
     secure: IPZv7B0uEI2F3J5WD75wZQjDHJLPChynfeG+mTv8/NfNS3XX7uAB5AJAIRLcwtC5ltjEZo1/iKjKfWzkr9DufShnO1SneZqVJzEpxs1Z0IBeWXMQDM7TMYLKRvUv3TGeea+R4zMBsqXWEg2AY6bmDk/k2TNxoqGy1Mm5rGFFmt2xH66ZMc0nyNcY2EVCd/YS25kWePkHyr55+s4gSKnAszeVz6KU677caEFyT19AjjpsFoN8de0fG3gCJl1GkSw85rJQDUd626OPYZAA+BdpFSVU3C+eXPFtKGa36lttG8vkpOlnI3FPvyhnh54KU1vp+hiegfQxETEI6ASj9ijprHQFjdWBBSSOz6DopHznAlTqUAq312MY6BBggWk5y3g2WEC9P/xoV5QE8NQEWg++AdGq9g5Bz4ZlTtr2HNW2yNSVTuxFyXjQ6XzhfMQI/Atby9T10mvtbeMstLgTLBGFlEdizrAsKdJuaBKAn8ndRpQOp8fR5KlVb4Rbiu1CFQQXkYoNhxnpPS31lYyaoKCXxF1wFgiu9PQ2oxsZKlvDO19YZ7kB1XgH5s+QHEVN1uJganlVFAoNzka5rt5/VxiCXHQDjB9Zl11Fy2ZuQs/mA9bEGUSWI8C3waDurpPtU2AlE4nOeFyaQbggStniwNDXfF+f9pFgyT80N+gJuNTLSzU=
-before_install:
-  - composer config --global github-oauth.github.com "$GH_TOKEN"
-install:
-  - composer install --dev --prefer-dist
-before_script:
-  - COMPOSER_ROOT_VERSION=dev-master composer install
