@@ -16,7 +16,7 @@ commit_website_files() {
   git add -A
   echo "commit "
   
-  git commit --message "Travis build #{Time.now.utc}"
+  git commit -q --message "Travis build #{Time.now.utc}"
   echo ${GH_TOKEN}
 }
 
@@ -29,4 +29,4 @@ upload_files() {
 
 setup_git
 commit_website_files
-#upload_files
+upload_files
