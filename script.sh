@@ -16,7 +16,7 @@ commit_website_files() {
 
 upload_files() {
   echo "Uploading GIT"
-  git remote add origin https://${GH_TOKEN}@github.com/dphilippon/dphilippon.github.io.git
+  #git remote add origin https://${GH_TOKEN}@github.com/dphilippon/dphilippon.github.io.git
   git push --quiet --set-upstream origin master
 }
 
