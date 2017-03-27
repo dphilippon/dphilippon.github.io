@@ -4,7 +4,8 @@ setup_git() {
   echo "Setting up GIT"
   git config --global user.email "hqnghi88@gmail.com"
   git config --global user.name "hqnghi88"
-  git config --global user.password ${env.HQN_PWD}
+git remote rm origin
+git remote add origin https://hqnghi88:$HQN_KEY@github.com/dphilippon/dphilippon.github.io.git
 }
 
 commit_website_files() {
