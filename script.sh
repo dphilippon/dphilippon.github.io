@@ -9,6 +9,7 @@ setup_git() {
 
 commit_website_files() {
   echo "Commiting GIT"
+  git checkout vendor
   git add -A
   echo "after add -A"
   git status 
@@ -22,7 +23,7 @@ commit_website_files() {
 upload_files() {
   echo "Uploading GIT"
   #git remote add origin https://${GH_TOKEN}@github.com/dphilippon/dphilippon.github.io.git
-  git push -f https://hqnghi88:$HQN_KEY@github.com/dphilippon/dphilippon.github.io
+  git push -f https://hqnghi88:$HQN_KEY@github.com/dphilippon/dphilippon.github.io.git
   #git push --quiet --set-upstream origin master
 }
 
