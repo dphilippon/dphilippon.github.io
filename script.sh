@@ -9,6 +9,7 @@ commit_website_files() {
   git checkout -b
   git add -A
   git commit --message "Travis build #{Time.now.utc}"
+  echo ${GH_TOKEN}
 }
 
 upload_files() {
