@@ -161,7 +161,7 @@ def findPages(folder)
         newWikiPage.puts fileContent
       end
     else
-      FileUtils.cp(aFile,wikiPagePath)
+      puts FileUtils.cp(aFile,wikiPagePath)
     end
   end
 end
