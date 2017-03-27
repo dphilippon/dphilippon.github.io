@@ -118,7 +118,8 @@ def findResources(folder)
   end
   Dir.glob(File.join("#{g('wiki_source')}",folder,"[A-Za-z]*.*")) do |aResource|
     puts "Copying Resource : "+aResource+" to "+File.join("#{g('wiki_dest')}",folder,File.basename(aResource))
-    FileUtils.cp(aResource,File.join("#{g('wiki_dest')}",folder,File.basename(aResource)),  true)
+    FileUtils.chmod(0777, aResource)
+    FileUtils.cp_r(aResource,File.join("#{g('wiki_dest')}",folder,File.basename(aResource)))
   end
 end
 def findPages(folder)
