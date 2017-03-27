@@ -5,6 +5,8 @@ setup_git() {
   git config --global user.email "hqnghi88@gmail.com"
   git config --global user.name "hqnghi88"
   git config --global push.default matching
+  git config user.name "hqnghi88@gmail.com"
+  git config user.password ${env.HQN_PWD}
 }
 
 commit_website_files() {
