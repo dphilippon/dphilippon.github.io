@@ -17,3 +17,5 @@ before_install:
   - composer config --global github-oauth.github.com "$GH_TOKEN"
 install:
   - composer install --dev --prefer-dist
+before_script:
+  - COMPOSER_ROOT_VERSION=dev-master composer install
