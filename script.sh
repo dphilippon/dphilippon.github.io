@@ -4,6 +4,7 @@ setup_git() {
   echo "Setting up GIT"
   git config --global user.email "hqnghi88@gmail.com"
   git config --global user.name "hqnghi88"
+  git config --global push.default matching
 }
 
 commit_website_files() {
