@@ -5,6 +5,7 @@ setup_git() {
   git config --global user.email "hqnghi88@gmail.com"
   git config --global user.name "hqnghi88"
   git config --global push.default matching
+  ls wiki/resources/pdf
 }
 
 commit_website_files() {
