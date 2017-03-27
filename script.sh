@@ -9,7 +9,7 @@ setup_git() {
 
 commit_website_files() {
   echo "Commiting GIT"
-  git checkout vendor
+  git checkout origin -- vendor
   git add -A
   echo "after add -A"
   git status 
