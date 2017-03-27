@@ -2,8 +2,8 @@
 
 setup_git() {
   echo "Setting up GIT"
-  git config --global user.email "travis@travis-ci.org"
-  git config --global user.name "Travis CI"
+  git config --global user.email "hqnghi88@gmail.com"
+  git config --global user.name "hqnghi88"
 }
 
 commit_website_files() {
