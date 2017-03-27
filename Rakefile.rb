@@ -246,7 +246,7 @@ task :wiki do |t|
     puts "Executing Wikibuild"
     wikibuildfunction
     puts "Deploying"
-    deploy
+    #deploy
     puts "Wiki synchronisation success !"
 end
 #Function to add the git of the wiki to a folder
