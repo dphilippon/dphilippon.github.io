@@ -6,7 +6,7 @@ rvm:
 before_script:
 - chmod +x ./script.sh
 script: rake wiki
-after_success:
+after_success: 
 - ./script.sh
 env:
   global:
