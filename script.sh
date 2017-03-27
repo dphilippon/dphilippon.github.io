@@ -7,7 +7,7 @@ setup_git() {
 
 commit_website_files() {
   git checkout -b gh-pages
-  git add . *.html
+  git add -A
   git commit --message "Travis build #{Time.now.utc}"
 }
 
