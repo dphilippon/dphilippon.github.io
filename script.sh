@@ -5,15 +5,14 @@ setup_git() {
   git config --global user.email "hqnghi88@gmail.com"
   git config --global user.name "hqnghi88"
   git config --global push.default matching
-  ls wiki/resources/pdf
 }
 
 commit_website_files() {
   echo "Commiting GIT"
-  git status 
-  echo "add -A"
-  
   git add -A
+  echo "after add -A"
+  git status 
+  
   echo "commit "
   
   git commit -q --message "Travis build #{Time.now.utc}"
