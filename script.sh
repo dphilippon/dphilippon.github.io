@@ -9,7 +9,8 @@ setup_git() {
 
 commit_website_files() {
   echo "Commiting GIT"
-  git checkout -b
+  git checkout -b temp_pages
+  git status 
   git add -A
   git commit --message "Travis build #{Time.now.utc}"
   echo ${GH_TOKEN}
