@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Recipes
+title: Recipes by Damien
 wikiPageName: Recipes
 wikiPagePath: wiki/Recipes.md
 ---
 
-# Recipes
+# Recipes by Damien
 
 
 
