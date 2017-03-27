@@ -118,7 +118,7 @@ def findResources(folder)
   end
   Dir.glob(File.join("#{g('wiki_source')}",folder,"[A-Za-z]*.*")) do |aResource|
     puts "Copying Resource : "+aResource+" to "+File.join("#{g('wiki_dest')}",folder,File.basename(aResource))
-    FileUtils.cp(aResource,File.join("#{g('wiki_dest')}",folder,File.basename(aResource)),  :remove_destination => true)
+    FileUtils.cp(aResource,File.join("#{g('wiki_dest')}",folder,File.basename(aResource)),  true)
   end
 end
 def findPages(folder)
