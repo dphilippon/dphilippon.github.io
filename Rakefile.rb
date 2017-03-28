@@ -42,7 +42,23 @@ end
 def g(key)
   CONFIG['wikiToJekyll'][ key ]
 end
+def wikisubfunction
+  puts "adding wiki as submodule"
+  check_configuration
+  wiki_repository = get_wiki_repository_url
+  command = 'git submodule add ' + wiki_repository + ' ' + g('wiki_source')
+  command += ' && git submodule init'
+  command += ' && git submodule update'
+  puts 'command : ' + command
 
+  output = `#{command}`
+
+  if output.include? 'failed'
+    abort("submodule add failed : verify you configuration and that your wiki is public") # exit
+  end
+
+  puts "wiki submodule OK"
+end
 def get_wiki_repository_url
   
   derived_url = ':https =>//github.com/' + g('user_name') + '/' + g('repository_name') + '.wiki.git'
@@ -103,7 +119,7 @@ def copy_wiki_pages
   puts "--------------------GENERATING MENU--------------------"
   defineLayoutMenu()
   puts "Copying Home to Index"
-  FileUtils.cp(File.join("#{g('wiki_source')}","Home.md"),File.join("#{g('wiki_source')}","../index-2.md"))
+  FileUtils.cp(File.join("#{g('wiki_source')}","Home.md"),File.join("#{g('wiki_source')}","../index.md"))
 end
 def copyResources()
   folderResources = "resources"
@@ -242,35 +258,23 @@ end
 task :wiki do |t|
     puts "Checking Configuration"
     check_configuration
-    #puts "Updating Submodule"
-    #update_wiki_submodule
+    puts "Adding Submodule"
+    wikisubfunction
+    puts "Updating Submodule"
+    update_wiki_submodule
     puts "Executing Wikibuild"
     wikibuildfunction
     puts "Deploying"
     #deploy
     open(".gitignore", 'w') do |gitPage|
         gitPage.puts "vendor/*"
+        gitPage.puts ".bundle/*"
     end
     puts "Wiki synchronisation success !"
 end
 #Function to add the git of the wiki to a folder
 task :wikisub do |t|
-
-  puts "adding wiki as submodule"
-  check_configuration
-  wiki_repository = get_wiki_repository_url
-  command = 'git submodule add ' + wiki_repository + ' ' + g('wiki_source')
-  command += ' && git submodule init'
-  command += ' && git submodule update'
-  puts 'command : ' + command
-
-  output = `#{command}`
-
-  if output.include? 'failed'
-    abort("submodule add failed : verify you configuration and that your wiki is public") # exit
-  end
-
-  puts "wiki submodule OK"
+  wikisubfunction
 end
 
 
