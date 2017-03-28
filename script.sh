@@ -14,7 +14,7 @@ commit_website_files() {
   git add -A
   echo "commit "
   
-  git commit -q --message "Travis build #{Time.now.utc}"
+  git commit -q --message "[ci skip] Travis build #{Time.now.utc}"
   echo ${GH_TOKEN}
 }
 
