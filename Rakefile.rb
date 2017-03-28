@@ -248,6 +248,9 @@ task :wiki do |t|
     wikibuildfunction
     puts "Deploying"
     #deploy
+    open(".gitignore", 'w') do |gitPage|
+        gitPage.puts "vendor/*"
+    end
     puts "Wiki synchronisation success !"
 end
 #Function to add the git of the wiki to a folder

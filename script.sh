@@ -2,8 +2,8 @@
 
 setup_git() {
   echo "Setting up GIT"
-  git config --global user.email "hqnghi88@gmail.com"
-  git config --global user.name "hqnghi88"
+  git config --global user.email "travis@travis-ci.com"
+  git config --global user.name "Travis CI"
   git config --global push.default simple
   git remote rm origin
   git remote add origin https://hqnghi88:$HQN_KEY@github.com/dphilippon/dphilippon.github.io.git
@@ -14,7 +14,7 @@ commit_website_files() {
   git add -A
   echo "commit "
   
-  git commit -q --message "[ci skip] Travis build #{Time.now.utc}"
+  git commit -q --message "[ci skip] Travis build $(date)"
   echo ${GH_TOKEN}
 }
 
