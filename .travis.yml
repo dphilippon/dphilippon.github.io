@@ -5,6 +5,8 @@ rvm:
 - 2.4.0
 before_script:
 - chmod +x ./script.sh
+- bundle install
+- bundle update
 script: rake wiki
 after_success: 
 - ./script.sh
