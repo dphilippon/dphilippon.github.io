@@ -258,8 +258,8 @@ end
 task :wiki do |t|
     puts "Checking Configuration"
     check_configuration
-    puts "Adding Submodule"
-    wikisubfunction
+    #puts "Adding Submodule"
+    #wikisubfunction
     puts "Updating Submodule"
     update_wiki_submodule
     puts "Executing Wikibuild"
