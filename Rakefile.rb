@@ -61,9 +61,9 @@ def wikisubfunction
 end
 def get_wiki_repository_url
   
-  derived_url = ':https =>//github.com/' + g('user_name') + '/' + g('repository_name') + '.wiki.git'
+  #derived_url = ':https =>//github.com/' + g('user_name') + '/' + g('repository_name') + '.wiki.git'
   
-  url = g('wiki_repository_url') || derived_url
+  url = g('wiki_repository_url') #|| derived_url
   
 end
 
