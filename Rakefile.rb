@@ -74,7 +74,7 @@ def update_wiki_submodule
     output = `#{pullCommand}`
 
     if output.include? 'Already up-to-date'
-      abort("No update necessary") # exit
+      puts "No update necessary" # exit
     end
   end
 end
