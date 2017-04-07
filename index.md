@@ -1,15 +1,8 @@
----
-layout: default
-title: Multiple application domains
-wikiPageName: Home
-wikiPagePath: wiki/Home.md
----
-
 **The new website of GAMA is now available at this address : [gama-platform.org](http://gama-platform.org/)**
 
 <div style="text-align:center"><img src ="https://github.com/gama-platform/gama/wiki/resources/images/general/GamaPlatform.png" width="800"/></div>
 
-Salut Damien ! GAMA is a modeling and simulation development environment for building spatially explicit agent-based simulations. 
+Salut Damien !  GAMA is a modeling and simulation development environment for building spatially explicit agent-based simulations. 
 
 * [**Multiple application domains :**](#multiple-application-domains) Use GAMA for whatever application domain you want.
 * [**High-level and Intuitive Agent-based language :**](high-level-and-intuitive-agent-based-language) Write your models easily using GAML, a high-level and intuitive agent-based language.
