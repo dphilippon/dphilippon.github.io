@@ -4,11 +4,7 @@ notifications:
 rvm:
 - 2.4.0
 before_script:
-- bundle update
-- bundle install
-- bundle update
 - chmod +x ./script.sh
-- rm -rf .bundle-cache
 script: rake wiki
 after_success: 
 - ./script.sh
