@@ -1,6 +1,7 @@
 notifications:
   email:
     on_success: always
+    on_error: always
 rvm:
 - 2.4.0
 before_script:
