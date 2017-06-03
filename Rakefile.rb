@@ -196,10 +196,10 @@ def defineLayoutMenu
     {% include style.html %}
     <div class="w3-bar w3-white w3-hide-small">
       <a href="/" class="w3-bar-item w3-button"><img src="/images/icon_gama_50.png"></a>
-      <a href="/wiki/" class="w3-bar-item w3-button w3-text-blue">Documentation</a>
+      <a href="/wiki/Home" class="w3-bar-item w3-button w3-text-blue">Documentation</a>
       <a href="/wiki/Tutorials" class="w3-bar-item w3-button w3-text-blue">Tutorials</a>
-      <a href="#" class="w3-bar-item w3-button w3-text-blue">Download</a>
-      <a href="#" class="w3-bar-item w3-button w3-text-blue">Community</a>
+      <a href="/" class="w3-bar-item w3-button w3-text-blue">Download</a>
+      <a href="/" class="w3-bar-item w3-button w3-text-blue">Community</a>
     </div>'
     oldUnder=-1
     File.foreach(File.join("#{g('wiki_source')}",URL_MENU_FILE)) do |line|
