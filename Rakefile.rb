@@ -3,6 +3,7 @@ require 'uri'
 # use Jekyll configuration file
 CONFIG = YAML.load_file("_config.yml")
 URL_LAYOUT_DEFAULT = "../_layouts/default.html"
+URL_LAYOUT_HOME = "../_layouts/home.html"
 URL_MENU_FILE = "./WebsiteTreeStructure.txt"
 task default: :build_dev
 
@@ -49,10 +50,9 @@ def wikisubfunction
   command = 'git submodule add ' + wiki_repository + ' ' + g('wiki_source')
   command += ' && git submodule init'
   command += ' && git submodule update'
-  puts 'command : ' + command
 
   output = `#{command}`
-
+  puts output
   if output.include? 'failed'
     abort("submodule add failed : verify you configuration and that your wiki is public") # exit
   end
@@ -68,16 +68,17 @@ def get_wiki_repository_url
 end
 
 def update_wiki_submodule
-  cd g('wiki_source') do
-    pullCommand = 'git pull origin master'
+#  cd g('wiki_source') do
+    pullCommand = 'git submodule foreach git pull origin master'
     puts "Updating wiki submodule"
     output = `#{pullCommand}`
 
     if output.include? 'Already up-to-date'
       puts "No update necessary" # exit
     end
+    puts output
   end
-end
+#end
 def wikibuildfunction
   clean_wiki_folders
   copy_wiki_pages
@@ -90,21 +91,21 @@ end
 def clean_wiki_folders
   puts "Trying to clean the wiki"
   if File.exist?(g('wiki_dest'))
-    puts "Removing Folder "+g('wiki_dest')
+    #puts "Removing Folder "+g('wiki_dest')
     removeFolder("")    
   end
-  puts "Creating Folder "+g('wiki_dest')
+  #puts "Creating Folder "+g('wiki_dest')
   FileUtils.mkdir(g('wiki_dest'))
 end
 
 def removeFolder(folder)
   puts "Inside "+folder
   Dir.glob(File.join("#{g('wiki_dest')}",folder,"/*.md")) do |wikiPage|
-    puts "Removing Page : "+wikiPage
+    #puts "Removing Page : "+wikiPage
     FileUtils.rm_rf(wikiPage)
   end
   FileUtils.rm_rf(File.join("#{g('wiki_dest')}",folder))
-  puts "Removing Folder : "+folder
+  #puts "Removing Folder : "+folder
 end
 
 
@@ -118,28 +119,26 @@ def copy_wiki_pages
   copyResources()
   puts "--------------------GENERATING MENU--------------------"
   defineLayoutMenu()
-  puts "Copying Home to Index"
-  FileUtils.cp(File.join("#{g('wiki_source')}","Home.md"),File.join("#{g('wiki_source')}","../index.md"))
 end
 def copyResources()
   folderResources = "resources"
   findResources(folderResources)
 end
 def findResources(folder)
-  puts "Looking for resources in "+folder
+  #puts "Looking for resources in "+folder
   FileUtils.mkdir(File.join("#{g('wiki_dest')}",folder))
   subdir_list = Dir.entries(File.join("#{g('wiki_source')}",folder)).select {|entry| File.directory? File.join("#{g('wiki_source')}",folder,entry) and !(entry =='.'||entry =='.git' || entry == '..') }
   subdir_list.each do |subfolder|
     findResources(File.join(folder,subfolder))
   end
   Dir.glob(File.join("#{g('wiki_source')}",folder,"[A-Za-z]*.*")) do |aResource|
-    puts "Copying Resource : "+aResource+" to "+File.join("#{g('wiki_dest')}",folder,File.basename(aResource))
+    #puts "Copying Resource : "+aResource+" to "+File.join("#{g('wiki_dest')}",folder,File.basename(aResource))
     FileUtils.chmod(0777, aResource)
     FileUtils.cp_r(aResource,File.join("#{g('wiki_dest')}",folder,File.basename(aResource)))
   end
 end
 def findPages(folder)
-  puts "Looking for pages in "+folder
+  #puts "Looking for pages in "+folder
   subdir_list = Dir.entries(File.join("#{g('wiki_source')}",folder)).select {|entry| File.directory? File.join("#{g('wiki_source')}",folder,entry) and !(entry =='.'||entry =='.git' || entry == '..' || entry =="resources") }
   subdir_list.each do |subfolder|
     findPages(File.join(folder,subfolder))
@@ -147,7 +146,7 @@ def findPages(folder)
   Dir.glob(File.join("#{g('wiki_source')}",folder,"[A-Za-z]*.*")) do |aFile|
     wikiPageFileName = File.basename(aFile).gsub(" ","-")
     wikiPagePath     = File.join("#{g('wiki_dest')}", wikiPageFileName)
-    puts "Copying Page :  "+aFile+" to "+wikiPagePath
+    #puts "Copying Page :  "+aFile+" to "+wikiPagePath
     if(File.extname(aFile)==".md")
       # remove extension
       wikiPageName    = wikiPageFileName.sub(/.[^.]+\z/,'')
@@ -187,15 +186,21 @@ end
 #      Creation of the Menu Layout
 #-----------------------------------------
 def defineLayoutMenu
-  puts "Removing Old Menu"
+  #puts "Removing Old Menu and Home Layout"
   rm_rf File.join("#{g('wiki_source')}",URL_LAYOUT_DEFAULT)
-  puts "Generating New Menu"
+  #puts "Generating New Menu"
   open(File.join("#{g('wiki_source')}",URL_LAYOUT_DEFAULT), 'w') do |newLayout|
     newLayout.puts '
     <!doctype html><html lang="en"><head><meta charset="utf-8"><title>{{ page.title }}</title></head>
     <body>
     {% include style.html %}
-      <div id="left">'
+    <div class="w3-bar w3-white w3-hide-small">
+      <a href="/" class="w3-bar-item w3-button"><img src="/images/icon_gama_50.png"></a>
+      <a href="/wiki/" class="w3-bar-item w3-button w3-text-blue">Documentation</a>
+      <a href="/wiki/Tutorials" class="w3-bar-item w3-button w3-text-blue">Tutorials</a>
+      <a href="#" class="w3-bar-item w3-button w3-text-blue">Download</a>
+      <a href="#" class="w3-bar-item w3-button w3-text-blue">Community</a>
+    </div>'
     oldUnder=-1
     File.foreach(File.join("#{g('wiki_source')}",URL_MENU_FILE)) do |line|
       currentUnder = count_em(line,"-")
@@ -203,16 +208,20 @@ def defineLayoutMenu
       if(currentUnder>oldUnder)
         if(oldUnder==-1)
           newLayout.puts '
-		<ul class="mcd-menu"><li><a href="/">Home</a></li><li><a href="/">Discussions</a></li>'
+    <div class="w3-row-padding w3-padding-64 w3-container">
+        <div>
+             <div class="w3-quarter" style="width:260px">
+		<nav class="w3-bar-block w3-collapse w3-large w3-theme-l5 w3-animate-left w3-small"  style="z-index:3;margin-left:10px" id="mySidebar">
+                    <div class="w3-medium w3-text-blue" style="font-weight:bold"><div>'
         else
-          newLayout.puts "<ul class='sub'>"
+          newLayout.puts "      <div id='sub' class=' w3-padding-small w3-bar-block w3-small'>"
         end
         oldUnder=currentUnder
       else
         #Père du courant
         if(currentUnder<oldUnder)
           loop do 
-            newLayout.puts "</ul>"
+            newLayout.puts "    </div>"
             oldUnder = oldUnder -1
             break if oldUnder==currentUnder
           end
@@ -227,25 +236,18 @@ def defineLayoutMenu
             break
           end
         end 
-        newLayout.puts "<li><a href='/"+fileWithName+"'>"+title.gsub("title: ","")+"</a>"+"</li>"
+        newLayout.puts "<a href='/"+fileWithName+"'>"+title.gsub("title: ","")+"</a><br/>"
       else
-        newLayout.puts "<li>"+title.gsub("-","")+"</li>"
+        newLayout.puts ""+title.gsub("-","")+""
       end
     end
-    newLayout.puts '</ul></ul></div><div id="right">
-<h3>Facebook Activities</h3>
-<ul id="fbquotes">
-</ul>
-<h3>Commit Activities</h3>
-<ul id="commitquotes">
-</ul>
-<h3>Issue Activities</h3>
-<ul id="issuequotes">
-</ul>
-<h3>Gama Platform Users Activities</h3>
-<ul id="googleusersquotes">
-</ul>
-</div><div id="content">{{ content }}</div></body></html>'
+    newLayout.puts '</div></div></nav></div>
+    <div class="w3-threequarter">
+        {{ content }}
+    </div>
+    </div>
+    </div>
+    </body></html>'
   end
   
  
@@ -258,13 +260,16 @@ end
 task :wiki do |t|
     puts "Checking Configuration"
     check_configuration
-    #puts "Adding Submodule"
-    #wikisubfunction
+    puts "Adding Submodule"
+    wikisubfunction
     puts "Updating Submodule"
     update_wiki_submodule
     puts "Executing Wikibuild"
     wikibuildfunction
-    puts "Deploying"
+    command = 'git rm -r --cached _wiki'
+    output = `#{command}` 
+    
+    #puts "Deploying"
     #deploy
     open(".gitignore", 'w') do |gitPage|
         gitPage.puts "vendor/*"
@@ -277,7 +282,9 @@ task :wikisub do |t|
   wikisubfunction
 end
 
-
+task :wikiupdate do |t|
+    update_wiki_submodule
+end
 
 #Function to build the wiki
 task :wikibuild do |t|

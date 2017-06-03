@@ -11,7 +11,7 @@ encoding: utf-8
 markdown: kramdown
 highlighter: rouge
 theme: minima
-menu: ['Références','Tutorials']
+menu:
 include: ['_wiki/WikiOnly']
 gems:
   - jekyll-feed
@@ -23,7 +23,7 @@ wikiToJekyll:
     repository_name: gama
     deploy_remote: "origin"
     deploy_branch: "master"
-    wiki_repository_url: ":https://github.com/gama-platform/gama.wiki.git"
+    wiki_repository_url: "https://github.com/gama-platform/gama.wiki.git"
     wiki_source: "_wiki"
     wiki_dest: "wiki"
     commit_and_push: false

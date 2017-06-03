@@ -7,7 +7,7 @@ wikiPagePath: wiki/CreatingAReleaseOfGama.md
 
 # Product a release of GAMA
 ## From the product
-Locate the file named `gama.product` (in plugin `msi.gama.application`) and open it.
+Locate the file named `gama.product` (in plugin `ummisco.gama.product`) and open it.
 On the first page, select the link `Eclipse Product export wizard` and follow the instructions in it. You can specify a root directory (under which the plugins will be copied) and an export directory on your hard drive where to export the whole application. Then click `Finish` and wait for a few minutes while Eclipse exports and packages your application. Once it is done, you can safely delete the `Repository` folder and the `logs.zip` file.
 ## Specific to MacOS X
 Use `Gama.app` as the name of the root directory. Failing to do so will leave you with a non-working application. 
