@@ -2,13 +2,6 @@
 layout: home
 title: Home
 ---
-<header class="w3-display-container w3-wide" id="home">
-                    <img class="w3-image" src="/images/GamaPlatform.png" alt="Gama Platform" width="1600" height="1060">
-                    <div class="w3-display-right w3-padding-large">
-                      <h1 class="w3-text-blue">GAMA PLATFORM</h1>
-                      <h6><button class="w3-button w3-blue w3-text-white w3-padding-large w3-large w3-opacity w3-hover-opacity-off" onclick="">DOWNLOAD</button></h6>
-                    </div>
-                </header>
 <div class="w3-row-padding w3-padding-64 w3-container">
   <div class="w3-content">
     <div class="w3-twothird">
