@@ -1,65 +1,21 @@
 
     <!doctype html><html lang="en"><head><meta charset="utf-8"><title>GAML</title></head>
     <body>
-    <link rel="stylesheet" href="/style.css">
-<link rel="stylesheet" href="/w3.css">
+    <link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/w3.css">
+<link rel="stylesheet" href="/css/font-awesome.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script src="//connect.facebook.net/en_US/all.js"></script>
-<script src="/linkify.min.js"></script>
-<script src="/linkify-jquery.min.js"></script>
-<script>
-  $(document).ready(function(){
-	  		$.getJSON('https://graph.facebook.com/238065426321929/feed?access_token=229040647557399|MQKFlFYX7YW25XGj4GUYZ7B1lcY', function(data) {
-		var ahtml="";
-		for(var i = 0; i < 5; i++) {
-			ahtml=ahtml+"<li>"+data["data"][i]["message"]+"</li>";
-		}
-		ahtml=ahtml+"";
-		$("#fbquotes").html(ahtml);
-		$("#fbquotes").linkify();
-	});
-	 
-		$.getJSON('https://api.github.com/repos/gama-platform/gama/commits', function(data) {
-			var ahtml="";
-			for(var i = 0; i < 5; i++) {
-				ahtml=ahtml+"<li>"+data[i]["commit"]["message"]+" by "+data[i]["commit"]["author"]["name"]+" <a href='"+data[i]["html_url"]+"'> See more</a></li>";
-			}
-			ahtml=ahtml+"";
-			$("#commitquotes").html(ahtml);
-			$("#commitquotes").linkify();
-		});
-		
-				
-		$.getJSON('https://api.github.com/repos/gama-platform/gama/issues', function(data) {
-			var ahtml="";
-			for(var i = 0; i < 5; i++) {
-				ahtml=ahtml+"<li>"+data[i]["title"]+" by "+data[i]["user"]["login"]+" <a href='"+data[i]["html_url"]+"'> See more</a></li>";
-			}
-			ahtml=ahtml+"";
-			$("#issuequotes").html(ahtml);
-			$("#issuequotes").linkify();
-		});
-		
-		$.getJSON('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fgroups.google.com%2Fforum%2Ffeed%2Fgama-platform%2Ftopics%2Frss.xml%3Fnum%3D15', function(data) {
-			var ahtml="";
-			for(var i = 0; i < 5; i++) {
-				ahtml=ahtml+"<li>"+data["items"][i]["title"]+" by "+data["items"][i]["author"]+" <a href='"+data["items"][i]["link"]+"'> See more</a></li>";
-			}
-			ahtml=ahtml+"";
-			$("#googleusersquotes").html(ahtml);
-			$("#googleusersquotes").linkify();
-			
-		});
- });
-  
-</script>
+<script src="/js/linkify.min.js"></script>
+<script src="/js/linkify-jquery.min.js"></script>
 
     <div class="w3-bar w3-white w3-hide-small">
       <a href="/" class="w3-bar-item w3-button"><img src="/images/icon_gama_50.png"></a>
       <a href="/wiki/Home" class="w3-bar-item w3-button w3-text-blue">Documentation</a>
       <a href="/wiki/Tutorials" class="w3-bar-item w3-button w3-text-blue">Tutorials</a>
       <a href="/download" class="w3-bar-item w3-button w3-text-blue">Download</a>
-      <a href="/community" class="w3-bar-item w3-button w3-text-blue">Community</a>
+      <a href="/news" class="w3-bar-item w3-button w3-text-blue">News</a>
+      <a href="/contribute" class="w3-bar-item w3-button w3-text-blue">Contribute</a>
     </div>
 
     <div class="w3-row-padding w3-padding-64 w3-container">
