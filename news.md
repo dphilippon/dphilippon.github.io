@@ -6,22 +6,9 @@ title: News
     <div class="w3-twothird">
     	{% for post in site.posts %}
             {% capture modulo %}{{ forloop.index0 | modulo :4 }}{% endcapture %}
-            {% if modulo == '0'%}
-            </div>
-            <div class="w3-twothird">
-            {% endif %}
-        <div class="w3-quarter">
-          <img src="{{post.image}}" alt="Gama Post" style="width:100%">
-          <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
-          <p><small><strong>{{ post.date | date: "%B %e, %Y" }} - {{ post.author }}</strong> -  {{ post.categories| join: ' '  }}  <a href="http://dphilippon.github.io{{ post.url }}"></a></small></p>			
-          <div class="span10">
-                <p>{{ post.content | strip_html | truncatewords: 20 }}
-                </p>
-          </div>
-        </div>	
-        {% endfor %}	
-    </div>
-    <div id="social-networks" class="w3-third">
+            {% if forloop.index0 ==4 %}
+                </div>
+                <div id="social-networks" class="w3-third">
                 <table>
                     <tr>
                         <td width="25%">
@@ -40,6 +27,23 @@ title: News
                 </table>
                 <div id="quotes">
                 </div>
+            {% endif %}
+            {% if modulo == '0'%}
+            </div>
+            <div class="w3-twothird">
+            {% endif %}
+        <div class="w3-quarter">
+          <img src="{{post.image}}" alt="Gama Post" style="width:100%">
+          <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+          <p><small><strong>{{ post.date | date: "%B %e, %Y" }} - {{ post.author }}</strong> -  {{ post.categories| join: ' '  }}  <a href="http://dphilippon.github.io{{ post.url }}"></a></small></p>			
+          <div class="span10">
+                <p>{{ post.content | strip_html | truncatewords: 20 }}
+                </p>
+          </div>
+        </div>	
+        {% endfor %}	
+    </div>
+    
     
 </div>
 <script>
