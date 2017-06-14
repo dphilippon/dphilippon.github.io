@@ -2,13 +2,28 @@
 layout: other
 title: News
 ---
-<div class="w3-row-padding w3-container">
-    <div class="w3-twothird">
+<div class="w3-row-padding w3-container w3-twothird">
+    <div >
     	{% for post in site.posts %}
             {% capture modulo %}{{ forloop.index0 | modulo :4 }}{% endcapture %}
-            {% if forloop.index0 ==4 %}
-                </div>
-                <div id="social-networks" class="w3-third">
+            {% if modulo == '0' and forloop.index0>0%}
+            </div>
+            <div >
+            {% endif %}
+        <div class="w3-quarter">
+          <img src="{{post.image}}" alt="Gama Post" style="width:100px; height:100px">
+          <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+          <p><small><strong>{{ post.date | date: "%B %e, %Y" }} - {{ post.author }}</strong> -  {{ post.categories| join: ' '  }}  <a href="http://dphilippon.github.io{{ post.url }}"></a></small></p>			
+          <div class="span10">
+                <p>{{ post.content | strip_html | truncatewords: 20 }}
+                </p>
+          </div>
+        </div>	
+        {% endfor %}	
+    </div>
+</div>
+<div  class="w3-third">
+                <div id="social-networks">
                 <table>
                     <tr>
                         <td width="25%">
@@ -27,25 +42,8 @@ title: News
                 </table>
                 <div id="quotes">
                 </div>
-            {% endif %}
-            {% if modulo == '0'%}
-            </div>
-            <div class="w3-twothird">
-            {% endif %}
-        <div class="w3-quarter">
-          <img src="{{post.image}}" alt="Gama Post" style="width:100%">
-          <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
-          <p><small><strong>{{ post.date | date: "%B %e, %Y" }} - {{ post.author }}</strong> -  {{ post.categories| join: ' '  }}  <a href="http://dphilippon.github.io{{ post.url }}"></a></small></p>			
-          <div class="span10">
-                <p>{{ post.content | strip_html | truncatewords: 20 }}
-                </p>
-          </div>
-        </div>	
-        {% endfor %}	
-    </div>
-    
-    
-</div>
+ </div>
+ </div>
 <script>
   $( document ).ready(function() 
   {
