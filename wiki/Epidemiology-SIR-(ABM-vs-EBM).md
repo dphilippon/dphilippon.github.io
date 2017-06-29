@@ -4,7 +4,6 @@ title: comparison_ABM_EBM_SIR
 wikiPageName: Epidemiology-SIR-(ABM-vs-EBM)
 wikiPagePath: wiki/Epidemiology-SIR-(ABM-vs-EBM).md
 ---
-
 [//]: # (keyword|operator_^)
 [//]: # (keyword|operator_of_species)
 [//]: # (keyword|statement_equation)

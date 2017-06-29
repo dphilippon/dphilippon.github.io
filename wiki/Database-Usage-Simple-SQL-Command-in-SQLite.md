@@ -4,7 +4,6 @@ title:  Simple SQL Command in SQLIte
 wikiPageName: Database-Usage-Simple-SQL-Command-in-SQLite
 wikiPagePath: wiki/Database-Usage-Simple-SQL-Command-in-SQLite.md
 ---
-
 [//]: # (keyword|skill_SQLSKILL)
 [//]: # (keyword|concept_database)
 #  Simple SQL Command in SQLIte

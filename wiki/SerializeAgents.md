@@ -4,7 +4,6 @@ title: Syntax in GAML
 wikiPageName: SerializeAgents
 wikiPagePath: wiki/SerializeAgents.md
 ---
-
 Using SavedAgent kind of GamlAgent, it is now possible to serialize and unserialize agents and simulations as a string. It can be done using the operators: `serializeSimulation`, `unserializeSimulation`, `saveSimulation` of `ummisco.gama.serialize`.
 
 Need to be improved:

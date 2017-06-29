@@ -4,7 +4,6 @@ title: comodel with mixed behaviors
 wikiPageName: Co-model-Usage-comodel_mix_behaviors
 wikiPagePath: wiki/Co-model-Usage-comodel_mix_behaviors.md
 ---
-
 [//]: # (keyword|operator_dead)
 [//]: # (keyword|operator_any)
 [//]: # (keyword|operator_triangle)

@@ -4,7 +4,6 @@ title: Installation
 wikiPageName: Installation
 wikiPagePath: wiki/Installation.md
 ---
-
 # Installation
 
 GAMA 1.7 comes in 5 different versions (32 & 64 bits for Windows & Linux, and 64 bits for MacOS X). You first need to determine which version to use (it depends on your computer, which may, or not, support 64 bits instructions, but also on the version of Java already installed, as the number of bits of the two versions must match).

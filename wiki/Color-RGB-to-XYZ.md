@@ -4,7 +4,6 @@ title: RGB color to XYZ position
 wikiPageName: Color-RGB-to-XYZ
 wikiPagePath: wiki/Color-RGB-to-XYZ.md
 ---
-
 [//]: # (keyword|operator_rgb_to_xyz)
 [//]: # (keyword|operator_cube)
 [//]: # (keyword|concept_color)

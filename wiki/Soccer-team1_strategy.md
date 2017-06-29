@@ -4,7 +4,6 @@ title: _team1strategy
 wikiPageName: Soccer-team1_strategy
 wikiPagePath: wiki/Soccer-team1_strategy.md
 ---
-
 [//]: # (keyword|operator_intersects)
 [//]: # (keyword|operator_closest_points_with)
 [//]: # (keyword|operator_norm)

@@ -4,7 +4,6 @@ title: Multigraph
 wikiPageName: Graphs-Multigraph
 wikiPagePath: wiki/Graphs-Multigraph.md
 ---
-
 [//]: # (keyword|operator_path_between)
 [//]: # (keyword|operator_node)
 [//]: # (keyword|operator_edge)

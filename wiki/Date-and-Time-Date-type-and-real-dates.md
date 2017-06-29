@@ -4,7 +4,6 @@ title: Use of the Date variables
 wikiPageName: Date-and-Time-Date-type-and-real-dates
 wikiPagePath: wiki/Date-and-Time-Date-type-and-real-dates.md
 ---
-
 [//]: # (keyword|operator_add_years)
 [//]: # (keyword|operator_add_months)
 [//]: # (keyword|operator_add_weeks)

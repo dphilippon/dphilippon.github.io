@@ -4,7 +4,6 @@ title: Extension
 wikiPageName: Extension_cict.gaml.extensions.netcdf
 wikiPagePath: wiki/Extension_cict.gaml.extensions.netcdf.md
 ---
-
 # Extension
 
 ----

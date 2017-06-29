@@ -4,7 +4,6 @@ title: Charts
 wikiPageName: Incremental-Model-Incremental-Model-2
 wikiPagePath: wiki/Incremental-Model-Incremental-Model-2.md
 ---
-
 [//]: # (keyword|operator_among)
 [//]: # (keyword|constant_#m)
 [//]: # (keyword|constant_#minute)

@@ -4,7 +4,6 @@ title: Predator Prey
 wikiPageName: Predator-Prey
 wikiPagePath: wiki/Predator-Prey.md
 ---
-
 # Predator Prey
 
 This sub-section is composed of the following models :

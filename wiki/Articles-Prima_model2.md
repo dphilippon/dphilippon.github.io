@@ -4,7 +4,6 @@ title: Prima 2
 wikiPageName: Articles-Prima_model2
 wikiPagePath: wiki/Articles-Prima_model2.md
 ---
-
 [//]: # (keyword|concept_skill)
 [//]: # (keyword|concept_shapefile)
 # Prima 2

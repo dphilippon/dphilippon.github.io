@@ -4,7 +4,6 @@ title: Syntax models
 wikiPageName: Syntax-models
 wikiPagePath: wiki/Syntax-models.md
 ---
-
 # Syntax models
 
 This sub-section is composed of the following models :

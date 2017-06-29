@@ -5,7 +5,6 @@ wikiPageName: GamlLanguage
 wikiPagePath: wiki/GamlLanguage.md
 ---
 
-
 # GAML
 
 

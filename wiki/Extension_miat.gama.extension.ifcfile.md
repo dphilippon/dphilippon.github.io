@@ -4,7 +4,6 @@ title: Extension
 wikiPageName: Extension_miat.gama.extension.ifcfile
 wikiPagePath: wiki/Extension_miat.gama.extension.ifcfile.md
 ---
-
 # Extension
 
 ----

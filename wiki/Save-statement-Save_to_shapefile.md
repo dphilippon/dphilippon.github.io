@@ -4,7 +4,6 @@ title: Save to Shapefile
 wikiPageName: Save-statement-Save_to_shapefile
 wikiPagePath: wiki/Save-statement-Save_to_shapefile.md
 ---
-
 [//]: # (keyword|operator_copy)
 [//]: # (keyword|statement_save)
 [//]: # (keyword|concept_save_file)

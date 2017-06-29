@@ -4,7 +4,6 @@ title: Ant Foraging (Simple)
 wikiPageName: Ants-(Foraging-and-Sorting)-Ant-Foraging-(Simple)
 wikiPagePath: wiki/Ants-(Foraging-and-Sorting)-Ant-Foraging-(Simple).md
 ---
-
 [//]: # (keyword|operator_round)
 [//]: # (keyword|operator_min_of)
 [//]: # (keyword|operator_sort)

@@ -4,7 +4,6 @@ title: Raster File and Shapefiles Import
 wikiPageName: Data-Importation-Raster-Images-and-shapefile-Import
 wikiPagePath: wiki/Data-Importation-Raster-Images-and-shapefile-Import.md
 ---
-
 [//]: # (keyword|operator_inside)
 [//]: # (keyword|operator_as_matrix)
 [//]: # (keyword|type_matrix)

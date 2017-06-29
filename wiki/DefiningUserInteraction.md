@@ -4,7 +4,6 @@ title: Defining user interaction
 wikiPageName: DefiningUserInteraction
 wikiPagePath: wiki/DefiningUserInteraction.md
 ---
-
 [//]: # (keyword|concept_gui)
 # Defining user interaction
 

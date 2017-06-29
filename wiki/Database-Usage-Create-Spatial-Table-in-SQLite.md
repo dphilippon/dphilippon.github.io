@@ -4,7 +4,6 @@ title:  CreateBuildingTableSQLite
 wikiPageName: Database-Usage-Create-Spatial-Table-in-SQLite
 wikiPagePath: wiki/Database-Usage-Create-Spatial-Table-in-SQLite.md
 ---
-
 [//]: # (keyword|skill_SQLSKILL)
 [//]: # (keyword|concept_database)
 #  CreateBuildingTableSQLite

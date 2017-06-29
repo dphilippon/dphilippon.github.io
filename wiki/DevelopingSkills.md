@@ -4,7 +4,6 @@ title: Developing a New Skill
 wikiPageName: DevelopingSkills
 wikiPagePath: wiki/DevelopingSkills.md
 ---
-
 # Developing a New Skill
 
 

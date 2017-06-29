@@ -4,7 +4,6 @@ title: File Types
 wikiPageName: FileTypes
 wikiPagePath: wiki/FileTypes.md
 ---
-
 [//]: # (startConcept|load_complex_datas)
 # File Types
 

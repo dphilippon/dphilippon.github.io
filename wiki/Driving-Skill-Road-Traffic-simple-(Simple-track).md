@@ -4,7 +4,6 @@ title: Easy Road Network
 wikiPageName: Driving-Skill-Road-Traffic-simple-(Simple-track)
 wikiPagePath: wiki/Driving-Skill-Road-Traffic-simple-(Simple-track).md
 ---
-
 [//]: # (keyword|operator_with_min_of)
 [//]: # (keyword|operator_select)
 [//]: # (keyword|operator_last)

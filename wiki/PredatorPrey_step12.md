@@ -4,7 +4,6 @@ title: 12. Image loading
 wikiPageName: PredatorPrey_step12
 wikiPagePath: wiki/PredatorPrey_step12.md
 ---
-
 # 12. Image loading
 This 12th step illustrates how to load an image file and to use it to initialize a grid.
 

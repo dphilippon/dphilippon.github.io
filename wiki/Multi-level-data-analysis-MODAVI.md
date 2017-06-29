@@ -4,7 +4,6 @@ title: Modavi
 wikiPageName: Multi-level-data-analysis-MODAVI
 wikiPagePath: wiki/Multi-level-data-analysis-MODAVI.md
 ---
-
 [//]: # (keyword|operator_list_with)
 [//]: # (keyword|operator_as_matrix)
 [//]: # (keyword|operator_hsb)

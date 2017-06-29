@@ -4,7 +4,6 @@ title: Graph Generation using Agents
 wikiPageName: Graphs-Graph-Building-From-Agents
 wikiPagePath: wiki/Graphs-Graph-Building-From-Agents.md
 ---
-
 [//]: # (keyword|operator_as_distance_graph)
 [//]: # (keyword|operator_as_intersection_graph)
 [//]: # (keyword|statement_switch)

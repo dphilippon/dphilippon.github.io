@@ -4,7 +4,6 @@ title: User Interaction
 wikiPageName: User-Interaction
 wikiPagePath: wiki/User-Interaction.md
 ---
-
 # User Interaction
 
 This sub-section is composed of the following models :

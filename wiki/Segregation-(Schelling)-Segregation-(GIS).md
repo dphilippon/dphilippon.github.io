@@ -4,7 +4,6 @@ title: segregationGIS
 wikiPageName: Segregation-(Schelling)-Segregation-(GIS)
 wikiPagePath: wiki/Segregation-(Schelling)-Segregation-(GIS).md
 ---
-
 [//]: # (keyword|operator_sum)
 [//]: # (keyword|statement_remove)
 [//]: # (keyword|constant_#lightgray)

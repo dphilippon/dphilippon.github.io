@@ -4,7 +4,6 @@ title: Shapefiles Import and Save
 wikiPageName: Data-Importation-GIS-Export
 wikiPagePath: wiki/Data-Importation-GIS-Export.md
 ---
-
 [//]: # (keyword|operator_get)
 [//]: # (keyword|statement_save)
 [//]: # (keyword|concept_gis)

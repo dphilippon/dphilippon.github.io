@@ -4,7 +4,6 @@ title: Developing Operators
 wikiPageName: DevelopingOperators
 wikiPagePath: wiki/DevelopingOperators.md
 ---
-
 # Developing Operators
 
 

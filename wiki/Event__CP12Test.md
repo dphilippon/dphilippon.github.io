@@ -4,7 +4,6 @@ title: Test Models & Language
 wikiPageName: Event__CP12Test
 wikiPagePath: wiki/Event__CP12Test.md
 ---
-
 # Test Models & Language
 
   * A Coding Dojo (5 people) was organized in order to sensibilize developpers about unit tests.

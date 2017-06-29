@@ -4,7 +4,6 @@ title: Overview
 wikiPageName: Headless-mode-for-dummies
 wikiPagePath: wiki/Headless-mode-for-dummies.md
 ---
-
 # Overview
 
 This tutorial presents the headless mode usage of GAMA. We will execute the Predator-Prey model, already presented in [this tutorial](PredatorPrey_step1).

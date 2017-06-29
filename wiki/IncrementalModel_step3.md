@@ -4,7 +4,6 @@ title: 3. Integration of GIS Data
 wikiPageName: IncrementalModel_step3
 wikiPagePath: wiki/IncrementalModel_step3.md
 ---
-
 # 3. Integration of GIS Data
 This step Illustrates how load and agentry GIS data.
 

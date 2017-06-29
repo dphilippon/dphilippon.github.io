@@ -4,7 +4,6 @@ title: Table of contents
 wikiPageName: Documentation
 wikiPagePath: wiki/Documentation.md
 ---
-
 ## Table of contents 
 
 * [Requirements](#requirements)

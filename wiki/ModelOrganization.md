@@ -4,7 +4,6 @@ title: Organization of a model
 wikiPageName: ModelOrganization
 wikiPagePath: wiki/ModelOrganization.md
 ---
-
 [//]: # (startConcept|model_structure)
 # Organization of a model
 

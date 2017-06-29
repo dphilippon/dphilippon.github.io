@@ -4,7 +4,6 @@ title: IScope interface
 wikiPageName: DevelopingIScope
 wikiPagePath: wiki/DevelopingIScope.md
 ---
-
 # IScope interface
 
 

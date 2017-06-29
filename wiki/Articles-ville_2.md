@@ -4,7 +4,6 @@ title: Ville 2
 wikiPageName: Articles-ville_2
 wikiPagePath: wiki/Articles-ville_2.md
 ---
-
 [//]: # (keyword|operator_gauss)
 [//]: # (keyword|concept_gui)
 [//]: # (keyword|concept_shapefile)

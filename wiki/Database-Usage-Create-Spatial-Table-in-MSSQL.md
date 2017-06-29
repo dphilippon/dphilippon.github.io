@@ -4,7 +4,6 @@ title:  CreateBuildingTableMSSQL
 wikiPageName: Database-Usage-Create-Spatial-Table-in-MSSQL
 wikiPagePath: wiki/Database-Usage-Create-Spatial-Table-in-MSSQL.md
 ---
-
 [//]: # (keyword|statement_remove)
 [//]: # (keyword|statement_put)
 [//]: # (keyword|skill_SQLSKILL)

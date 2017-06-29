@@ -4,7 +4,6 @@ title: Using Database Access
 wikiPageName: UsingDatabase
 wikiPagePath: wiki/UsingDatabase.md
 ---
-
 [//]: # (startConcept|use_database)
 [//]: # (keyword|concept_database)
 # Using Database Access

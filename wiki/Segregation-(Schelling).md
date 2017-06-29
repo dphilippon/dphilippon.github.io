@@ -4,7 +4,6 @@ title: Segregation (Schelling)
 wikiPageName: Segregation-(Schelling)
 wikiPagePath: wiki/Segregation-(Schelling).md
 ---
-
 # Segregation (Schelling)
 
 This sub-section is composed of the following models :

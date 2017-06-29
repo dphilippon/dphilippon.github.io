@@ -4,7 +4,6 @@ title: Incremental Model
 wikiPageName: Incremental-Model
 wikiPagePath: wiki/Incremental-Model.md
 ---
-
 # Incremental Model
 
 This sub-section is composed of the following models :

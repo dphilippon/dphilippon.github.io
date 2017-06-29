@@ -4,7 +4,6 @@ title: Predator agents (parent species)
 wikiPageName: Predator-Prey-Model-05
 wikiPagePath: wiki/Predator-Prey-Model-05.md
 ---
-
 [//]: # (keyword|operator_inside)
 [//]: # (keyword|concept_inheritance)
 # Predator agents (parent species)

@@ -4,7 +4,6 @@ title: Using BDI
 wikiPageName: UsingBDI
 wikiPagePath: wiki/UsingBDI.md
 ---
-
 [//]: # (keyword|concept_bdi)
 # Using BDI
 

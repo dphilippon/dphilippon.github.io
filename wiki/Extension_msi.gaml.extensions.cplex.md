@@ -4,7 +4,6 @@ title: Extension
 wikiPageName: Extension_msi.gaml.extensions.cplex
 wikiPagePath: wiki/Extension_msi.gaml.extensions.cplex.md
 ---
-
 # Extension
 
 ----

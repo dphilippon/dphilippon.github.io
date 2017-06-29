@@ -4,7 +4,6 @@ title: Control Architectures
 wikiPageName: ControlArchitecture
 wikiPagePath: wiki/ControlArchitecture.md
 ---
-
 [//]: # (keyword|concept_architecture)
 # Control Architectures
 

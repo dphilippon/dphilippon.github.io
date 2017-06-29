@@ -4,7 +4,6 @@ title: Lists
 wikiPageName: Syntax-models-Lists
 wikiPagePath: wiki/Syntax-models-Lists.md
 ---
-
 [//]: # (keyword|operator_list_with)
 [//]: # (keyword|operator_sample)
 [//]: # (keyword|operator_any)

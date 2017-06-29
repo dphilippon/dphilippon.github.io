@@ -4,7 +4,6 @@ title: Anisotropic diffusion (Toroidal)
 wikiPageName: Diffusion-Statement-Anisotropic-Diffusion-(Toroidal)
 wikiPagePath: wiki/Diffusion-Statement-Anisotropic-Diffusion-(Toroidal).md
 ---
-
 [//]: # (keyword|operator_hsb)
 [//]: # (keyword|statement_diffuse)
 [//]: # (keyword|type_matrix)

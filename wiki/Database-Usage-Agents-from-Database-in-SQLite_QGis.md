@@ -4,7 +4,6 @@ title:  Agents from Database in SQLite QGIS
 wikiPageName: Database-Usage-Agents-from-Database-in-SQLite_QGis
 wikiPagePath: wiki/Database-Usage-Agents-from-Database-in-SQLite_QGis.md
 ---
-
 [//]: # (keyword|skill_SQLSKILL)
 [//]: # (keyword|concept_database)
 #  Agents from Database in SQLite QGIS

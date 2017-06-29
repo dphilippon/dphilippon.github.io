@@ -4,7 +4,6 @@ title: Developing Plugins
 wikiPageName: DevelopingPlugins
 wikiPagePath: wiki/DevelopingPlugins.md
 ---
-
 # Developing Plugins
 
 

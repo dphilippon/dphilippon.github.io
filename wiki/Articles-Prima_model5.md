@@ -4,7 +4,6 @@ title: Prima 5
 wikiPageName: Articles-Prima_model5
 wikiPagePath: wiki/Articles-Prima_model5.md
 ---
-
 [//]: # (keyword|operator_inside)
 [//]: # (keyword|operator_of_species)
 [//]: # (keyword|statement_capture)

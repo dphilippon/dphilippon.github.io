@@ -4,7 +4,6 @@ title: Product a release of GAMA
 wikiPageName: CreatingAReleaseOfGama
 wikiPagePath: wiki/CreatingAReleaseOfGama.md
 ---
-
 # Product a release of GAMA
 ## From the product
 Locate the file named `gama.product` (in plugin `ummisco.gama.product`) and open it.

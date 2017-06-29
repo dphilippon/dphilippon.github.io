@@ -4,7 +4,6 @@ title: User Command
 wikiPageName: User-Interaction-User-Control-Architecture
 wikiPagePath: wiki/User-Interaction-User-Control-Architecture.md
 ---
-
 [//]: # (keyword|architecture_user_only)
 [//]: # (keyword|operator_among)
 [//]: # (keyword|statement_user_panel)

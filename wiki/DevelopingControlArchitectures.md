@@ -4,7 +4,6 @@ title: Developing architecture
 wikiPageName: DevelopingControlArchitectures
 wikiPagePath: wiki/DevelopingControlArchitectures.md
 ---
-
 # Developing architecture
 
 

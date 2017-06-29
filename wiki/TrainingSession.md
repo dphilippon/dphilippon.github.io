@@ -4,7 +4,6 @@ title: Training Session
 wikiPageName: TrainingSession
 wikiPagePath: wiki/TrainingSession.md
 ---
-
 # Training Session
 
 ## Modeling for supporting decision in urban management issues

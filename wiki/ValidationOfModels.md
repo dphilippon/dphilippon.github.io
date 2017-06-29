@@ -4,7 +4,6 @@ title: Validation of Models
 wikiPageName: ValidationOfModels
 wikiPagePath: wiki/ValidationOfModels.md
 ---
-
 # Validation of Models
 
 When editing a model, GAMA will continuously validate (i.e. _compile_) what the modeler is entering and indicate, with specific visual affordances, various information on the state of the model. This information ranges from documentation items to errors indications. We will review some of them in this section.

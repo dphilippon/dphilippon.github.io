@@ -4,7 +4,6 @@ title: Coding Camps
 wikiPageName: Event__Events
 wikiPagePath: wiki/Event__Events.md
 ---
-
 # Coding Camps
 List of GAMA Coding Camps :
   * [Coding Camp March 2012](Event__CodingCamp2012)

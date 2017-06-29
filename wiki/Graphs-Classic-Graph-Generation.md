@@ -4,7 +4,6 @@ title: Graph Generation
 wikiPageName: Graphs-Classic-Graph-Generation
 wikiPagePath: wiki/Graphs-Classic-Graph-Generation.md
 ---
-
 [//]: # (keyword|operator_generate_barabasi_albert)
 [//]: # (keyword|operator_generate_watts_strogatz)
 [//]: # (keyword|operator_generate_complete_graph)

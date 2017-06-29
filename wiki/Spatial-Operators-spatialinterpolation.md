@@ -4,7 +4,6 @@ title: Spatial Interpolation
 wikiPageName: Spatial-Operators-spatialinterpolation
 wikiPagePath: wiki/Spatial-Operators-spatialinterpolation.md
 ---
-
 [//]: # (keyword|operator_^)
 [//]: # (keyword|operator_IDW)
 [//]: # (keyword|statement_put)

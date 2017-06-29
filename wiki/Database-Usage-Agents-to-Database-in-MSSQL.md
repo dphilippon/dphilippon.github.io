@@ -4,7 +4,6 @@ title:  Agents to Database in MSSQL
 wikiPageName: Database-Usage-Agents-to-Database-in-MSSQL
 wikiPagePath: wiki/Database-Usage-Agents-to-Database-in-MSSQL.md
 ---
-
 [//]: # (keyword|skill_SQLSKILL)
 [//]: # (keyword|concept_database)
 #  Agents to Database in MSSQL

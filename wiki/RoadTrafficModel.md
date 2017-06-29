@@ -4,7 +4,6 @@ title: Road Traffic
 wikiPageName: RoadTrafficModel
 wikiPagePath: wiki/RoadTrafficModel.md
 ---
-
 # Road Traffic
 
 

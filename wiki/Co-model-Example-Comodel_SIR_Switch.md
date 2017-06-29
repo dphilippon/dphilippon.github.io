@@ -4,7 +4,6 @@ title: Comodel SIR Switch
 wikiPageName: Co-model-Example-Comodel_SIR_Switch
 wikiPagePath: wiki/Co-model-Example-Comodel_SIR_Switch.md
 ---
-
 [//]: # (keyword|operator_diff)
 [//]: # (keyword|statement_equation)
 [//]: # (keyword|statement_\=)

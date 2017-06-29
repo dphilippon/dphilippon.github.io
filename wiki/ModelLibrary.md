@@ -4,7 +4,6 @@ title: Models Library
 wikiPageName: ModelLibrary
 wikiPagePath: wiki/ModelLibrary.md
 ---
-
 # Models Library
 
 Here is the list of models accessible when you download GAMA. Do not hesitate to consult those models to have an idea of the possibilities of the platform.

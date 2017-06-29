@@ -4,7 +4,6 @@ title: Uniform diffusion with mask (Avoid mask)
 wikiPageName: Diffusion-Statement-Uniform-diffusion-with-mask-(Avoid-mask)
 wikiPagePath: wiki/Diffusion-Statement-Uniform-diffusion-with-mask-(Avoid-mask).md
 ---
-
 [//]: # (keyword|operator_as_matrix)
 [//]: # (keyword|operator_row_at)
 [//]: # (keyword|operator_hsb)

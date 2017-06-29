@@ -4,7 +4,6 @@ title: Movement on Graph
 wikiPageName: Incremental-Model-Incremental-Model-4
 wikiPagePath: wiki/Incremental-Model-Incremental-Model-4.md
 ---
-
 [//]: # (keyword|operator_^)
 [//]: # (keyword|operator_abs)
 [//]: # (keyword|operator_among)

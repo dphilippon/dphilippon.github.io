@@ -4,7 +4,6 @@ title: Extension
 wikiPageName: Extension_ummisco.gaml.extensions.stats
 wikiPagePath: wiki/Extension_ummisco.gaml.extensions.stats.md
 ---
-
 # Extension
 
 ----

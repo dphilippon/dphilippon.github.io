@@ -4,7 +4,6 @@ title: 9. Stopping condition
 wikiPageName: PredatorPrey_step9
 wikiPagePath: wiki/PredatorPrey_step9.md
 ---
-
 # 9. Stopping condition
 This 9th step Illustrates how to use the **halt** action to stop a simulation
 

@@ -4,7 +4,6 @@ title: Agent movement
 wikiPageName: Agent-movement
 wikiPagePath: wiki/Agent-movement.md
 ---
-
 # Agent movement
 
 This sub-section is composed of the following models :

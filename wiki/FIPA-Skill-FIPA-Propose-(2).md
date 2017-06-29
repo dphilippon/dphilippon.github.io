@@ -4,7 +4,6 @@ title: FIPA Propose (2)
 wikiPageName: FIPA-Skill-FIPA-Propose-(2)
 wikiPagePath: wiki/FIPA-Skill-FIPA-Propose-(2).md
 ---
-
 [//]: # (keyword|skill_fipa)
 [//]: # (keyword|type_message)
 [//]: # (keyword|concept_fipa)

@@ -4,7 +4,6 @@ title: Save to Text
 wikiPageName: Save-statement-Save_to_text
 wikiPagePath: wiki/Save-statement-Save_to_text.md
 ---
-
 [//]: # (keyword|statement_save)
 [//]: # (keyword|concept_save_file)
 [//]: # (keyword|concept_txt)

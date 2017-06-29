@@ -4,7 +4,6 @@ title: Developing Types
 wikiPageName: DevelopingTypes
 wikiPagePath: wiki/DevelopingTypes.md
 ---
-
 # Developing Types
 
 

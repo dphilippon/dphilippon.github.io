@@ -4,7 +4,6 @@ title: Soccer game (Various strategies)
 wikiPageName: Soccer-soccer_expe
 wikiPagePath: wiki/Soccer-soccer_expe.md
 ---
-
 [//]: # (keyword|operator_intersects)
 [//]: # (keyword|operator_closest_points_with)
 [//]: # (keyword|operator_norm)

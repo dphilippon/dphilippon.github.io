@@ -4,7 +4,6 @@ title: Traffic
 wikiPageName: Traffic-Simple-traffic-model
 wikiPagePath: wiki/Traffic-Simple-traffic-model.md
 ---
-
 [//]: # (keyword|operator_rnd_color)
 [//]: # (keyword|operator_exp)
 [//]: # (keyword|operator_as_map)

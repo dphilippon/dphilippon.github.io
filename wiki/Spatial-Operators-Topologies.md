@@ -4,7 +4,6 @@ title: Spatial Operators
 wikiPageName: Spatial-Operators-Topologies
 wikiPagePath: wiki/Spatial-Operators-Topologies.md
 ---
-
 [//]: # (keyword|operator_closest_to)
 [//]: # (keyword|operator_of_species)
 [//]: # (keyword|operator_agents_at_distance)

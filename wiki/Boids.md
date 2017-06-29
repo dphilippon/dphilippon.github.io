@@ -4,7 +4,6 @@ title: Boids
 wikiPageName: Boids
 wikiPagePath: wiki/Boids.md
 ---
-
 # Boids
 
 This sub-section is composed of the following models :

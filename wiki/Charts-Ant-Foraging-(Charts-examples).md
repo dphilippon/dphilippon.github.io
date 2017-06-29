@@ -4,7 +4,6 @@ title: Ant Foraging (Charts examples)
 wikiPageName: Charts-Ant-Foraging-(Charts-examples)
 wikiPagePath: wiki/Charts-Ant-Foraging-(Charts-examples).md
 ---
-
 [//]: # (keyword|operator_min_of)
 [//]: # (keyword|operator_sort)
 [//]: # (keyword|operator_last)

@@ -4,7 +4,6 @@ title: 5. Visualizing in 3D
 wikiPageName: IncrementalModel_step5
 wikiPagePath: wiki/IncrementalModel_step5.md
 ---
-
 # 5. Visualizing in 3D
 This step Illustrates how to define a 3D display
 

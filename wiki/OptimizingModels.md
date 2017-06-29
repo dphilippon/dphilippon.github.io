@@ -4,7 +4,6 @@ title: Optimizing Models
 wikiPageName: OptimizingModels
 wikiPagePath: wiki/OptimizingModels.md
 ---
-
 [//]: # (startConcept|optimizing_tips)
 [//]: # (keyword|concept_optimization)
 # Optimizing Models

@@ -4,7 +4,6 @@ title: 4. Inspectors and Monitors
 wikiPageName: PredatorPrey_step4
 wikiPagePath: wiki/PredatorPrey_step4.md
 ---
-
 # 4. Inspectors and Monitors
 This fourth step Illustrates how to monitor more precisely the simulation. Practically, we will define monitors to follow the evolution of specific variables (or expression) whereas inspector allows to follow the state of a given agent (or a species).
 

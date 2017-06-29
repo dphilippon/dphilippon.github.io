@@ -4,7 +4,6 @@ title:  Agents from Database in PostGIS
 wikiPageName: Database-Usage-Agents-from-Database-in-PostGIS
 wikiPagePath: wiki/Database-Usage-Agents-from-Database-in-PostGIS.md
 ---
-
 [//]: # (keyword|skill_SQLSKILL)
 [//]: # (keyword|concept_database)
 #  Agents from Database in PostGIS

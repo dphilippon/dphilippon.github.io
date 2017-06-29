@@ -4,7 +4,6 @@ title: Defining advanced species
 wikiPageName: DefiningAdvancedSpecies
 wikiPagePath: wiki/DefiningAdvancedSpecies.md
 ---
-
 # Defining advanced species
 
 In the previous chapter, we saw how to declare and manipulate [**regular species**](RegularSpecies) and the [**global species**](GlobalSpecies) (as a reminder, the instance of the **global species** is the **world agent**). 

@@ -4,7 +4,6 @@ title: Spatial Operators
 wikiPageName: Spatial-Operators
 wikiPagePath: wiki/Spatial-Operators.md
 ---
-
 # Spatial Operators
 
 This sub-section is composed of the following models :

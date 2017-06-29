@@ -4,7 +4,6 @@ title: vote
 wikiPageName: Vote-Vote
 wikiPagePath: wiki/Vote-Vote.md
 ---
-
 [//]: # (keyword|operator_points_at)
 [//]: # (keyword|operator_copy)
 [//]: # (keyword|operator_with_min_of)

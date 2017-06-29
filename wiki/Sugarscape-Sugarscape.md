@@ -4,7 +4,6 @@ title: sugarscape
 wikiPageName: Sugarscape-Sugarscape
 wikiPagePath: wiki/Sugarscape-Sugarscape.md
 ---
-
 [//]: # (keyword|statement_put)
 [//]: # (keyword|constant_#lightgray)
 [//]: # (keyword|concept_grid)

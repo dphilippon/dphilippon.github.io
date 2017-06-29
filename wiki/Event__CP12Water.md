@@ -4,7 +4,6 @@ title: Water-management tutorial
 wikiPageName: Event__CP12Water
 wikiPagePath: wiki/Event__CP12Water.md
 ---
-
 # Water-management tutorial
 
 We did not work on this theme, but we made some decisions :

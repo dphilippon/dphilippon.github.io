@@ -4,7 +4,6 @@ title: segregationAgents
 wikiPageName: Segregation-(Schelling)-Segregation-(Agents)
 wikiPagePath: wiki/Segregation-(Schelling)-Segregation-(Agents).md
 ---
-
 [//]: # (keyword|operator_sum)
 [//]: # (keyword|statement_remove)
 [//]: # (keyword|concept_grid)

@@ -2,19 +2,19 @@
 layout: other
 title: News
 ---
-<div class="w3-row-padding w3-container w3-twothird">
+<div class="w3-row-padding w3-container w3-twothird w3-content w3-center">
     <div >
     	{% for post in site.posts %}
-            {% capture modulo %}{{ forloop.index0 | modulo :4 }}{% endcapture %}
+            {% capture modulo %}{{ forloop.index0 | modulo :3 }}{% endcapture %}
             {% if modulo == '0' and forloop.index0>0%}
             </div>
-            <div >
+            <div>
             {% endif %}
-        <div class="w3-quarter">
-          <img src="{{post.image}}" alt="Gama Post" style="width:100px; height:100px">
+        <div class="w3-quarter  w3-margin-left w3-margin-bottom w3-round-large w3-text-white w3-blue w3-border w3-border-blue">
+          <img src="{{post.image}}" alt="Gama Post" style="width:100px; height:100px" >
           <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
           <p><small><strong>{{ post.date | date: "%B %e, %Y" }} - {{ post.author }}</strong> -  {{ post.categories| join: ' '  }}  <a href="http://dphilippon.github.io{{ post.url }}"></a></small></p>			
-          <div class="span10">
+          <div class="span10 w3-text-black w3-white">
                 <p>{{ post.content | strip_html | truncatewords: 20 }}
                 </p>
           </div>
@@ -22,27 +22,24 @@ title: News
         {% endfor %}	
     </div>
 </div>
-<div  class="w3-third">
-                <div id="social-networks">
-                <table>
-                    <tr>
-                        <td width="25%">
-                            <i class='fa fa-facebook-official w3-text-blue' aria-hidden='true' onclick='facebook();'></i>
-                        </td>
-                        <td width="25%">
-                            <i class='fa fa-git w3-text-blue' aria-hidden='true' onclick='commits();'></i>
-                        </td>
-                        <td width="25%">
-                            <i class='fa fa-github w3-text-blue' aria-hidden='true' onclick='issues();'></i>
-                        </td>
-                        <td width="25%">
-                            <i class='fa fa-google w3-text-blue' aria-hidden='true' onclick='google();'></i>
-                        </td>
-                    </tr>
-                </table>
-                <div id="quotes">
-                </div>
- </div>
+<div  class="w3-third w3-round-large w3-white w3-border w3-border-grey">
+        
+                <div class="w3-row">
+                	   <div class="w3-col l3 m3 s3 w3-blue w3-center">
+                        <i class='fa fa-2x fa-facebook-official w3-text-white' aria-hidden='true' onclick='facebook();'></i>
+                    </div>
+                    <div class="w3-col l3 m3 s3 w3-blue w3-center">
+                        <i class='fa fa-2x fa-git w3-text-white' aria-hidden='true' onclick='commits();'></i>
+                    </div>
+                    <div class="w3-col l3 m3 s3 w3-blue w3-center">
+                        <i class='fa fa-2x fa-github w3-text-white' aria-hidden='true' onclick='issues();'></i>
+                    </div>
+                    <div class="w3-col l3 m3 s3 w3-blue w3-center">
+                        <i class='fa fa-2x fa-google w3-text-white' aria-hidden='true' onclick='google();'></i>
+                    </div>
+               </div>
+               <div id="quotes" class="w3-white">
+               </div>
  </div>
 <script>
   $( document ).ready(function() 
@@ -58,14 +55,14 @@ title: News
                 {
 		
 			var d = new Date(data["data"][i]["created_time"]);
-			ahtml=ahtml+"<div class='w3-border-top w3-border-bottom'>";
+			ahtml=ahtml+"<div class=''>";
 			if("message" in data["data"][i])
 			{
-				ahtml=ahtml+"<i class='fa  fa-2x fa-facebook-official w3-text-blue' aria-hidden='true'></i><small> - "+d.getDate()  + "-" + (d.getMonth()) + "-" + d.getFullYear() + " " +d.getHours() + ":" + d.getMinutes()+"</small><p>"+data["data"][i]["message"]+" ";
+				ahtml=ahtml+"<i class='fa  fa-2x fa-facebook-official w3-text-red' aria-hidden='true'></i><small><strong> - "+d.toUTCString() + "</strong></small><p>"+data["data"][i]["message"]+" ";
 			}
 			else
 			{
-				ahtml=ahtml+"<i class='fa  fa-2x fa-facebook-official w3-text-blue' aria-hidden='true'></i><small> - "+d.getDate()  + "-" + (d.getMonth()) + "-" + d.getFullYear() + " " +d.getHours() + ":" + d.getMinutes()+"</small><p>"+data["data"][i]["story"]+" ";
+				ahtml=ahtml+"<i class='fa  fa-2x fa-facebook-official w3-text-red' aria-hidden='true'></i><small><strong> - "+d.toUTCString() + "</strong></small><p>"+data["data"][i]["story"]+" ";
 			}
 			ahtml=ahtml+"</p></div>";
 		}
@@ -82,9 +79,9 @@ title: News
         {
                 var ahtml="";
                 for(var i = 0; i < 5; i++) {
-                        ahtml=ahtml+"<div class='w3-border-top w3-border-bottom'>";
+                        ahtml=ahtml+"<div class=''>";
                         var d = new Date(data[i]["created_at"]);
-                        ahtml=ahtml+"<i class='fa  fa-2x fa-github w3-text-blue' aria-hidden='true'></i><small> -"+d.getDate()  + "-" + (d.getMonth()+1) + "-" + d.getFullYear() + " " +d.getHours() + ":" + d.getMinutes()+"</small><p>"+data[i]["title"]+" by "+data[i]["user"]["login"]+" <a href='"+data[i]["html_url"]+"'> See more</a>";
+                        ahtml=ahtml+"<i class='fa  fa-2x fa-github w3-text-red' aria-hidden='true'></i><small><strong> - "+d.toUTCString() + "</strong></small><p>"+data[i]["title"]+" by "+data[i]["user"]["login"]+" <a href='"+data[i]["html_url"]+"'> See more</a>";
                         ahtml=ahtml+"</p></div>";
                 }
                 ahtml=ahtml+"";
@@ -100,9 +97,9 @@ title: News
                 var ahtml="";
                 for(var i = 0; i < 5; i++) 
                 {
-                        ahtml=ahtml+"<div class='w3-border-top w3-border-bottom'>";
+                        ahtml=ahtml+"<div class=''>";
                         var d = new Date(data[i]["commit"]["author"]["date"]);
-                        ahtml=ahtml+"<i class='fa  fa-2x fa-git w3-text-blue' aria-hidden='true'></i><small> - "+d.getDate()  + "-" + (d.getMonth()) + "-" + d.getFullYear() + " " +d.getHours() + ":" + d.getMinutes()+"</small><p>"+data[i]["commit"]["message"]+" by "+data[i]["commit"]["author"]["name"]+" <a href='"+data[i]["html_url"]+"'> See more</a>";
+                        ahtml=ahtml+"<i class='fa  fa-2x fa-git w3-text-red' aria-hidden='true'></i><small><strong> - "+d.toUTCString() + "</strong></small><p>"+data[i]["commit"]["message"]+" by "+data[i]["commit"]["author"]["name"]+" <a href='"+data[i]["html_url"]+"'> See more</a>";
                         ahtml=ahtml+"</p></div>";
                 }
                 ahtml=ahtml+"";
@@ -118,9 +115,9 @@ title: News
         {
                 var ahtml="";
                 for(var i = 0; i < 5; i++) {
-                        ahtml=ahtml+"<div class='w3-border-top w3-border-bottom'>";
+                        ahtml=ahtml+"<div class=''>";
                         var d = new Date(data["items"][i]["pubDate"]);
-                        ahtml=ahtml+"<i class='fa  fa-2x fa-google w3-text-blue' aria-hidden='true'></i><small> - "+d.getDate()  + "-" + (d.getMonth()) + "-" + d.getFullYear() + " " +d.getHours() + ":" + d.getMinutes()+"</small><p>"+data["items"][i]["title"]+" by "+data["items"][i]["author"]+" <a href='"+data["items"][i]["link"]+"'> See more</a>";
+                        ahtml=ahtml+"<i class='fa  fa-2x fa-google w3-text-red' aria-hidden='true'></i><small><strong> - "+d.toUTCString() + "</strong></small><p>"+data["items"][i]["title"]+" by "+data["items"][i]["author"]+" <a href='"+data["items"][i]["link"]+"'> See more</a>";
                         ahtml=ahtml+"</p></div>";
 
                 }

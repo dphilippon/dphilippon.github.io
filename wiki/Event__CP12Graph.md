@@ -4,7 +4,6 @@ title: Graph operators and indicators
 wikiPageName: Event__CP12Graph
 wikiPagePath: wiki/Event__CP12Graph.md
 ---
-
 # Graph operators and indicators
 
 ## goals

@@ -4,7 +4,6 @@ title: Operators (D to M)
 wikiPageName: OperatorsDM
 wikiPagePath: wiki/OperatorsDM.md
 ---
-
 #Operators (D to M)
  	
 ----

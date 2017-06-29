@@ -4,7 +4,6 @@ title: Hand Made Graph
 wikiPageName: Graphs-Hand-Made-Graph
 wikiPagePath: wiki/Graphs-Hand-Made-Graph.md
 ---
-
 [//]: # (keyword|operator_edge)
 [//]: # (keyword|operator_node)
 [//]: # (keyword|operator_add_node)

@@ -4,7 +4,6 @@ title: Implementing light
 wikiPageName: ManipulateLight
 wikiPagePath: wiki/ManipulateLight.md
 ---
-
 [//]: # (startConcept|light)
 [//]: # (keyword|concept_3d)
 [//]: # (keyword|concept_light)

@@ -4,7 +4,6 @@ title: Defining GUI Experiment
 wikiPageName: DefiningGUIExperiment
 wikiPagePath: wiki/DefiningGUIExperiment.md
 ---
-
 [//]: # (startConcept|gui_experiments)
 # Defining GUI Experiment
 

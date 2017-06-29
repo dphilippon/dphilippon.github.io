@@ -4,7 +4,6 @@ title: Uniform diffusion
 wikiPageName: Diffusion-Statement-Uniform-Diffusion
 wikiPagePath: wiki/Diffusion-Statement-Uniform-Diffusion.md
 ---
-
 [//]: # (keyword|operator_hsb)
 [//]: # (keyword|statement_diffuse)
 [//]: # (keyword|concept_diffusion)

@@ -4,7 +4,6 @@ title: FIPA no protocol
 wikiPageName: FIPA-Skill-FIPA-No-Protocol
 wikiPagePath: wiki/FIPA-Skill-FIPA-No-Protocol.md
 ---
-
 [//]: # (keyword|skill_fipa)
 [//]: # (keyword|type_message)
 [//]: # (keyword|concept_fipa)

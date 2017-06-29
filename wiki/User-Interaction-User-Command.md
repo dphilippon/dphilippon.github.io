@@ -4,7 +4,6 @@ title: User Command
 wikiPageName: User-Interaction-User-Command
 wikiPagePath: wiki/User-Interaction-User-Command.md
 ---
-
 [//]: # (keyword|operator_user_input)
 [//]: # (keyword|statement_user_command)
 [//]: # (keyword|concept_gui)

@@ -4,7 +4,6 @@ title: _soccerbase
 wikiPageName: Soccer-soccer_base
 wikiPagePath: wiki/Soccer-soccer_base.md
 ---
-
 [//]: # (keyword|operator_intersects)
 [//]: # (keyword|operator_closest_points_with)
 [//]: # (keyword|operator_norm)

@@ -4,7 +4,6 @@ title: Multi-level data analysis
 wikiPageName: Multi-level-data-analysis
 wikiPagePath: wiki/Multi-level-data-analysis.md
 ---
-
 # Multi-level data analysis
 
 This sub-section is composed of the following models :

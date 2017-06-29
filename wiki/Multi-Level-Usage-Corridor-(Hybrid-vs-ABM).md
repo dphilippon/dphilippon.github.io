@@ -4,7 +4,6 @@ title: Corridor Multi-Level Architecture with Mathematics Model and Agent Based 
 wikiPageName: Multi-Level-Usage-Corridor-(Hybrid-vs-ABM)
 wikiPagePath: wiki/Multi-Level-Usage-Corridor-(Hybrid-vs-ABM).md
 ---
-
 [//]: # (keyword|operator_at_location)
 [//]: # (keyword|operator_towards)
 [//]: # (keyword|statement_capture)

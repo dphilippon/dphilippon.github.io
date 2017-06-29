@@ -4,7 +4,6 @@ title: Boids
 wikiPageName: Boids-Boids
 wikiPagePath: wiki/Boids-Boids.md
 ---
-
 [//]: # (keyword|operator_copy)
 [//]: # (keyword|operator_triangle)
 [//]: # (keyword|statement_event)

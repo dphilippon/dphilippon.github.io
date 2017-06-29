@@ -7,7 +7,6 @@ wikiPagePath: wiki/Event__CodingCampFall2012_coupling.md
 
 
 
-
 # Coupling GAMA with hydrodynamics simulators
 
 # Integration of EDP solver into GAMA

@@ -4,7 +4,6 @@ title: evacuationgoto
 wikiPageName: Evacuation-Goto-on-Grid
 wikiPagePath: wiki/Evacuation-Goto-on-Grid.md
 ---
-
 [//]: # (keyword|operator_rnd_color)
 [//]: # (keyword|operator_pyramid)
 [//]: # (keyword|concept_3d)

@@ -4,7 +4,6 @@ title: 10. Charts
 wikiPageName: PredatorPrey_step10
 wikiPagePath: wiki/PredatorPrey_step10.md
 ---
-
 # 10. Charts
 This 10th step Illustrates how to define charts.
 

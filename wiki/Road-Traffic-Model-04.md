@@ -4,7 +4,6 @@ title: Definition of weight for the road network
 wikiPageName: Road-Traffic-Model-04
 wikiPagePath: wiki/Road-Traffic-Model-04.md
 ---
-
 [//]: # (keyword|operator_as_map)
 [//]: # (keyword|operator_\:\:)
 [//]: # (keyword|operator_with_weights)

@@ -4,7 +4,6 @@ title: SIR_split_in_agents
 wikiPageName: Epidemiology-SIR-(Split-in-Agents)
 wikiPagePath: wiki/Epidemiology-SIR-(Split-in-Agents).md
 ---
-
 [//]: # (keyword|operator_diff)
 [//]: # (keyword|statement_equation)
 [//]: # (keyword|statement_\=)

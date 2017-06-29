@@ -1,5 +1,6 @@
 require 'yaml'
 require 'uri'
+require 'json'
 # use Jekyll configuration file
 CONFIG = YAML.load_file("_config.yml")
 URL_LAYOUT_DEFAULT = "../_layouts/default.html"
@@ -113,12 +114,17 @@ end
 #    Copy the wiki pages and resources
 #-----------------------------------------
 def copy_wiki_pages
+  index = Hash.new
   puts "--------------------FINDING PAGES--------------------"
-  findPages("")
+  findPages("",index)
   puts "--------------------COPYING RESOURCES--------------------"
   copyResources()
   puts "--------------------GENERATING MENU--------------------"
   defineLayoutMenu()
+  
+  File.open("lunr.json","w") do |f|
+    f.write(index.to_json)
+  end
 end
 def copyResources()
   folderResources = "resources"
@@ -137,11 +143,11 @@ def findResources(folder)
     FileUtils.cp_r(aResource,File.join("#{g('wiki_dest')}",folder,File.basename(aResource)))
   end
 end
-def findPages(folder)
+def findPages(folder,index)
   #puts "Looking for pages in "+folder
   subdir_list = Dir.entries(File.join("#{g('wiki_source')}",folder)).select {|entry| File.directory? File.join("#{g('wiki_source')}",folder,entry) and !(entry =='.'||entry =='.git' || entry == '..' || entry =="resources") }
   subdir_list.each do |subfolder|
-    findPages(File.join(folder,subfolder))
+    findPages(File.join(folder,subfolder),index)
   end
   Dir.glob(File.join("#{g('wiki_source')}",folder,"[A-Za-z]*.*")) do |aFile|
     wikiPageFileName = File.basename(aFile).gsub(" ","-")
@@ -162,6 +168,7 @@ def findPages(folder)
         end
       end 
       fileContent      = File.read(aFile)
+      index[wikiPageFileName]={"title"=>wikiPageTitle, "content"=>fileContent, "url"=>wikiPagePath}
       folderString = File.join("#{g('wiki_dest')}",folder)
       # write the new file with yaml front matter
       open(wikiPagePath, 'w') do |newWikiPage|
@@ -173,7 +180,6 @@ def findPages(folder)
         newWikiPage.puts "wikiPagePath: #{wikiPagePath}"
         # used to generate a wiki specific menu. see readme
         newWikiPage.puts "---"
-        newWikiPage.puts ""
         newWikiPage.puts fileContent
       end
     else

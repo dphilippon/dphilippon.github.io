@@ -4,7 +4,6 @@ title: Event Feature
 wikiPageName: User-Interaction-Event-Layer
 wikiPagePath: wiki/User-Interaction-Event-Layer.md
 ---
-
 [//]: # (keyword|statement_event)
 [//]: # (keyword|concept_gui)
 # Event Feature

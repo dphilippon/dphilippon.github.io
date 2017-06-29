@@ -4,7 +4,6 @@ title: Implementing diffusion
 wikiPageName: Diffusion
 wikiPagePath: wiki/Diffusion.md
 ---
-
 [//]: # (startConcept|diffusion)
 [//]: # (keyword|concept_diffusion)
 # Implementing diffusion

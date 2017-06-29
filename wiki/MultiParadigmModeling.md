@@ -4,7 +4,6 @@ title: Multi-Paradigm Modeling
 wikiPageName: MultiParadigmModeling
 wikiPagePath: wiki/MultiParadigmModeling.md
 ---
-
 [//]: # (keyword|concept_architecture)
 [//]: # (keyword|concept_equation)
 # Multi-Paradigm Modeling

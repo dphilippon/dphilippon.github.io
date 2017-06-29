@@ -4,7 +4,6 @@ title: Defining displays (Generalities)
 wikiPageName: DefiningDisplaysGeneralities
 wikiPagePath: wiki/DefiningDisplaysGeneralities.md
 ---
-
 [//]: # (startConcept|2d_displays)
 # Defining displays (Generalities)
 [//]: # (keyword|concept_display)

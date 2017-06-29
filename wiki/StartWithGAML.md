@@ -4,7 +4,6 @@ title: Start with GAML
 wikiPageName: StartWithGAML
 wikiPagePath: wiki/StartWithGAML.md
 ---
-
 # Start with GAML
 
 In this part, we will present you some basic concepts of GAML that will help you a lot for the next pages. 

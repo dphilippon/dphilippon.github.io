@@ -4,7 +4,6 @@ title: 7. Differential Equations
 wikiPageName: IncrementalModel_step7
 wikiPagePath: wiki/IncrementalModel_step7.md
 ---
-
 # 7. Differential Equations
 This step Illustrates how to use differential equations
 

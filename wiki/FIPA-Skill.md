@@ -4,7 +4,6 @@ title: FIPA Skill
 wikiPageName: FIPA-Skill
 wikiPagePath: wiki/FIPA-Skill.md
 ---
-
 # FIPA Skill
 
 This sub-section is composed of the following models :

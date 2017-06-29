@@ -4,7 +4,6 @@ title: 2. People Agents
 wikiPageName: RoadTrafficModel_step2
 wikiPagePath: wiki/RoadTrafficModel_step2.md
 ---
-
 # 2. People Agents
 This second step Illustrates how to obtain a random point inside a geometry. We will also define some moving agent called _people_.
 

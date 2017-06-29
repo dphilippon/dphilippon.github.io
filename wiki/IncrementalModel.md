@@ -4,7 +4,6 @@ title: Incremental Model
 wikiPageName: IncrementalModel
 wikiPagePath: wiki/IncrementalModel.md
 ---
-
 # Incremental Model
 
 

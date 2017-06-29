@@ -4,7 +4,6 @@ title: segregationGrid
 wikiPageName: Segregation-(Schelling)-Segregation-(Cellular-Automata)
 wikiPagePath: wiki/Segregation-(Schelling)-Segregation-(Cellular-Automata).md
 ---
-
 [//]: # (keyword|operator_sum)
 [//]: # (keyword|operator_any)
 [//]: # (keyword|operator_copy)

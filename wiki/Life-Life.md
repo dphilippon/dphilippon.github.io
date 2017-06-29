@@ -4,7 +4,6 @@ title: Life
 wikiPageName: Life-Life
 wikiPagePath: wiki/Life-Life.md
 ---
-
 [//]: # (keyword|operator_in)
 [//]: # (keyword|concept_grid)
 # Life

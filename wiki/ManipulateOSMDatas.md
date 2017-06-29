@@ -4,7 +4,6 @@ title: Manipulate OSM Datas
 wikiPageName: ManipulateOSMDatas
 wikiPagePath: wiki/ManipulateOSMDatas.md
 ---
-
 [//]: # (startConcept|use_osm_datas)
 [//]: # (keyword|concept_osm)
 # Manipulate OSM Datas

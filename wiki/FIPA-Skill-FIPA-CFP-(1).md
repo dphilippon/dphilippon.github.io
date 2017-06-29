@@ -4,7 +4,6 @@ title: FIPA Contract Net
 wikiPageName: FIPA-Skill-FIPA-CFP-(1)
 wikiPagePath: wiki/FIPA-Skill-FIPA-CFP-(1).md
 ---
-
 [//]: # (keyword|skill_fipa)
 [//]: # (keyword|type_message)
 [//]: # (keyword|concept_fipa)

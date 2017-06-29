@@ -4,7 +4,6 @@ title: Extension
 wikiPageName: Extension_irit.maelia.gaml.additions
 wikiPagePath: wiki/Extension_irit.maelia.gaml.additions.md
 ---
-
 # Extension
 
 ----

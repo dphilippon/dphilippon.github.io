@@ -4,7 +4,6 @@ title: SIR_switch
 wikiPageName: Epidemiology-SIR-(Switch)
 wikiPagePath: wiki/Epidemiology-SIR-(Switch).md
 ---
-
 [//]: # (keyword|operator_round)
 [//]: # (keyword|operator_diff)
 [//]: # (keyword|operator_of_species)

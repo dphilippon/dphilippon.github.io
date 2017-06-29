@@ -4,7 +4,6 @@ title: Ant Foraging (Complex)
 wikiPageName: Ants-(Foraging-and-Sorting)-Ant-Foraging-(Complex)
 wikiPagePath: wiki/Ants-(Foraging-and-Sorting)-Ant-Foraging-(Complex).md
 ---
-
 [//]: # (keyword|architecture_fsm)
 [//]: # (keyword|operator_round)
 [//]: # (keyword|operator_sort_by)

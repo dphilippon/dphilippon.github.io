@@ -4,7 +4,6 @@ title: Runtime Concepts
 wikiPageName: RuntimeConcepts
 wikiPagePath: wiki/RuntimeConcepts.md
 ---
-
 [//]: # (startConcept|runtime_and_schedulers)
 [//]: # (keyword|concept_scheduler)
 # Runtime Concepts

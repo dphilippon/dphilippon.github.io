@@ -4,7 +4,6 @@ title: simple_ODE_SIR_Predefined
 wikiPageName: Epidemiology-SIR-(Built-In)
 wikiPagePath: wiki/Epidemiology-SIR-(Built-In).md
 ---
-
 [//]: # (keyword|statement_equation)
 [//]: # (keyword|statement_solve)
 [//]: # (keyword|constant_#lightgray)

@@ -4,7 +4,6 @@ title: Coding Activities Summary
 wikiPageName: Event__CodingCamp2012
 wikiPagePath: wiki/Event__CodingCamp2012.md
 ---
-
 March 19-24th 2012
 
 # Coding Activities Summary

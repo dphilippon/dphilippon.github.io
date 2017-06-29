@@ -4,7 +4,6 @@ title: 2. Charts
 wikiPageName: IncrementalModel_step2
 wikiPagePath: wiki/IncrementalModel_step2.md
 ---
-
 # 2. Charts
 This step Illustrates how define monitors and charts in GAMA. In addition, it illustrates how to define a stopping condition for the simulation.
 

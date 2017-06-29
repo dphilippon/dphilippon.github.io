@@ -4,7 +4,6 @@ title: Clock
 wikiPageName: Clock-Clock
 wikiPagePath: wiki/Clock-Clock.md
 ---
-
 [//]: # (keyword|constant_#msec)
 [//]: # (keyword|constant_#sec)
 # Clock

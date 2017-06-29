@@ -4,7 +4,6 @@ title: Ville 3
 wikiPageName: Articles-ville_3
 wikiPagePath: wiki/Articles-ville_3.md
 ---
-
 [//]: # (keyword|operator_gauss)
 [//]: # (keyword|concept_gui)
 [//]: # (keyword|concept_shapefile)

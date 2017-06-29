@@ -4,7 +4,6 @@ title: Predator Prey
 wikiPageName: PredatorPrey
 wikiPagePath: wiki/PredatorPrey.md
 ---
-
 # Predator Prey
 
 

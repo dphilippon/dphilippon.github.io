@@ -4,7 +4,6 @@ title: Architecture of GAMA
 wikiPageName: GamaArchitecture
 wikiPagePath: wiki/GamaArchitecture.md
 ---
-
 # Architecture of GAMA
 
 

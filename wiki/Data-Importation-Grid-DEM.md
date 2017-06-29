@@ -4,7 +4,6 @@ title: ASCII File to DEM Representation
 wikiPageName: Data-Importation-Grid-DEM
 wikiPagePath: wiki/Data-Importation-Grid-DEM.md
 ---
-
 [//]: # (keyword|operator_dem)
 [//]: # (keyword|concept_load_file)
 [//]: # (keyword|concept_gis)

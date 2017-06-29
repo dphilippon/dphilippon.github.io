@@ -4,7 +4,6 @@ title: Boids With Flocks
 wikiPageName: Boids-Boids-With-Flocks
 wikiPagePath: wiki/Boids-Boids-With-Flocks.md
 ---
-
 [//]: # (keyword|operator_copy)
 [//]: # (keyword|operator_triangle)
 [//]: # (keyword|operator_buffer)

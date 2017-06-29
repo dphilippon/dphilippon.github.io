@@ -4,7 +4,6 @@ title: Use of Inspectors/monitors
 wikiPageName: Predator-Prey-Model-04
 wikiPagePath: wiki/Predator-Prey-Model-04.md
 ---
-
 [//]: # (keyword|concept_inspector)
 [//]: # (keyword|concept_monitor)
 # Use of Inspectors/monitors

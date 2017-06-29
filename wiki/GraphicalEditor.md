@@ -4,7 +4,6 @@ title: The Graphical Editor
 wikiPageName: GraphicalEditor
 wikiPagePath: wiki/GraphicalEditor.md
 ---
-
 # The Graphical Editor
 
 

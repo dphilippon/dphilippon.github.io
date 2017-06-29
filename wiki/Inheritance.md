@@ -4,7 +4,6 @@ title: Inheritance
 wikiPageName: Inheritance
 wikiPagePath: wiki/Inheritance.md
 ---
-
 [//]: # (startConcept|inheritance)
 [//]: # (keyword|concept_inheritance)
 # Inheritance

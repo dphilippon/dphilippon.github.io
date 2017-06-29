@@ -4,7 +4,6 @@ title: ODE_LotkaVolterra
 wikiPageName: Predator-Prey-Lotka-Volterra-(Influence-of-Integration-Step)
 wikiPagePath: wiki/Predator-Prey-Lotka-Volterra-(Influence-of-Integration-Step).md
 ---
-
 [//]: # (keyword|operator_diff)
 [//]: # (keyword|statement_equation)
 [//]: # (keyword|statement_\=)

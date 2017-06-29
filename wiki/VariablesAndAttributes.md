@@ -5,7 +5,6 @@ wikiPageName: VariablesAndAttributes
 wikiPagePath: wiki/VariablesAndAttributes.md
 ---
 
-
 # Variables and Attributes
 
 

@@ -4,7 +4,6 @@ title: Installing the GIT version
 wikiPageName: InstallingGitVersion
 wikiPagePath: wiki/InstallingGitVersion.md
 ---
-
 # Installing the GIT version
 
 Tested on MacOS X (10.9 to 10.11), Windows (8 to 10) and Ubuntu 15.04 (Vivid)

@@ -4,7 +4,6 @@ title: Contribute
 wikiPageName: Contribute
 wikiPagePath: wiki/Contribute.md
 ---
-
 # Contribute
 
 Since GAMA is a free opensource software, we are proud to share the source code with anyone who wants to contribute to the platform. Note that GAMA is easy to extand through the use of additionnal plugins.

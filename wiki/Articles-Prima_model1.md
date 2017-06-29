@@ -4,7 +4,6 @@ title: Prima 1
 wikiPageName: Articles-Prima_model1
 wikiPagePath: wiki/Articles-Prima_model1.md
 ---
-
 [//]: # (keyword|concept_skill)
 # Prima 1
 

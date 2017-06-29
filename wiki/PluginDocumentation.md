@@ -4,7 +4,6 @@ title: Extensions
 wikiPageName: PluginDocumentation
 wikiPagePath: wiki/PluginDocumentation.md
 ---
-
 # Extensions
 
 In this part, we will present you all the different plugins available for GAMA.

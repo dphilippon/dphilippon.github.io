@@ -4,7 +4,6 @@ title: grid_move
 wikiPageName: Evacuation-Move-on-Grid
 wikiPagePath: wiki/Evacuation-Move-on-Grid.md
 ---
-
 [//]: # (keyword|operator_in)
 [//]: # (keyword|operator_with_min_of)
 [//]: # (keyword|operator_pyramid)

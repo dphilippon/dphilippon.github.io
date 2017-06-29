@@ -4,7 +4,6 @@ title: Download GAMA
 wikiPageName: Download
 wikiPagePath: wiki/Download.md
 ---
-
 # Download GAMA
 
 ## GAMA 1.7 [Continuous Release](https://github.com/gama-platform/gama/releases)

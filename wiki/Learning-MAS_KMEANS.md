@@ -4,7 +4,6 @@ title: Agent Based Clustering
 wikiPageName: Learning-MAS_KMEANS
 wikiPagePath: wiki/Learning-MAS_KMEANS.md
 ---
-
 [//]: # (keyword|operator_cross)
 [//]: # (keyword|operator_cube)
 [//]: # (keyword|operator_rnd_color)

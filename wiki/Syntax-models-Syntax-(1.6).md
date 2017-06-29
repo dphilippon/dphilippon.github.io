@@ -4,7 +4,6 @@ title: Syntax
 wikiPageName: Syntax-models-Syntax-(1.6)
 wikiPagePath: wiki/Syntax-models-Syntax-(1.6).md
 ---
-
 [//]: # (keyword|operator_list_with)
 [//]: # (keyword|operator_diff)
 [//]: # (keyword|operator_select)

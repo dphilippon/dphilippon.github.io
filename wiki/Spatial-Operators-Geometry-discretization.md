@@ -4,7 +4,6 @@ title: Discretization of Topology
 wikiPageName: Spatial-Operators-Geometry-discretization
 wikiPagePath: wiki/Spatial-Operators-Geometry-discretization.md
 ---
-
 [//]: # (keyword|operator_to_squares)
 [//]: # (keyword|operator_to_rectangles)
 [//]: # (keyword|operator_triangulate)
