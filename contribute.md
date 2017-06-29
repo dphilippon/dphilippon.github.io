@@ -62,7 +62,6 @@ function search() {
         			'title': json[key].title,
         			'content': json[key].content
       		});
-        break;
     	}
     });
     console.log("FINISHING INDEX");
