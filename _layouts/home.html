@@ -5,102 +5,11 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
         <body>
             {% include style.html %}
-            <div class="w3-bar w3-white w3-hide-small w3-display-center">
-              <div class="w3-left-align">
-              <a href="/" class="w3-bar-item w3-button"><img src="/images/icon_gama_50.png"></a>
-              <a href="/wiki/Home" class="w3-bar-item w3-button w3-text-blue w3-hover-white w3-hover-text-white">Documentation</a>
-              <a href="/wiki/Tutorials" class="w3-bar-item w3-button w3-text-blue">Tutorials</a>
-              <a href="/download" class="w3-bar-item w3-button w3-text-blue">Download</a>
-              <a href="/news" class="w3-bar-item w3-button w3-text-blue">News</a>
-              <a href="/contribute" class="w3-bar-item w3-button w3-text-blue">Contribute</a>
-              <div class="w3-bar-item w3-right"><input type="text" id="search-box" name="search-box">
-                    <i class="fa fa-search w3-text-blue" aria-hidden="true" onclick="search();"></i>
-                    <div class="w3-sidebar w3-bar-block w3-card-2 w3-animate-right w3-quarter" style="display:none;right:0;" id="rightMenu">
-                      <i onclick="closeRightMenu()" class="fa fa-times w3-bar-item w3-large"></i>
-                      <ul id="search-results"></ul>
-                    </div>
-                    
-              </div>
-            
-            </div>
+            {% include menu.html %}
             
             <div class="w3-content">
                 {{ content }}
             </div>
             
-            <script>
-            var json = (function () {
-                var json = null;
-                $.ajax({
-                    'async': false,
-                    'global': false,
-                    'url': "index.json",
-                    'dataType': "json",
-                    'success': function (data) {
-                        json = data;
-                    }
-                });
-                return json;
-            })(); 
-            var store = {
-                {% for post in site.pages %}
-                  "{{ post.url }}": {
-                    "title": "{{ post.title | xml_escape }}",
-                    "url": "{{ post.url | xml_escape }}"
-                  }
-                  {% unless forloop.last %},{% endunless %}
-                {% endfor %}
-              };
-            function displaySearchResults(results, store) {
-                var searchResults = document.getElementById('search-results');
-
-                if (results.length) { // Are there any results?
-                  var appendString = '';
-
-                  for (var i = 0; i < results.length; i++) {  // Iterate over the results
-                    var item = store[results[i].ref];
-                    if(!item)
-                    {
-                        var tmp_ref = "/"+results[i].ref.substr(0,results[i].ref.lastIndexOf('.'))+".html";
-                        item = store[tmp_ref];
-                    }
-                    if(item)
-                    {
-                        appendString += '<li><a href="'+item.url+'"><h3>' + item.title + '</h3></a></li>';
-                    }
-                  }
-
-                  searchResults.innerHTML = appendString;
-                } else {
-                  searchResults.innerHTML = '<li>No results found</li>';
-                }
-                openRightMenu()();
-              }
-            function search() {
-              
-
-              var searchTerm = document.getElementById('search-box').value;
-
-              if (searchTerm) {
-                 // Initalize lunr with the fields it will be searching on. I've given title
-                // a boost of 10 to indicate matches on this field are more important.
-                var idx = lunr.Index.load(json)
-                console.log("FINISHING INDEX");
-                 var results = idx.search(searchTerm); // Get lunr to perform a search
-                 
-                console.log("FINISHING SEARCH");
-                 displaySearchResults(results, store); // We'll write this in the next section
-                 
-              }
-              
-              return false;
-            }
-            function openRightMenu() {
-                document.getElementById("rightMenu").style.display = "block";
-            }
-            function closeRightMenu() {
-                document.getElementById("rightMenu").style.display = "none";
-            }
-            </script>
         </body>
     </html>
