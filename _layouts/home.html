@@ -37,7 +37,7 @@
                 });
                 return json;
             })(); 
-            var store = {window.store = {
+            var store = {
                 {% for post in site.pages %}
                   "{{ post.url | slugify }}": {
                     "title": "{{ post.title | xml_escape }}",
