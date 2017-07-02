@@ -37,19 +37,15 @@
                 });
                 return json;
             })(); 
-            var store = (function () {
-                var store = null;
-                $.ajax({
-                    'async': false,
-                    'global': false,
-                    'url': "lunr.json",
-                    'dataType': "json",
-                    'success': function (data) {
-                        store = data;
-                    }
-                });
-                return store;
-            })(); 
+            var store = {window.store = {
+                {% for post in site.pages %}
+                  "{{ post.url | slugify }}": {
+                    "title": "{{ post.title | xml_escape }}",
+                    "url": "{{ post.url | xml_escape }}"
+                  }
+                  {% unless forloop.last %},{% endunless %}
+                {% endfor %}
+              };
             function displaySearchResults(results, store) {
                 var searchResults = document.getElementById('search-results');
 
