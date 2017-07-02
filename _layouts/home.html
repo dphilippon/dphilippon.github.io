@@ -56,7 +56,7 @@
                     var item = store[results[i].ref];
                     if(!item)
                     {
-                        var tmp_ref = results[i].ref.substr(0,results[i].ref.lastIndexOf('.'))+".html";
+                        var tmp_ref = "/"+results[i].ref.substr(0,results[i].ref.lastIndexOf('.'))+".html";
                         item = store[tmp_ref];
                     }
                     if(item)
