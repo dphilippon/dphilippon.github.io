@@ -52,7 +52,7 @@
                 $.ajax({
                     'async': false,
                     'global': false,
-                    'url': "search.json",
+                    'url': "index.json",
                     'dataType': "json",
                     'success': function (data) {
                         json = data;
@@ -61,7 +61,6 @@
                 return json;
             })(); 
             function search() {
-              console.log(json);
               function displaySearchResults(results, store) {
                 var searchResults = document.getElementById('search-results');
 
@@ -84,26 +83,12 @@
               if (searchTerm) {
                  // Initalize lunr with the fields it will be searching on. I've given title
                 // a boost of 10 to indicate matches on this field are more important.
-                var idx = lunr(function () 
-                {
-                    this.field('id');
-                    this.field('title', { boost: 10 });
-                    this.field('content');
-                    for (var key in json) 
-                    { 
-                            this.add({
-                                            'id': key,
-                                            'title': json[key].title,
-                                            'content': json[key].content
-                            });
-                    }
-                });
+                var idx = lunr.Index.load(JSON.parse(json))
                 console.log("FINISHING INDEX");
                  var results = idx.search(searchTerm); // Get lunr to perform a search
                  
                 console.log("FINISHING SEARCH");
                  displaySearchResults(results, json); // We'll write this in the next section
-                 var serializedIdx = JSON.stringify(idx.toJSON());
               }
               
                 return false;
