@@ -39,7 +39,7 @@
             })(); 
             var store = {
                 {% for post in site.pages %}
-                  "{{ post.url | slugify }}": {
+                  "{{ post.url }}": {
                     "title": "{{ post.title | xml_escape }}",
                     "url": "{{ post.url | xml_escape }}"
                   }
@@ -54,7 +54,10 @@
 
                   for (var i = 0; i < results.length; i++) {  // Iterate over the results
                     var item = store[results[i].ref];
-                    appendString += '<li><h3>' + item.title + '</h3></li>';
+                    if(item)
+                    {
+                        appendString += '<li><h3>' + item.title + '</h3></li>';
+                    }
                   }
 
                   searchResults.innerHTML = appendString;
