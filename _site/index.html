@@ -3100,6 +3100,11 @@
 
                   for (var i = 0; i < results.length; i++) {  // Iterate over the results
                     var item = store[results[i].ref];
+                    if(!item)
+                    {
+                        var tmp_ref = results[i].ref.substr(0,str.lastIndexOf('.'))+".md";
+                        item = store[tmp_ref];
+                    }
                     if(item)
                     {
                         appendString += '<li><h3>' + item.title + '</h3></li>';
