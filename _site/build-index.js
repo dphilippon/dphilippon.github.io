@@ -15,7 +15,7 @@ stdin.on('end', function () {
 
   var idx = lunr(function () {
     this.ref('id')
-    this.field('title')
+    this.field('title',{ boost: 10 })
     this.field('content')
 
     documents.forEach(function (doc) {
