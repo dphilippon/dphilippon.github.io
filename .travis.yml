@@ -7,14 +7,12 @@ rvm:
 bundler_args: --without deployment
 before_script:
 - chmod +x ./script.sh
-- curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | sudo apt-key add - 
-- sudo sh -c "echo deb https://deb.nodesource.com/node_6.x yakkety main \ > /etc/apt/sources.list.d/nodesource.list"
-- sudo apt-get install nodejs
-- npm install lunr-index-build
+- chmod +x ./indexing.sh
+- chmod +x ./install_for_indexing.sh
+- ./install_for_indexing.sh
 script: rake wiki
 after_success: 
-- lunr-index-build -r id -f title:10 -f body lunr.json index.json
-- echo '[{ "id": "1", "title": "Foo", "body": "Bar" }]' | node build-index.js > index.json
+- ./indexing.sh
 - ./script.sh
 env:
   global:
