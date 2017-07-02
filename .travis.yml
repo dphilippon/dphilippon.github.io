@@ -7,7 +7,8 @@ rvm:
 bundler_args: --without deployment
 before_script:
 - chmod +x ./script.sh
-- curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -sudo apt-get install -y nodejs
+- curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+- sudo apt-get install -y nodejs
 - npm install lunr-index-build
 script: rake wiki
 after_success: 
