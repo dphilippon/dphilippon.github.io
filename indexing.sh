@@ -1,3 +1,3 @@
 #!/bin/sh
 
-cat lunr.json | node build-index.js > index.json
+cat _site/lunr.json | node build-index.js > index.json
