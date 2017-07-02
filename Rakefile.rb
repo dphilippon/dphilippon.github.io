@@ -115,7 +115,7 @@ end
 #    Copy the wiki pages and resources
 #-----------------------------------------
 def copy_wiki_pages
-  index = Hash.new
+  index = []
   puts "--------------------FINDING PAGES--------------------"
   findPages("",index)
   puts "--------------------COPYING RESOURCES--------------------"
@@ -170,7 +170,7 @@ def findPages(folder,index)
       end 
       fileContent      = File.read(aFile)
       doc = Nokogiri::HTML(fileContent)
-      index[wikiPageFileName]={"title"=>wikiPageTitle, "content"=>doc.search('//text()').text, "url"=>wikiPagePath}
+      index<<{"id"=>"url"=>wikiPagePath,"title"=>wikiPageTitle, "content"=>doc.search('//text()').text, "url"=>wikiPagePath}
       folderString = File.join("#{g('wiki_dest')}",folder)
       # write the new file with yaml front matter
       open(wikiPagePath, 'w') do |newWikiPage|
