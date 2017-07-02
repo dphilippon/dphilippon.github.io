@@ -137,9 +137,7 @@
                 });
                 return json;
             })(); 
-            function search() {
-              console.log("JSON : "+json);
-              function displaySearchResults(results, store) {
+            function displaySearchResults(results, store) {
                 var searchResults = document.getElementById('search-results');
 
                 if (results.length) { // Are there any results?
@@ -155,13 +153,16 @@
                   searchResults.innerHTML = '<li>No results found</li>';
                 }
               }
+            function search() {
+              console.log("JSON : "+json);
+              
 
               var searchTerm = document.getElementById('search-box').value;
 
               if (searchTerm) {
                  // Initalize lunr with the fields it will be searching on. I've given title
                 // a boost of 10 to indicate matches on this field are more important.
-                var idx = lunr.Index.load(JSON.parse(json))
+                var idx = lunr.Index.load(json)
                 console.log("FINISHING INDEX");
                  var results = idx.search(searchTerm); // Get lunr to perform a search
                  
