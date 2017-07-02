@@ -13,8 +13,7 @@
               <a href="/news" class="w3-bar-item w3-button w3-text-blue">News</a>
               <a href="/contribute" class="w3-bar-item w3-button w3-text-blue">Contribute</a>
             <form action="" >
-              <label for="search-box">Search</label>
-              <input type="text" id="search-box" name="query">
+              <input type="text" id="search-box" name="search-box">
               <input type="submit" value="search" onclick="return search();">
             </form>
             <ul id="search-results"></ul>
@@ -39,6 +38,7 @@
                 return json;
             })(); 
             function search() {
+              console.log("JSON : "+json);
               function displaySearchResults(results, store) {
                 var searchResults = document.getElementById('search-results');
 
@@ -47,7 +47,7 @@
 
                   for (var i = 0; i < results.length; i++) {  // Iterate over the results
                     var item = store[results[i].ref];
-                    appendString += '<li><a href="'+item.url+'"><h3>' + item.title + '</h3></a></li>';
+                    appendString += '<li><h3>' + item.title + '</h3></li>';
                   }
 
                   searchResults.innerHTML = appendString;
@@ -67,9 +67,11 @@
                  
                 console.log("FINISHING SEARCH");
                  displaySearchResults(results, json); // We'll write this in the next section
+                 
+                console.log(idx);
               }
               
-                return false;
+              return false;
             }
             </script>
         </body>
