@@ -1,8 +1,6 @@
 
 <!doctype html>
     <html lang="en"><head><meta charset="utf-8"><title>Error 404</title></head>
-    <script src="https://unpkg.com/lunr/lunr.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
         <body>
             <link rel="stylesheet" href="/css/style.css">
 <link rel="stylesheet" href="/css/w3.css">
@@ -11,7 +9,7 @@
 <script src="//connect.facebook.net/en_US/all.js"></script>
 <script src="/js/linkify.min.js"></script>
 <script src="/js/linkify-jquery.min.js"></script>
-
+<script src="https://unpkg.com/lunr/lunr.js"></script>
             <div class="w3-bar w3-white w3-hide-small w3-display-center">
               <div class="w3-left-align">
               <a href="/" class="w3-bar-item w3-button"><img src="/images/icon_gama_50.png"></a>
@@ -37,7 +35,7 @@ var json = (function () {
     $.ajax({
         'async': false,
         'global': false,
-        'url': "index.json",
+        'url': "/index.json",
         'dataType': "json",
         'success': function (data) {
             json = data;
