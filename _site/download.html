@@ -19,7 +19,7 @@
               <a href="/download" class="w3-bar-item w3-button w3-text-blue">Download</a>
               <a href="/news" class="w3-bar-item w3-button w3-text-blue">News</a>
               <a href="/contribute" class="w3-bar-item w3-button w3-text-blue">Contribute</a>
-            <form action="" >
+            <form action="post" >
               <input type="text" id="search-box" name="search-box">
               <input type="submit" value="search" onclick="return search();">
             </form>
@@ -101,7 +101,6 @@
                 console.log("FINISHING SEARCH");
                  displaySearchResults(results, json); // We'll write this in the next section
                  
-                console.log(idx);
               }
               
               return false;
