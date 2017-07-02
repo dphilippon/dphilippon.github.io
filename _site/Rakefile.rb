@@ -214,8 +214,8 @@ def defineLayoutMenu
     <div class="w3-row-padding w3-padding-64 w3-container">
         <div>
              <div class="w3-quarter" style="width:260px">
-		<nav class="w3-bar-block w3-collapse w3-large w3-theme-l5 w3-animate-left w3-small"  style="z-index:3;margin-left:10px" id="mySidebar">
-                    <div class="w3-medium w3-text-blue" style="font-weight:bold"><div>'
+		<nav class="w3-bar-block w3-collapse w3-large w3-theme-l5 w3-animate-left w3-small w3-round-xlarge w3-blue"  style="z-index:3;margin-left:10px" id="mySidebar">
+                    <div class="w3-medium w3-text-white" style="font-weight:bold"><div>'
         else
           newLayout.puts "      <div id='sub' class=' w3-padding-small w3-bar-block w3-small'>"
         end
