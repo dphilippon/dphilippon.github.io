@@ -13,17 +13,22 @@
 <script src="/js/linkify-jquery.min.js"></script>
 
             <div class="w3-bar w3-white w3-hide-small w3-display-center">
+              <div class="w3-left-align">
               <a href="/" class="w3-bar-item w3-button"><img src="/images/icon_gama_50.png"></a>
               <a href="/wiki/Home" class="w3-bar-item w3-button w3-text-blue w3-hover-white w3-hover-text-white">Documentation</a>
               <a href="/wiki/Tutorials" class="w3-bar-item w3-button w3-text-blue">Tutorials</a>
               <a href="/download" class="w3-bar-item w3-button w3-text-blue">Download</a>
               <a href="/news" class="w3-bar-item w3-button w3-text-blue">News</a>
               <a href="/contribute" class="w3-bar-item w3-button w3-text-blue">Contribute</a>
-            <form action="post" >
-              <input type="text" id="search-box" name="search-box">
-              <i class="fa fa-search" aria-hidden="true" onclick="search();"></i>
-            </form>
-            <ul id="search-results"></ul>
+              <div class="w3-bar-item w3-right"><input type="text" id="search-box" name="search-box">
+                    <i class="fa fa-search w3-text-blue" aria-hidden="true" onclick="search();"></i>
+                    <div class="w3-sidebar w3-bar-block w3-card-2 w3-animate-right w3-quarter" style="display:none;right:0;" id="rightMenu">
+                      <i onclick="closeRightMenu()" class="fa fa-times w3-bar-item w3-large"></i>
+                      <ul id="search-results"></ul>
+                    </div>
+                    
+              </div>
+            
             </div>
             
             <div class="w3-content">
@@ -3107,7 +3112,7 @@
                     }
                     if(item)
                     {
-                        appendString += '<li><h3>' + item.title + '</h3></li>';
+                        appendString += '<li><a href="'+item.url+'"><h3>' + item.title + '</h3></a></li>';
                     }
                   }
 
@@ -3115,6 +3120,7 @@
                 } else {
                   searchResults.innerHTML = '<li>No results found</li>';
                 }
+                openRightMenu()();
               }
             function search() {
               
@@ -3134,6 +3140,12 @@
               }
               
               return false;
+            }
+            function openRightMenu() {
+                document.getElementById("rightMenu").style.display = "block";
+            }
+            function closeRightMenu() {
+                document.getElementById("rightMenu").style.display = "none";
             }
             </script>
         </body>
