@@ -25,54 +25,29 @@ function checkEntry(e){
     }
 };
 var json = (function () {
-    var json = null;
-    $.ajax({
-        'async': false,
-        'global': false,
-        'url': "/index.json",
-        'dataType': "json",
-        'success': function (data) {
-            json = data;
-        }
-    });
-    return json;
-})(); 
-
-/*var json_content = (function () {
-    var json_content = null;
-    $.ajax({
-        'async': false,
-        'global': false,
-        'url': "/lunr.operators.json",
-        'dataType': "json",
-        'success': function (data) {
-            json_content = data;
-        }
-    });
-    return json_content;
-}); 
-var json_operator = (function () {
-    var json_operator = null;
-    $.ajax({
-        'async': false,
-        'global': false,
-        'url': "/index_operator.json",
-        'dataType': "json",
-        'success': function (data) {
-            json_operator = data;
-        }
-    });
-    return json_operator;
-}); */
-var store = {
-    {% for post in site.pages %}
-      "{{ post.url }}": {
-        "title": "{{ post.title | xml_escape }}",
-        "url": "{{ post.url | xml_escape }}"
-      }
-      {% unless forloop.last %},{% endunless %}
-    {% endfor %}
-  };
+      var json = null;
+      $.ajax({
+         'async': false,
+         'global': false,
+         'url': "/index.json",
+         'dataType': "json",
+         'success': function (data) {
+             json = data;
+         }
+     });
+     return json;
+ })(); 
+ var store = {
+     {% for post in site.pages %}
+       "{{ post.url }}": {
+         "title": "{{ post.title | xml_escape }}",
+         "url": "{{ post.url | xml_escape }}"
+       }
+        {% unless forloop.last %},{% endunless %}
+      {% endfor %}
+    };
+var idx = lunr.Index.load(json);
+var searchResults = document.getElementById('search-results');
 function displaySearchResults(results, store) {
 
     if (results.length) { // Are there any results?
