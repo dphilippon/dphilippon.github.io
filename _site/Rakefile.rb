@@ -184,6 +184,34 @@ def findPages(folder,index)
         newWikiPage.puts "---"
         newWikiPage.puts fileContent
       end
+      if(File.basename(aFile)=="Operators.md")
+        operators_index=[]
+        fileContent.scan(/.*(\[\/\/\]:\s\#\s\(keyword\|operator\_.*\))/) do |anOccurence|
+            strOcc = anOccurence.to_s
+            strOcc = strOcc.sub("\"","")
+            strOcc = strOcc.sub("\"","")
+            strOcc = strOcc.sub("\[","")
+            strOcc = strOcc.sub("\[","")
+            strOcc = strOcc.sub("\]","")
+            strOcc = strOcc.sub("\]","")
+            strOcc = strOcc.sub("\(","")
+            strOcc = strOcc.sub("\)","")
+            strOcc = strOcc.sub("\#","")
+            strOcc = strOcc.sub("\:","")
+            strOcc = strOcc.sub("\/","")
+            strOcc = strOcc.sub("\/","")
+            strOcc = strOcc.sub(" ","")
+            strOcc = strOcc.sub(" ","")
+            strOcc = strOcc.sub("keyword","")
+            strOcc = strOcc.sub("operator_","")
+            strOcc = strOcc.sub("|","")
+            puts strOcc;
+            operators_index<<{"id"=>strOcc,"title"=>"operator : "+strOcc, "url"=>"/wiki/Operators#"+strOcc, "content"=>strOcc}
+        end
+        File.open("lunr.operators.json","w") do |f|
+            f.write(operators_index.to_json)
+        end
+      end
     else
       FileUtils.cp(aFile,wikiPagePath)
     end
