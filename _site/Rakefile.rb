@@ -170,7 +170,7 @@ def findPages(folder,index)
       end 
       fileContent      = File.read(aFile)
       doc = Nokogiri::HTML(fileContent)
-      index<<{"id"=>wikiPagePath,"title"=>wikiPageTitle, "content"=>doc.search('//text()').text, "url"=>wikiPagePath}
+      index<<{"id"=>wikiPagePath,"title"=>wikiPageTitle, "content"=>doc.xpath('//text()').remove, "url"=>wikiPagePath}
       folderString = File.join("#{g('wiki_dest')}",folder)
       # write the new file with yaml front matter
       open(wikiPagePath, 'w') do |newWikiPage|
