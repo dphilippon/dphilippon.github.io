@@ -2,6 +2,7 @@ require 'yaml'
 require 'uri'
 require 'json'
 require 'nokogiri'
+require 'kramdown'
 # use Jekyll configuration file
 CONFIG = YAML.load_file("_config.yml")
 URL_LAYOUT_DEFAULT = "../_layouts/default.html"
@@ -124,7 +125,7 @@ def copy_wiki_pages
   defineLayoutMenu()
   
   File.open("lunr.json","w") do |f|
-    f.write(index.to_json)
+    f.write(JSON.generate(index))
   end
 end
 def copyResources()
@@ -169,10 +170,39 @@ def findPages(folder,index)
         end
       end 
       fileContent      = File.read(aFile)
-      doc = Nokogiri::HTML(fileContent)
-      text = doc.xpath("//text()").to_s
-      text.encode('UTF-8', :invalid => :replace, :undef => :replace)
-      index<<{"id"=>wikiPagePath,"title"=>wikiPageTitle, "content"=>text, "url"=>wikiPagePath}
+      fileHTML=Kramdown::Document.new(fileContent).to_html
+      doc = Nokogiri::HTML(fileHTML)
+      text = doc.xpath("//text()").text.to_s
+      text = text.encode('UTF-8', :invalid => :replace, :undef => :replace)
+      text = text.gsub("\\t"," ")
+      text = text.gsub("\"","")
+      text = text.gsub("\n"," ")
+      text = text.gsub("\r"," ")
+      text = text.gsub("\""," ")
+      text = text.gsub("\'"," ")
+      text = text.gsub("'"," ")
+      text = text.gsub("\\r"," ")
+      text = text.gsub("\t"," ")
+      #text = text.gsub('\n',"")
+      #text = text.gsub('/\n',"")
+      #text = text.gsub("/\n","")
+      #text = text.delete("\n")
+      #text = text.delete('\n')
+      #text = text.delete('/\n')
+      #text = text.delete("/\n")
+      #text = text.gsub("/`","")
+      text = text.gsub("\`"," ")
+      #text = text.gsub("`","")
+      #text = text.gsub('/`',"")
+      #text = text.gsub('\`',"")
+      #text = text.gsub('`',"")
+      #text = text.delete("/`")
+      #text = text.delete("\`")
+      #text = text.delete("`")
+      #text = text.delete('/`')
+      #text = text.delete('\`')
+      #text = text.delete('`')
+      index<<{"id"=>wikiPagePath,"title"=>wikiPageTitle,"content"=>text,"url"=>wikiPagePath}
       folderString = File.join("#{g('wiki_dest')}",folder)
       # write the new file with yaml front matter
       open(wikiPagePath, 'w') do |newWikiPage|
@@ -186,34 +216,7 @@ def findPages(folder,index)
         newWikiPage.puts "---"
         newWikiPage.puts fileContent
       end
-      if(File.basename(aFile)=="Operators.md")
-        operators_index=[]
-        fileContent.scan(/.*(\[\/\/\]:\s\#\s\(keyword\|operator\_.*\))/) do |anOccurence|
-            strOcc = anOccurence.to_s
-            strOcc = strOcc.sub("\"","")
-            strOcc = strOcc.sub("\"","")
-            strOcc = strOcc.sub("\[","")
-            strOcc = strOcc.sub("\[","")
-            strOcc = strOcc.sub("\]","")
-            strOcc = strOcc.sub("\]","")
-            strOcc = strOcc.sub("\(","")
-            strOcc = strOcc.sub("\)","")
-            strOcc = strOcc.sub("\#","")
-            strOcc = strOcc.sub("\:","")
-            strOcc = strOcc.sub("\/","")
-            strOcc = strOcc.sub("\/","")
-            strOcc = strOcc.sub(" ","")
-            strOcc = strOcc.sub(" ","")
-            strOcc = strOcc.sub("keyword","")
-            strOcc = strOcc.sub("operator_","")
-            strOcc = strOcc.sub("|","")
-            puts strOcc;
-            operators_index<<{"id"=>strOcc,"title"=>"operator : "+strOcc, "url"=>"/wiki/Operators#"+strOcc, "content"=>strOcc}
-        end
-        File.open("lunr.operators.json","w") do |f|
-            f.write(operators_index.to_json)
-        end
-      end
+      
     else
       FileUtils.cp(aFile,wikiPagePath)
     end
