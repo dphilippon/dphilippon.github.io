@@ -48,6 +48,33 @@ var json = (function () {
     });
     return json;
 })(); 
+
+/*var json_content = (function () {
+    var json_content = null;
+    $.ajax({
+        'async': false,
+        'global': false,
+        'url': "/lunr.operators.json",
+        'dataType': "json",
+        'success': function (data) {
+            json_content = data;
+        }
+    });
+    return json_content;
+}); 
+var json_operator = (function () {
+    var json_operator = null;
+    $.ajax({
+        'async': false,
+        'global': false,
+        'url': "/index_operator.json",
+        'dataType': "json",
+        'success': function (data) {
+            json_operator = data;
+        }
+    });
+    return json_operator;
+}); */
 var store = {
     
       "/404.html": {
@@ -3009,8 +3036,6 @@ var store = {
       
     
   };
-var idx = lunr.Index.load(json);
-var searchResults = document.getElementById('search-results');
 function displaySearchResults(results, store) {
 
     if (results.length) { // Are there any results?
@@ -3041,10 +3066,14 @@ function search() {
   if (searchTerm) {
      // Initalize lunr with the fields it will be searching on. I've given title
     // a boost of 10 to indicate matches on this field are more important.
-    var idx = lunr.Index.load(json)
+    var idx = lunr.Index.load(json);
     console.log("FINISHING INDEX");
+    //var idx_operator = lunr.Index.load(json_operator)
+    console.log("FINISHING INDEX OPERATOR");
      var results = idx.search(searchTerm); // Get lunr to perform a search
     console.log("FINISHING SEARCH");
+    //results = results+idx.search(searchTerm); // Get lunr to perform a search
+    console.log("FINISHING SEARCH OPERATOR");
      displaySearchResults(results, store); // We'll write this in the next section
      
   }
