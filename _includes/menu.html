@@ -24,6 +24,19 @@ function checkEntry(e){
         search();
     }
 };
+var json_operator = (function () {
+      var json_operator = null;
+      $.ajax({
+         'async': false,
+         'global': false,
+         'url': "/index_operator.json",
+         'dataType': "json",
+         'success': function (data) {
+             json_operator = data;
+         }
+     });
+     return json_operator;
+ })(); 
 var json = (function () {
       var json = null;
       $.ajax({
@@ -66,28 +79,40 @@ function displaySearchResults(results, store) {
         }
       }
 
-      searchResults.innerHTML = appendString;
+      searchResults.innerHTML = searchResults.innerHTML = searchResults.innerHTML+appendString+"<br/>";
     } else {
-      searchResults.innerHTML = 'No results found';
+      searchResults.innerHTML = searchResults.innerHTML = searchResults.innerHTML+'<br/>No results found';
     }
-    openRightMenu();
+  }
+  function displaySearchResultsOperators(resultsOperator) {
+
+    var appendString = '';
+
+    if (resultsOperator.length) { // Are there any results?
+      for (var i = 0; i < resultsOperator.length; i++) {  // Iterate over the results
+        appendString += '<li class="w3-margin-left"><a href="/wiki/Operators#'+resultsOperator[i].ref+'" class="w3-text-blue" style="text-decoration: none;"> OPERATOR : ' + resultsOperator[i].ref + '</a></li>';
+      }
+    } 
+    searchResults.innerHTML = searchResults.innerHTML+"OPERATORS    "+appendString+"---------------------------- <br/>";
   }
 function search() {
   var searchTerm = document.getElementById("search-box").value;
-
+  searchResults.innerHTML="";
   if (searchTerm) {
      // Initalize lunr with the fields it will be searching on. I've given title
     // a boost of 10 to indicate matches on this field are more important.
     var idx = lunr.Index.load(json);
     console.log("FINISHING INDEX");
-    //var idx_operator = lunr.Index.load(json_operator)
+    var idx_operator = lunr.Index.load(json_operator)
     console.log("FINISHING INDEX OPERATOR");
+    var resultsOperator = idx_operator.search(searchTerm); // Get lunr to perform a search
+    console.log("FINISHING SEARCH OPERATOR");
+     displaySearchResultsOperators(resultsOperator); // We'll write this in the next section
      var results = idx.search(searchTerm); // Get lunr to perform a search
     console.log("FINISHING SEARCH");
-    //results = results+idx.search(searchTerm); // Get lunr to perform a search
-    console.log("FINISHING SEARCH OPERATOR");
-     displaySearchResults(results, store); // We'll write this in the next section
+     displaySearchResults(results,store); // We'll write this in the next section
      
+    openRightMenu();
   }
   
   return false;
