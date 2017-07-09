@@ -11,7 +11,9 @@ stdin.on('data', function (data) {
 })
 
 stdin.on('end', function () {
-  var documents = JSON.parse(buffer.join(), :quirks_mode => true)
+	var s=buffer.join();
+	s = s.replace(/[\u0000-\u001F]+/g,""); 
+  var documents = JSON.parse(s)
 
   var idx = lunr(function () {
     this.ref('id')
