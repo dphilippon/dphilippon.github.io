@@ -11,7 +11,8 @@ stdin.on('data', function (data) {
 })
 
 stdin.on('end', function () {
-  var documents = JSON.parse(buffer.join())
+	var stringify = JSON.stringify(buffer.join())
+  var documents = JSON.parse(stringify)
 
   var idx = lunr(function () {
     this.ref('id')
