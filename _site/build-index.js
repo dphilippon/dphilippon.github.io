@@ -16,6 +16,7 @@ stdin.on('end', function () {
   var documents = JSON.parse(s)
 
   var idx = lunr(function () {
+    
     this.ref('id')
     this.field('title',{ boost: 10 })
     this.field('content')
