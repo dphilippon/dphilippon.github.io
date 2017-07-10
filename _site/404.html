@@ -36,7 +36,46 @@ function checkEntry(e){
         search();
     }
 };
-var json_operator = (function () {
+var json_architectures = (function () {
+      var json_architectures = null;
+      $.ajax({
+         'async': false,
+         'global': false,
+         'url': "/index_architectures.json",
+         'dataType': "json",
+         'success': function (data) {
+             json_architectures = data;
+         }
+     });
+     return json_architectures;
+ })(); 
+var json_constants = (function () {
+      var json_constants = null;
+      $.ajax({
+         'async': false,
+         'global': false,
+         'url': "/index_constants.json",
+         'dataType': "json",
+         'success': function (data) {
+             json_constants = data;
+         }
+     });
+     return json_constants;
+ })(); 
+var json_literals = (function () {
+      var json_literals = null;
+      $.ajax({
+         'async': false,
+         'global': false,
+         'url': "/index_literals.json",
+         'dataType': "json",
+         'success': function (data) {
+             json_literals = data;
+         }
+     });
+     return json_literals;
+ })(); 
+ var json_operator = (function () {
       var json_operator = null;
       $.ajax({
          'async': false,
@@ -49,18 +88,70 @@ var json_operator = (function () {
      });
      return json_operator;
  })(); 
-var json = (function () {
-      var json = null;
+var json_skills = (function () {
+      var json_skills = null;
+      $.ajax({
+         'async': false,
+         'global': false,
+         'url': "/index_skills.json",
+         'dataType': "json",
+         'success': function (data) {
+             json_skills = data;
+         }
+     });
+     return json_skills;
+ })(); 
+var json_species = (function () {
+      var json_species = null;
+      $.ajax({
+         'async': false,
+         'global': false,
+         'url': "/index_species.json",
+         'dataType': "json",
+         'success': function (data) {
+             json_species = data;
+         }
+     });
+     return json_species;
+ })(); 
+var json_statements = (function () {
+      var json_statements = null;
+      $.ajax({
+         'async': false,
+         'global': false,
+         'url': "/index_statements.json",
+         'dataType': "json",
+         'success': function (data) {
+             json_statements = data;
+         }
+     });
+     return json_statements;
+ })(); 
+var json_types = (function () {
+      var json_types = null;
+      $.ajax({
+         'async': false,
+         'global': false,
+         'url': "/index_types.json",
+         'dataType': "json",
+         'success': function (data) {
+             json_types = data;
+         }
+     });
+     return json_types;
+ })(); 
+var json_pages = (function () {
+      var json_pages = null;
       $.ajax({
          'async': false,
          'global': false,
          'url': "/index.json",
          'dataType': "json",
          'success': function (data) {
-             json = data;
+             json_pages = data;
          }
      });
-     return json;
+     return json_pages;
  })(); 
  var store = {
      
@@ -3023,7 +3114,7 @@ var json = (function () {
         
       
     };
-var idx = lunr.Index.load(json);
+var idx = lunr.Index.load(json_pages);
 var searchResults = document.getElementById('search-results');
 function displaySearchResults(results, store) {
 
@@ -3043,37 +3134,71 @@ function displaySearchResults(results, store) {
         }
       }
 
-      searchResults.innerHTML = searchResults.innerHTML = searchResults.innerHTML+appendString+"<br/>";
-    } else {
-      searchResults.innerHTML = searchResults.innerHTML = searchResults.innerHTML+'<br/>No results found';
-    }
+      searchResults.innerHTML = searchResults.innerHTML+appendString+"<br/>";
+    } 
   }
-  function displaySearchResultsOperators(resultsOperator) {
+  function displaySearchResultsDocumentation(resultsSet,description,page) {
 
     var appendString = '';
 
-    if (resultsOperator.length) { // Are there any results?
-      for (var i = 0; i < resultsOperator.length; i++) {  // Iterate over the results
-        appendString += '<li class="w3-margin-left"><a href="/wiki/Operators#'+resultsOperator[i].ref+'" class="w3-text-blue" style="text-decoration: none;"> OPERATOR : ' + resultsOperator[i].ref + '</a></li>';
+    if (resultsSet.length) { // Are there any results?
+      for (var i = 0; i < resultsSet.length; i++) {  // Iterate over the results
+        appendString += '<li class="w3-margin-left"><a href="/wiki/'+page+'#'+resultsSet[i].ref+'" class="w3-text-blue" style="text-decoration: none;"> '+  resultsSet[i].ref + ' - <i class="w3-text-grey"> '+description+'</i></a></li>';
       }
-    } 
-    searchResults.innerHTML = searchResults.innerHTML+"OPERATORS    "+appendString+"---------------------------- <br/>";
+    }
+    searchResults.innerHTML = searchResults.innerHTML+appendString;
   }
 function search() {
   var searchTerm = document.getElementById("search-box").value;
+  var searchResults = document.getElementById('search-results');
   searchResults.innerHTML="";
   if (searchTerm) {
      // Initalize lunr with the fields it will be searching on. I've given title
     // a boost of 10 to indicate matches on this field are more important.
-    var idx = lunr.Index.load(json);
+    var idx = lunr.Index.load(json_pages);
     console.log("FINISHING INDEX");
+    var idx_architectures = lunr.Index.load(json_architectures)
+    console.log("FINISHING INDEX ARCHITECTURES");
+    var idx_constants = lunr.Index.load(json_constants)
+    console.log("FINISHING INDEX CONSTANTS");
+    var idx_literals = lunr.Index.load(json_literals)
+    console.log("FINISHING INDEX LITERALS");
     var idx_operator = lunr.Index.load(json_operator)
     console.log("FINISHING INDEX OPERATOR");
+    var idx_skills = lunr.Index.load(json_skills)
+    console.log("FINISHING INDEX SKILLS");
+    var idx_species = lunr.Index.load(json_species)
+    console.log("FINISHING INDEX SPECIES");
+    var idx_statements = lunr.Index.load(json_statements)
+    console.log("FINISHING INDEX STATEMENTS");
+    var idx_types = lunr.Index.load(json_types)
+    console.log("FINISHING INDEX TYPES");
+    var resultsArchitectures = idx_architectures.search(searchTerm); // Get lunr to perform a search
+    console.log("FINISHING SEARCH ARCHITECTURES");
+    var resultsConstants = idx_constants.search(searchTerm); // Get lunr to perform a search
+    console.log("FINISHING SEARCH CONSTANTS");
+    var resultsLiterals = idx_literals.search(searchTerm); // Get lunr to perform a search
+    console.log("FINISHING SEARCH LITERALS");
     var resultsOperator = idx_operator.search(searchTerm); // Get lunr to perform a search
     console.log("FINISHING SEARCH OPERATOR");
-     displaySearchResultsOperators(resultsOperator); // We'll write this in the next section
-     var results = idx.search(searchTerm); // Get lunr to perform a search
-    console.log("FINISHING SEARCH");
+    var resultsSkills = idx_skills.search(searchTerm); // Get lunr to perform a search
+    console.log("FINISHING SEARCH SKILLS");
+    var resultsSpecies = idx_species.search(searchTerm); // Get lunr to perform a search
+    console.log("FINISHING SEARCH SPECIES");
+    var resultsStatements = idx_statements.search(searchTerm); // Get lunr to perform a search
+    console.log("FINISHING SEARCH STATEMENTS");
+    var resultsTypes = idx_types.search(searchTerm); // Get lunr to perform a search
+    console.log("FINISHING SEARCH TYPES");
+    displaySearchResultsDocumentation(resultsArchitectures,"architecture","BuiltInArchitectures");
+    displaySearchResultsDocumentation(resultsConstants,"constant","UnitsAndConstants");
+    displaySearchResultsDocumentation(resultsLiterals,"literal","Literals");
+    displaySearchResultsDocumentation(resultsOperator,"operator","Operators");
+    displaySearchResultsDocumentation(resultsSkills,"skill","BuiltInSkills");
+    displaySearchResultsDocumentation(resultsSpecies,"species","BuiltInSpecies");
+    displaySearchResultsDocumentation(resultsStatements,"statement","Statements");
+    displaySearchResultsDocumentation(resultsTypes,"type","DataTypes");
+    var results = idx.search(searchTerm); // Get lunr to perform a search
+    console.log("FINISHING SEARCH IN PAGES");
      displaySearchResults(results,store); // We'll write this in the next section
      
     openRightMenu();
