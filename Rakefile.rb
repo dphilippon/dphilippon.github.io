@@ -186,29 +186,12 @@ def findPages(folder,index)
       text = text.gsub("        "," ")
       text = text.gsub("*.\s.*"," ")
       text = text.gsub("\t"," ")
-      #text = text.gsub('\n',"")
-      #text = text.gsub('/\n',"")
-      #text = text.gsub("/\n","")
-      #text = text.delete("\n")
-      #text = text.delete('\n')
-      #text = text.delete('/\n')
-      #text = text.delete("/\n")
       #text = text.gsub("/`","")
       text = text.gsub("\“"," ")
       text = text.gsub("\‘"," ")
       text = text.gsub("\’"," ")
       text = text.gsub("\”"," ")
       text = text.gsub("\`"," ")
-      #text = text.gsub("`","")
-      #text = text.gsub('/`',"")
-      #text = text.gsub('\`',"")
-      #text = text.gsub('`',"")
-      #text = text.delete("/`")
-      #text = text.delete("\`")
-      #text = text.delete("`")
-      #text = text.delete('/`')
-      #text = text.delete('\`')
-      #text = text.delete('`')
       index<<{"id"=>wikiPagePath,"title"=>wikiPageTitle,"content"=>text,"url"=>wikiPagePath}
       folderString = File.join("#{g('wiki_dest')}",folder)
       # write the new file with yaml front matter
@@ -224,41 +207,112 @@ def findPages(folder,index)
         newWikiPage.puts fileContent
       end
       if(File.basename(aFile)=="Operators.md")
-        operators_index=[]
+        tmp_index=[]
         fileContent.scan(/.*(\[\/\/\]:\s\#\s\(keyword\|operator\_.*\))/) do |anOccurence|
-            strOcc = anOccurence.to_s
-            strOcc = strOcc.sub("\"","")
-            strOcc = strOcc.sub("\"","")
-            strOcc = strOcc.sub("\[","")
-            strOcc = strOcc.sub("\[","")
-            strOcc = strOcc.sub("\]","")
-            strOcc = strOcc.sub("\]","")
-            strOcc = strOcc.sub("\(","")
-            strOcc = strOcc.sub("\)","")
-            strOcc = strOcc.sub("\#","")
-            strOcc = strOcc.sub("\:","")
-            strOcc = strOcc.sub("\/","")
-            strOcc = strOcc.sub("\/","")
-            strOcc = strOcc.sub(" ","")
-            strOcc = strOcc.sub(" ","")
-            strOcc = strOcc.sub("keyword","")
-            strOcc = strOcc.sub("operator_","")
-            strOcc = strOcc.sub("|","")
-            puts strOcc;
-            operators_index<<{"id"=>strOcc,"title"=>"operator : "+strOcc, "url"=>"/wiki/Operators#"+strOcc, "content"=>strOcc}
+            strOcc = clearFromCharacterForJson(anOccurence,"operator_")
+            tmp_index<<{"id"=>strOcc,"title"=>"operator : "+strOcc, "url"=>"/wiki/Operators#"+strOcc, "content"=>strOcc}
         end
         File.open("lunr.operators.json","w") do |f|
-            f.write(operators_index.to_json)
+            f.write(tmp_index.to_json)
         end
       end
-
+      if(File.basename(aFile)=="BuiltInArchitectures.md")
+        tmp_index=[]
+        fileContent.scan(/.*(\[\/\/\]:\s\#\s\(keyword\|architecture\_.*\))/) do |anOccurence|
+            strOcc = clearFromCharacterForJson(anOccurence,"architecture_")
+            tmp_index<<{"id"=>strOcc,"title"=>"architecture : "+strOcc, "url"=>"/wiki/BuiltInArchitectures#"+strOcc, "content"=>strOcc}
+        end
+        File.open("lunr.architectures.json","w") do |f|
+            f.write(tmp_index.to_json)
+        end
+      end
+      if(File.basename(aFile)=="BuiltInSkills.md")
+        tmp_index=[]
+        fileContent.scan(/.*(\[\/\/\]:\s\#\s\(keyword\|skill\_.*\))/) do |anOccurence|
+            strOcc = clearFromCharacterForJson(anOccurence,"skill_")
+            tmp_index<<{"id"=>strOcc,"title"=>"skill : "+strOcc, "url"=>"/wiki/BuiltInSkills#"+strOcc, "content"=>strOcc}
+        end
+        File.open("lunr.skills.json","w") do |f|
+            f.write(tmp_index.to_json)
+        end
+      end
+      if(File.basename(aFile)=="BuiltInSpecies.md")
+        tmp_index=[]
+        fileContent.scan(/.*(\[\/\/\]:\s\#\s\(keyword\|species\_.*\))/) do |anOccurence|
+            strOcc = clearFromCharacterForJson(anOccurence,"species_")
+            tmp_index<<{"id"=>strOcc,"title"=>"species : "+strOcc, "url"=>"/wiki/BuiltInSpecies#"+strOcc, "content"=>strOcc}
+        end
+        File.open("lunr.species.json","w") do |f|
+            f.write(tmp_index.to_json)
+        end
+      end
+      if(File.basename(aFile)=="DataTypes.md")
+        tmp_index=[]
+        fileContent.scan(/.*(\[\/\/\]:\s\#\s\(keyword\|type\_.*\))/) do |anOccurence|
+            strOcc = clearFromCharacterForJson(anOccurence,"type_")
+            tmp_index<<{"id"=>strOcc,"title"=>"type : "+strOcc, "url"=>"/wiki/DataTypes#"+strOcc, "content"=>strOcc}
+        end
+        File.open("lunr.types.json","w") do |f|
+            f.write(tmp_index.to_json)
+        end
+      end
+      if(File.basename(aFile)=="Literals.md")
+        tmp_index=[]
+        fileContent.scan(/.*(\[\/\/\]:\s\#\s\(keyword\|concept\_.*\))/) do |anOccurence|
+            strOcc = clearFromCharacterForJson(anOccurence,"concept_")
+            tmp_index<<{"id"=>strOcc,"title"=>"concept : "+strOcc, "url"=>"/wiki/Literals#"+strOcc, "content"=>strOcc}
+        end
+        File.open("lunr.literals.json","w") do |f|
+            f.write(tmp_index.to_json)
+        end
+      end
+      if(File.basename(aFile)=="Statements.md")
+        tmp_index=[]
+        fileContent.scan(/.*(\[\/\/\]:\s\#\s\(keyword\|statement\_.*\))/) do |anOccurence|
+            strOcc = clearFromCharacterForJson(anOccurence,"statement_")
+            tmp_index<<{"id"=>strOcc,"title"=>"statement : "+strOcc, "url"=>"/wiki/Statements#"+strOcc, "content"=>strOcc}
+        end
+        File.open("lunr.statements.json","w") do |f|
+            f.write(tmp_index.to_json)
+        end
+      end
+      if(File.basename(aFile)=="UnitsAndConstants.md")
+        tmp_index=[]
+        fileContent.scan(/.*(\[\/\/\]:\s\#\s\(keyword\|constant\_.*\))/) do |anOccurence|
+            strOcc = clearFromCharacterForJson(anOccurence,"constant_")
+            tmp_index<<{"id"=>strOcc,"title"=>"constant : "+strOcc, "url"=>"/wiki/UnitsAndConstants#"+strOcc, "content"=>strOcc}
+        end
+        File.open("lunr.constants.json","w") do |f|
+            f.write(tmp_index.to_json)
+        end
+      end
       
     else
       FileUtils.cp(aFile,wikiPagePath)
     end
   end
 end
-
+def clearFromCharacterForJson(anOccurence,removable)
+    strOcc = anOccurence.to_s
+    strOcc = strOcc.sub("\"","")
+    strOcc = strOcc.sub("\"","")
+    strOcc = strOcc.sub("\[","")
+    strOcc = strOcc.sub("\[","")
+    strOcc = strOcc.sub("\]","")
+    strOcc = strOcc.sub("\]","")
+    strOcc = strOcc.sub("\(","")
+    strOcc = strOcc.sub("\)","")
+    strOcc = strOcc.sub("\#","")
+    strOcc = strOcc.sub("\:","")
+    strOcc = strOcc.sub("\/","")
+    strOcc = strOcc.sub("\/","")
+    strOcc = strOcc.sub(" ","")
+    strOcc = strOcc.sub(" ","")
+    strOcc = strOcc.sub("keyword","")
+    strOcc = strOcc.sub(removable,"")
+    strOcc = strOcc.sub("|","")
+    return strOcc
+end
 #-----------------------------------------
 #      Creation of the Menu Layout
 #-----------------------------------------
