@@ -35,7 +35,7 @@ Here are detailled steps to create and configure a new GAMA plug-in.
     * Name « Additions to GAML from Maelia project »
     * Uncheck "Generate an activator, a Java class that controls the plug-in's life cycle" ,
     * Uncheck "This plug-in will make contributions to the UI"
-    * Check "No" when its asks "Would you like to create a rich client application ?"
+    * Check "No" when it asks "Would you like to create a rich client application ?"
     * Click on "Next"
   * In the "New plug-in Project" / "Templates" window:
     * Uncheck "Create a plug-in using one of the templates"
@@ -47,7 +47,7 @@ Your plug-in has been created.
     * Overview pane:
       * check « This plug-in is a singleton »
     * Dependencies pane:
-      * add (at least minimum) the three plug-ins "msi.gama.core", "msi.gama.ext" and "msi.gama.processor" in the "Required Plug-ins". When you click on "Add", a new window will appear without any plug-in. Just write the beginning of the plug-in name in the text field under "Select a plug-in".
+      * add (at least minimum) the two plug-ins "msi.gama.core" and "msi.gama.ext" in the "Required Plug-ins". When you click on "Add", a new window will appear without any plug-in. Just write the beginning of the plug-in name in the text field under "Select a plug-in".
     * Runtime pane:
       * In exported Packages: nothing (but when you will have implemented new packages in the plug-in you should add them there)
       * Add in the classpath all the additional libraries (.jar files) used in the project.
@@ -56,7 +56,7 @@ Your plug-in has been created.
     * Save the file. This should create a "plugin.xml" file.
 
   * Select the project and in menu Project > Properties:
-    * Java Compiler  > Annotation Processing: check "Enable project specific settings", then in "Generated Source Directory", change ".apt\_generated" in "gaml",
+    * Java Compiler  > Annotation Processing: check "Enable project specific settings", then in "Generated Source Directory", change ".apt\_generated" to "gaml",
     * Java Compiler  > Annotation Processing > Factory path: check "Enable project specific settings", then "Add Jars" and choose "msi.gama.processor/processor/plugins/msi.gama.processor.1.4.0.jar"
     * Close the menu. It should compile the project and create the `gaml` directory.
     * Return in the Project > Properties Menu.

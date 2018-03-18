@@ -14,15 +14,17 @@ wikiPagePath: wiki/Statements.md
 
 ## Table of Contents
 <wiki:toc max_depth="2" />
-[=](#=), [action](#action), [add](#add), [agents](#agents), [annealing](#annealing), [ask](#ask), [aspect](#aspect), [assert](#assert), [benchmark](#benchmark), [break](#break), [camera](#camera), [capture](#capture), [chart](#chart), [conscious_contagion](#conscious_contagion), [create](#create), [data](#data), [datalist](#datalist), [default](#default), [diffuse](#diffuse), [display](#display), [display_grid](#display_grid), [display_population](#display_population), [do](#do), [draw](#draw), [else](#else), [emotional_contagion](#emotional_contagion), [enter](#enter), [equation](#equation), [error](#error), [event](#event), [exhaustive](#exhaustive), [exit](#exit), [experiment](#experiment), [export](#export), [focus](#focus), [focus_on](#focus_on), [genetic](#genetic), [graphics](#graphics), [highlight](#highlight), [hill_climbing](#hill_climbing), [if](#if), [image](#image), [inspect](#inspect), [let](#let), [light](#light), [loop](#loop), [match](#match), [migrate](#migrate), [monitor](#monitor), [output](#output), [output_file](#output_file), [overlay](#overlay), [parameter](#parameter), [perceive](#perceive), [permanent](#permanent), [plan](#plan), [put](#put), [reactive_tabu](#reactive_tabu), [reflex](#reflex), [release](#release), [remove](#remove), [return](#return), [rule](#rule), [run](#run), [save](#save), [save_batch](#save_batch), [set](#set), [setup](#setup), [simulate](#simulate), [socialize](#socialize), [solve](#solve), [species](#species), [state](#state), [status](#status), [switch](#switch), [tabu](#tabu), [task](#task), [test](#test), [trace](#trace), [transition](#transition), [unconscious_contagion](#unconscious_contagion), [user_command](#user_command), [user_init](#user_init), [user_input](#user_input), [user_panel](#user_panel), [using](#using), [Variable_container](#variable_container), [Variable_number](#variable_number), [Variable_regular](#variable_regular), [warn](#warn), [write](#write), 
+[=](#=), [action](#action), [add](#add), [agents](#agents), [annealing](#annealing), [ask](#ask), [aspect](#aspect), [assert](#assert), [benchmark](#benchmark), [break](#break), [camera](#camera), [capture](#capture), [catch](#catch), [chart](#chart), [conscious_contagion](#conscious_contagion), [create](#create), [data](#data), [datalist](#datalist), [default](#default), [diffuse](#diffuse), [display](#display), [display_grid](#display_grid), [display_population](#display_population), [do](#do), [draw](#draw), [else](#else), [emotional_contagion](#emotional_contagion), [enforcement](#enforcement), [enter](#enter), [equation](#equation), [error](#error), [event](#event), [exhaustive](#exhaustive), [exit](#exit), [experiment](#experiment), [focus](#focus), [focus_on](#focus_on), [genetic](#genetic), [graphics](#graphics), [highlight](#highlight), [hill_climbing](#hill_climbing), [if](#if), [image](#image), [inspect](#inspect), [law](#law), [let](#let), [light](#light), [loop](#loop), [match](#match), [migrate](#migrate), [monitor](#monitor), [norm](#norm), [output](#output), [output_file](#output_file), [overlay](#overlay), [parameter](#parameter), [perceive](#perceive), [permanent](#permanent), [plan](#plan), [put](#put), [reactive_tabu](#reactive_tabu), [reflex](#reflex), [release](#release), [remove](#remove), [return](#return), [rule](#rule), [sanction](#sanction), [save](#save), [set](#set), [setup](#setup), [simulate](#simulate), [socialize](#socialize), [solve](#solve), [species](#species), [state](#state), [status](#status), [switch](#switch), [tabu](#tabu), [task](#task), [test](#test), [trace](#trace), [transition](#transition), [try](#try), [unconscious_contagion](#unconscious_contagion), [user_command](#user_command), [user_init](#user_init), [user_input](#user_input), [user_panel](#user_panel), [using](#using), [Variable_container](#variable_container), [Variable_number](#variable_number), [Variable_regular](#variable_regular), [warn](#warn), [write](#write), 
 
 
 ## Statements by kinds
 
   * **Batch method**
-    * [annealing](#annealing),  [exhaustive](#exhaustive),  [genetic](#genetic),  [hill_climbing](#hill_climbing),  [reactive_tabu](#reactive_tabu),  [save_batch](#save_batch),  [tabu](#tabu),  
+    * [annealing](#annealing),  [exhaustive](#exhaustive),  [genetic](#genetic),  [hill_climbing](#hill_climbing),  [reactive_tabu](#reactive_tabu),  [tabu](#tabu),  
   * **Behavior**
-    * [aspect](#aspect),  [plan](#plan),  [reflex](#reflex),  [state](#state),  [task](#task),  [test](#test),  [user_init](#user_init),  [user_panel](#user_panel),  
+    * [aspect](#aspect),  [norm](#norm),  [plan](#plan),  [reflex](#reflex),  [sanction](#sanction),  [state](#state),  [task](#task),  [test](#test),  [user_init](#user_init),  [user_panel](#user_panel),  
+  * **Behavior**
+    * [aspect](#aspect),  [norm](#norm),  [plan](#plan),  [reflex](#reflex),  [sanction](#sanction),  [state](#state),  [task](#task),  [test](#test),  [user_init](#user_init),  [user_panel](#user_panel),  
   * **Experiment**
     * [experiment](#experiment),  
   * **Layer**
@@ -32,9 +34,19 @@ wikiPagePath: wiki/Statements.md
   * **Parameter**
     * [parameter](#parameter),  
   * **Sequence of statements or action**
-    * [action](#action),  [ask](#ask),  [benchmark](#benchmark),  [capture](#capture),  [create](#create),  [default](#default),  [else](#else),  [enter](#enter),  [equation](#equation),  [exit](#exit),  [if](#if),  [loop](#loop),  [match](#match),  [migrate](#migrate),  [perceive](#perceive),  [release](#release),  [run](#run),  [setup](#setup),  [switch](#switch),  [trace](#trace),  [transition](#transition),  [user_command](#user_command),  [using](#using),  
+    * [action](#action),  [ask](#ask),  [benchmark](#benchmark),  [capture](#capture),  [catch](#catch),  [create](#create),  [default](#default),  [else](#else),  [enter](#enter),  [equation](#equation),  [exit](#exit),  [if](#if),  [loop](#loop),  [match](#match),  [migrate](#migrate),  [perceive](#perceive),  [release](#release),  [setup](#setup),  [switch](#switch),  [trace](#trace),  [transition](#transition),  [try](#try),  [user_command](#user_command),  [using](#using),  
+  * **Sequence of statements or action**
+    * [action](#action),  [ask](#ask),  [benchmark](#benchmark),  [capture](#capture),  [catch](#catch),  [create](#create),  [default](#default),  [else](#else),  [enter](#enter),  [equation](#equation),  [exit](#exit),  [if](#if),  [loop](#loop),  [match](#match),  [migrate](#migrate),  [perceive](#perceive),  [release](#release),  [setup](#setup),  [switch](#switch),  [trace](#trace),  [transition](#transition),  [try](#try),  [user_command](#user_command),  [using](#using),  
+  * **Sequence of statements or action**
+    * [action](#action),  [ask](#ask),  [benchmark](#benchmark),  [capture](#capture),  [catch](#catch),  [create](#create),  [default](#default),  [else](#else),  [enter](#enter),  [equation](#equation),  [exit](#exit),  [if](#if),  [loop](#loop),  [match](#match),  [migrate](#migrate),  [perceive](#perceive),  [release](#release),  [setup](#setup),  [switch](#switch),  [trace](#trace),  [transition](#transition),  [try](#try),  [user_command](#user_command),  [using](#using),  
   * **Single statement**
-    * [=](#=),  [add](#add),  [assert](#assert),  [break](#break),  [conscious_contagion](#conscious_contagion),  [data](#data),  [datalist](#datalist),  [diffuse](#diffuse),  [do](#do),  [draw](#draw),  [emotional_contagion](#emotional_contagion),  [error](#error),  [export](#export),  [focus](#focus),  [focus_on](#focus_on),  [highlight](#highlight),  [let](#let),  [put](#put),  [remove](#remove),  [return](#return),  [rule](#rule),  [save](#save),  [set](#set),  [simulate](#simulate),  [socialize](#socialize),  [solve](#solve),  [status](#status),  [unconscious_contagion](#unconscious_contagion),  [user_input](#user_input),  [warn](#warn),  [write](#write),  
+    * [=](#=),  [add](#add),  [assert](#assert),  [break](#break),  [conscious_contagion](#conscious_contagion),  [data](#data),  [datalist](#datalist),  [diffuse](#diffuse),  [do](#do),  [draw](#draw),  [emotional_contagion](#emotional_contagion),  [enforcement](#enforcement),  [error](#error),  [focus](#focus),  [focus_on](#focus_on),  [highlight](#highlight),  [law](#law),  [let](#let),  [put](#put),  [remove](#remove),  [return](#return),  [rule](#rule),  [save](#save),  [set](#set),  [simulate](#simulate),  [socialize](#socialize),  [solve](#solve),  [status](#status),  [unconscious_contagion](#unconscious_contagion),  [user_input](#user_input),  [warn](#warn),  [write](#write),  
+  * **Single statement**
+    * [=](#=),  [add](#add),  [assert](#assert),  [break](#break),  [conscious_contagion](#conscious_contagion),  [data](#data),  [datalist](#datalist),  [diffuse](#diffuse),  [do](#do),  [draw](#draw),  [emotional_contagion](#emotional_contagion),  [enforcement](#enforcement),  [error](#error),  [focus](#focus),  [focus_on](#focus_on),  [highlight](#highlight),  [law](#law),  [let](#let),  [put](#put),  [remove](#remove),  [return](#return),  [rule](#rule),  [save](#save),  [set](#set),  [simulate](#simulate),  [socialize](#socialize),  [solve](#solve),  [status](#status),  [unconscious_contagion](#unconscious_contagion),  [user_input](#user_input),  [warn](#warn),  [write](#write),  
+  * **Single statement**
+    * [=](#=),  [add](#add),  [assert](#assert),  [break](#break),  [conscious_contagion](#conscious_contagion),  [data](#data),  [datalist](#datalist),  [diffuse](#diffuse),  [do](#do),  [draw](#draw),  [emotional_contagion](#emotional_contagion),  [enforcement](#enforcement),  [error](#error),  [focus](#focus),  [focus_on](#focus_on),  [highlight](#highlight),  [law](#law),  [let](#let),  [put](#put),  [remove](#remove),  [return](#return),  [rule](#rule),  [save](#save),  [set](#set),  [simulate](#simulate),  [socialize](#socialize),  [solve](#solve),  [status](#status),  [unconscious_contagion](#unconscious_contagion),  [user_input](#user_input),  [warn](#warn),  [write](#write),  
+  * **Single statement**
+    * [=](#=),  [add](#add),  [assert](#assert),  [break](#break),  [conscious_contagion](#conscious_contagion),  [data](#data),  [datalist](#datalist),  [diffuse](#diffuse),  [do](#do),  [draw](#draw),  [emotional_contagion](#emotional_contagion),  [enforcement](#enforcement),  [error](#error),  [focus](#focus),  [focus_on](#focus_on),  [highlight](#highlight),  [law](#law),  [let](#let),  [put](#put),  [remove](#remove),  [return](#return),  [rule](#rule),  [save](#save),  [set](#set),  [simulate](#simulate),  [socialize](#socialize),  [solve](#solve),  [status](#status),  [unconscious_contagion](#unconscious_contagion),  [user_input](#user_input),  [warn](#warn),  [write](#write),  
   * **Species**
     * [species](#species),  
   * **Variable (container)**
@@ -48,25 +60,49 @@ wikiPagePath: wiki/Statements.md
 ## Statements by embedment
 
   * **Behavior**
-    * [add](#add), [ask](#ask), [benchmark](#benchmark), [capture](#capture), [conscious_contagion](#conscious_contagion), [create](#create), [diffuse](#diffuse), [do](#do), [emotional_contagion](#emotional_contagion), [error](#error), [focus](#focus), [focus_on](#focus_on), [highlight](#highlight), [if](#if), [inspect](#inspect), [let](#let), [loop](#loop), [migrate](#migrate), [put](#put), [release](#release), [remove](#remove), [return](#return), [run](#run), [save](#save), [set](#set), [simulate](#simulate), [socialize](#socialize), [solve](#solve), [status](#status), [switch](#switch), [trace](#trace), [transition](#transition), [unconscious_contagion](#unconscious_contagion), [using](#using), [warn](#warn), [write](#write), 
+    * [add](#add), [ask](#ask), [assert](#assert), [benchmark](#benchmark), [capture](#capture), [conscious_contagion](#conscious_contagion), [create](#create), [diffuse](#diffuse), [do](#do), [emotional_contagion](#emotional_contagion), [enforcement](#enforcement), [error](#error), [focus](#focus), [focus_on](#focus_on), [highlight](#highlight), [if](#if), [inspect](#inspect), [let](#let), [loop](#loop), [migrate](#migrate), [put](#put), [release](#release), [remove](#remove), [return](#return), [save](#save), [set](#set), [simulate](#simulate), [socialize](#socialize), [solve](#solve), [status](#status), [switch](#switch), [trace](#trace), [transition](#transition), [try](#try), [unconscious_contagion](#unconscious_contagion), [using](#using), [warn](#warn), [write](#write), 
+  * **Behavior**
+    * [add](#add), [ask](#ask), [assert](#assert), [benchmark](#benchmark), [capture](#capture), [conscious_contagion](#conscious_contagion), [create](#create), [diffuse](#diffuse), [do](#do), [emotional_contagion](#emotional_contagion), [enforcement](#enforcement), [error](#error), [focus](#focus), [focus_on](#focus_on), [highlight](#highlight), [if](#if), [inspect](#inspect), [let](#let), [loop](#loop), [migrate](#migrate), [put](#put), [release](#release), [remove](#remove), [return](#return), [save](#save), [set](#set), [simulate](#simulate), [socialize](#socialize), [solve](#solve), [status](#status), [switch](#switch), [trace](#trace), [transition](#transition), [try](#try), [unconscious_contagion](#unconscious_contagion), [using](#using), [warn](#warn), [write](#write), 
+  * **Behavior**
+    * [add](#add), [ask](#ask), [assert](#assert), [benchmark](#benchmark), [capture](#capture), [conscious_contagion](#conscious_contagion), [create](#create), [diffuse](#diffuse), [do](#do), [emotional_contagion](#emotional_contagion), [enforcement](#enforcement), [error](#error), [focus](#focus), [focus_on](#focus_on), [highlight](#highlight), [if](#if), [inspect](#inspect), [let](#let), [loop](#loop), [migrate](#migrate), [put](#put), [release](#release), [remove](#remove), [return](#return), [save](#save), [set](#set), [simulate](#simulate), [socialize](#socialize), [solve](#solve), [status](#status), [switch](#switch), [trace](#trace), [transition](#transition), [try](#try), [unconscious_contagion](#unconscious_contagion), [using](#using), [warn](#warn), [write](#write), 
+  * **Behavior**
+    * [add](#add), [ask](#ask), [assert](#assert), [benchmark](#benchmark), [capture](#capture), [conscious_contagion](#conscious_contagion), [create](#create), [diffuse](#diffuse), [do](#do), [emotional_contagion](#emotional_contagion), [enforcement](#enforcement), [error](#error), [focus](#focus), [focus_on](#focus_on), [highlight](#highlight), [if](#if), [inspect](#inspect), [let](#let), [loop](#loop), [migrate](#migrate), [put](#put), [release](#release), [remove](#remove), [return](#return), [save](#save), [set](#set), [simulate](#simulate), [socialize](#socialize), [solve](#solve), [status](#status), [switch](#switch), [trace](#trace), [transition](#transition), [try](#try), [unconscious_contagion](#unconscious_contagion), [using](#using), [warn](#warn), [write](#write), 
   * **Environment**
     * [species](#species), 
   * **Experiment**
-    * [action](#action), [annealing](#annealing), [exhaustive](#exhaustive), [export](#export), [genetic](#genetic), [hill_climbing](#hill_climbing), [output](#output), [parameter](#parameter), [permanent](#permanent), [reactive_tabu](#reactive_tabu), [reflex](#reflex), [save_batch](#save_batch), [setup](#setup), [simulate](#simulate), [state](#state), [tabu](#tabu), [task](#task), [test](#test), [user_command](#user_command), [user_init](#user_init), [user_panel](#user_panel), [Variable_container](#variable_container), [Variable_number](#variable_number), [Variable_regular](#variable_regular), 
+    * [action](#action), [annealing](#annealing), [exhaustive](#exhaustive), [genetic](#genetic), [hill_climbing](#hill_climbing), [output](#output), [parameter](#parameter), [permanent](#permanent), [reactive_tabu](#reactive_tabu), [reflex](#reflex), [setup](#setup), [simulate](#simulate), [state](#state), [tabu](#tabu), [task](#task), [test](#test), [user_command](#user_command), [user_init](#user_init), [user_panel](#user_panel), [Variable_container](#variable_container), [Variable_number](#variable_number), [Variable_regular](#variable_regular), 
+  * **Experiment**
+    * [action](#action), [annealing](#annealing), [exhaustive](#exhaustive), [genetic](#genetic), [hill_climbing](#hill_climbing), [output](#output), [parameter](#parameter), [permanent](#permanent), [reactive_tabu](#reactive_tabu), [reflex](#reflex), [setup](#setup), [simulate](#simulate), [state](#state), [tabu](#tabu), [task](#task), [test](#test), [user_command](#user_command), [user_init](#user_init), [user_panel](#user_panel), [Variable_container](#variable_container), [Variable_number](#variable_number), [Variable_regular](#variable_regular), 
   * **Layer**
-    * [add](#add), [benchmark](#benchmark), [draw](#draw), [error](#error), [focus_on](#focus_on), [highlight](#highlight), [if](#if), [let](#let), [loop](#loop), [put](#put), [remove](#remove), [set](#set), [status](#status), [switch](#switch), [trace](#trace), [using](#using), [warn](#warn), [write](#write), 
+    * [add](#add), [benchmark](#benchmark), [draw](#draw), [error](#error), [focus_on](#focus_on), [highlight](#highlight), [if](#if), [let](#let), [loop](#loop), [put](#put), [remove](#remove), [set](#set), [status](#status), [switch](#switch), [trace](#trace), [try](#try), [using](#using), [warn](#warn), [write](#write), 
   * **Model**
-    * [action](#action), [aspect](#aspect), [equation](#equation), [experiment](#experiment), [output](#output), [perceive](#perceive), [plan](#plan), [reflex](#reflex), [rule](#rule), [run](#run), [setup](#setup), [species](#species), [state](#state), [task](#task), [test](#test), [user_command](#user_command), [user_init](#user_init), [user_panel](#user_panel), [Variable_container](#variable_container), [Variable_number](#variable_number), [Variable_regular](#variable_regular), 
+    * [action](#action), [aspect](#aspect), [equation](#equation), [experiment](#experiment), [law](#law), [norm](#norm), [output](#output), [perceive](#perceive), [plan](#plan), [reflex](#reflex), [rule](#rule), [sanction](#sanction), [setup](#setup), [species](#species), [state](#state), [task](#task), [test](#test), [user_command](#user_command), [user_init](#user_init), [user_panel](#user_panel), [Variable_container](#variable_container), [Variable_number](#variable_number), [Variable_regular](#variable_regular), 
+  * **Model**
+    * [action](#action), [aspect](#aspect), [equation](#equation), [experiment](#experiment), [law](#law), [norm](#norm), [output](#output), [perceive](#perceive), [plan](#plan), [reflex](#reflex), [rule](#rule), [sanction](#sanction), [setup](#setup), [species](#species), [state](#state), [task](#task), [test](#test), [user_command](#user_command), [user_init](#user_init), [user_panel](#user_panel), [Variable_container](#variable_container), [Variable_number](#variable_number), [Variable_regular](#variable_regular), 
+  * **Model**
+    * [action](#action), [aspect](#aspect), [equation](#equation), [experiment](#experiment), [law](#law), [norm](#norm), [output](#output), [perceive](#perceive), [plan](#plan), [reflex](#reflex), [rule](#rule), [sanction](#sanction), [setup](#setup), [species](#species), [state](#state), [task](#task), [test](#test), [user_command](#user_command), [user_init](#user_init), [user_panel](#user_panel), [Variable_container](#variable_container), [Variable_number](#variable_number), [Variable_regular](#variable_regular), 
   * **Sequence of statements or action**
-    * [add](#add), [ask](#ask), [benchmark](#benchmark), [break](#break), [capture](#capture), [conscious_contagion](#conscious_contagion), [create](#create), [data](#data), [datalist](#datalist), [diffuse](#diffuse), [do](#do), [draw](#draw), [emotional_contagion](#emotional_contagion), [error](#error), [focus](#focus), [focus_on](#focus_on), [highlight](#highlight), [if](#if), [inspect](#inspect), [let](#let), [loop](#loop), [migrate](#migrate), [put](#put), [release](#release), [remove](#remove), [return](#return), [save](#save), [set](#set), [simulate](#simulate), [socialize](#socialize), [solve](#solve), [status](#status), [switch](#switch), [trace](#trace), [transition](#transition), [unconscious_contagion](#unconscious_contagion), [using](#using), [warn](#warn), [write](#write), 
-  * **Single statement**
-    * [run](#run), 
+    * [add](#add), [ask](#ask), [assert](#assert), [assert](#assert), [benchmark](#benchmark), [break](#break), [capture](#capture), [conscious_contagion](#conscious_contagion), [create](#create), [data](#data), [datalist](#datalist), [diffuse](#diffuse), [do](#do), [draw](#draw), [emotional_contagion](#emotional_contagion), [enforcement](#enforcement), [error](#error), [focus](#focus), [focus_on](#focus_on), [highlight](#highlight), [if](#if), [inspect](#inspect), [let](#let), [loop](#loop), [migrate](#migrate), [put](#put), [release](#release), [remove](#remove), [return](#return), [save](#save), [set](#set), [simulate](#simulate), [socialize](#socialize), [solve](#solve), [status](#status), [switch](#switch), [trace](#trace), [transition](#transition), [try](#try), [unconscious_contagion](#unconscious_contagion), [using](#using), [warn](#warn), [write](#write), 
+  * **Sequence of statements or action**
+    * [add](#add), [ask](#ask), [assert](#assert), [assert](#assert), [benchmark](#benchmark), [break](#break), [capture](#capture), [conscious_contagion](#conscious_contagion), [create](#create), [data](#data), [datalist](#datalist), [diffuse](#diffuse), [do](#do), [draw](#draw), [emotional_contagion](#emotional_contagion), [enforcement](#enforcement), [error](#error), [focus](#focus), [focus_on](#focus_on), [highlight](#highlight), [if](#if), [inspect](#inspect), [let](#let), [loop](#loop), [migrate](#migrate), [put](#put), [release](#release), [remove](#remove), [return](#return), [save](#save), [set](#set), [simulate](#simulate), [socialize](#socialize), [solve](#solve), [status](#status), [switch](#switch), [trace](#trace), [transition](#transition), [try](#try), [unconscious_contagion](#unconscious_contagion), [using](#using), [warn](#warn), [write](#write), 
+  * **Sequence of statements or action**
+    * [add](#add), [ask](#ask), [assert](#assert), [assert](#assert), [benchmark](#benchmark), [break](#break), [capture](#capture), [conscious_contagion](#conscious_contagion), [create](#create), [data](#data), [datalist](#datalist), [diffuse](#diffuse), [do](#do), [draw](#draw), [emotional_contagion](#emotional_contagion), [enforcement](#enforcement), [error](#error), [focus](#focus), [focus_on](#focus_on), [highlight](#highlight), [if](#if), [inspect](#inspect), [let](#let), [loop](#loop), [migrate](#migrate), [put](#put), [release](#release), [remove](#remove), [return](#return), [save](#save), [set](#set), [simulate](#simulate), [socialize](#socialize), [solve](#solve), [status](#status), [switch](#switch), [trace](#trace), [transition](#transition), [try](#try), [unconscious_contagion](#unconscious_contagion), [using](#using), [warn](#warn), [write](#write), 
+  * **Sequence of statements or action**
+    * [add](#add), [ask](#ask), [assert](#assert), [assert](#assert), [benchmark](#benchmark), [break](#break), [capture](#capture), [conscious_contagion](#conscious_contagion), [create](#create), [data](#data), [datalist](#datalist), [diffuse](#diffuse), [do](#do), [draw](#draw), [emotional_contagion](#emotional_contagion), [enforcement](#enforcement), [error](#error), [focus](#focus), [focus_on](#focus_on), [highlight](#highlight), [if](#if), [inspect](#inspect), [let](#let), [loop](#loop), [migrate](#migrate), [put](#put), [release](#release), [remove](#remove), [return](#return), [save](#save), [set](#set), [simulate](#simulate), [socialize](#socialize), [solve](#solve), [status](#status), [switch](#switch), [trace](#trace), [transition](#transition), [try](#try), [unconscious_contagion](#unconscious_contagion), [using](#using), [warn](#warn), [write](#write), 
   * **Species**
-    * [action](#action), [aspect](#aspect), [equation](#equation), [perceive](#perceive), [plan](#plan), [reflex](#reflex), [rule](#rule), [run](#run), [setup](#setup), [simulate](#simulate), [species](#species), [state](#state), [task](#task), [test](#test), [user_command](#user_command), [user_init](#user_init), [user_panel](#user_panel), [Variable_container](#variable_container), [Variable_number](#variable_number), [Variable_regular](#variable_regular), 
+    * [action](#action), [aspect](#aspect), [equation](#equation), [law](#law), [norm](#norm), [perceive](#perceive), [plan](#plan), [reflex](#reflex), [rule](#rule), [sanction](#sanction), [setup](#setup), [simulate](#simulate), [species](#species), [state](#state), [task](#task), [test](#test), [user_command](#user_command), [user_init](#user_init), [user_panel](#user_panel), [Variable_container](#variable_container), [Variable_number](#variable_number), [Variable_regular](#variable_regular), 
+  * **Species**
+    * [action](#action), [aspect](#aspect), [equation](#equation), [law](#law), [norm](#norm), [perceive](#perceive), [plan](#plan), [reflex](#reflex), [rule](#rule), [sanction](#sanction), [setup](#setup), [simulate](#simulate), [species](#species), [state](#state), [task](#task), [test](#test), [user_command](#user_command), [user_init](#user_init), [user_panel](#user_panel), [Variable_container](#variable_container), [Variable_number](#variable_number), [Variable_regular](#variable_regular), 
+  * **Species**
+    * [action](#action), [aspect](#aspect), [equation](#equation), [law](#law), [norm](#norm), [perceive](#perceive), [plan](#plan), [reflex](#reflex), [rule](#rule), [sanction](#sanction), [setup](#setup), [simulate](#simulate), [species](#species), [state](#state), [task](#task), [test](#test), [user_command](#user_command), [user_init](#user_init), [user_panel](#user_panel), [Variable_container](#variable_container), [Variable_number](#variable_number), [Variable_regular](#variable_regular), 
+  * **Species**
+    * [action](#action), [aspect](#aspect), [equation](#equation), [law](#law), [norm](#norm), [perceive](#perceive), [plan](#plan), [reflex](#reflex), [rule](#rule), [sanction](#sanction), [setup](#setup), [simulate](#simulate), [species](#species), [state](#state), [task](#task), [test](#test), [user_command](#user_command), [user_init](#user_init), [user_panel](#user_panel), [Variable_container](#variable_container), [Variable_number](#variable_number), [Variable_regular](#variable_regular), 
   * **action**
-    * [return](#return), 
+    * [assert](#assert), [return](#return), 
   * **aspect**
     * [draw](#draw), 
+  * **chart**
+    * [add](#add), [ask](#ask), [data](#data), [datalist](#datalist), [do](#do), [put](#put), [remove](#remove), [set](#set), [simulate](#simulate), [using](#using), 
   * **chart**
     * [add](#add), [ask](#ask), [data](#data), [datalist](#datalist), [do](#do), [put](#put), [remove](#remove), [set](#set), [simulate](#simulate), [using](#using), 
   * **display**
@@ -93,6 +129,8 @@ wikiPagePath: wiki/Statements.md
     * [default](#default), [match](#match), 
   * **test**
     * [assert](#assert), 
+  * **try**
+    * [catch](#catch), 
   * **user_command**
     * [user_input](#user_input), 
   * **user_first**
@@ -147,14 +185,7 @@ Allows to implement an equation in the form function(n, t) = expression. The lef
 * The syntax of the = statement is a bit different from the other statements. It has to be used as follows (in an equation):
 
 ```
-float t;
-float S;
-float I;
-equation SI { 
-   diff(S,t) = (- 0.3 * S * I / 100);
-   diff(I,t) = (0.3 * S * I / 100);
-} 
-```
+float t; float S; float I; equation SI {     diff(S,t) = (- 0.3 * S * I / 100);    diff(I,t) = (0.3 * S * I / 100); }  ```
 
     
 * See also: [equation](#equation), [solve](#solve), 
@@ -185,44 +216,25 @@ Allows to define in a species, model or experiment a new action that can be call
 * The simplest syntax to define an action that does not take any parameter and does not return anything is:
 
 ```
-action simple_action {
-   // [set of statements]
-}
-```
+action simple_action {    // [set of statements] } ```
 
 
 * If the action needs some parameters, they can be specified betwee, braquets after the identifier of the action:
 
 ```
-action action_parameters(int i, string s){
-   // [set of statements using i and s]
-}
-```
+action action_parameters(int i, string s){    // [set of statements using i and s] } ```
 
 
 * If the action returns any value, the returned type should be used instead of the "action" keyword. A return statement inside the body of the action statement is mandatory.
 
 ```
-int action_return_val(int i, string s){
-   // [set of statements using i and s]
-   return i + i;
-}
-```
+int action_return_val(int i, string s){    // [set of statements using i and s]    return i + i; } ```
 
 
 * If virtual: is true, then the action is abstract, which means that the action is defined without body. A species containing at least one abstract action is abstract. Agents of this species cannot be created. The common use of an abstract action is to define an action that can be used by all its sub-species, which should redefine all abstract actions and implements its body.
 
 ```
-species parent_species {
-   int virtual_action(int i, string s);
-}
-
-species children parent: parent_species {
-   int virtual_action(int i, string s) {
-      return i + i;
-   }
-}
-```
+species parent_species {    int virtual_action(int i, string s); }  species children parent: parent_species {    int virtual_action(int i, string s) {       return i + i;    } } ```
 
     
 * See also: [do](#do), 
@@ -230,7 +242,7 @@ species children parent: parent_species {
 #### Embedments
 * The `action` statement is of type: **Sequence of statements or action**
 * The `action` statement can be embedded into: Species, Experiment, Model, 
-* The `action` statement embeds statements: [return](#return),  
+* The `action` statement embeds statements: [assert](#assert),  [return](#return),  
 
 ----
 
@@ -245,7 +257,7 @@ species children parent: parent_species {
   * `edge` (any type): a pair that will be added to a graph as an edge (if nodes do not exist, they are also added)
   * `node` (any type): an expression that will be added to a graph as a node.
   * `vertex` (any type): 
-  * `weight` (float):  
+  * `weight` (float): An optional float value representing the weight to attach to this element in case the container is a graph 
  	
 #### Definition
 
@@ -256,64 +268,47 @@ Allows to add, i.e. to insert, a new element in a container (a list, matrix, map
 * The new element can be added either at the end of the container or at a particular position.
 
 ```
-add expr to: expr_container;    // Add at the end
-add expr at: expr to: expr_container;   // Add at position expr
-```
+add expr to: expr_container;    // Add at the end add expr at: expr to: expr_container;   // Add at position expr ```
 
 
 * Case of a list, the expression in the facet at: should be an integer.
 
 ```
-list<int> workingList <- [];
-add 0 at: 0 to: workingList ; 	// workingList equals [0]
-add 10 at: 0 to: workingList ; 	// workingList equals [10,0]
-add 20 at: 2 to: workingList ; 	// workingList equals [10,0,20]
-add 50 to: workingList; 	// workingList equals [10,0,20,50]
-add [60,70] all: true to: workingList; 	// workingList equals [10,0,20,50,60,70]
-```
+list<int> workingList <- []; add 0 at: 0 to: workingList ;//workingList equals [0]add 10 at: 0 to: workingList ;//workingList equals [10,0]add 20 at: 2 to: workingList ;//workingList equals [10,0,20]add 50 to: workingList;//workingList equals [10,0,20,50]add [60,70] all: true to: workingList;//workingList equals [10,0,20,50,60,70]```
 
 
 * Case of a map: As a map is basically a list of pairs key::value, we can also use the add statement on it. It is important to note that the behavior of the statement is slightly different, in particular in the use of the at facet, which denotes the key of the pair.
 
 ```
-map<string,string> workingMap <- [];
-add "val1" at: "x" to: workingMap; 	// workingMap equals ["x"::"val1"]
-```
+map<string,string> workingMap <- []; add "val1" at: "x" to: workingMap;//workingMap equals ["x"::"val1"]```
 
 
 * If the at facet is omitted, a pair expr_item::expr_item will be added to the map. An important exception is the case where the expr_item is a pair: in this case the pair is added.
 
 ```
-add "val2" to: workingMap; 	// workingMap equals ["x"::"val1", "val2"::"val2"]
-add "5"::"val4" to: workingMap;  	// workingMap equals ["x"::"val1", "val2"::"val2", "5"::"val4"]
-```
+add "val2" to: workingMap;//workingMap equals ["x"::"val1", "val2"::"val2"]add "5"::"val4" to: workingMap; //workingMap equals ["x"::"val1", "val2"::"val2", "5"::"val4"]```
 
 
 * Notice that, as the key should be unique, the addition of an item at an existing position (i.e. existing key) will only modify the value associated with the given key.
 
 ```
-add "val3" at: "x" to: workingMap; 	// workingMap equals ["x"::"val3", "val2"::"val2", "5"::"val4"]
-```
+add "val3" at: "x" to: workingMap;//workingMap equals ["x"::"val3", "val2"::"val2", "5"::"val4"]```
 
 
 * On a map, the all facet will add all value of a container  in the map (so as pair val_cont::val_cont)
 
 ```
-add ["val4","val5"] all: true at: "x" to: workingMap; 	// workingMap equals ["x"::"val3", "val2"::"val2", "5"::"val4","val4"::"val4","val5"::"val5"]
-```
+add ["val4","val5"] all: true at: "x" to: workingMap;//workingMap equals ["x"::"val3", "val2"::"val2", "5"::"val4","val4"::"val4","val5"::"val5"]```
 
 
 * In case of a graph, we can use the facets `node`, `edge` and `weight` to add a node, an edge or weights to the graph. However, these facets are now considered as deprecated, and it is advised to use the various edge(), node(), edges(), nodes() operators, which can build the correct objects to add to the graph 
 
 ```
-graph g <- as_edge_graph([{1,5}::{12,45}]);
-add edge: {1,5}::{2,3} to: g;
-list var <- g.vertices; 	// var equals [{1,5},{12,45},{2,3}]
-list var <- g.edges; 	// var equals [polyline({1.0,5.0}::{12.0,45.0}),polyline({1.0,5.0}::{2.0,3.0})]
-add node: {5,5} to: g;
-list var <- g.vertices; 	// var equals [{1.0,5.0},{12.0,45.0},{2.0,3.0},{5.0,5.0}]
-list var <- g.edges; 	// var equals [polyline({1.0,5.0}::{12.0,45.0}),polyline({1.0,5.0}::{2.0,3.0})]
-```
+graph g <- as_edge_graph([{1,5}::{12,45}]); add edge: {1,5}::{2,3} to: g;  
+list var <- g.vertices; // var equals [{1,5},{12,45},{2,3}] 
+list var <- g.edges; // var equals [polyline({1.0,5.0}::{12.0,45.0}),polyline({1.0,5.0}::{2.0,3.0})]add node: {5,5} to: g;  
+list var <- g.vertices; // var equals [{1.0,5.0},{12.0,45.0},{2.0,3.0},{5.0,5.0}] 
+list var <- g.edges; // var equals [polyline({1.0,5.0}::{12.0,45.0}),polyline({1.0,5.0}::{2.0,3.0})]```
 
 
 * Case of a matrix: this statement can not be used on matrix. Please refer to the statement put.    
@@ -351,19 +346,13 @@ list var <- g.edges; 	// var equals [polyline({1.0,5.0}::{12.0,45.0}),polyline({
 * The general syntax is:
 
 ```
-display my_display {
-   agents layer_name value: expression [additional options];
-}
-```
+display my_display {    agents layer_name value: expression [additional options]; } ```
 
 
 * For instance, in a segregation model, `agents` will only display unhappy agents:
 
 ```
-display Segregation {
-   agents agentDisappear value: people as list where (each.is_happy = false) aspect: with_group_color;
-}
-```
+display Segregation {    agents agentDisappear value: people as list where (each.is_happy = false) aspect: with_group_color; } ```
 
     
 * See also: [display](#display), [chart](#chart), [event](#event), [graphics](#graphics), [display_grid](#display_grid), [image](#image), [overlay](#overlay), [display_population](#display_population), 
@@ -379,7 +368,7 @@ display Segregation {
 ### annealing 
 #### Facets 
   
-  * **`name`** (an identifier), (omissible) : 
+  * **`name`** (an identifier), (omissible) : The name of the method. For internal use only
   * `aggregation` (a label), takes values in: {min, max}: the agregation method
   * `maximize` (float): the value the algorithm tries to maximize
   * `minimize` (float): the value the algorithm tries to minimize
@@ -397,15 +386,13 @@ This algorithm is an implementation of the Simulated Annealing algorithm. See th
 * As other batch methods, the basic syntax of the annealing statement uses `method annealing` instead of the expected `annealing name: id` : 
 
 ```
-method annealing [facet: value];
-```
+method annealing [facet: value]; ```
 
 
 * For example: 
 
 ```
-method annealing temp_init: 100  temp_end: 1 temp_decrease: 0.5 nb_iter_cst_temp: 5 maximize: food_gathered;
-```
+method annealing temp_init: 100  temp_end: 1 temp_decrease: 0.5 nb_iter_cst_temp: 5 maximize: food_gathered; ```
 
 
 
@@ -433,56 +420,31 @@ Allows an agent, the sender agent (that can be the [Sections161#global world age
 * Ask  a set of receiver agents, stored in a container, to perform a block of statements. The block is evaluated in the context of the agents' species
 
 ```
-ask ${receiver_agents} {
-     ${cursor}
-}
-```
+ask ${receiver_agents} {      ${cursor} } ```
 
 
 * Ask  one agent to perform a block of statements. The block is evaluated in the context of the agent's species
 
 ```
-ask ${one_agent} {
-     ${cursor}
-}
-```
+ask ${one_agent} {      ${cursor} } ```
 
 
 * If the species of the receiver agent(s) cannot be determined, it is possible to force it using the `as` facet. An error is thrown if an agent is not a direct or undirect instance of this species
 
 ```
-ask${receiver_agent(s)} as: ${a_species_expression} {
-     ${cursor}
-}
-```
+ask${receiver_agent(s)} as: ${a_species_expression} {      ${cursor} } ```
 
 
 * To ask a set of agents to do something only if they belong to a given species, the `of_species` operator can be used. If none of the agents belong to the species, nothing happens
 
 ```
-ask ${receiver_agents} of_species ${species_name} {
-     ${cursor}
-}
-```
+ask ${receiver_agents} of_species ${species_name} {      ${cursor} } ```
 
 
 * Any statement can be declared in the block statements. All the statements will be evaluated in the context of the receiver agent(s), as if they were defined in their species, which means that an expression like `self` will represent the receiver agent and not the sender. If the sender needs to refer to itself, some of its own attributes (or temporary variables) within the block statements, it has to use the keyword `myself`.
 
 ```
-species animal {
-    float energy <- rnd (1000) min: 0.0 {
-    reflex when: energy > 500 { // executed when the energy is above the given threshold
-         list<animal> others <- (animal at_distance 5); // find all the neighboring animals in a radius of 5 meters
-         float shared_energy  <- (energy - 500) / length (others); // compute the amount of energy to share with each of them
-         ask others { // no need to cast, since others has already been filtered to only include animals
-              if (energy < 500) { // refers to the energy of each animal in others
-                   energy <- energy + myself.shared_energy; // increases the energy of each animal
-                   myself.energy <- myself.energy - myself.shared_energy; // decreases the energy of the sender
-              }
-         }
-    }
-}
-```
+species animal {     float energy <- rnd (1000) min: 0.0 {     reflex when: energy > 500 { // executed when the energy is above the given threshold          list<animal> others <- (animal at_distance 5); // find all the neighboring animals in a radius of 5 meters          float shared_energy  <- (energy - 500) / length (others); // compute the amount of energy to share with each of them          ask others { // no need to cast, since others has already been filtered to only include animals               if (energy < 500) { // refers to the energy of each animal in others                    energy <- energy + myself.shared_energy; // increases the energy of each animal                    myself.energy <- myself.energy - myself.shared_energy; // decreases the energy of the sender               }          }     } } ```
 
 
 * If the species of the receiver agent cannot be determined, it is possible to force it by casting the agent. Nothing happens if the agent cannot be casted to this species
@@ -509,15 +471,7 @@ Aspect statement is used to define a way to draw the current agent. Several aspe
 * An example of use of the aspect statement:
 
 ```
-species one_species {
-	int a <- rnd(10);
-	aspect aspect1 {
-		if(a mod 2 = 0) { draw circle(a);}
-		else {draw square(a);}
-		draw text: "a= " + a color: #black size: 5;
-	}
-}
-```
+species one_species { 	int a <- rnd(10); 	aspect aspect1 { 		if(a mod 2 = 0) { draw circle(a);} 		else {draw square(a);} 		draw text: "a= " + a color: #black size: 5; 	} } ```
 
 
 
@@ -532,44 +486,32 @@ species one_species {
 ### assert 
 #### Facets 
   
-  * **`value`** (any type), (omissible) : the value that is evaluated and compared to other facets
-  * `equals` (any type): an expression, assert tests whether the value is equals to this expression
-  * `is_not` (any type): an expression, assert tests whether the value is not equals to this expression
-  * `raises` (an identifier): "error" or "warning", used in testing what raises the evaluation of the value: expression 
+  * **`value`** (boolean), (omissible) : a boolean expression. If its evaluation is true, the assertion is successful. Otherwise, an error (or a warning) is raised.
+  * `warning` (boolean): if set to true, makes the assertion emit a warning instead of an error 
  	
 #### Definition
 
-Allows to check whether the evaluation of a given expression fulfills a given condition. If it is not fulfilled, an exception is raised.
+Allows to check if the evaluation of a given expression returns true. If not, an error (or a warning) is raised. If the statement is used inside a test, the error is not propagagated but invalidates the test (in case of a warning, it partially invalidates it). Otherwise, it is normally propagated
 
 #### Usages
 
-* if the equals: facet is used, the equality between the evaluation of expressions in the value: and in the equals: facets is tested
+* Any boolean expression can be used
 
 ```
-assert (2+2) equals: 4;
-```
+assert (2+2) = 4; assert self != nil; int t <- 0; assert is_error(3/t); (1 / 2) is float ```
 
 
-* if the is_not: facet is used, the inequality between the evaluation of expressions in the value: and in the equals: facets is tested
-
-```
-assert self is_not: nil;
-```
-
-
-* if the raises: facet is used with either "warning" or "error", the statement tests whether the evaluation of the value: expression raises an error (resp. a warning)
+* if the 'warn:' facet is set to true, the statement emits a warning (instead of an error) in case the expression is false
 
 ```
-int z <- 0;
-assert (3/z) raises: "error";
-```
+assert 'abc' is string warning: true ```
 
     
-* See also: [test](#test), [setup](#setup), 
+* See also: [test](#test), [setup](#setup), [is_error](#is_error), [is_warning](#is_warning), 
 
 #### Embedments
 * The `assert` statement is of type: **Single statement**
-* The `assert` statement can be embedded into: test, 
+* The `assert` statement can be embedded into: test, action, Sequence of statements or action, Behavior, Sequence of statements or action, 
 * The `assert` statement embeds statements: 
 
 ----
@@ -655,31 +597,19 @@ Allows an agent to capture other agent(s) as its micro-agent(s).
 * The preliminary for an agent A to capture an agent B as its micro-agent is that the A's species must defined a micro-species which is a sub-species of B's species (cf. [Species161#Nesting_species Nesting species]).
 
 ```
-species A {
-...
-}
-species B {
-...
-   species C parent: A {
-   ...
-   }
-...
-}
-```
+species A { ... } species B { ...    species C parent: A {    ...    } ... } ```
 
 
 * To capture all "A" agents as "C" agents, we can ask an "B" agent to execute the following statement:
 
 ```
-capture list(B) as: C;
-```
+capture list(B) as: C; ```
 
 
 * Deprecated writing:
 
 ```
-capture target: list (B) as: C;
-```
+capture target: list (B) as: C; ```
 
     
 * See also: [release](#release), 
@@ -688,6 +618,26 @@ capture target: list (B) as: C;
 * The `capture` statement is of type: **Sequence of statements or action**
 * The `capture` statement can be embedded into: Behavior, Sequence of statements or action, 
 * The `capture` statement embeds statements: 
+
+----
+
+[//]: # (keyword|statement_catch)
+### catch 
+#### Facets 
+ 
+ 	
+#### Definition
+
+This statement cannot be used alone
+
+#### Usages
+    
+* See also: [try](#try), 
+
+#### Embedments
+* The `catch` statement is of type: **Sequence of statements or action**
+* The `catch` statement can be embedded into: try, 
+* The `catch` statement embeds statements: 
 
 ----
 
@@ -715,19 +665,31 @@ capture target: list (B) as: C;
   * `tick_font` (string): Tick font face
   * `tick_font_size` (int): Tick font size
   * `tick_font_style` (an identifier), takes values in: {plain, bold, italic}: the style used to display ticks
+  * `tick_line_color` (rgb): the tick lines color
   * `title_font` (string): Title font face
   * `title_font_size` (int): Title font size
   * `title_font_style` (an identifier), takes values in: {plain, bold, italic}: the style used to display titles
+  * `title_visible` (boolean): chart title visible
   * `type` (an identifier), takes values in: {xy, scatter, histogram, series, pie, radar, heatmap, box_whisker}: the type of chart. It could be histogram, series, xy, pie, radar, heatmap or box whisker. The difference between series and xy is that the former adds an implicit x-axis that refers to the numbers of cycles, while the latter considers the first declaration of data to be its x-axis.
   * `x_label` (string): the title for the X axis
+  * `x_log_scale` (boolean): use Log Scale for X axis
   * `x_range` (any type in [float, int, point, list]): range of the x-axis. Can be a number (which will set the axis total range) or a point (which will set the min and max of the axis).
   * `x_serie` (any type in [list, float, int]): for series charts, change the default common x serie (simulation cycle) for an other value (list or numerical).
   * `x_serie_labels` (any type in [list, float, int, a label]): change the default common x series labels (replace x value or categories) for an other value (string or numerical).
+  * `x_tick_line_visible` (boolean): X tick line visible
   * `x_tick_unit` (float): the tick unit for the y-axis (distance between horyzontal lines and values on the left of the axis).
+  * `x_tick_values_visible` (boolean): X tick values visible
   * `y_label` (string): the title for the Y axis
+  * `y_log_scale` (boolean): use Log Scale for Y axis
   * `y_range` (any type in [float, int, point, list]): range of the y-axis. Can be a number (which will set the axis total range) or a point (which will set the min and max of the axis).
   * `y_serie_labels` (any type in [list, float, int, a label]): for heatmaps/3d charts, change the default y serie for an other value (string or numerical in a list or cumulative).
-  * `y_tick_unit` (float): the tick unit for the x-axis (distance between vertical lines and values bellow the axis). 
+  * `y_tick_line_visible` (boolean): Y tick line visible
+  * `y_tick_unit` (float): the tick unit for the x-axis (distance between vertical lines and values bellow the axis).
+  * `y_tick_unit` (float): the tick unit for the x-axis (distance between vertical lines and values bellow the axis).
+  * `y_tick_values_visible` (boolean): Y tick values visible
+  * `y2_label` (string): the title for the second Y axis
+  * `y2_log_scale` (boolean): use Log Scale for second Y axis
+  * `y2_range` (any type in [float, int, point, list]): range of the second y-axis. Can be a number (which will set the axis total range) or a point (which will set the min and max of the axis). 
  	
 #### Definition
 
@@ -738,12 +700,7 @@ capture target: list (B) as: C;
 * The general syntax is:
 
 ```
-display chart_display {
-   chart "chart name" type: series [additional options] {
-      [Set of data, datalists statements]
-   }
-}
-```
+display chart_display {    chart "chart name" type: series [additional options] {       [Set of data, datalists statements]    } } ```
 
     
 * See also: [display](#display), [agents](#agents), [event](#event), [graphics](#graphics), [display_grid](#display_grid), [image](#image), [overlay](#overlay), [quadtree](#quadtree), [display_population](#display_population), [text](#text), 
@@ -763,6 +720,8 @@ display chart_display {
   * **`emotion_detected`** (546706): the emotion that will start the contagion
   * `name` (an identifier), (omissible) : the identifier of the unconscious contagion
   * `charisma` (float): The charisma value of the perceived agent (between 0 and 1)
+  * `decay` (float): The decay value of the emotion added to the agent
+  * `intensity` (float): The intensity value of the emotion added to the agent
   * `receptivity` (float): The receptivity value of the current agent (between 0 and 1)
   * `threshold` (float): The threshold value to make the contagion
   * `when` (boolean): A boolean value to get the emotion only with a certain condition 
@@ -775,9 +734,7 @@ enables to directly add an emotion of a perceived specie if the perceived agent 
 
 * Other examples of use: 
 ```
-conscious_contagion emotion_detected:fear emotion_created:fearConfirmed;
-conscious_contagion emotion_detected:fear emotion_created:fearConfirmed charisma: 0.5 receptivity: 0.5;
-``` 
+conscious_contagion emotion_detected:fear emotion_created:fearConfirmed; conscious_contagion emotion_detected:fear emotion_created:fearConfirmed charisma: 0.5 receptivity: 0.5; ``` 
   
 
 #### Embedments
@@ -808,71 +765,49 @@ Allows an agent to create `number` agents of species `species`, to create agents
 * Its simple syntax to create `an_int` agents of species `a_species` is:
 
 ```
-create a_species number: an_int;
-create species_of(self) number: 5 returns: list5Agents;
-5
-```
+create a_species number: an_int; create species_of(self) number: 5 returns: list5Agents; 5 ```
 
 
 * In GAML modelers can create agents of species `a_species  (with two attributes `type` and `nature` with types corresponding to the types of the shapefile attributes) from a shapefile `the_shapefile` while reading attributes 'TYPE_OCC' and 'NATURE' of the shapefile. One agent will be created by object contained in the shapefile:
 
 ```
-create a_species from: the_shapefile with: [type:: read('TYPE_OCC'), nature::read('NATURE')];
-```
+create a_species from: the_shapefile with: [type:: read('TYPE_OCC'), nature::read('NATURE')]; ```
 
 
 * In order to create agents from a .csv file, facet `header` can be used to specified whether we can use columns header:
 
 ```
-create toto from: "toto.csv" header: true with:[att1::read("NAME"), att2::read("TYPE")];
-or
-create toto from: "toto.csv" with:[att1::read(0), att2::read(1)]; //with read(int), the index of the column
-```
+create toto from: "toto.csv" header: true with:[att1::read("NAME"), att2::read("TYPE")]; or create toto from: "toto.csv" with:[att1::read(0), att2::read(1)]; //with read(int), the index of the column ```
 
 
 * Similarly to the creation from shapefile, modelers can create agents from a set of geometries. In this case, one agent per geometry will be created (with the geometry as shape)
 
 ```
-create species_of(self) from: [square(4),circle(4)]; 	// 2 agents have been created, with shapes respectively square(4) and circle(4)
-```
+create species_of(self) from: [square(4),circle(4)]; 	// 2 agents have been created, with shapes respectively square(4) and circle(4) ```
 
 
 * Created agents are initialized following the rules of their species. If one wants to refer to them after the statement is executed, the returns keyword has to be defined: the agents created will then be referred to by the temporary variable it declares. For instance, the following statement creates 0 to 4 agents of the same species as the sender, and puts them in the temporary variable children for later use.
 
 ```
-create species (self) number: rnd (4) returns: children;
-ask children {
-        // ...
-}
-```
+create species (self) number: rnd (4) returns: children; ask children {         // ... } ```
 
 
 * If one wants to specify a special initialization sequence for the agents created, create provides the same possibilities as ask. This extended syntax is:
 
 ```
-create a_species number: an_int {
-     [statements]
-}
-```
+create a_species number: an_int {      [statements] } ```
 
 
 * The same rules as in ask apply. The only difference is that, for the agents created, the assignments of variables will bypass the initialization defined in species. For instance:
 
 ```
-create species(self) number: rnd (4) returns: children {
-     set location <- myself.location + {rnd (2), rnd (2)}; // tells the children to be initially located close to me
-     set parent <- myself; // tells the children that their parent is me (provided the variable parent is declared in this species) 
-}
-```
+create species(self) number: rnd (4) returns: children {      set location <- myself.location + {rnd (2), rnd (2)}; // tells the children to be initially located close to me      set parent <- myself; // tells the children that their parent is me (provided the variable parent is declared in this species)  } ```
 
 
 * Desprecated uses: 
 
 ```
-// Simple syntax
-create species: a_species number: an_int;
-
-```
+// Simple syntax create species: a_species number: an_int;  ```
 
 
 * If `number` equals 0 or species is not a species, the statement is ignored.
@@ -888,20 +823,28 @@ create species: a_species number: an_int;
 ### data 
 #### Facets 
   
-  * **`legend`** (string), (omissible) :   
-  * **`value`** (any type in [float, point, list]): 
+  * **`legend`** (string), (omissible) : The legend of the chart  
+  * **`value`** (any type in [float, point, list]): The value to output on the chart
   * `accumulate_values` (boolean): Force to replace values at each step (false) or accumulate with previous steps (true)
   * `color` (any type in [rgb, list]): color of the serie, for heatmap can be a list to specify [minColor,maxColor] or [minColor,medColor,maxColor]
   * `fill` (boolean): Marker filled (true) or not (false)
-  * `line_visible` (boolean): Line visible or not
+  * `line_visible` (boolean): Whether lines are visible or not
   * `marker` (boolean): marker visible or not
   * `marker_shape` (an identifier), takes values in: {marker_empty, marker_square, marker_circle, marker_up_triangle, marker_diamond, marker_hor_rectangle, marker_down_triangle, marker_hor_ellipse, marker_right_triangle, marker_vert_rectangle, marker_left_triangle}: Shape of the marker
   * `marker_size` (float): Size in pixels of the marker
   * `style` (an identifier), takes values in: {line, whisker, area, bar, dot, step, spline, stack, 3d, ring, exploded}: Style for the serie (if not the default one sepecified on chart statement)
   * `thickness` (float): The thickness of the lines to draw
+  * `use_second_y_axis` (boolean): Use second y axis for this serie
   * `x_err_values` (any type in [float, list]): the X Error bar values to display. Has to be a List. Each element can be a number or a list with two values (low and high value)
   * `y_err_values` (any type in [float, list]): the Y Error bar values to display. Has to be a List. Each element can be a number or a list with two values (low and high value)
-  * `y_minmax_values` (list): the Y MinMax bar values to display (BW charts). Has to be a List. Each element can be a number or a list with two values (low and high value)
+  * `y_minmax_values` (list): the Y MinMax bar values to display (BW charts). Has to be a List. Each element can be a number or a list with two values (low and high value) 
+ 	
+#### Definition
+
+This statement allows to describe the values that will be displayed on the chart.
+
+#### Usages
+
 
 #### Embedments
 * The `data` statement is of type: **Single statement**
@@ -924,9 +867,18 @@ create species: a_species number: an_int;
   * `marker_shape` (an identifier), takes values in: {marker_empty, marker_square, marker_circle, marker_up_triangle, marker_diamond, marker_hor_rectangle, marker_down_triangle, marker_hor_ellipse, marker_right_triangle, marker_vert_rectangle, marker_left_triangle}: Shape of the marker. Same one for all series.
   * `marker_size` (list): the marker sizes to display. Can be a list of numbers (same size for each marker of the series) or a list of list (different sizes by point)
   * `style` (an identifier), takes values in: {line, whisker, area, bar, dot, step, spline, stack, 3d, ring, exploded}: Style for the serie (if not the default one sepecified on chart statement)
+  * `thickness` (float): The thickness of the lines to draw
+  * `use_second_y_axis` (boolean): Use second y axis for this serie
   * `x_err_values` (list): the X Error bar values to display. Has to be a List. Each element can be a number or a list with two values (low and high value)
   * `y_err_values` (list): the Y Error bar values to display. Has to be a List. Each element can be a number or a list with two values (low and high value)
-  * `y_minmax_values` (list): the Y MinMax bar values to display (BW charts). Has to be a List. Each element can be a number or a list with two values (low and high value)
+  * `y_minmax_values` (list): the Y MinMax bar values to display (BW charts). Has to be a List. Each element can be a number or a list with two values (low and high value) 
+ 	
+#### Definition
+
+add a list of series to a chart. The number of series can be dynamic (the size of the list changes each step). See Ant Foraging (Charts) model in ChartTest for examples.
+
+#### Usages
+
 
 #### Embedments
 * The `datalist` statement is of type: **Single statement**
@@ -939,7 +891,7 @@ create species: a_species number: an_int;
 ### default 
 #### Facets 
 
-  * `value` (any type), (omissible) :  
+  * `value` (any type), (omissible) : The value or values this statement tries to match 
  	
 #### Definition
 
@@ -983,23 +935,19 @@ This statements allows a value to diffuse among a species on agents (generally o
 * A basic example of diffusion of the variable phero defined in the species cells, given a diffusion matrix math_diff is:
 
 ```
-matrix<float> math_diff <- matrix([[1/9,1/9,1/9],[1/9,1/9,1/9],[1/9,1/9,1/9]]);
-diffuse var: phero on: cells mat_diffu: math_diff;
-```
+matrix<float> math_diff <- matrix([[1/9,1/9,1/9],[1/9,1/9,1/9],[1/9,1/9,1/9]]); diffuse var: phero on: cells mat_diffu: math_diff; ```
 
 
 * The diffusion can be masked by obstacles, created from a bitmap image:
 
 ```
-diffuse var: phero on: cells mat_diffu: math_diff mask: mymask;
-```
+diffuse var: phero on: cells mat_diffu: math_diff mask: mymask; ```
 
 
 * A convenient way to have an uniform diffusion in a given radius is (which is equivalent to the above diffusion):
 
 ```
-diffuse var: phero on: cells proportion: 1/9 radius: 1;
-```
+diffuse var: phero on: cells proportion: 1/9 radius: 1; ```
 
 
 
@@ -1032,14 +980,17 @@ diffuse var: phero on: cells proportion: 1/9 radius: 1;
   * `keystone` (container): Set the position of the 4 corners of your screen ([topLeft,topRight,botLeft,botRight]), in (x,y) coordinate ( the (0,0) position is the top left corner, while the (1,1) position is the bottom right corner). The default value is : [{0,0},{1,0},{0,1},{1,1}]
   * `light` (boolean): Allows to enable/disable the light. Default is true
   * `orthographic_projection` (boolean): Allows to enable/disable the orthographic projection. Default can be configured in Preferences
+  * `parent` (an identifier): Declares that this display inherits its layers and attributes from the parent display named as the argument. Expects the identifier of the parent display or a string if the name of the parent contains spaces
   * `refresh` (boolean): Indicates the condition under which this output should be refreshed (default is true)
   * `refresh_every` (int): Allows to refresh the display every n time steps (default is 1)
   * `rotate` (float): Set the angle for the rotation around the Z axis
   * `scale` (any type in [boolean, float]): Allows to display a scale bar in the overlay. Accepts true/false or an unit name
   * `show_fps` (boolean): Allows to enable/disable the drawing of the number of frames per second
   * `synchronized` (boolean): Indicates whether the display should be directly synchronized with the simulation
+  * `toolbar` (boolean): Indicates whether the top toolbar of the display view should be initially visible or not
   * `type` (a label): Allows to use either Java2D (for planar models) or OpenGL (for 3D models) as the rendering subsystem
   * `use_shader` (boolean): Under construction...
+  * `virtual` (boolean): Declaring a display as virtual makes it invisible on screen, and only usable for display inheritance
   * `z_fighting` (boolean): Allows to alleviate a problem where agents at the same z would overlap each other in random ways 
  	
 #### Definition
@@ -1051,18 +1002,13 @@ A display refers to a independent and mobile part of the interface that can disp
 * The general syntax is:
 
 ```
-display my_display [additional options] { ... }
-```
+display my_display [additional options] { ... } ```
 
 
 * Each display can include different layers (like in a GIS).
 
 ```
-display gridWithElevationTriangulated type: opengl ambient_light: 100 {
-	grid cell elevation: true triangulation: true;
-	species people aspect: base;
-}
-```
+display gridWithElevationTriangulated type: opengl ambient_light: 100 { 	grid cell elevation: true triangulation: true; 	species people aspect: base; } ```
 
 
 
@@ -1101,19 +1047,13 @@ display gridWithElevationTriangulated type: opengl ambient_light: 100 {
 * The general syntax is:
 
 ```
-display my_display {
-   grid ant_grid lines: #black position: { 0.5, 0 } size: {0.5,0.5};
-}
-```
+display my_display {    grid ant_grid lines: #black position: { 0.5, 0 } size: {0.5,0.5}; } ```
 
 
 * To display a grid as a DEM:
 
 ```
-display my_display {
-    grid cell texture: texture_file text: false triangulation: true elevation: true;
-}
-```
+display my_display {     grid cell texture: texture_file text: false triangulation: true elevation: true; } ```
 
     
 * See also: [display](#display), [agents](#agents), [chart](#chart), [event](#event), [graphics](#graphics), [image](#image), [overlay](#overlay), [display_population](#display_population), 
@@ -1148,32 +1088,19 @@ The `display_population` statement is used using the `species keyword`. It allow
 * The general syntax is:
 
 ```
-display my_display {
-   species species_name [additional options];
-}
-```
+display my_display {    species species_name [additional options]; } ```
 
 
 * Species can be superposed on the same plan (be careful with the order, the last one will be above all the others):
 
 ```
-display my_display {
-   species agent1 aspect: base;
-   species agent2 aspect: base;
-   species agent3 aspect: base;
-}
-```
+display my_display {    species agent1 aspect: base;    species agent2 aspect: base;    species agent3 aspect: base; } ```
 
 
 * Each species layer can be placed at a different z value using the opengl display. position:{0,0,0} means the layer will be placed on the ground and position:{0,0,1} means it will be placed at an height equal to the maximum size of the environment.
 
 ```
-display my_display type: opengl{
-   species agent1 aspect: base ;
-   species agent2 aspect: base position:{0,0,0.5};
-   species agent3 aspect: base position:{0,0,1};
-}
-```
+display my_display type: opengl{    species agent1 aspect: base ;    species agent2 aspect: base position:{0,0,0.5};    species agent3 aspect: base position:{0,0,1}; } ```
 
     
 * See also: [display](#display), [agents](#agents), [chart](#chart), [event](#event), [graphics](#graphics), [display_grid](#display_grid), [image](#image), [overlay](#overlay), 
@@ -1203,56 +1130,31 @@ Allows the agent to execute an action or a primitive.  For a list of primitives 
 * The simple syntax (when the action does not expect any argument and the result is not to be kept) is:
 
 ```
-do name_of_action_or_primitive;
-```
+do name_of_action_or_primitive; ```
 
 
 * In case the action expects one or more arguments to be passed, they are defined by using facets (enclosed tags or a map are now deprecated):
 
 ```
-do name_of_action_or_primitive arg1: expression1 arg2: expression2;
-```
+do name_of_action_or_primitive arg1: expression1 arg2: expression2; ```
 
 
 * In case the result of the action needs to be made available to the agent, the action can be called with the agent calling the action (`self` when the agent itself calls the action) instead of `do`; the result should be assigned to a temporary variable:
 
 ```
-type_returned_by_action result <- self name_of_action_or_primitive [];
-```
+type_returned_by_action result <- self name_of_action_or_primitive []; ```
 
 
 * In case of an action expecting arguments and returning a value, the following syntax is used:
 
 ```
-type_returned_by_action result <- self name_of_action_or_primitive [arg1::expression1, arg2::expression2];
-```
+type_returned_by_action result <- self name_of_action_or_primitive [arg1::expression1, arg2::expression2]; ```
 
 
 * Deprecated uses: following uses of the `do` statement (still accepted) are now deprecated:
 
 ```
-// Simple syntax: 
-do action: name_of_action_or_primitive;
-
-// In case the result of the action needs to be made available to the agent, the `returns` keyword can be defined; the result will then be referred to by the temporary variable declared in this attribute:
-do name_of_action_or_primitive returns: result;
-do name_of_action_or_primitive arg1: expression1 arg2: expression2 returns: result;
-type_returned_by_action result <- name_of_action_or_primitive(self, [arg1::expression1, arg2::expression2]);
-
-// In case the result of the action needs to be made available to the agent
-let result <- name_of_action_or_primitive(self, []);
-
-// In case the action expects one or more arguments to be passed, they can also be defined by using enclosed `arg` statements, or the `with` facet with a map of parameters:
-do name_of_action_or_primitive with: [arg1::expression1, arg2::expression2];
-
-or
-
-do name_of_action_or_primitive {
-     arg arg1 value: expression1;
-     arg arg2 value: expression2;
-     ...
-}
-```
+// Simple syntax:  do action: name_of_action_or_primitive;  // In case the result of the action needs to be made available to the agent, the `returns` keyword can be defined; the result will then be referred to by the temporary variable declared in this attribute: do name_of_action_or_primitive returns: result; do name_of_action_or_primitive arg1: expression1 arg2: expression2 returns: result; type_returned_by_action result <- name_of_action_or_primitive(self, [arg1::expression1, arg2::expression2]);  // In case the result of the action needs to be made available to the agent let result <- name_of_action_or_primitive(self, []);  // In case the action expects one or more arguments to be passed, they can also be defined by using enclosed `arg` statements, or the `with` facet with a map of parameters: do name_of_action_or_primitive with: [arg1::expression1, arg2::expression2];  or  do name_of_action_or_primitive {      arg arg1 value: expression1;      arg arg2 value: expression2;      ... } ```
 
 
 
@@ -1294,31 +1196,19 @@ do name_of_action_or_primitive {
 * Any kind of geometry as any location can be drawn when displaying an agent (independently of his shape)
 
 ```
-aspect geometryAspect {
-	draw circle(1.0) empty: !hasFood color: #orange ;
-}
-```
+aspect geometryAspect { 	draw circle(1.0) empty: !hasFood color: #orange ; } ```
 
 
 * Image or text can also be drawn
 
 ```
-aspect arrowAspect {
-	draw "Current state= "+state at: location + {-3,1.5} color: #white font: font('Default', 12, #bold) ;
-	draw file(ant_shape_full) rotate: heading at: location size: 5
-}
-```
+aspect arrowAspect { 	draw "Current state= "+state at: location + {-3,1.5} color: #white font: font('Default', 12, #bold) ; 	draw file(ant_shape_full) rotate: heading at: location size: 5 } ```
 
 
 * Arrows can be drawn with any kind of geometry, using begin_arrow and end_arrow facets, combined with the empty: facet to specify whether it is plain or empty
 
 ```
-aspect arrowAspect {
-	draw line([{20, 20}, {40, 40}]) color: #black begin_arrow:5;
-	draw line([{10, 10},{20, 50}, {40, 70}]) color: #green end_arrow: 2 begin_arrow: 2 empty: true;
-	draw square(10) at: {80,20} color: #purple begin_arrow: 2 empty: true;
-}
-```
+aspect arrowAspect { 	draw line([{20, 20}, {40, 40}]) color: #black begin_arrow:5; 	draw line([{10, 10},{20, 50}, {40, 70}]) color: #green end_arrow: 2 begin_arrow: 2 empty: true; 	draw square(10) at: {80,20} color: #purple begin_arrow: 2 empty: true; } ```
 
 
 
@@ -1356,7 +1246,9 @@ This statement cannot be used alone
   * **`emotion_detected`** (546706): the emotion that will start the contagion
   * `name` (an identifier), (omissible) : the identifier of the emotional contagion
   * `charisma` (float): The charisma value of the perceived agent (between 0 and 1)
+  * `decay` (float): The decay value of the emotion added to the agent
   * `emotion_created` (546706): the emotion that will be created with the contagion
+  * `intensity` (float): The intensity value of the emotion created to the agent
   * `receptivity` (float): The receptivity value of the current agent (between 0 and 1)
   * `threshold` (float): The threshold value to make the contagion
   * `when` (boolean): A boolean value to get the emotion only with a certain condition 
@@ -1369,16 +1261,43 @@ enables to make conscious or unconscious emotional contagion
 
 * Other examples of use: 
 ```
-emotional_contagion emotion_detected:fearConfirmed;
-emotional_contagion emotion_detected:fear emotion_created:fearConfirmed;
-emotional_contagion emotion_detected:fear emotion_created:fearConfirmed charisma: 0.5 receptivity: 0.5;
-``` 
+emotional_contagion emotion_detected:fearConfirmed; emotional_contagion emotion_detected:fear emotion_created:fearConfirmed; emotional_contagion emotion_detected:fear emotion_created:fearConfirmed charisma: 0.5 receptivity: 0.5; ``` 
   
 
 #### Embedments
 * The `emotional_contagion` statement is of type: **Single statement**
 * The `emotional_contagion` statement can be embedded into: Behavior, Sequence of statements or action, 
 * The `emotional_contagion` statement embeds statements: 
+
+----
+
+[//]: # (keyword|statement_enforcement)
+### enforcement 
+#### Facets 
+
+  * `name` (an identifier), (omissible) : the identifier of the enforcement
+  * `law` (string): The law to enforce
+  * `norm` (string): The norm to enforce
+  * `obligation` (546704): The obligation to enforce
+  * `reward` (string): The positive sanction to apply if the norm has been followed
+  * `sanction` (string): The sanction to apply if the norm is violated
+  * `when` (boolean): A boolean value to enforce only with a certain condition 
+ 	
+#### Definition
+
+applay a sanction if the norm specified is violated, or a reward if the norm is applied by the perceived agent
+
+#### Usages
+
+* Other examples of use: 
+```
+focus var:speed /*where speed is a variable from a species that is being perceived*/ ``` 
+  
+
+#### Embedments
+* The `enforcement` statement is of type: **Single statement**
+* The `enforcement` statement can be embedded into: Behavior, Sequence of statements or action, 
+* The `enforcement` statement embeds statements: 
 
 ----
 
@@ -1396,13 +1315,7 @@ In an FSM architecture, `enter` introduces a sequence of statements to execute u
 * In the following example, at the step it enters into the state s_init, the message 'Enter in s_init' is displayed followed by the display of the state name:
 
 ```
-	state s_init {
-		enter { write "Enter in" + state; }
-			write "Enter in" + state;
-		}
-		write state;
-	}
-```
+	state s_init { 		enter { write "Enter in" + state; } 			write "Enter in" + state; 		} 		write state; 	} ```
 
     
 * See also: [state](#state), [exit](#exit), [transition](#transition), 
@@ -1433,26 +1346,13 @@ The equation statement is used to create an equation system from several single 
 * The basic syntax to define an equation system is:
 
 ```
-float t;
-float S;
-float I;
-equation SI { 
-   diff(S,t) = (- 0.3 * S * I / 100);
-   diff(I,t) = (0.3 * S * I / 100);
-} 
-```
+float t; float S; float I; equation SI {     diff(S,t) = (- 0.3 * S * I / 100);    diff(I,t) = (0.3 * S * I / 100); }  ```
 
 
 * If the type: facet is used, a predefined equation system is defined using variables vars: and parameters params: in the right order. All possible predefined equation systems are the following ones (see [EquationPresentation161 EquationPresentation161] for precise definition of each classical equation system): 
 
 ```
-equation eqSI type: SI vars: [S,I,t] params: [N,beta];
-equation eqSIS type: SIS vars: [S,I,t] params: [N,beta,gamma];
-equation eqSIR type:SIR vars:[S,I,R,t] params:[N,beta,gamma];
-equation eqSIRS type: SIRS vars: [S,I,R,t] params: [N,beta,gamma,omega,mu];
-equation eqSEIR type: SEIR vars: [S,E,I,R,t] params: [N,beta,gamma,sigma,mu];
-equation eqLV type: LV vars: [x,y,t] params: [alpha,beta,delta,gamma] ;
-```
+equation eqSI type: SI vars: [S,I,t] params: [N,beta]; equation eqSIS type: SIS vars: [S,I,t] params: [N,beta,gamma]; equation eqSIR type:SIR vars:[S,I,R,t] params:[N,beta,gamma]; equation eqSIRS type: SIRS vars: [S,I,R,t] params: [N,beta,gamma,omega,mu]; equation eqSEIR type: SEIR vars: [S,E,I,R,t] params: [N,beta,gamma,sigma,mu]; equation eqLV type: LV vars: [x,y,t] params: [alpha,beta,delta,gamma] ; ```
 
 
 * If the simultaneously: facet is used, system of all the agents will be solved simultaneously.    
@@ -1480,8 +1380,7 @@ The statement makes the agent output an error dialog (if the simulation contains
 * Throwing an error
 
 ```
-error 'This is an error raised by ' + self;
-```
+error 'This is an error raised by ' + self; ```
 
 
 
@@ -1498,6 +1397,7 @@ error 'This is an error raised by ' + self;
   
   * **`name`** (an identifier), (omissible) : the type of event captured: can be  "mouse_up", "mouse_down", "mouse_move", "mouse_exit", "mouse_enter" or a character  
   * **`action`** (26): Either a block of statements to execute in the context of the simulation or the identifier of the action to be executed. This action needs to be defined in 'global' or in the current experiment, without any arguments. The location of the mouse in the world can be retrieved in this action with the pseudo-constant #user_location
+  * `type` (string): Type of peripheric used to generate events. Defaults to 'default', which encompasses keyboard and mouse
   * `unused` (an identifier), takes values in: {mouse_up, mouse_down, mouse_move, mouse_enter, mouse_exit}: an unused facet that serves only for the purpose of declaring the string values 
  	
 #### Definition
@@ -1509,29 +1409,13 @@ error 'This is an error raised by ' + self;
 * The general syntax is:
 
 ```
-event [event_type] action: myAction;
-```
+event [event_type] action: myAction; ```
 
 
 * For instance:
 
 ```
-global {
-   // ... 
-   action myAction () {
-      point loc <- #user_location; // contains the location of the mouse in the world
-      list<agent> selected_agents <- agents inside (10#m around loc); // contains agents clicked by the event
-      
-      // code written by modelers
-   }
-}
-
-experiment Simple type:gui {
-   display my_display {
-      event mouse_up action: myAction;
-   }
-}
-```
+global {    // ...     action myAction () {       point loc <- #user_location; // contains the location of the mouse in the world       list<agent> selected_agents <- agents inside (10#m around loc); // contains agents clicked by the event              // code written by modelers    } }  experiment Simple type:gui {    display my_display {       event mouse_up action: myAction;    } } ```
 
     
 * See also: [display](#display), [agents](#agents), [chart](#chart), [graphics](#graphics), [display_grid](#display_grid), [image](#image), [overlay](#overlay), [display_population](#display_population), 
@@ -1547,8 +1431,8 @@ experiment Simple type:gui {
 ### exhaustive 
 #### Facets 
   
-  * **`name`** (an identifier), (omissible) : 
-  * `aggregation` (a label), takes values in: {min, max}: the agregation method
+  * **`name`** (an identifier), (omissible) : The name of the method. For internal use only
+  * `aggregation` (a label), takes values in: {min, max}: The aggregation method to use (either min or max)
   * `maximize` (float): the value the algorithm tries to maximize
   * `minimize` (float): the value the algorithm tries to minimize 
  	
@@ -1561,15 +1445,13 @@ This is the standard batch method. The exhaustive mode is defined by default whe
 * As other batch methods, the basic syntax of the exhaustive statement uses `method exhaustive` instead of the expected `exhaustive name: id` : 
 
 ```
-method exhaustive [facet: value];
-```
+method exhaustive [facet: value]; ```
 
 
 * For example: 
 
 ```
-method exhaustive maximize: food_gathered;
-```
+method exhaustive maximize: food_gathered; ```
 
 
 
@@ -1594,16 +1476,7 @@ In an FSM architecture, `exit` introduces a sequence of statements to execute ri
 * In the following example, at the state it leaves the state s_init, he will display the message 'EXIT from s_init':
 
 ```
-	state s_init initial: true {
-		write state;
-		transition to: s1 when: (cycle > 2) {
-			write "transition s_init -> s1";
-		}
-		exit {
-			write "EXIT from "+state;
-		}
-	}
-```
+	state s_init initial: true { 		write state; 		transition to: s1 when: (cycle > 2) { 			write "transition s_init -> s1"; 		} 		exit { 			write "EXIT from "+state; 		} 	} ```
 
     
 * See also: [enter](#enter), [state](#state), [transition](#transition), 
@@ -1621,7 +1494,8 @@ In an FSM architecture, `exit` introduces a sequence of statements to execute ri
   
   * **`name`** (a label), (omissible) : identifier of the experiment  
   * **`title`** (a label):   
-  * **`type`** (a label), takes values in: {batch, memorize, gui, headless}: the type of the experiment (either 'gui' or 'batch'
+  * **`type`** (a label), takes values in: {batch, memorize, gui, test, headless}: the type of the experiment (either 'gui' or 'batch'
+  * `autorun` (boolean): whether this experiment should be run automatically when launched (false by default)
   * `control` (an identifier): 
   * `frequency` (int): the execution frequence of the experiment (default value: 1). If frequency: 10, the experiment is executed only each 10 steps.
   * `keep_seed` (boolean): 
@@ -1632,26 +1506,19 @@ In an FSM architecture, `exit` introduces a sequence of statements to execute ri
   * `schedules` (container): A container of agents (a species, a dynamic list, or a combination of species and containers) , which represents which agents will be actually scheduled when the population is scheduled for execution. For instance, 'species a schedules: (10 among a)' will result in a population that schedules only 10 of its own agents every cycle. 'species b schedules: []' will prevent the agents of 'b' to be scheduled. Note that the scope of agents covered here can be larger than the population, which allows to build complex scheduling controls; for instance, defining 'global schedules: [] {...} species b schedules: []; species c schedules: b + world; ' allows to simulate a model where the agents of b are scheduled first, followed by the world, without even having to create an instance of c.
   * `skills` (list): 
   * `until` (boolean): In the case of a batch experiment, an expression that will be evaluated to know when a simulation should be terminated
+  * `virtual` (boolean): whether the experiment is virtual (cannot be instantiated, but only used as a parent, false by default) 
+ 	
+#### Definition
+
+Declaration of a particular type of agent that can manage simulations
+
+#### Usages
+
 
 #### Embedments
 * The `experiment` statement is of type: **Experiment**
 * The `experiment` statement can be embedded into: Model, 
 * The `experiment` statement embeds statements: 
-
-----
-
-[//]: # (keyword|statement_export)
-### export 
-#### Facets 
-  
-  * **`var`** (an identifier), (omissible) : 
-  * `framerate` (int): 
-  * `name` (string): 
-
-#### Embedments
-* The `export` statement is of type: **Single statement**
-* The `export` statement can be embedded into: Experiment, 
-* The `export` statement embeds statements: 
 
 ----
 
@@ -1661,10 +1528,15 @@ In an FSM architecture, `exit` introduces a sequence of statements to execute ri
 
   * `name` (an identifier), (omissible) : the identifier of the focus
   * `agent_cause` (agent): the agentCause value of the created belief (can be nil
+  * `belief` (546704): The predicate to focus on the beliefs of the other agent
+  * `desire` (546704): The predicate to focus on the desires of the other agent
+  * `emotion` (546706): The emotion to focus on the emotions of the other agent
   * `expression` (any type): an expression that will be the value kept in the belief
+  * `ideal` (546704): The predicate to focus on the ideals of the other agent
   * `lifetime` (int): the lifetime value of the created belief
-  * `priority` (any type in [float, int]): The priority of the created predicate
+  * `strength` (any type in [float, int]): The priority of the created predicate
   * `truth` (boolean): the truth value of the created belief
+  * `uncertainty` (546704): The predicate to focus on the uncertainties of the other agent
   * `var` (any type in [any type, list, container]): the variable of the perceived agent you want to add to your beliefs
   * `when` (boolean): A boolean value to focus only with a certain condition 
  	
@@ -1676,8 +1548,7 @@ enables to directly add a belief from the variable of a perceived specie.
 
 * Other examples of use: 
 ```
-focus var:speed /*where speed is a variable from a species that is being perceived*/
-``` 
+focus var:speed /*where speed is a variable from a species that is being perceived*/ ``` 
   
 
 #### Embedments
@@ -1702,8 +1573,7 @@ Allows to focus on the passed parameter in all available displays. Passing 'nil'
 * Focuses on an agent, a geometry, a set of agents, etc...)
 
 ```
-focus_on my_species(0);
-```
+focus_on my_species(0); ```
 
 
 
@@ -1718,15 +1588,17 @@ focus_on my_species(0);
 ### genetic 
 #### Facets 
   
-  * **`name`** (an identifier), (omissible) : 
+  * **`name`** (an identifier), (omissible) : The name of this method. For internal use only
   * `aggregation` (a label), takes values in: {min, max}: the agregation method
   * `crossover_prob` (float): crossover probability between two individual solutions
+  * `improve_sol` (boolean): if true, use a hill climbing algorithm to improve the solutions at each generation
   * `max_gen` (int): number of generations
   * `maximize` (float): the value the algorithm tries to maximize
   * `minimize` (float): the value the algorithm tries to minimize
   * `mutation_prob` (float): mutation probability for an individual solution
   * `nb_prelim_gen` (int): number of random populations used to build the initial population
-  * `pop_dim` (int): size of the population (number of individual solutions) 
+  * `pop_dim` (int): size of the population (number of individual solutions)
+  * `stochastic_sel` (boolean): if true, use a stochastic selection algorithm (roulette) rather a determistic one (keep the best solutions) 
  	
 #### Definition
 
@@ -1737,15 +1609,13 @@ This is a simple implementation of Genetic Algorithms (GA). See the wikipedia ar
 * As other batch methods, the basic syntax of the `genetic` statement uses `method genetic` instead of the expected `genetic name: id` : 
 
 ```
-method genetic [facet: value];
-```
+method genetic [facet: value]; ```
 
 
 * For example: 
 
 ```
-method genetic maximize: food_gathered pop_dim: 5 crossover_prob: 0.7 mutation_prob: 0.1 nb_prelim_gen: 1 max_gen: 20; 
-```
+method genetic maximize: food_gathered pop_dim: 5 crossover_prob: 0.7 mutation_prob: 0.1 nb_prelim_gen: 1 max_gen: 20;  ```
 
 
 
@@ -1777,13 +1647,7 @@ method genetic maximize: food_gathered pop_dim: 5 crossover_prob: 0.7 mutation_p
 * The general syntax is:
 
 ```
-display my_display {
-   graphics "my new layer" {
-      draw circle(5) at: {10,10} color: #red;
-      draw "test" at: {10,10} size: 20 color: #black;
-   }
-}
-```
+display my_display {    graphics "my new layer" {       draw circle(5) at: {10,10} color: #red;       draw "test" at: {10,10} size: 20 color: #black;    } } ```
 
     
 * See also: [display](#display), [agents](#agents), [chart](#chart), [event](#event), [graphics](#graphics), [display_grid](#display_grid), [image](#image), [overlay](#overlay), [display_population](#display_population), 
@@ -1811,8 +1675,7 @@ Allows to highlight the agent passed in parameter in all available displays, opt
 * Highlighting an agent
 
 ```
-highlight my_species(0) color: #blue;
-```
+highlight my_species(0) color: #blue; ```
 
 
 
@@ -1827,7 +1690,7 @@ highlight my_species(0) color: #blue;
 ### hill_climbing 
 #### Facets 
   
-  * **`name`** (an identifier), (omissible) : 
+  * **`name`** (an identifier), (omissible) : The name of the method. For internal use only
   * `aggregation` (a label), takes values in: {min, max}: the agregation method
   * `iter_max` (int): number of iterations
   * `maximize` (float): the value the algorithm tries to maximize
@@ -1842,15 +1705,13 @@ This algorithm is an implementation of the Hill Climbing algorithm. See the wiki
 * As other batch methods, the basic syntax of the `hill_climbing` statement uses `method hill_climbing` instead of the expected `hill_climbing name: id` : 
 
 ```
-method hill_climbing [facet: value];
-```
+method hill_climbing [facet: value]; ```
 
 
 * For example: 
 
 ```
-method hill_climbing iter_max: 50 maximize : food_gathered; 
-```
+method hill_climbing iter_max: 50 maximize : food_gathered;  ```
 
 
 
@@ -1876,53 +1737,19 @@ Allows the agent to execute a sequence of statements if and only if the conditio
 * The generic syntax is:
 
 ```
-if bool_expr {
-    [statements]
-}
-```
+if bool_expr {     [statements] } ```
 
 
 * Optionally, the statements to execute when the condition evaluates to false can be defined in a following statement else. The syntax then becomes:
 
 ```
-if bool_expr {
-    [statements]
-}
-else {
-    [statements]
-}
-string valTrue <- "";
-if true {
-	valTrue <- "true";
-}
-else {
-	valTrue <- "false";
-}
- 	// valTrue equals "true"
-string valFalse <- "";
-if false {
-	valFalse <- "true";
-}
-else {
-	valFalse <- "false";
-}
- 	// valFalse equals "false"
-```
+if bool_expr {     [statements] } else {     [statements] } string valTrue <- ""; if true { 	valTrue <- "true"; } else { 	valTrue <- "false"; } //valTrue equals "true"string valFalse <- ""; if false { 	valFalse <- "true"; } else { 	valFalse <- "false"; } //valFalse equals "false"```
 
 
 * ifs and elses can be imbricated as needed. For instance:
 
 ```
-if bool_expr {
-    [statements]
-}
-else if bool_expr2 {
-    [statements]
-}
-else {
-    [statements]
-}
-```
+if bool_expr {     [statements] } else if bool_expr2 {     [statements] } else {     [statements] } ```
 
 
 
@@ -1938,11 +1765,11 @@ else {
 #### Facets 
 
   * `name` (any type in [string, file]), (omissible) : Human readable title of the image layer
-  * `color` (rgb): in the case of a shapefile, this the color used to fill in geometries of the shapefile
+  * `color` (rgb): in the case of a shapefile, this the color used to fill in geometries of the shapefile. In the case of an image, it is used to tint the image
   * `file` (any type in [string, file]): the name/path of the image (in the case of a raster image)
   * `gis` (any type in [file, string]): the name/path of the shape file (to display a shapefile as background, without creating agents from it)
   * `position` (point): position of the upper-left corner of the layer. Note that if coordinates are in [0,1[, the position is relative to the size of the environment (e.g. {0.5,0.5} refers to the middle of the display) whereas it is absolute when coordinates are greater than 1 for x and y. The z-ordinate can only be defined between 0 and 1. The position can only be a 3D point {0.5, 0.5, 0.5}, the last coordinate specifying the elevation of the layer.
-  * `refresh` (boolean): (openGL only) specify whether the image display is refreshed. (true by default, usefull in case of images that is not modified over the simulation)
+  * `refresh` (boolean): (openGL only) specify whether the image display is refreshed or not. (false by default, true should be used in cases of images that are modified over the simulation)
   * `size` (point): extent of the layer in the screen from its position. Coordinates in [0,1[ are treated as percentages of the total surface, while coordinates > 1 are treated as absolute sizes in model units (i.e. considering the model occupies the entire view). Like in 'position', an elevation can be provided with the z coordinate, allowing to scale the layer in the 3 directions
   * `transparency` (float): the transparency rate of the agents (between 0 and 1, 1 means no transparency) 
  	
@@ -1955,39 +1782,25 @@ else {
 * The general syntax is:
 
 ```
-display my_display {
-   image layer_name file: image_file [additional options];
-}
-```
+display my_display {    image layer_name file: image_file [additional options]; } ```
 
 
 * For instance, in the case of a bitmap image
 
 ```
-display my_display {
-   image background file:"../images/my_backgound.jpg";
-}
-```
+display my_display {    image background file:"../images/my_backgound.jpg"; } ```
 
 
 * Or in the case of a shapefile:
 
 ```
-display my_display {
-   image testGIS gis: "../includes/building.shp" color: rgb('blue');
-}
-```
+display my_display {    image testGIS gis: "../includes/building.shp" color: rgb('blue'); } ```
 
 
 * It is also possible to superpose images on different layers in the same way as for species using opengl display:
 
 ```
-display my_display {
-  image image1 file:"../images/image1.jpg";
-  image image2 file:"../images/image2.jpg";
-  image image3 file:"../images/image3.jpg" position: {0,0,0.5};
-}
-```
+display my_display {   image image1 file:"../images/image1.jpg";   image image2 file:"../images/image2.jpg";   image image3 file:"../images/image3.jpg" position: {0,0,0.5}; } ```
 
     
 * See also: [display](#display), [agents](#agents), [chart](#chart), [event](#event), [graphics](#graphics), [display_grid](#display_grid), [overlay](#overlay), [display_population](#display_population), 
@@ -2004,7 +1817,7 @@ display my_display {
 #### Facets 
   
   * **`name`** (any type), (omissible) : the identifier of the inspector
-  * `attributes` (list): the list of attributes to inspect
+  * `attributes` (list): the list of attributes to inspect. A list that can contain strings or pair<string,type>, or a mix of them. These can be variables of the species, but also attributes present in the attributes table of the agent. The type is necessary in that case
   * `refresh` (boolean): Indicates the condition under which this output should be refreshed (default is true)
   * `refresh_every` (int): Allows to refresh the inspector every n time steps (default is 1)
   * `type` (an identifier), takes values in: {agent, table}: the way to inspect agents: in a table, or a set of inspectors
@@ -2019,8 +1832,7 @@ display my_display {
 * An example of syntax is:
 
 ```
-inspect "my_inspector" value: ant attributes: ["name", "location"];
-```
+inspect "my_inspector" value: ant attributes: ["name", "location"]; ```
 
 
 
@@ -2031,15 +1843,55 @@ inspect "my_inspector" value: ant attributes: ["name", "location"];
 
 ----
 
+[//]: # (keyword|statement_law)
+### law 
+#### Facets 
+
+  * `name` (an identifier), (omissible) : The name of the law
+  * `belief` (546704): The mandatory belief
+  * `beliefs` (list): The mandatory beliefs
+  * `lifetime` (int): the lifetime value of the mental state created
+  * `new_obligation` (546704): The predicate that will be added as an obligation
+  * `new_obligations` (list): The list of predicates that will be added as obligations
+  * `parallel` (any type in [boolean, int]): setting this facet to 'true' will allow 'perceive' to use concurrency with a parallel_bdi architecture; setting it to an integer will set the threshold under which they will be run sequentially (the default is initially 20, but can be fixed in the preferences). This facet is true by default.
+  * `strength` (any type in [float, int]): The stregth of the mental state created
+  * `threshold` (float): Threshold linked to the obedience value.
+  * `when` (boolean):  
+ 	
+#### Definition
+
+enables to add a desire or a belief or to remove a belief, a desire or an intention if the agent gets the belief or/and desire or/and condition mentioned.
+
+#### Usages
+
+* Other examples of use: 
+```
+rule belief: new_predicate("test") when: flip(0.5) new_desire: new_predicate("test") ``` 
+  
+
+#### Embedments
+* The `law` statement is of type: **Single statement**
+* The `law` statement can be embedded into: Species, Model, 
+* The `law` statement embeds statements: 
+
+----
+
 [//]: # (keyword|statement_let)
 ### let 
 #### Facets 
   
-  * **`name`** (a new identifier), (omissible) : 
-  * `index` (a datatype identifier): 
-  * `of` (a datatype identifier): 
-  * `type` (a datatype identifier): 
-  * `value` (any type): 
+  * **`name`** (a new identifier), (omissible) : The name of the variable declared
+  * `index` (a datatype identifier): The type of the index if this declaration concerns a container
+  * `of` (a datatype identifier): The type of the contents if this declaration concerns a container
+  * `type` (a datatype identifier): The type of the variable
+  * `value` (any type): The value assigned to this variable 
+ 	
+#### Definition
+
+Allows to declare a temporary variable of the specified type and to initialize it with a value
+
+#### Usages
+
 
 #### Embedments
 * The `let` statement is of type: **Single statement**
@@ -2073,10 +1925,7 @@ inspect "my_inspector" value: ant attributes: ["name", "location"];
 * The general syntax is:
 
 ```
-light 1 type:point position:{20,20,20} color:255, linear_attenuation:0.01 quadratic_attenuation:0.0001 draw_light:true update:false
-light 2 type:spot position:{20,20,20} direction:{0,0,-1} color:255 spot_angle:25 linear_attenuation:0.01 quadratic_attenuation:0.0001 draw_light:true update:false
-light 3 type:point direction:{1,1,-1} color:255 draw_light:true update:false
-```
+light 1 type:point position:{20,20,20} color:255, linear_attenuation:0.01 quadratic_attenuation:0.0001 draw_light:true update:false light 2 type:spot position:{20,20,20} direction:{0,0,-1} color:255 spot_angle:25 linear_attenuation:0.01 quadratic_attenuation:0.0001 draw_light:true update:false light 3 type:point direction:{1,1,-1} color:255 draw_light:true update:false ```
 
     
 * See also: [display](#display), 
@@ -2109,68 +1958,43 @@ Allows the agent to perform the same set of statements either a fixed number of 
 * The basic syntax for repeating a fixed number of times a set of statements is:
 
 ```
-loop times: an_int_expression {
-     // [statements]
-}
-```
+loop times: an_int_expression {      // [statements] } ```
 
 
 * The basic syntax for repeating a set of statements while a condition holds is:
 
 ```
-loop while: a_bool_expression {
-     // [statements]
-}
-```
+loop while: a_bool_expression {      // [statements] } ```
 
 
 * The basic syntax for repeating a set of statements by progressing over a container of a point is:
 
 ```
-loop a_temp_var over: a_collection_expression {
-     // [statements]
-}
-```
+loop a_temp_var over: a_collection_expression {      // [statements] } ```
 
 
 * The basic syntax for repeating a set of statements while an index iterates over a range of values with a fixed step of 1 is:
 
 ```
-loop a_temp_var from: int_expression_1 to: int_expression_2 {
-     // [statements]
-}
-```
+loop a_temp_var from: int_expression_1 to: int_expression_2 {      // [statements] } ```
 
 
 * The incrementation step of the index can also be chosen:
 
 ```
-loop a_temp_var from: int_expression_1 to: int_expression_2 step: int_expression3 {
-     // [statements]
-}
-```
+loop a_temp_var from: int_expression_1 to: int_expression_2 step: int_expression3 {      // [statements] } ```
 
 
 * In these latter three cases, the name facet designates the name of a temporary variable, whose scope is the loop, and that takes, in turn, the value of each of the element of the list (or each value in the interval). For example, in the first instance of the "loop over" syntax :
 
 ```
-int a <- 0;
-loop i over: [10, 20, 30] {
-     a <- a + i;
-} // a now equals 60
-```
+int a <- 0; loop i over: [10, 20, 30] {      a <- a + i; } // a now equals 60 ```
 
 
 * The second (quite common) case of the loop syntax allows one to use an interval of integers. The from and to facets take an integer expression as arguments, with the first (resp. the last) specifying the beginning (resp. end) of the inclusive interval (i.e. [to, from]). If the step is not defined, it is assumed to be equal to 1 or -1, depending on the direction of the range. If it is defined, its sign will be respected, so that a positive step will never allow the loop to enter a loop from i to j where i is greater than j
 
 ```
-list the_list <-list (species_of (self));
-loop i from: 0 to: length (the_list) - 1 {
-     ask the_list at i {
-        // ...
-     }
-} // every  agent of the list is asked to do something
-```
+list the_list <-list (species_of (self)); loop i from: 0 to: length (the_list) - 1 {      ask the_list at i {         // ...      } } // every  agent of the list is asked to do something ```
 
 
 
@@ -2185,7 +2009,7 @@ loop i from: 0 to: length (the_list) - 1 {
 ### match 
 #### Facets 
 
-  * `value` (any type), (omissible) :  
+  * `value` (any type), (omissible) : The value or values this statement tries to match 
  	
 #### Definition
 
@@ -2196,31 +2020,19 @@ In a switch...match structure, the value of each match block is compared to the 
 * match block is executed if the switch value is equals to the value of the match:
 
 ```
-switch 3 {
-   match 1 {write "Match 1"; }
-   match 3 {write "Match 2"; }
-}
-```
+switch 3 {    match 1 {write "Match 1"; }    match 3 {write "Match 2"; } } ```
 
 
 * match_between block is executed if the switch value is in the interval given in value of the match_between:
 
 ```
-switch 3 {
-   match_between [1,2] {write "Match OK between [1,2]"; }
-   match_between [2,5] {write "Match OK between [2,5]"; }
-}
-```
+switch 3 {    match_between [1,2] {write "Match OK between [1,2]"; }    match_between [2,5] {write "Match OK between [2,5]"; } } ```
 
 
 * match_one block is executed if the switch value is equals to one of the values of the match_one:
 
 ```
-switch 3 {
-   match_one [0,1,2] {write "Match OK with one of [0,1,2]"; }
-   match_between [2,3,4,5] {write "Match OK with one of [2,3,4,5]"; }
-}
-```
+switch 3 {    match_one [0,1,2] {write "Match OK with one of [0,1,2]"; }    match_between [2,3,4,5] {write "Match OK with one of [2,3,4,5]"; } } ```
 
     
 * See also: [switch](#switch), [default](#default), 
@@ -2249,8 +2061,7 @@ This command permits agents to migrate from one population/species to another po
 * It can be used in a 3-levels model, in case where individual agents can be captured into group meso agents and groups into clouds macro agents. migrate is used to allows agents captured by groups to migrate into clouds. See the model 'Balls, Groups and Clouds.gaml' in the library.
 
 ```
-migrate ball_in_group target: ball_in_cloud;
-```
+migrate ball_in_group target: ball_in_cloud; ```
 
     
 * See also: [capture](#capture), [release](#release), 
@@ -2281,8 +2092,7 @@ A monitor allows to follow the value of an arbitrary expression in GAML.
 * An example of use is:
 
 ```
-monitor "nb preys" value: length(prey as list) refresh_every: 5;  
-```
+monitor "nb preys" value: length(prey as list) refresh_every: 5;   ```
 
 
 
@@ -2290,6 +2100,27 @@ monitor "nb preys" value: length(prey as list) refresh_every: 5;
 * The `monitor` statement is of type: **Output**
 * The `monitor` statement can be embedded into: output, permanent, 
 * The `monitor` statement embeds statements: 
+
+----
+
+[//]: # (keyword|statement_norm)
+### norm 
+#### Facets 
+
+  * `name` (an identifier), (omissible) : 
+  * `finished_when` (boolean): 
+  * `instantaneous` (boolean): 
+  * `intention` (546704): 
+  * `lifetime` (int): 
+  * `obligation` (546704): 
+  * `priority` (float): 
+  * `threshold` (float): 
+  * `when` (boolean): 
+
+#### Embedments
+* The `norm` statement is of type: **Behavior**
+* The `norm` statement can be embedded into: Species, Model, 
+* The `norm` statement embeds statements: 
 
 ----
 
@@ -2307,13 +2138,7 @@ monitor "nb preys" value: length(prey as list) refresh_every: 5;
 * Its basic syntax is: 
 
 ```
-experiment exp_name type: gui {
-   // [inputs]
-   output {
-      // [display, file, inspect, layout or monitor statements]
-   }
-}
-```
+experiment exp_name type: gui {    // [inputs]    output {       // [display, file, inspect, layout or monitor statements]    } } ```
 
     
 * See also: [display](#display), [monitor](#monitor), [inspect](#inspect), [output_file](#output_file), [layout](#layout), 
@@ -2336,7 +2161,14 @@ experiment exp_name type: gui {
   * `refresh` (boolean): Indicates the condition under which this file should be saved (default is true)
   * `refresh_every` (int): Allows to save the file every n time steps (default is 1)
   * `rewrite` (boolean): Rewrite or not the existing file
-  * `type` (an identifier), takes values in: {csv, text, xml}: The type of your output data
+  * `type` (an identifier), takes values in: {csv, text, xml}: The type of your output data 
+ 	
+#### Definition
+
+Represents an output that writes the result of expressions into a file
+
+#### Usages
+
 
 #### Embedments
 * The `output_file` statement is of type: **Output**
@@ -2369,8 +2201,7 @@ experiment exp_name type: gui {
 * To display information in the bottom overlay, the syntax is:
 
 ```
-overlay "Cycle: " + (cycle) center: "Duration: " + total_duration + "ms" right: "Model time: " + as_date(time,"") color: [#yellow, #orange, #yellow];
-```
+overlay "Cycle: " + (cycle) center: "Duration: " + total_duration + "ms" right: "Model time: " + as_date(time,"") color: [#yellow, #orange, #yellow]; ```
 
     
 * See also: [display](#display), [agents](#agents), [chart](#chart), [event](#event), [graphics](#graphics), [display_grid](#display_grid), [image](#image), [display_population](#display_population), 
@@ -2408,16 +2239,13 @@ The parameter statement specifies which global attributes (i) will change throug
 * In gui experiment, the general syntax is the following:
 
 ```
-parameter title var: global_var category: cat;
-```
+parameter title var: global_var category: cat; ```
 
 
 * In batch experiment, the two following syntaxes can be used to describe the possible values of a parameter:
 
 ```
-parameter 'Value of toto:' var: toto among: [1, 3, 7, 15, 100]; 
-parameter 'Value of titi:' var: titi min: 1 max: 100 step: 2; 
-```
+parameter 'Value of toto:' var: toto among: [1, 3, 7, 15, 100];  parameter 'Value of titi:' var: titi min: 1 max: 100 step: 2;  ```
 
 
 
@@ -2450,11 +2278,7 @@ Allow the agent, with a bdi architecture, to perceive others agents
 * the basic syntax to perceive agents inside a circle of perception
 
 ```
-perceive name_of-perception target: the_agents_you_want_to_perceive in: a_distance when: a_certain_condition {
-Here you are in the context of the perceived agents. To refer to the agent who does the perception, use myself.
-If you want to make an action (such as adding a belief for example), use ask myself{ do the_action}
-}
-```
+perceive name_of-perception target: the_agents_you_want_to_perceive in: a_distance when: a_certain_condition { Here you are in the context of the perceived agents. To refer to the agent who does the perception, use myself. If you want to make an action (such as adding a belief for example), use ask myself{ do the_action} } ```
 
 
 
@@ -2480,14 +2304,7 @@ Represents the outputs of the experiment itself. In a batch experiment, the perm
 * For instance, this permanent section will allow to display for each simulation the end value of the food_gathered variable:
 
 ```
-permanent {
-	display Ants background: rgb('white') refresh_every: 1 {
-		chart "Food Gathered" type: series {
-			data "Food" value: food_gathered;
-		}
-	}
-}
-```
+permanent { 	display Ants background: rgb('white') refresh_every: 1 { 		chart "Food Gathered" type: series { 			data "Food" value: food_gathered; 		} 	} } ```
 
 
 
@@ -2539,37 +2356,28 @@ Allows the agent to replace a value in a container at a given position (in a lis
 * The allowed parameters configurations are the following ones:
 
 ```
-put expr at: expr in: expr_container;
-put all: expr in: expr_container;
-```
+put expr at: expr in: expr_container; put all: expr in: expr_container; ```
 
 
 * In the case of a list, the position should an integer in the bound of the list. The facet all: is used to replace all the elements of the list by the given value.
 
 ```
-list<int> putList <- [1,2,3,4,5]; 	// putList equals [1,2,3,4,5]
-put -10 at: 1 in: putList; 	// putList equals [1,-10,3,4,5]
-put 10 all: true in: putList; 	// putList equals [10,10,10,10,10]
-```
+list<int> 
+putList <- [1,2,3,4,5]; //putList equals [1,2,3,4,5]put -10 at: 1 in: putList;//putList equals [1,-10,3,4,5]put 10 all: true in: putList;//putList equals [10,10,10,10,10]```
 
 
 * In the case of a matrix, the position should be a point in the bound of the matrix. The facet all: is used to replace all the elements of the matrix by the given value.
 
 ```
-matrix<int> putMatrix <- matrix([[0,1],[2,3]]); 	// putMatrix equals matrix([[0,1],[2,3]])
-put -10 at: {1,1} in: putMatrix; 	// putMatrix equals matrix([[0,1],[2,-10]])
-put 10 all: true in: putMatrix; 	// putMatrix equals matrix([[10,10],[10,10]])
-```
+matrix<int> 
+putMatrix <- matrix([[0,1],[2,3]]); //putMatrix equals matrix([[0,1],[2,3]])put -10 at: {1,1} in: putMatrix;//putMatrix equals matrix([[0,1],[2,-10]])put 10 all: true in: putMatrix;//putMatrix equals matrix([[10,10],[10,10]])```
 
 
 * In the case of a map, the position should be one of the key values of the map. Notice that if the given key value does not exist in the map, the given pair key::value will be added to the map. The facet all is used to replace the value of all the pairs of the map.
 
 ```
-map<string,int> putMap <- ["x"::4,"y"::7]; 	// putMap equals ["x"::4,"y"::7]
-put -10 key: "y" in: putMap; 	// putMap equals ["x"::4,"y"::-10]
-put -20 key: "z" in: putMap; 	// putMap equals ["x"::4,"y"::-10, "z"::-20]
-put -30 all: true in: putMap; 	// putMap equals ["x"::-30,"y"::-30, "z"::-30]
-```
+map<string,int> 
+putMap <- ["x"::4,"y"::7]; //putMap equals ["x"::4,"y"::7]put -10 key: "y" in: putMap;//putMap equals ["x"::4,"y"::-10]put -20 key: "z" in: putMap;//putMap equals ["x"::4,"y"::-10, "z"::-20]put -30 all: true in: putMap;//putMap equals ["x"::-30,"y"::-30, "z"::-30]```
 
 
 
@@ -2605,15 +2413,13 @@ This algorithm is a simple implementation of the Reactive Tabu Search algorithm 
 * As other batch methods, the basic syntax of the reactive_tabu statement uses `method reactive_tabu` instead of the expected `reactive_tabu name: id` : 
 
 ```
-method reactive_tabu [facet: value];
-```
+method reactive_tabu [facet: value]; ```
 
 
 * For example: 
 
 ```
-method reactive_tabu iter_max: 50 tabu_list_size_init: 5 tabu_list_size_min: 2 tabu_list_size_max: 10 nb_tests_wthout_col_max: 20 cycle_size_min: 2 cycle_size_max: 20 maximize: food_gathered;
-```
+method reactive_tabu iter_max: 50 tabu_list_size_init: 5 tabu_list_size_min: 2 tabu_list_size_max: 10 nb_tests_wthout_col_max: 20 cycle_size_min: 2 cycle_size_max: 20 maximize: food_gathered; ```
 
 
 
@@ -2640,10 +2446,7 @@ Reflexes are sequences of statements that can be executed by the agent. Reflexes
 * Example:
 
 ```
-reflex my_reflex when: flip (0.5){ 		//Only executed when flip returns true
-    write "Executing the unconditional reflex";
-}
-```
+reflex my_reflex when: flip (0.5){ 		//Only executed when flip returns true     write "Executing the unconditional reflex"; } ```
 
 
 
@@ -2672,34 +2475,19 @@ Allows an agent to release its micro-agent(s). The preliminary for an agent to r
 * We consider the following species. Agents of "C" species can be released from a "B" agent to become agents of "A" species. Agents of "D" species cannot be released from the "A" agent because species "D" has no parent species.
 
 ```
-species A {
-...
-}
-species B {
-...
-   species C parent: A {
-   ...
-   }
-   species D {
-   ...
-   }
-...
-}
-```
+species A { ... } species B { ...    species C parent: A {    ...    }    species D {    ...    } ... } ```
 
 
 * To release all "C" agents from a "B" agent, agent "C" has to execute the following statement. The "C" agent will change to "A" agent. The won't consider "B" agent as their macro-agent (host) anymore. Their host (macro-agent) will the be the host (macro-agent) of the "B" agent.
 
 ```
-release list(C);
-```
+release list(C); ```
 
 
 * The modeler can specify the new host and the new species of the released agents:
 
 ```
-release list (C) as: new_species in: new host;
-```
+release list (C) as: new_species in: new host; ```
 
     
 * See also: [capture](#capture), 
@@ -2733,72 +2521,41 @@ Allows the agent to remove an element from a container (a list, matrix, map...).
 * This statement should be used in the following ways, depending on the kind of container used and the expected action on it:
 
 ```
-remove expr from: expr_container;
-remove index: expr from: expr_container;
-remove key: expr from: expr_container;
-remove all: expr from: expr_container;
-```
+remove expr from: expr_container; remove index: expr from: expr_container; remove key: expr from: expr_container; remove all: expr from: expr_container; ```
 
 
 * In the case of list, the facet `item:` is used to remove the first occurence of a given expression, whereas `all` is used to remove all the occurrences of the given expression.
 
 ```
-list<int> removeList <- [3,2,1,2,3];
-remove 2 from: removeList; 	// removeList equals [3,1,2,3]
-remove 3 all: true from: removeList; 	// removeList equals [1,2]
-remove index: 1 from: removeList; 	// removeList equals [1]
-```
+list<int> removeList <- [3,2,1,2,3]; remove 2 from: removeList;//removeList equals [3,1,2,3]remove 3 all: true from: removeList;//removeList equals [1,2]remove index: 1 from: removeList;//removeList equals [1]```
 
 
 * In the case of map, the facet `key:` is used to remove the pair identified by the given key.
 
 ```
-map<string,int> removeMap <- ["x"::5, "y"::7, "z"::7];
-remove key: "x" from: removeMap; 	// removeMap equals ["y"::7, "z"::7]
-remove 7 all: true from: removeMap; 	// removeMap equals map([])
-```
+map<string,int> removeMap <- ["x"::5, "y"::7, "z"::7]; remove key: "x" from: removeMap;//removeMap equals ["y"::7, "z"::7]remove 7 all: true from: removeMap;//removeMap equals map([])```
 
 
 * In addition, a map a be managed as a list with pair key as index. Given that, facets item:, all: and index: can be used in the same way:
 
 ```
-map<string,int> removeMapList <- ["x"::5, "y"::7, "z"::7, "t"::5];
-remove 7 from: removeMapList; 	// removeMapList equals ["x"::5, "z"::7, "t"::5]
-remove [5,7] all: true from: removeMapList; 	// removeMapList equals ["t"::5]
-remove index: "t" from: removeMapList; 	// removeMapList equals map([])
-```
+map<string,int> removeMapList <- ["x"::5, "y"::7, "z"::7, "t"::5]; remove 7 from: removeMapList;//removeMapList equals ["x"::5, "z"::7, "t"::5]remove [5,7] all: true from: removeMapList;//removeMapList equals ["t"::5]remove index: "t" from: removeMapList;//removeMapList equals map([])```
 
 
 * In the case of a graph, both edges and nodes can be removes using node: and edge facets. If a node is removed, all edges to and from this node are also removed.
 
 ```
-graph removeGraph <- as_edge_graph([{1,2}::{3,4},{3,4}::{5,6}]);
-remove node: {1,2} from: removeGraph;
-remove node(1,2) from: removeGraph;
-list var <- removeGraph.vertices; 	// var equals [{3,4},{5,6}]
-list var <- removeGraph.edges; 	// var equals [polyline({3,4}::{5,6})]
-remove edge: {3,4}::{5,6} from: removeGraph;
-remove edge({3,4},{5,6}) from: removeGraph;
-list var <- removeGraph.vertices; 	// var equals [{3,4},{5,6}]
-list var <- removeGraph.edges; 	// var equals []
-```
+graph removeGraph <- as_edge_graph([{1,2}::{3,4},{3,4}::{5,6}]); remove node: {1,2} from: removeGraph; remove node(1,2) from: removeGraph;  
+list var <- removeGraph.vertices; // var equals [{3,4},{5,6}] 
+list var <- removeGraph.edges; // var equals [polyline({3,4}::{5,6})]remove edge: {3,4}::{5,6} from: removeGraph; remove edge({3,4},{5,6}) from: removeGraph;  
+list var <- removeGraph.vertices; // var equals [{3,4},{5,6}] 
+list var <- removeGraph.edges; // var equals []```
 
 
 * In the case of an agent or a shape, `remove` allows to remove an attribute from the attributes map of the receiver. However, for agents, it will only remove attributes that have been added dynamically, not the ones defined in the species or in its built-in parent.
 
 ```
-global {
-   init {
-      create speciesRemove;
-      speciesRemove sR <- speciesRemove(0); 	// sR.a now equals 100
-      remove key:"a" from: sR; 	// sR.a now equals nil
-   }
-}
-
-species speciesRemove {
-   int a <- 100; 
-}
-```
+global {    init {       create speciesRemove;       speciesRemove sR <- speciesRemove(0); 	// sR.a now equals 100       remove key:"a" from: sR; 	// sR.a now equals nil    } }  species speciesRemove {    int a <- 100;  } ```
 
 
 * This statement can not be used on *matrix*.    
@@ -2826,29 +2583,13 @@ Allows to immediately stop and tell which value to return from the evaluation of
 * Example:
 
 ```
-string foo {
-     return "foo";
-}
-
-reflex {
-    string foo_result <- foo(); 	// foos_result is now equals to "foo"
-}
-```
+string foo {      return "foo"; }  reflex {     string foo_result <- foo(); 	// foos_result is now equals to "foo" } ```
 
 
 * In the specific case one wants an agent to ask another agent to execute a statement with a return, it can be done similarly to:
 
 ```
-// In Species A:
-string foo_different {
-     return "foo_not_same";
-}
-/// ....
-// In Species B:
-reflex writing {
-    string temp <- some_agent_A.foo_different []; 	// temp is now equals to "foo_not_same" 
-}
-```
+// In Species A: string foo_different {      return "foo_not_same"; } /// .... // In Species B: reflex writing {     string temp <- some_agent_A.foo_different []; 	// temp is now equals to "foo_not_same"  } ```
 
 
 
@@ -2865,8 +2606,12 @@ reflex writing {
 
   * `name` (an identifier), (omissible) : The name of the rule
   * `belief` (546704): The mandatory belief
+  * `beliefs` (list): The mandatory beliefs
   * `desire` (546704): The mandatory desire
+  * `desires` (list): The mandatory desires
   * `emotion` (546706): The mandatory emotion
+  * `emotions` (list): The mandatory emotions
+  * `lifetime` (int): the lifetime value of the mental state created
   * `new_belief` (546704): The belief that will be added
   * `new_beliefs` (list): The belief that will be added
   * `new_desire` (546704): The desire that will be added
@@ -2876,7 +2621,6 @@ reflex writing {
   * `new_uncertainties` (list): The uncertainty that will be added
   * `new_uncertainty` (546704): The uncertainty that will be added
   * `parallel` (any type in [boolean, int]): setting this facet to 'true' will allow 'perceive' to use concurrency with a parallel_bdi architecture; setting it to an integer will set the threshold under which they will be run sequentially (the default is initially 20, but can be fixed in the preferences). This facet is true by default.
-  * `priority` (any type in [float, int]): The priority of the predicate added as a desire
   * `remove_belief` (546704): The belief that will be removed
   * `remove_beliefs` (list): The belief that will be removed
   * `remove_desire` (546704): The desire that will be removed
@@ -2886,7 +2630,9 @@ reflex writing {
   * `remove_intention` (546704): The intention that will be removed
   * `remove_uncertainties` (list): The uncertainty that will be removed
   * `remove_uncertainty` (546704): The uncertainty that will be removed
+  * `strength` (any type in [float, int]): The stregth of the mental state created
   * `threshold` (float): Threshold linked to the emotion.
+  * `uncertainties` (list): The mandatory uncertainties
   * `uncertainty` (546704): The mandatory uncertainty
   * `when` (boolean):  
  	
@@ -2898,8 +2644,7 @@ enables to add a desire or a belief or to remove a belief, a desire or an intent
 
 * Other examples of use: 
 ```
-rule belief: new_predicate("test") when: flip(0.5) new_desire: new_predicate("test")
-``` 
+rule belief: new_predicate("test") when: flip(0.5) new_desire: new_predicate("test") ``` 
   
 
 #### Embedments
@@ -2909,22 +2654,16 @@ rule belief: new_predicate("test") when: flip(0.5) new_desire: new_predicate("te
 
 ----
 
-[//]: # (keyword|statement_run)
-### run 
+[//]: # (keyword|statement_sanction)
+### sanction 
 #### Facets 
-  
-  * **`name`** (string), (omissible) :   
-  * **`of`** (string): 
-  * `core` (int): 
-  * `end_cycle` (int): 
-  * `seed` (int): 
-  * `with_output` (map): 
-  * `with_param` (map): 
+
+  * `name` (an identifier), (omissible) : 
 
 #### Embedments
-* The `run` statement is of type: **Sequence of statements or action**
-* The `run` statement can be embedded into: Behavior, Single statement, Species, Model, 
-* The `run` statement embeds statements: 
+* The `sanction` statement is of type: **Behavior**
+* The `sanction` statement can be embedded into: Species, Model, 
+* The `sanction` statement embeds statements: 
 
 ----
 
@@ -2933,11 +2672,11 @@ rule belief: new_predicate("test") when: flip(0.5) new_desire: new_predicate("te
 #### Facets 
 
   * `data` (any type), (omissible) : any expression, that will be saved in the file
-  * `attributes` (map): Allows to specify the attributes of a shape file (or other files that accept attributes). The keys of the map are the names of the attributes that will be present in the file, the values are whatever expression neeeded to define their value
+  * `attributes` (map): Allows to specify the attributes of a shape file where agents are saved. The keys of the map are the names of the attributes that will be present in the file, the values are whatever expressions neeeded to define their value
   * `crs` (any type): the name of the projection, e.g. crs:"EPSG:4326" or its EPSG id, e.g. crs:4326. Here a list of the CRS codes (and EPSG id): http://spatialreference.org
   * `header` (boolean): an expression that evaluates to a boolean, specifying whether the save will write a header if the file does not exist
   * `rewrite` (boolean): an expression that evaluates to a boolean, specifying whether the save will ecrase the file or append data at the end of it. Default is true
-  * `to` (string): an expression that evaluates to an string, the path to the file
+  * `to` (string): an expression that evaluates to an string, the path to the file, or directly to a file
   * `type` (an identifier), takes values in: {shp, text, csv, asc, geotiff, image}: an expression that evaluates to an string, the type of the output file (it can be only "shp", "asc", "geotiff", "image", "text" or "csv")
   * `with` (map): Allows to define the attributes of a shape file. Keys of the map are the attributes of agents to save, values are the names of attributes in the shape file 
  	
@@ -2950,57 +2689,49 @@ Allows to save data in a file. The type of file can be "shp", "asc", "geotiff", 
 * Its simple syntax is:
 
 ```
-save data to: output_file type: a_type_file;
-```
+save data to: output_file type: a_type_file; ```
 
 
 * To save data in a text file:
 
 ```
-save (string(cycle) + "->"  + name + ":" + location) to: "save_data.txt" type: "text";
-```
+save (string(cycle) + "->"  + name + ":" + location) to: "save_data.txt" type: "text"; ```
 
 
 * To save the values of some attributes of the current agent in csv file:
 
 ```
-save [name, location, host] to: "save_data.csv" type: "csv";
-```
+save [name, location, host] to: "save_data.csv" type: "csv"; ```
 
 
 * To save the values of all attributes of all the agents of a species into a csv (with optional attributes):
 
 ```
-save species_of(self) to: "save_csvfile.csv" type: "csv" header: false;
-```
+save species_of(self) to: "save_csvfile.csv" type: "csv" header: false; ```
 
 
 * To save the geometries of all the agents of a species into a shapefile (with optional attributes):
 
 ```
-save species_of(self) to: "save_shapefile.shp" type: "shp" with: [name::"nameAgent", location::"locationAgent"] crs: "EPSG:4326";
-```
+save species_of(self) to: "save_shapefile.shp" type: "shp" with: [name::"nameAgent", location::"locationAgent"] crs: "EPSG:4326"; ```
 
 
 * To save the grid_value attributes of all the cells of a grid into an ESRI ASCII Raster file:
 
 ```
-save grid to: "save_grid.asc" type: "asc";
-```
+save grid to: "save_grid.asc" type: "asc"; ```
 
 
 * To save the grid_value attributes of all the cells of a grid into geotiff:
 
 ```
-save grid to: "save_grid.tif" type: "geotiff";
-```
+save grid to: "save_grid.tif" type: "geotiff"; ```
 
 
 * To save the grid_value attributes of all the cells of a grid into png (with a worldfile):
 
 ```
-save grid to: "save_grid.png" type: "image";
-```
+save grid to: "save_grid.png" type: "image"; ```
 
 
 * The save statement can be use in an init block, a reflex, an action or in a user command. Do not use it in experiments.
@@ -3009,21 +2740,6 @@ save grid to: "save_grid.png" type: "image";
 * The `save` statement is of type: **Single statement**
 * The `save` statement can be embedded into: Behavior, Sequence of statements or action, 
 * The `save` statement embeds statements: 
-
-----
-
-[//]: # (keyword|statement_save_batch)
-### save_batch 
-#### Facets 
-  
-  * **`to`** (a label): 
-  * `data` (any type), (omissible) : 
-  * `rewrite` (boolean): 
-
-#### Embedments
-* The `save_batch` statement is of type: **Batch method**
-* The `save_batch` statement can be embedded into: Experiment, 
-* The `save_batch` statement embeds statements: 
 
 ----
 
@@ -3062,18 +2778,7 @@ The setup statement is used to define the set of instructions that will be execu
 * As every test should be independent from the others, the setup will mainly contain initialization of variables that will be used in each test.
 
 ```
-species Tester {
-    int val_to_test;
-
-    setup {
-        val_to_test <- 0;
-    }
-
-    test t1 {
-       // [set of instructions, including asserts]
-    }
-}
-```
+species Tester {     int val_to_test;      setup {         val_to_test <- 0;     }      test t1 {        // [set of instructions, including asserts]     } } ```
 
     
 * See also: [test](#test), [assert](#assert), 
@@ -3106,10 +2811,7 @@ Allows an agent, the sender agent (that can be the [Sections161#global world age
 
 * Other examples of use: 
 ```
-ask receiver_agent(s) {
-     // [statements]
-}
-``` 
+ask receiver_agent(s) {      // [statements] } ``` 
   
 
 #### Embedments
@@ -3129,6 +2831,7 @@ ask receiver_agent(s) {
   * `familiarity` (float): the familiarity value of the created social link
   * `liking` (float): the appreciation value of the created social link
   * `solidarity` (float): the solidarity value of the created social link
+  * `trust` (float): the trust value of the created social link
   * `when` (boolean): A boolean value to socialize only with a certain condition 
  	
 #### Definition
@@ -3139,8 +2842,7 @@ enables to directly add a social link from a perceived agent.
 
 * Other examples of use: 
 ```
-socialize;
-``` 
+socialize; ``` 
   
 
 #### Embedments
@@ -3176,8 +2878,7 @@ Solves all equations which matched the given name, with all systems of agents th
 
 * Other examples of use: 
 ```
-solve SIR method: "rk4" step:0.001;
-``` 
+solve SIR method: "rk4" step:0.001; ``` 
   
 
 #### Embedments
@@ -3197,12 +2898,15 @@ solve SIR method: "rk4" step:0.001;
   * `compile` (boolean): 
   * `control` (22): defines the architecture of the species (e.g. fsm...)
   * `edge_species` (species): In the case of a species defining a graph topology for its instances (nodes of the graph), specifies the species to use for representing the edges
-  * `file` (file): (grid only), a bitmap file that will be loaded at runtime so that the value of each pixel  can be assigned to the attribute 'grid_value'
+  * `file` (file): (grid only), a bitmap file that will be loaded at runtime so that the value of each pixel can be assigned to the attribute 'grid_value'
+  * `files` (list): (grid only), a list of bitmap file that will be loaded at runtime so that the value of each pixel of each file can be assigned to the attribute 'bands'
   * `frequency` (int): The execution frequency of the species (default value: 1). For instance, if frequency is set to 10, the population of agents will be executed only every 10 cycles.
   * `height` (int): (grid only),  the height of the grid (in terms of agent number)
+  * `horizontal_orientation` (boolean): (hexagonal grid only),(true by default). Allows use a hexagonal grid with a horizontal or vertical orientation.
   * `mirrors` (any type in [list, species]): The species this species is mirroring. The population of this current species will be dependent of that of the species mirrored (i.e. agents creation and death are entirely taken in charge by GAMA with respect to the demographics of the species mirrored). In addition, this species is provided with an attribute called 'target', which allows each agent to know which agent of the mirrored species it is representing.
   * `neighbors` (int): (grid only), the chosen neighborhood (4, 6 or 8)
   * `neighbours` (int): (grid only), the chosen neighborhood (4, 6 or 8)
+  * `optimizer` (string): (grid only),("A*" by default). Allows to specify the algorithm for the shortest path computation ("BF", "Dijkstra", "A*" or "JPS*"
   * `parallel` (any type in [boolean, int]): (experimental) setting this facet to 'true' will allow this species to use concurrency when scheduling its agents; setting it to an integer will set the threshold under which they will be run sequentially (the default is initially 20, but can be fixed in the preferences). This facet has a default set in the preferences (Under Performances > Concurrency)
   * `parent` (species): the parent class (inheritance)
   * `schedules` (container): A container of agents (a species, a dynamic list, or a combination of species and containers) , which represents which agents will be actually scheduled when the population is scheduled for execution. For instance, 'species a schedules: (10 among a)' will result in a population that schedules only 10 of its own agents every cycle. 'species b schedules: []' will prevent the agents of 'b' to be scheduled. Note that the scope of agents covered here can be larger than the population, which allows to build complex scheduling controls; for instance, defining 'global schedules: [] {...} species b schedules: []; species c schedules: b + world; ' allows to simulate a model where the agents of b are scheduled first, followed by the world, without even having to create an instance of c.
@@ -3212,6 +2916,7 @@ solve SIR method: "rk4" step:0.001;
   * `use_individual_shapes` (boolean): (grid only),(true by default). Allows to specify whether or not the agents of the grid will have distinct geometries. If set to false, they will all have simpler proxy geometries
   * `use_neighbors_cache` (boolean): (grid only),(true by default). Allows to turn on or off the use of the neighbors cache used for grids. Note that if a diffusion of variable occurs, GAMA will emit a warning and automatically switch to a caching version
   * `use_regular_agents` (boolean): (grid only),(true by default). Allows to specify if the agents of the grid are regular agents (like those of any other species) or minimal ones (which can't have sub-populations, can't inherit from a regular species, etc.)
+  * `virtual` (boolean): whether the species is virtual (cannot be instantiated, but only used as a parent) (false by default)
   * `width` (int): (grid only), the width of the grid (in terms of agent number) 
  	
 #### Definition
@@ -3223,29 +2928,25 @@ The species statement allows modelers to define new species in the model. `globa
 * Here is an example of a species definition with a FSM architecture and the additional skill moving:
 
 ```
-species ant skills: [moving] control: fsm {
-```
+species ant skills: [moving] control: fsm { ```
 
 
 * In the case of a species aiming at mirroring another one:
 
 ```
-species node_agent mirrors: list(bug) parent: graph_node edge_species: edge_agent {
-```
+species node_agent mirrors: list(bug) parent: graph_node edge_species: edge_agent { ```
 
 
 * The definition of the single grid of a model will automatically create gridwidth x gridheight agents:
 
 ```
-grid ant_grid width: gridwidth height: gridheight file: grid_file neighbors: 8 use_regular_agents: false { 
-```
+grid ant_grid width: gridwidth height: gridheight file: grid_file neighbors: 8 use_regular_agents: false {  ```
 
 
 * Using a file to initialize the grid can replace width/height facets:
 
 ```
-grid ant_grid file: grid_file neighbors: 8 use_regular_agents: false { 
-```
+grid ant_grid file: grid_file neighbors: 8 use_regular_agents: false {  ```
 
 
 
@@ -3273,30 +2974,7 @@ A state, like a reflex, can contains several statements that can be executed at 
 * Here is an exemple integrating 2 states and the statements in the FSM architecture:
 
 ```
-	state s_init initial: true {
-		enter { write "Enter in" + state; }
-			write "Enter in" + state;
-		}
-
-		write state;
-
-		transition to: s1 when: (cycle > 2) {
-			write "transition s_init -> s1";
-		}
-
-		exit {
-			write "EXIT from "+state;
-		}
-	}
-	state s1 {
-
-	enter {write 'Enter in '+state;}
-
-	write state;
-
-	exit {write 'EXIT from '+state;}
-}
-```
+	state s_init initial: true { 		enter { write "Enter in" + state; } 			write "Enter in" + state; 		}  		write state;  		transition to: s1 when: (cycle > 2) { 			write "transition s_init -> s1"; 		}  		exit { 			write "EXIT from "+state; 		} 	} 	state s1 {  	enter {write 'Enter in '+state;}  	write state;  	exit {write 'EXIT from '+state;} } ```
 
     
 * See also: [enter](#enter), [exit](#exit), [transition](#transition), 
@@ -3313,7 +2991,7 @@ A state, like a reflex, can contains several statements that can be executed at 
 #### Facets 
   
   * **`message`** (any type), (omissible) : Allows to display a necessarily short message in the status box in the upper left corner. No formatting characters (carriage returns, tabs, or Unicode characters) should be used, but a background color can be specified. The message will remain in place until it is replaced by another one or by nil, in which case the standard status (number of cycles) will be displayed again
-  * `color` (rgb):  
+  * `color` (rgb): The color used for displaying the background of the status message 
  	
 #### Definition
 
@@ -3324,8 +3002,7 @@ The statement makes the agent output an arbitrary message in the status box.
 * Outputting a message
 
 ```
-status ('This is my status ' + self) color: #yellow;
-```
+status ('This is my status ' + self) color: #yellow; ```
 
 
 
@@ -3351,27 +3028,13 @@ The "switch... match" statement is a powerful replacement for imbricated "if ...
 * The prototypical syntax is as follows:
 
 ```
-switch an_expression {
-        match value1 {...}
-        match_one [value1, value2, value3] {...}
-        match_between [value1, value2] {...}
-        default {...}
-}
-```
+switch an_expression {         match value1 {...}         match_one [value1, value2, value3] {...}         match_between [value1, value2] {...}         default {...} } ```
 
 
 * Example:
 
 ```
-switch 3 {
-   match 1 {write "Match 1"; }
-   match 2 {write "Match 2"; }
-   match 3 {write "Match 3"; }
-   match_one [4,4,6,3,7]  {write "Match one_of"; }
-   match_between [2, 4] {write "Match between"; }
-   default {write "Match Default"; }
-}
-```
+switch 3 {    match 1 {write "Match 1"; }    match 2 {write "Match 2"; }    match 3 {write "Match 3"; }    match_one [4,4,6,3,7]  {write "Match one_of"; }    match_between [2, 4] {write "Match between"; }    default {write "Match Default"; } } ```
 
     
 * See also: [match](#match), [default](#default), [if](#if), 
@@ -3387,7 +3050,7 @@ switch 3 {
 ### tabu 
 #### Facets 
   
-  * **`name`** (an identifier), (omissible) : 
+  * **`name`** (an identifier), (omissible) : The name of the method. For internal use only
   * `aggregation` (a label), takes values in: {min, max}: the agregation method
   * `iter_max` (int): number of iterations
   * `maximize` (float): the value the algorithm tries to maximize
@@ -3403,15 +3066,13 @@ This algorithm is an implementation of the Tabu Search algorithm. See the wikipe
 * As other batch methods, the basic syntax of the tabu statement uses `method tabu` instead of the expected `tabu name: id` : 
 
 ```
-method tabu [facet: value];
-```
+method tabu [facet: value]; ```
 
 
 * For example: 
 
 ```
-method tabu iter_max: 50 tabu_list_size: 5 maximize: food_gathered;
-```
+method tabu iter_max: 50 tabu_list_size: 5 maximize: food_gathered; ```
 
 
 
@@ -3451,25 +3112,14 @@ As reflex, a task is a sequence of statements that can be executed, at each time
  	
 #### Definition
 
-The test statement allows modeler to define a set of assertions that will be tested. Before the execution of the embedded set of instructions, if a setup is defined in the species, model or experiment, it is executed. In a test, if one assertion fails, the evaluation of other assertions continue (if GAMA is configured in the preferences that the program does not stop at the first exception).
+The test statement allows modeler to define a set of assertions that will be tested. Before the execution of the embedded set of instructions, if a setup is defined in the species, model or experiment, it is executed. In a test, if one assertion fails, the evaluation of other assertions continue.
 
 #### Usages
 
 * An example of use:
 
 ```
-species Tester {
-    // set of attributes that will be used in test
-
-    setup {
-        // [set of instructions... in particular initializations]
-    }
-
-    test t1 {
-       // [set of instructions, including asserts]
-    }
-}
-```
+species Tester {     // set of attributes that will be used in test      setup {         // [set of instructions... in particular initializations]     }      test t1 {        // [set of instructions, including asserts]     } } ```
 
     
 * See also: [setup](#setup), [assert](#assert), 
@@ -3516,13 +3166,7 @@ In an FSM architecture, `transition` specifies the next state of the life cycle.
 * In the following example, the transition is executed when after 2 steps:
 
 ```
-	state s_init initial: true {
-		write state;
-		transition to: s1 when: (cycle > 2) {
-			write "transition s_init -> s1";
-		}
-	}
-```
+	state s_init initial: true { 		write state; 		transition to: s1 when: (cycle > 2) { 			write "transition s_init -> s1"; 		} 	} ```
 
     
 * See also: [enter](#enter), [state](#state), [exit](#exit), 
@@ -3534,6 +3178,37 @@ In an FSM architecture, `transition` specifies the next state of the life cycle.
 
 ----
 
+[//]: # (keyword|statement_try)
+### try 
+#### Facets 
+ 
+ 	
+#### Definition
+
+Allows the agent to execute a sequence of statements and to catch any runtime error that might happen in a subsequent `catch` block, either to ignore it (not a good idea, usually) or to safely stop the model
+
+#### Usages
+
+* The generic syntax is:
+
+```
+try {     [statements] } ```
+
+
+* Optionally, the statements to execute when a runtime error happens in the block can be defined in a following statement 'catch'. The syntax then becomes:
+
+```
+try {     [statements] } catch {     [statements] } ```
+
+
+
+#### Embedments
+* The `try` statement is of type: **Sequence of statements or action**
+* The `try` statement can be embedded into: Behavior, Sequence of statements or action, Layer, 
+* The `try` statement embeds statements: [catch](#catch),  
+
+----
+
 [//]: # (keyword|statement_unconscious_contagion)
 ### unconscious_contagion 
 #### Facets 
@@ -3541,6 +3216,7 @@ In an FSM architecture, `transition` specifies the next state of the life cycle.
   * **`emotion`** (546706): the emotion that will be copied with the contagion
   * `name` (an identifier), (omissible) : the identifier of the unconscious contagion
   * `charisma` (float): The charisma value of the perceived agent (between 0 and 1)
+  * `decay` (float): The decay value of the emotion added to the agent
   * `receptivity` (float): The receptivity value of the current agent (between 0 and 1)
   * `threshold` (float): The threshold value to make the contagion
   * `when` (boolean): A boolean value to get the emotion only with a certain condition 
@@ -3553,9 +3229,7 @@ enables to directly copy an emotion presents in the perceived specie.
 
 * Other examples of use: 
 ```
-unconscious_contagion emotion:fearConfirmed; 
-unconscious_contagion emotion:fearConfirmed charisma: 0.5 receptivity: 0.5;
-``` 
+unconscious_contagion emotion:fearConfirmed;  unconscious_contagion emotion:fearConfirmed charisma: 0.5 receptivity: 0.5; ``` 
   
 
 #### Embedments
@@ -3571,6 +3245,7 @@ unconscious_contagion emotion:fearConfirmed charisma: 0.5 receptivity: 0.5;
   
   * **`name`** (a label), (omissible) : the identifier of the user_command
   * `action` (26): the identifier of the action to be executed. This action should be accessible in the context in which the user_command is defined (an experiment, the global section or a species). A special case is allowed to maintain the compatibility with older versions of GAMA, when the user_command is declared in an experiment and the action is declared in 'global'. In that case, all the simulations managed by the experiment will run the action in response to the user executing the command
+  * `category` (a label): a category label, used to group parameters in the interface
   * `color` (rgb): The color of the button to display
   * `continue` (boolean): Whether or not the button, when clicked, should dismiss the user panel it is defined in. Has no effect in other contexts (menu, parameters, inspectors)
   * `when` (boolean): the condition that should be fulfilled (in addition to the user clicking it) in order to execute this action
@@ -3585,8 +3260,7 @@ Anywhere in the global block, in a species or in an (GUI) experiment, user_comma
 * The general syntax is for example:
 
 ```
-user_command kill_myself action: some_action with: [arg1::val1, arg2::val2, ...];
-```
+user_command kill_myself action: some_action with: [arg1::val1, arg2::val2, ...]; ```
 
     
 * See also: [user_init](#user_init), [user_panel](#user_panel), [user_input](#user_input), 
@@ -3641,11 +3315,7 @@ It allows to let the user define the value of a variable.
 
 * Other examples of use: 
 ```
-user_panel "Advanced Control" {
-	user_input "Location" returns: loc type: point <- {0,0};
-	create cells number: 10 with: [location::loc];
-}
-``` 
+user_panel "Advanced Control" { 	user_input "Location" returns: loc type: point <- {0,0}; 	create cells number: 10 with: [location::loc]; } ``` 
       
 * See also: [user_command](#user_command), [user_init](#user_init), [user_panel](#user_panel), 
 
@@ -3672,17 +3342,7 @@ It is the basic behavior of the user control architecture (it is similar to stat
 * The general syntax is for example:
 
 ```
-user_panel default initial: true {
-	user_input 'Number' returns: number type: int <- 10;
-	ask (number among list(cells)){ do die; }
-	transition to: "Advanced Control" when: every (10);
-}
-
-user_panel "Advanced Control" {
-	user_input "Location" returns: loc type: point <- {0,0};
-	create cells number: 10 with: [location::loc];
-}
-```
+user_panel default initial: true { 	user_input 'Number' returns: number type: int <- 10; 	ask (number among list(cells)){ do die; } 	transition to: "Advanced Control" when: every (10); }  user_panel "Advanced Control" { 	user_input "Location" returns: loc type: point <- {0,0}; 	create cells number: 10 with: [location::loc]; } ```
 
     
 * See also: [user_command](#user_command), [user_init](#user_init), [user_input](#user_input), 
@@ -3709,11 +3369,7 @@ user_panel "Advanced Control" {
 * All the spatial operations are topology-dependent (e.g. neighbors are not the same in a continuous and in a grid topology). So `using` statement allows modelers to specify the topology in which the spatial operation will be computed.
 
 ```
-float dist <- 0.0;
-using topology(grid_ant) {
-	d (self.location distance_to target.location);
-}
-```
+float dist <- 0.0; using topology(grid_ant) { 	d (self.location distance_to target.location); } ```
 
 
 
@@ -3733,13 +3389,13 @@ using topology(grid_ant) {
   * `const` (boolean): Indicates whether this attribute can be subsequently modified or not
   * `fill_with` (any type): 
   * `function` (any type): Used to specify an expression that will be evaluated each time the attribute is accessed. This facet is incompatible with both 'init:' and 'update:'
-  * `index` (a datatype identifier): 
+  * `index` (a datatype identifier): The type of the key used to retrieve the contents of this attribute
   * `init` (any type): The initial value of the attribute
-  * `of` (a datatype identifier): 
+  * `of` (a datatype identifier): The type of the contents of this container attribute
   * `on_change` (any type): Provides a block of statements that will be executed whenever the value of the attribute changes
   * `parameter` (a label): Soon to be deprecated. Declare the parameter in an experiment instead
   * `size` (any type in [int, point]): 
-  * `type` (a datatype identifier): 
+  * `type` (a datatype identifier): The type of the attribute
   * `update` (any type): An expression that will be evaluated each cycle to compute a new value for the attribute
   * `value` (any type):  
  	
@@ -3771,7 +3427,7 @@ Allows to declare an attribute of a species or an experiment
   * `min` (any type in [int, float]): The minimum value this attribute can take
   * `on_change` (any type): Provides a block of statements that will be executed whenever the value of the attribute changes
   * `parameter` (a label): Soon to be deprecated. Declare the parameter in an experiment instead
-  * `step` (int): 
+  * `step` (int): A discrete step (used in conjunction with min and max) that constrains the values this variable can take
   * `type` (a datatype identifier): The type of the attribute, either 'int' or 'float'
   * `update` (any type in [int, float]): An expression that will be evaluated each cycle to compute a new value for the attribute
   * `value` (any type in [int, float]):  
@@ -3837,8 +3493,7 @@ The statement makes the agent output an arbitrary message in the error view as a
 * Emmitting a warning
 
 ```
-warn 'This is a warning from ' + self;
-```
+warn 'This is a warning from ' + self; ```
 
 
 
@@ -3865,8 +3520,7 @@ The statement makes the agent output an arbitrary message in the console.
 * Outputting a message
 
 ```
-write 'This is a message from ' + self;
-```
+write 'This is a message from ' + self; ```
 
 
 
